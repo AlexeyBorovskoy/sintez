@@ -1,0 +1,104 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="nav nav-tabs">
+
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('upload') }}">{{ _('Update') }}</a>
+  </li>
+
+  <li class="nav-item active">
+    <a class="nav-link active" href="{{ url_for('backup') }}">{{ _('Backup') }}</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link active" href="{{ url_for('security') }}">{{ _('Security') }}</a>
+  </li>
+</ul>
+
+<br>
+
+<div class="alert alert-warning" role="alert">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('The program will restart while the backup is being downloaded.')}}
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<form class="form-horizontal" method="post" enctype='multipart/form-data' action="">
+
+<h3>{{ _('Backup traffic light configuration.') }}</h3>
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Backup:') }}</label>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-custom" onclick="window.location.href='full_backup'">{{ _('Save') }}</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Select the backup file:') }}</label>
+    <div class="col-sm-9">
+      {% if updating %}
+        <input type="file" id="upfile" name="upfile" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}" disabled="true">
+      {% else %}
+        <input type="file" id="upfile" name="upfile" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}">
+      {% endif %}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      {% if updating %}
+        <button type="submit" class="btn btn-custom" disabled='true'>{{ _('Upload') }}</button>
+      {% else %}
+        <button type="submit" class="btn btn-custom">{{ _('Upload') }}</button>
+      {% endif %}
+    </div>
+  </div>
+
+
+{#<h3>{{ _('Reset to factory settings.') }}</h3>#}
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Factory settings') }}:</label>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#myModal">{{ _('Reset') }}</button>
+    </div>
+  </div>
+
+</form>
+{% endblock %}
+
+{% block modal %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="false" data-keyboard="false" style="z-index:2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 100%">
+      <div class="modal-header" style="border-bottom: none">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">{{ _('Reset to factory settings.') }}</h3>
+      </div>
+
+      <div class="modal-body">
+        <div class="alert alert-warning">
+          <h4 class="text-warning">
+            <strong>{{_('ATTENTION!!!')}}</strong> {{_('It is recommended to make a backup copy of the traffic light configuration file reset settings to default.')}}</h4>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="border-top: none">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{_('Cancel')}}</button>
+        <button type="button" class="btn btn-custom" onclick="window.location.href='reset_settings'">{{_('Reset')}}</button>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+  $("[data-hide]").on("click", function(){
+    $(this).closest('.alert').hide();
+  });
+</script>
+
+{% endblock %}
+

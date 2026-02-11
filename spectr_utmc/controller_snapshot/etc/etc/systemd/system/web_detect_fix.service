@@ -1,0 +1,13 @@
+[Unit]
+Description=SNMPD config copy service
+
+[Service]
+Type=oneshot
+WorkingDirectory = /home/voicelink/.service/
+ExecStart = /bin/sh -c 'cd /home/voicelink/.service/ && ./web_detect_fix'
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
+

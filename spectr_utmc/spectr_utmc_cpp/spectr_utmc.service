@@ -1,0 +1,16 @@
+[Unit]
+Description=UMTC to Spectr-ITS bridge (C++)
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/spectr_utmc_cpp /etc/spectr_utmc/config.json
+WorkingDirectory=/etc/spectr_utmc
+Type=simple
+Restart=always
+RestartSec=30
+
+User=ripas
+Group=ripas
+
+[Install]
+WantedBy=multi-user.target

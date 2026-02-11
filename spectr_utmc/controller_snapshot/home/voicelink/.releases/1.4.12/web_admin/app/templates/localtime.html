@@ -1,0 +1,342 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h3>{{ _('Setting the date and time.') }}</h3>
+<form class="form-horizontal" method="post" name="localtime" action="">
+{{form.hidden_tag()}}
+
+  <div class="form-group" id="currentdatetime_div">
+    <label class="control-label col-sm-3">{{ _('Current Datetime:') }}</label>
+    <div class="col-sm-8">
+      <label class="control-label"><span class="text-normal" id="tl_date">{{time.date}}</span>&nbsp;<span class="text-normal" id="tl_time">{{time.time}}</span></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Time zone:') }}</label>
+    <div class="col-sm-8">
+      <select class="form-control" name="timezone">
+        {% for tz in time.get("timezones", range(-12, 15, 1)) %}
+        <option value="{{ tz }}" {% if time.timezone == tz %} selected="selected" {% endif %}>UTC{% if tz > 0 %}+{{tz}}{% elif tz < 0 %}{{tz}}{% endif %}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group" id="time_mode_div">
+      {{ form.time_mode.label(class="control-label col-sm-3") }} 
+      <div class="col-sm-8">
+          {{ form.time_mode(class_="form-control",  onChange="SelectMode(this)") }}
+      </div>
+  </div>
+
+
+
+  <div class="form-group" id="date_div">
+    <label class="control-label col-sm-3">{{ _('Date:') }}</label>
+    <div class="col-sm-8">
+      <input required pattern="(((0[1-9]|[12]\d|3[01])[- /.](0[13578]|1[02])[- /.](20\d{2}))|((0[1-9]|[12]\d|30)[- /.](0[13456789]|1[012])[- /.](20\d{2}))|((0[1-9]|1\d|2[0-8])[- /.]02[- /.](20\d{2}))|(29[- /.]02[- /.]((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))" type="text" name="date" id="date" value="{{time.date}}" class="form-control" placeholder="{{ _('DD.MM.YYYY-day.month.year') }}">
+    </div>
+  </div>
+  <div class="form-group" id="time_div">
+    <label class="control-label col-sm-3">{{ _('Time:') }}</label>
+    <div class="col-sm-8">
+      <input required pattern="([01]\d|2[0-3]):[0-5][0-9]:[0-5][0-9]" type="text" name="time" id="time" value="{{time.time}}" class="form-control" placeholder="{{ _('hh:mm:ss-hours:minutes:seconds') }}">
+    </div>
+  </div>
+
+  <div class="form-group" id="ntpserver_div">
+    <label class="control-label col-sm-3">{{ _('NTP Server:') }}</label>
+    <div class="col-sm-8">
+        {{ form.ntpserver(class_="form-control", placeholder="ip or domain name") }}
+    </div>
+  </div>
+
+  <div class="form-group" id="synctimentp_div">
+      {{ form.synctimentp.label(class="control-label col-sm-3") }} 
+      <div class="col-sm-8">
+          {{ form.synctimentp(class_="form-control") }}
+      </div>
+  </div>
+
+  <div class="form-group" id="synctime_div">
+      {{ form.synctime.label(class="control-label col-sm-3") }} 
+      <div class="col-sm-8">
+          {{ form.synctime(class_="form-control") }}
+      </div>
+  </div>
+
+  {% if time.last_sync_time %}
+  <div class="form-group" id="last_sync_time_div">
+    <label class="control-label col-sm-3">{{ _('Last sync time:') }}</label>
+    <div class="col-sm-8">
+      <label class="control-label"><span class="text-normal" >{{time.last_sync_time}}</span></label>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="form-group" id="sync_fallback_div">
+    {{ form.sync_fallback.label(class="control-label col-sm-3") }} 
+    <div class="col-sm-8" style="padding-top: 7px;">
+      {{ form.sync_fallback() }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    {{ form.dst_enabled.label(class="control-label col-sm-3") }} 
+    <div class="col-sm-8" style="padding-top: 7px;">
+      {{ form.dst_enabled(onChange="Checked(this)") }}
+    </div>
+  </div>
+
+  <div class="form-group" id="time_migration_div">
+    {{ form.time_migration.label(class="control-label col-sm-3") }} 
+    <div class="col-sm-8">
+      {{ form.time_migration(class_="form-control", type="number", min="1", max="1380") }}
+    </div>
+  </div>
+
+
+
+  <div class="form-group" id="start_datetime1">
+      {{ form.start_month.label(class="control-label col-sm-2") }}
+      <label class="control-label col-sm-1" id="start_year"></label>
+      <div class="col-sm-4">
+          {{ form.start_month(class_="form-control", onChange="load_date(this)") }}
+      </div>
+      <div class="col-sm-4">
+          {{ form.start_day(class_="form-control", onChange="load_date(this)") }}
+      </div>
+  </div>
+
+  <div class="form-group" id="start_datetime2">
+      <label class="control-label col-sm-3"></label>
+      <div class="col-sm-4">
+          {{ form.start_day_of_the_week(class_="form-control", onChange="load_date(this)") }}
+      </div>
+      <div class="col-sm-4">
+          {{ form.start_time(class_="form-control", onChange="load_date(this)", pattern="([01]\d|2[0-3]):[0-5][0-9]", placeholder="%s" % _('hh:mm-hours:minutes') )}}
+      </div>
+  </div>
+  
+
+
+  <div class="form-group" id="end_datetime1">
+      {{ form.end_month.label(class="control-label col-sm-2") }}
+      <label class="control-label col-sm-1" id="end_year"></label>
+      <div class="col-sm-4">
+          {{ form.end_month(class_="form-control", onChange="load_date(this)") }}
+      </div>
+      <div class="col-sm-4">
+          {{ form.end_day(class_="form-control", onChange="load_date(this)") }}
+      </div>
+  </div>
+
+  <div class="form-group" id="end_datetime2">
+      <label class="control-label col-sm-3"></label>
+      <div class="col-sm-4">
+          {{ form.end_day_of_the_week(class_="form-control", onChange="load_date(this)") }}
+      </div>
+      <div class="col-sm-4">
+          {{ form.end_time(class_="form-control", onChange="load_date(this)", pattern="([01]\d|2[0-3]):[0-5][0-9]", placeholder="%s" % _('hh:mm-hours:minutes') )}}
+      </div>
+  </div>
+  
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+};
+
+function get_date_from_dst(current_year, dst_obj){
+  var num_days_in_res_month = daysInMonth(current_year, dst_obj.res_month);
+  var count = 0;
+  for (var i = 1; i < num_days_in_res_month + 1; i++) {
+    var dt = new Date(current_year, dst_obj.res_month, i);
+    if (dt.getDay() == dst_obj.res_day_of_the_week) {
+      count += 1;
+      if (count == dst_obj.res_day){
+        var res_date = dt;
+        break;
+      } else if (dst_obj.res_day == -1) {
+        var res_date = dt;
+      }
+    }
+  }
+  // console.log(res_date)
+  res_date.setHours(Number(dst_obj.res_time));
+  // res_date.setMinutes(Number(dst_obj.res_time.split(':')[1]));
+  return res_date;
+};
+
+function load_date(a) {
+
+  var current_date = new Date(
+    document.getElementById('tl_date').innerHTML.split('.')[2],
+    Number(document.getElementById('tl_date').innerHTML.split('.')[1]) - 1,
+    document.getElementById('tl_date').innerHTML.split('.')[0],
+    document.getElementById('tl_time').innerHTML.split(':')[0],
+    document.getElementById('tl_time').innerHTML.split(':')[1],
+    document.getElementById('tl_time').innerHTML.split(':')[2],
+  );
+  // 20/07/2018 01:00:10
+  // var current_date = new Date(2018, 7, 20, 1, 0, 0);
+  const end_dict = new Map();
+  end_dict['res_month'] = Number(document.getElementById('end_month').value) - 1;
+  end_dict['res_day'] = Number(document.getElementById('end_day').value);
+  end_dict['res_day_of_the_week'] = Number(document.getElementById('end_day_of_the_week').value) + 1;
+  end_dict['res_time'] = document.getElementById('end_time').value;
+  
+  var current_end_date = get_date_from_dst(current_date.getFullYear(), end_dict);
+  if (current_end_date <= current_date) {
+    var end_date = get_date_from_dst(current_date.getFullYear() + 1, end_dict);
+  } else {
+    var end_date = current_end_date
+  }
+
+  const start_dict = new Map();
+  start_dict['res_month'] = Number(document.getElementById('start_month').value) - 1;
+  start_dict['res_day'] = Number(document.getElementById('start_day').value);
+  start_dict['res_day_of_the_week'] = Number(document.getElementById('start_day_of_the_week').value) + 1;
+  start_dict['res_time'] = document.getElementById('start_time').value;
+
+  var current_start_date = get_date_from_dst(current_date.getFullYear(), start_dict);
+  if (current_end_date <= current_start_date) {
+    var start_date = get_date_from_dst(end_date.getFullYear() - 1, start_dict);
+  } else {
+    var start_date = get_date_from_dst(end_date.getFullYear(), start_dict);
+  }
+
+
+  document.getElementById("start_year").innerHTML = start_date.getFullYear();
+  document.getElementById("end_year").innerHTML = end_date.getFullYear();
+}
+
+function loadDateTime() {
+  var timezone = document.getElementsByName("timezone")[0];
+  var date = document.getElementsByName("date")[0];
+  var time = document.getElementsByName("time")[0];
+
+  function setLocalDateTime(event) { // при надажии t устанавливает локальное время компа
+    var kep = event.which;
+    if (kep == 84) { //84 - код клавиши t
+      // текущая дата
+      var datec = new Date();
+      var hours = datec.getHours();
+      var minutes = datec.getMinutes();
+      var seconds = datec.getSeconds();
+      var dt = datec.getDate();
+      var month = datec.getMonth()+1;
+      var year = datec.getFullYear();
+      
+      timezone.value = -1*datec.getTimezoneOffset()/60;
+      
+      if (dt < 10)
+        dt2display = "0" + dt;
+      else
+        dt2display = dt;
+      if (month < 10)
+        month2display = "0" + month;
+      else
+        month2display = month;
+      date.value = dt2display+"."+month2display+"."+year;
+      
+      if (hours < 10)
+        hours2display = "0" + hours;
+      else
+        hours2display = hours;
+      if (minutes < 10)
+        minutes2display = "0" + minutes;
+      else
+        minutes2display = minutes;
+      if (seconds < 10)
+        seconds2display = "0" + seconds;
+      else
+        seconds2display = seconds;
+      time.value = hours2display + ":" + minutes2display + ":" + seconds2display;
+    }
+  };
+  document.body.onkeydown = setLocalDateTime;
+  LoadPage()
+};
+function Checked(a) {
+  if (a.checked) {
+    document.getElementById("time_migration_div").style.display='block';
+    document.getElementById("start_datetime1").style.display='block';
+    document.getElementById("start_datetime2").style.display='block';
+    document.getElementById("end_datetime1").style.display='block';
+    document.getElementById("end_datetime2").style.display='block';
+    document.getElementById('time_migration').setAttribute('required', '');
+    load_date(document.getElementById('start_month'));
+  } else {
+    document.getElementById("time_migration_div").style.display='none';
+    document.getElementById("start_datetime1").style.display='none';
+    document.getElementById("start_datetime2").style.display='none';
+    document.getElementById("end_datetime1").style.display='none';
+    document.getElementById("end_datetime2").style.display='none';
+    document.getElementById('time_migration').removeAttribute('required', '');
+  }
+}
+function SelectMode(a) {
+  var mode = a.value;
+    if (mode == "manual") {
+      var ntpserver = document.getElementById('ntpserver');
+      if (ntpserver != null){
+        ntpserver.removeAttribute('required', '');
+      }
+      document.getElementById("time_div").style.display='block';
+      document.getElementById("date_div").style.display='block';
+      document.getElementById("ntpserver_div").style.display='none';
+      document.getElementById("synctime_div").style.display='block';
+      document.getElementById("synctimentp_div").style.display='none';
+      document.getElementById("sync_fallback_div").style.display='none';
+    } else if (mode == "auto") {
+      document.getElementById("time_div").style.display='none';
+      document.getElementById("date_div").style.display='none';
+      document.getElementById("ntpserver_div").style.display='block';
+      document.getElementById("synctime_div").style.display='none';
+      document.getElementById("synctimentp_div").style.display='block';
+      document.getElementById('ntpserver').setAttribute('required', '');
+      document.getElementById("sync_fallback_div").style.display='block';
+    } else {
+      document.getElementById("id_v3").style.display='none';
+      alert('error');
+    }
+}
+function LoadPage() {
+  Checked(document.getElementById('dst_enabled'));
+  SelectMode(document.getElementById('time_mode'));
+  if (document.getElementById('dst_enabled').checked) {
+    load_date(document.getElementById('start_month'));
+  };
+}
+var updateInterval = 1000;
+
+window.setInterval(function(){
+  $.get('check_time', {} )
+  .done(function( data ) {
+    document.getElementById("tl_date").innerHTML = data.tl_date;
+    document.getElementById("tl_time").innerHTML = data.tl_time;
+  });
+
+}, updateInterval);
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+<body class="gray-bg" onLoad="loadDateTime();">
+{% endblock %}

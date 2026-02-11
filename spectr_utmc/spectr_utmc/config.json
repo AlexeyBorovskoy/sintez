@@ -1,0 +1,11 @@
+{
+  "its": {
+    "host":"commserver.cudd",
+    "port": 3000,
+    "reconnectTimeout": 10
+  },
+  "community": "UTMC",
+  "objects": [
+    { "id":10101, "strid":"Test SINTEZ UTMC", "addr":"192.168.4.77", "//siteId":"CO1111" }
+  ]
+}

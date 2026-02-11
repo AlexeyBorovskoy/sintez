@@ -1,0 +1,12 @@
+[Unit]
+Description=Timestamp service
+After=resident.service
+
+[Service]
+WorkingDirectory = /home/voicelink/.service/
+ExecStart = /bin/sh -c 'cd /home/voicelink/.service/ && ./timestamp'
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
+

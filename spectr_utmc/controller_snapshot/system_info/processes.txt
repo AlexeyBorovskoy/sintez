@@ -1,0 +1,136 @@
+ 
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.8  33704  7972 ?        Ss   Jan12   0:52 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jan12   0:05 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   Jan12   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   Jan12   0:00 [rcu_par_gp]
+root         8  0.0  0.0      0     0 ?        I<   Jan12   0:00 [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    Jan12   0:00 [rcu_tasks_rude_]
+root        10  0.0  0.0      0     0 ?        S    Jan12   0:00 [rcu_tasks_trace]
+root        11  0.0  0.0      0     0 ?        S    Jan12   5:36 [ksoftirqd/0]
+root        12  0.3  0.0      0     0 ?        I    Jan12 115:03 [rcu_sched]
+root        13  0.0  0.0      0     0 ?        S    Jan12   0:00 [migration/0]
+root        14  0.0  0.0      0     0 ?        S    Jan12   0:00 [cpuhp/0]
+root        15  0.0  0.0      0     0 ?        S    Jan12   0:00 [cpuhp/1]
+root        16  0.0  0.0      0     0 ?        S    Jan12   0:02 [migration/1]
+root        17  0.0  0.0      0     0 ?        S    Jan12   7:15 [ksoftirqd/1]
+root        20  0.0  0.0      0     0 ?        S    Jan12   0:00 [cpuhp/2]
+root        21  0.0  0.0      0     0 ?        S    Jan12   0:00 [migration/2]
+root        22  0.0  0.0      0     0 ?        S    Jan12   4:32 [ksoftirqd/2]
+root        25  0.0  0.0      0     0 ?        S    Jan12   0:00 [cpuhp/3]
+root        26  0.0  0.0      0     0 ?        S    Jan12   0:00 [migration/3]
+root        27  0.0  0.0      0     0 ?        S    Jan12   3:21 [ksoftirqd/3]
+root        30  0.0  0.0      0     0 ?        S    Jan12   0:00 [kdevtmpfs]
+root        31  0.0  0.0      0     0 ?        I<   Jan12   0:00 [netns]
+root        34  0.0  0.0      0     0 ?        S    Jan12   0:00 [kauditd]
+root        36  0.0  0.0      0     0 ?        S    Jan12   0:03 [khungtaskd]
+root        37  0.0  0.0      0     0 ?        S    Jan12   0:00 [oom_reaper]
+root        38  0.0  0.0      0     0 ?        I<   Jan12   0:00 [writeback]
+root        39  0.0  0.0      0     0 ?        S    Jan12   4:01 [kcompactd0]
+root        57  0.0  0.0      0     0 ?        I<   Jan12   0:00 [kblockd]
+root        58  0.0  0.0      0     0 ?        I<   Jan12   0:00 [blkcg_punt_bio]
+root        59  0.0  0.0      0     0 ?        S    Jan12   0:00 [watchdogd]
+root        62  0.0  0.0      0     0 ?        I<   Jan12   0:00 [rpciod]
+root        63  0.0  0.0      0     0 ?        I<   Jan12   0:00 [kworker/u9:0]
+root        64  0.0  0.0      0     0 ?        I<   Jan12   0:00 [xprtiod]
+root        65  0.0  0.0      0     0 ?        S    Jan12   0:00 [kswapd0]
+root        66  0.0  0.0      0     0 ?        I<   Jan12   0:00 [nfsiod]
+root        69  0.0  0.0      0     0 ?        I<   Jan12   0:00 [iscsi_eh]
+root        70  0.0  0.0      0     0 ?        I<   Jan12   0:00 [iscsi_destroy]
+root        71  0.0  0.0      0     0 ?        I<   Jan12   0:00 [dwc_otg]
+root        73  0.0  0.0      0     0 ?        I<   Jan12   0:00 [DWC Notificatio]
+root        74  0.0  0.0      0     0 ?        S<   Jan12   0:00 [vchiq-slot/0]
+root        75  0.0  0.0      0     0 ?        S<   Jan12   0:00 [vchiq-recy/0]
+root        76  0.0  0.0      0     0 ?        S<   Jan12   0:00 [vchiq-sync/0]
+root        77  0.0  0.0      0     0 ?        I<   Jan12   0:00 [zswap-shrink]
+root        83  0.0  0.0      0     0 ?        I<   Jan12   0:00 [mmc_complete]
+root        88  0.0  0.0      0     0 ?        S    Jan12   2:40 [jbd2/mmcblk0p2-]
+root        89  0.0  0.0      0     0 ?        I<   Jan12   0:00 [ext4-rsv-conver]
+root        92  0.0  0.0      0     0 ?        I<   Jan12   0:00 [ipv6_addrconf]
+root       115  0.0  1.4  41892 14192 ?        Ss   Jan12  16:26 /lib/systemd/systemd-journald
+root       153  0.0  0.3  18104  3912 ?        Ss   Jan12   0:07 /lib/systemd/systemd-udevd
+root       173  0.0  0.0      0     0 ?        S    Jan12   0:00 [vchiq-keep/0]
+root       243  0.0  0.0      0     0 ?        I<   Jan12   0:00 [cfg80211]
+root       258  0.0  0.0      0     0 ?        I<   Jan12   0:00 [brcmf_wq/mmc1:0]
+root       262  0.0  0.0      0     0 ?        S    Jan12   0:00 [brcmf_wdog/mmc1]
+root       324  0.0  0.2   7948  2240 ?        Ss   Jan12   0:06 /usr/sbin/cron -f
+root       337  0.0  0.3  25512  3104 ?        Ssl  Jan12   2:29 /usr/sbin/rsyslogd -n -iNONE
+root       345  0.0  0.0   1940   376 ?        S<s  Jan12   0:00 /bin/sh -c cd /home/voicelink/rtc/resident && ./resident
+root       350  0.0  0.0   1940   376 ?        Ss   Jan12   0:00 /bin/sh -c cd /home/voicelink/.service/ && ./arp_link
+root       354  0.0  0.6  12576  6532 ?        S    Jan12  15:45 ./arp_link
+root       357 88.8  2.5 130268 25176 ?        S<l  Jan12 29653:35 ./resident
+message+   358  0.0  0.3   6572  3496 ?        Ss   Jan12   0:02 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       366  0.0  0.5  13092  5696 ?        Ss   Jan12   0:08 /lib/systemd/systemd-logind
+root       367  0.0  0.0   1940   404 ?        S<s  Jan12   0:00 /bin/sh -c cd /home/voicelink/ && ./firmware_updater
+root       368  0.0  0.0   3692   740 ?        SNs  Jan12   0:01 /usr/sbin/alsactl -E HOME=/run/alsa -s -n 19 -c rdaemon
+root       369  0.0  1.0  19104 10184 ?        S<   Jan12   2:14 ./firmware_updater
+avahi      372  0.0  0.3   6276  3384 ?        Ss   Jan12   9:20 avahi-daemon: running [sintez-lite-3b.local]
+root       374  0.0  0.0   1940   412 ?        Ss   Jan12   0:00 /bin/sh -c cd /home/voicelink/.service/ && ./timestamp
+root       375  0.0  0.5  12228  5800 ?        S    Jan12   0:43 ./timestamp
+root       376  0.0  0.3  10708  3680 ?        Ss   Jan12   0:20 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root       377  0.0  0.0  27656    80 ?        SLsl Jan12   0:27 /usr/sbin/rngd -r /dev/hwrng
+nobody     392  0.0  0.2   4320  2020 ?        Ss   Jan12   0:30 /usr/sbin/thd --triggers /etc/triggerhappy/triggers.d/ --socket /run/thd.socket --user nobody --deviceglob /dev/input/event*
+avahi      438  0.0  0.0   5768   252 ?        S    Jan12   0:00 avahi-daemon: chroot helper
+root       447  0.0  0.0   1940   376 ?        Ss   Jan12   0:00 /bin/sh -c cd /home/voicelink/rtc/modbus_tcp && ./modbus_tcp
+root       448  0.0  1.0  17956 10304 ?        S    Jan12  15:01 ./modbus_tcp
+root       450  0.0  0.0   1940   380 ?        Ss   Jan12   0:00 /bin/sh -c cd /home/voicelink/rtc/traffixtream2 && ./traffixtream2
+root       451  0.4  0.7  16084  7564 ?        S    Jan12 134:33 ./traffixtream2
+root       453  0.0  0.0   1940   408 ?        Ss   Jan12   0:00 /bin/sh -c cd /home/voicelink/rtc/traficam && ./traficam
+root       454  0.3  0.9  17760  9384 ?        S    Jan12 133:02 ./traficam
+voiceli+   458  0.3 29.3 368128 292512 ?       Ssl  Jan12 115:46 /usr/bin/node spectr_utmc.js config.json
+root       459  0.0  0.0   1940   412 ?        SNs  Jan12   0:00 /bin/sh -c cd /home/voicelink/rtc/snmp_agent && ./snmp_agent
+voiceli+   460  0.0  1.4  21508 14408 ?        Ss   Jan12  13:34 /usr/bin/python /usr/bin/gunicorn --workers 1 --bind unix:web_admin.sock -m 007 --timeout 300 wsgi:app
+voiceli+   461  0.0  1.4  21508 14468 ?        Ss   Jan12  20:53 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+root       463 82.8  2.2  76276 22064 ?        SNl  Jan12 27656:02 ./snmp_agent
+Debian-+   464  0.1  0.9  24436  9072 ?        Ss   Jan12  49:57 /usr/sbin/snmpd -Lf /dev/null -u Debian-snmp -g Debian-snmp -I -smux mteTrigger mteTriggerConf -f -p /run/snmpd.pid
+root       465  0.0  0.1   4308  1284 tty1     Ss+  Jan12   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root       469  0.0  0.5  10692  5636 ?        Ss   Jan12   0:00 /usr/sbin/sshd -D
+root       481  0.0  0.2  50228  2368 ?        Ss   Jan12   0:00 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+www-data   482  0.0  0.5  50764  5684 ?        S    Jan12   1:33 nginx: worker process
+www-data   483  0.0  0.5  50808  5720 ?        S    Jan12   0:08 nginx: worker process
+www-data   484  0.0  0.5  50504  5036 ?        S    Jan12   0:00 nginx: worker process
+www-data   485  0.0  0.4  50516  4736 ?        S    Jan12   0:00 nginx: worker process
+root       652  0.0  0.0   1940   356 ?        S<s  Jan12   0:00 /bin/sh -c cd /home/voicelink/.service/ && ./restart_frozen_phase
+root       654  6.1  0.9  16216  9100 ?        R<   Jan12 2047:19 ./restart_frozen_phase
+voiceli+   858  0.0  3.3  52740 33336 ?        S    Jan12  31:47 /usr/bin/python /usr/bin/gunicorn --workers 1 --bind unix:web_admin.sock -m 007 --timeout 300 wsgi:app
+voiceli+   882  0.0  1.8  36640 18012 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   883  0.0  1.8  36648 18008 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   886  0.0  1.8  36640 18012 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   890  0.0  1.8  36636 17992 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   893  0.0  1.8  36628 18004 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   898  0.0  1.8  36624 18008 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   900  0.0  1.8  36628 18012 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+voiceli+   903  0.0  1.8  36648 18008 ?        S    Jan12   0:10 /usr/bin/python /usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+root      1147  0.0  0.0      0     0 ?        I    13:48   0:00 [kworker/1:2-mm_percpu_wq]
+root      1277  0.0  0.0      0     0 ?        I<   13:48   0:00 [kworker/2:1H]
+root      3547  0.0  0.0      0     0 ?        I<   01:07   0:04 [kworker/0:1H-mmc_complete]
+root      4440  0.0  0.0      0     0 ?        I    13:49   0:00 [kworker/2:0-events]
+root      7503  0.0  0.0      0     0 ?        I<   13:40   0:00 [kworker/1:1H]
+root     11025  0.0  0.0      0     0 ?        Z<   Feb03   0:00 [date] <defunct>
+root     11039  6.8  1.6 105724 16252 ?        S<   Feb03  92:26 ./resident
+root     11045 59.2  1.7 105680 17500 ?        R<   Feb03 798:49 ./resident
+root     11530  0.0  0.0      0     0 ?        I    13:32   0:01 [kworker/1:0-events_power_efficient]
+root     12520  0.0  0.0      0     0 ?        I<   13:32   0:00 [kworker/0:2H]
+root     12966  0.0  0.0      0     0 ?        I<   06:24   0:00 [kworker/2:0H-kblockd]
+root     13256  0.5  0.0      0     0 ?        I    13:51   0:01 [kworker/u8:1-events_unbound]
+root     14749  0.0  0.0      0     0 ?        I    13:52   0:00 [kworker/3:1-events]
+root     16930  0.0  0.0      0     0 ?        I    05:47   0:00 [kworker/0:1-cgroup_destroy]
+root     17511  0.0  0.0      0     0 ?        I    12:18   0:00 [kworker/2:1-events]
+root     18677  0.0  0.0      0     0 ?        I    13:53   0:00 [kworker/1:1-events_power_efficient]
+root     19709  0.0  0.0      0     0 ?        I<   13:53   0:00 [kworker/1:2H]
+root     20514  0.0  0.0      0     0 ?        I    Feb02   0:29 [kworker/0:0-events]
+root     21948  0.0  0.0      0     0 ?        I    13:54   0:00 [kworker/2:2-events_freezable]
+root     24598  0.0  0.0      0     0 ?        I    12:10   0:00 [kworker/3:0-mm_percpu_wq]
+root     24612  0.0  0.0      0     0 ?        I<   Feb03   0:01 [kworker/3:1H-kblockd]
+root     25521  0.8  0.0      0     0 ?        I    13:45   0:05 [kworker/u8:2-events_unbound]
+root     25686  0.0  0.0      0     0 ?        I<   13:55   0:00 [kworker/3:0H]
+root     25845  0.0  0.0      0     0 ?        I<   13:27   0:00 [kworker/3:2H]
+root     29120  0.0  0.0      0     0 ?        I    13:46   0:00 [kworker/3:2-events]
+root     29949  0.0  0.0      0     0 ?        I<   10:37   0:00 [kworker/1:0H-kblockd]
+voiceli+ 30802  9.0  0.7  14568  7060 ?        Ss   13:56   0:00 /lib/systemd/systemd --user
+voiceli+ 30805  0.0  0.1  35244  1836 ?        S    13:56   0:00 (sd-pam)
+root     30855  0.6  0.0      0     0 ?        I    13:56   0:00 [kworker/u8:0-events_unbound]
+root     30863  0.0  0.0      0     0 ?        I    13:56   0:00 [kworker/0:2-events]
+root     31040 31.0  0.6  12204  6176 ?        Ss   13:56   0:00 sshd: voicelink [priv]
+voiceli+ 31087  0.0  0.3  12204  3436 ?        S    13:56   0:00 sshd: voicelink@notty
+voiceli+ 31092  0.0  0.2   9788  2512 ?        Rs   13:56   0:00 ps aux

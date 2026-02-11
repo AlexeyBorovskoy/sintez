@@ -1,0 +1,59 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+{% endblock %}
+
+
+{% block content %}
+<form class="form-horizontal" method="post" name="police" action="">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('police', type_tab = 'police') }}">{{ _('Police') }}</a>
+  </li>
+  {% if tl_lite %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('police', type_tab = 'boards') }}">{{ _('Boards') }}</a>
+  </li>
+  {% endif %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('police', type_tab = 'start_tl') }}">{{ _('Starting') }}</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link active" href="{{ url_for('ping') }}">{{ _('Ping') }}</a>
+  </li>
+</ul>
+<form class="form-horizontal" method="post" name="localtime" action="">
+<h3>{{ _('Ping.') }}</h3>
+{{form.hidden_tag()}}
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('IP address:') }}</label>
+    <div class="col-sm-10">
+      <input required 
+      	pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$"
+      	type="ip_address_str"
+      	name="ip_address_str"
+      	value="{{request.form['ip_address_str']}}"
+      	class="form-control">
+      </input>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Send') }}</button>
+    </div>
+  </div>
+</form>
+
+{% if result %}
+<form class="form-horizontal" >
+  <div class="form-group">
+    <label class="control-label col-sm-2" style="text-align: right;">{{ _('Result') }}:</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows=11 style="overflow:auto; resize: none;" disabled>{{result}}</textarea>
+    </div>
+  </div>
+</form>
+{% endif %}
+{% endblock %}

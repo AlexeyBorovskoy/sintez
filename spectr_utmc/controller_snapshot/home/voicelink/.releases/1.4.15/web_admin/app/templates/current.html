@@ -1,0 +1,192 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript">
+    var style_flag = false;
+    function updateCurrent(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", window.location, true);
+        xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+            if (this.status != 200) {
+                // обработать ошибку
+                //alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+                window.location.href = '/index';
+                return;
+            }
+            if (window.location != this.responseURL) {
+                //console.log(this.responseURL);
+                //window.location.replace(this.responseURL);
+                window.location.href = '/index';
+                return;
+            }
+            // получить результат из this.responseText или this.responseXML
+            var ans = this.responseText;
+            var doc = new DOMParser().parseFromString(this.responseText, "text/html");  // преобразовать текст в HTML
+            var curr = document.getElementsByName('curr[]');
+            for (var i = 0; i < curr.length; i++) {
+                curr[i].innerHTML =  doc.getElementsByName('curr[]')[i].innerHTML;
+                //curr[i].style.color = doc.getElementsByName('curr[]')[i].style.color;
+                if (doc.getElementsByName('curr[]')[i].style.color == "green" && style_flag == true) {
+                  curr.item(i).style.color = "";
+                  curr.item(i).className = "label label-success";
+                } else {
+                  curr.item(i).className = "";
+                  curr.item(i).style.color = doc.getElementsByName('curr[]')[i].style.color;
+                }
+            }
+            setTimeout("updateCurrent();", 300);
+        }
+        xhr.timeout = 10000;
+        xhr.send();
+        //setTimeout("updateCurrent();", 300);
+    }
+    function setEnabled() {
+        onoff = document.getElementsByName("onoff")[0];
+        voltage_onoff = document.getElementsByName("voltage_onoff")[0];
+        delay = document.getElementsByName("delay")[0];
+        master = document.getElementsByName("master")[0];
+        manual = document.getElementsByName("manual")[0];
+        currents = document.getElementsByName("currents[]");
+        if (onoff.checked) {
+            voltage_onoff.checked = true;
+            manual.disabled = false;
+            delay.readOnly = false;
+            if (manual.checked) {
+                master.readOnly = true;
+                for (var i = 0; i < currents.length; i++) {
+                    currents[i].readOnly = false;
+                }
+            } else {
+                master.readOnly = false;
+                for (var i = 0; i < currents.length; i++) {
+                    currents[i].readOnly = true;
+                }
+            }
+        }
+        else {
+            delay.readOnly = true;
+            master.readOnly = true;
+            manual.disabled = true;
+            for (var i = 0; i < currents.length; i++) {
+                currents[i].readOnly = true;
+            }
+        }
+    }
+    function loadStyleSheet() {
+      function setStyleSheet(event) { // при надажии t устанавливает скин для показания напряжения
+        var kep = event.which;
+        if (kep == 84) { //84 - код клавиши t
+          style_flag = !style_flag;
+        }
+      };
+      document.body.onkeydown = setStyleSheet;
+    };
+    setTimeout("updateCurrent();", 300);
+    function loadData() {
+      loadStyleSheet();
+      setEnabled();
+    }
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+{% if g.user.role == 2 %}
+<body class="gray-bg" onLoad="loadData();">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" method="post" name="current" action="">
+<h3>{{ _('Threshold settings for group currents.') }}</h3>
+<div class="form-group">
+  <div class="col-sm-12">
+    <div class="checkbox">
+      <label><input onchange="setEnabled();" type="checkbox" name="onoff" value="1" {% if data.current_lamps.onoff %} checked {% endif %} {% if g.user.role != 2 %} disabled readonly {% endif %}>{{ _('Current monitoring') }}</label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4">{{ _('Delay check current of lamps (ms):') }}</label>
+  <div class="col-sm-8">
+    <input pattern="[1-9]\d{2}|1\d{3}|2000" type="text" name="delay" value="{{data.current_lamps.delay}}" {% if g.user.role != 2 %} readonly {% endif %} class="form-control" placeholder="{{ _('from {0} to {1}').format(100, 2000) }}">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-12">
+    <div class="checkbox">
+      <label><input onchange="setEnabled();" type="checkbox" name="voltage_onoff" value="1" {% if data.current_lamps.voltage_onoff %} checked {% endif %} {% if g.user.role != 2 %} disabled readonly {% endif %}>{{ _('Voltage monitoring') }}</label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-12">
+    <div class="checkbox">
+      <label><input onchange="setEnabled();" type="checkbox" name="manual" value="1" {% if data.current_lamps.manual %} checked {% endif %} {% if g.user.role != 2 %} disabled readonly {% endif %}>{{ _('Manual current setting') }}</label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-4">{{ _('Threshold current value of lamps (mA):') }}</label>
+  <div class="col-sm-8">
+    <input pattern="0|\d{1,3}|[123]\d{3}|4000" type="text" name="master" value="{{data.current_lamps.master}}" {% if g.user.role != 2 %} readonly {% endif %} class="form-control" placeholder="{{ _('from {0} to {1}').format(0, 4000) }}">
+  </div>
+</div>
+<div class="table-responsive">
+  <table rules="all" class="table table-condensed table-striped">
+    <thead>
+    <tr>
+      <th nowrap rowspan="2">{{ _('№ group') }}</th>
+      <th colspan="2">{{ _('Red') }}</th>
+      <th colspan="2">{{ _('Yellow') }}</th>
+      <th colspan="2">{{ _('Green') }}</th>
+      {% if not tl_lite %}
+      <th colspan="2">{{ _('Green') }} 2</th>
+      {% endif %}
+    </tr>
+    <tr>
+      <th>{{ _('Installed(mA)') }}</th><th>{{ _('Current(mA)') }}</th>
+      <th>{{ _('Installed(mA)') }}</th><th>{{ _('Current(mA)') }}</th>
+      <th>{{ _('Installed(mA)') }}</th><th>{{ _('Current(mA)') }}</th>
+      {% if not tl_lite %}
+      <th>{{ _('Installed(mA)') }}</th><th>{{ _('Current(mA)') }}</th>
+      {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for n, val in data.current_lamps.currents %}
+    <tr>
+      <td><p class="form-control-static">{{ _('Group') }}&nbsp;{{ n }}</p></td>
+      {% for i, v in enumerate(val) %}
+      {% if not tl_lite or i != 3 %}
+        <td><input pattern="0|\d{1,3}|[123]\d{3}|4000" name="currents[]" type="text" value="{{v}}" {% if g.user.role != 2 %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(0, 4000) }}" class="form-control" style="min-width: 100px;"></td>
+      {% else %}
+        <input name="currents[]" type="hidden" value="{{v}}">
+      {% endif %}
+      {% if not tl_lite or i != 3 %}
+        {% if data.current_lamps.curr_curr_lamps %}
+          {% if data.current_lamps.curr_curr_lamps[n-1][i][1] %}
+          <td><p class="form-control-static"><span name="curr[]" style="color:green">{{data.current_lamps.curr_curr_lamps[n-1][i][0]}}</span></p></td>
+          {% else %}
+          <td><p class="form-control-static"><span name="curr[]" class="">{{data.current_lamps.curr_curr_lamps[n-1][i][0]}}</span></p></td>
+          {% endif %}
+        {% else %}
+          <td></td>
+        {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% if g.user.role == 2 %}
+<div class="form-group">
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+  </div>
+</div>
+{% endif %}
+</form>
+{% endblock %}

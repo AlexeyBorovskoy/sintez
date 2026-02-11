@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% if title %}
+    <title>{{title}} - {{ _('Traffic controller') }}</title>
+    {% else %}
+    <title>{{ _('Traffic controller') }}</title>
+    {% endif %}
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/moment.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-filestyle.min.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.ui.widget.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fileupload.js') }}"></script>
+
+
+    <script type="text/javascript" language="javascript">
+    function SetLanguage(pVal)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'lang/' + pVal, true);
+        xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+            if (this.status != 200) {
+                // обработать ошибку
+                //alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+                return;
+            }
+            // получить результат из this.responseText или this.responseXML
+            var ans = this.responseText;
+            if ( ans == pVal) {
+                window.location.replace(window.location);
+            }
+        }
+        xhr.send();
+    }
+    </script>
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+    <script type="text/javascript">
+        imageDir = "{{ url_for('static', filename='images/') }}";
+        sflakesMax = 30;
+        sflakesMaxActive = 30;
+        svMaxX = 2;
+        svMaxY = 4;
+        ssnowStick = 1;
+        ssnowCollect = 0;
+        sfollowMouse = 1;
+        sflakeBottom = 0;
+        susePNG = 1;
+        sflakeTypes = 5;
+        sflakeWidth = 15;
+        sflakeHeight = 15;
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/snow.js') }}"></script>-->
+    {% block javascript %}
+    {% endblock %}
+</head>
+{% block start_javascript %}
+
+<body class="gray-bg">
+{% endblock %}
+<div class="container-fluid white-bg">
+    <div class="">
+    <!--<div class="tc_logo" alt="Traffic controller"></div>-->
+        <div class="title"><span>{{ _('Intelligent traffic management system') }}</span></div>
+        {% if g.user.is_authenticated %}
+        <div class="logout"><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></div>
+        <div class="welcome">{{ _('You are logged in as') }} <span class="text-capitalize">{{g.user.login}}</span></div>
+        {% endif %}
+        <div class="lang">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/static/images/flags/{{ g.locale }}.png" alt="Language" /><span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                <!--{% for k in g.languages %}-->
+                  <!--<li {% if g.locale == '{{k}}' %} class="active" {% endif %}><a href="{{ url_for('lang', lng = k) }}" onclick="SetLanguage('{{k}}');return false;"><img src="/static/images/flags/{{k}}.png" alt="{{ _(k) }}" />&nbsp;{{ _(k) }}</a></li>-->
+                <!--{% endfor %}-->
+                  <li {% if g.locale == 'en' %} class="active" {% endif %}><a href="{{ url_for('lang', lng = 'en') }}" onclick="SetLanguage('en');return false;"><img src="/static/images/flags/en.png" alt="English" />&nbsp;English</a></li>
+                  <li {% if g.locale == 'ru' %} class="active" {% endif %}><a href="{{ url_for('lang', lng = 'ru') }}" onclick="SetLanguage('ru');return false;"><img src="/static/images/flags/ru.png" alt="Русский" />&nbsp;Русский</a></li>
+                  <li {% if g.locale == 'bg' %} class="active" {% endif %}><a href="{{ url_for('lang', lng = 'bg') }}" onclick="SetLanguage('bg');return false;"><img src="/static/images/flags/bg.png" alt="Български" />&nbsp;Български</a></li>
+                  <li {% if g.locale == 'es' %} class="active" {% endif %}><a href="{{ url_for('lang', lng = 'es') }}" onclick="SetLanguage('es');return false;"><img src="/static/images/flags/es.png" alt="Español" />&nbsp;Español</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% block header %}
+<div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+    <div class="navbar-header">
+        <!-- <a class="navbar-brand" href="#">Brand</a> -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="http://voice-link.ru/about/company/" target="_blank"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Brand"></a> -->
+    </div>
+    <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="{{pages.index}}"><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+            <li class="{{pages.detectors}}"><a href="{{ url_for('detectors') }}">{{ _('Detectors') }}</a></li>
+            <li class="{{pages.controller_management}}"><a href="{{ url_for('controller_management') }}">{{ _('Management controller') }}</a></li>
+            <li class="{{pages.centerless_control}}"><a href="{{ url_for('centerless_control') }}">{{ _('Centerless control') }}</a></li>
+            <li class="{{pages.countdown_display}}"><a href="{{ url_for('countdown_display') }}">{{ _('Countdown display') }}</a></li>
+            <li class="{{pages.network}}"><a href="{{ url_for('network') }}">{{ _('Network') }}</a></li>
+            <li class="{{pages.log}}"><a href="{{ url_for('log') }}">{{ _('Log') }}</a></li>
+            <li class="{{pages.current}}"><a href="{{ url_for('current') }}">{{ _('Lamps current') }}</a></li>
+            <li class="{{pages.police}}"><a href="{{ url_for('police') }}">{{ _('Police') }}</a></li>
+            {% if g.user.role %}
+            <li class="{{pages.security}}"><a href="{{ url_for('security') }}">{{ _('Security') }}</a></li>
+            <li class="{{pages.localtime}}"><a href="{{ url_for('localtime') }}">{{ _('Date and Time') }}</a></li>
+            <li class="{{pages.upload}}"><a href="{{ url_for('upload') }}">{{ _('Update') }}</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+<div class="container" style="margin-top: 20px">
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <!-- flash begin -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade in" role="alert">
+                <strong>{{ message.strip().partition(';')[0] }}</strong>{{ message.partition(';')[2].rstrip(';') }}
+                <!-- {{ message }} -->
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <!-- flash end -->
+        {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[Unit]
+Description=Resident service
+After=brd_init.service 
+
+[Service]
+Nice=-10
+WorkingDirectory = /home/voicelink/rtc/resident
+ExecStart = /bin/sh -c 'cd /home/voicelink/rtc/resident && ./resident'
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
+

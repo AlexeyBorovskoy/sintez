@@ -1,0 +1,11 @@
+ 
+/etc/systemd/system/multi-user.target.wants/spectr_utmc.service
+/etc/systemd/system/spectr_utmc.service
+/home/voicelink/scripts/spectr_utmc
+/home/voicelink/scripts/spectr_utmc/spectr_utmc.js
+/home/voicelink/scripts/spectr_utmc/spectr_utmc.service
+/run/systemd/units/invocation:spectr_utmc.service
+/sys/fs/cgroup/devices/system.slice/spectr_utmc.service
+/sys/fs/cgroup/pids/system.slice/spectr_utmc.service
+/sys/fs/cgroup/systemd/system.slice/spectr_utmc.service
+/sys/fs/cgroup/unified/system.slice/spectr_utmc.service

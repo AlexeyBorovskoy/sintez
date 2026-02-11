@@ -1,0 +1,2 @@
+ 
+Linux sintez-lite-3b 5.10.63-v7+ #1459 SMP Wed Oct 6 16:41:10 BST 2021 armv7l GNU/Linux

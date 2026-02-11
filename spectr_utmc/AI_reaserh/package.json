@@ -1,0 +1,33 @@
+{
+  "name": "utmc-tester",
+  "version": "1.0.0",
+  "description": "UTMC/UG405 SNMP Testing Toolkit for Traffic Controllers",
+  "main": "utmc-tester.js",
+  "scripts": {
+    "test": "node utmc-tester.js --help",
+    "diagnose": "node diagnose.js --help",
+    "test-connection": "node utmc-tester.js --ip ${IP:-192.168.1.100} --test",
+    "scan": "node utmc-tester.js --ip ${IP:-192.168.1.100} --scan",
+    "status": "node utmc-tester.js --ip ${IP:-192.168.1.100} --status"
+  },
+  "bin": {
+    "utmc-tester": "./utmc-tester.js",
+    "utmc-diagnose": "./diagnose.js"
+  },
+  "dependencies": {
+    "net-snmp": "^3.11.2",
+    "commander": "^11.1.0"
+  },
+  "keywords": [
+    "utmc",
+    "ug405",
+    "snmp",
+    "traffic-controller",
+    "traffic-light"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=Arp link service
+After=resident.service
+
+[Service]
+WorkingDirectory = /home/voicelink/.service/
+ExecStart = /bin/sh -c 'cd /home/voicelink/.service/ && ./arp_link'
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
+

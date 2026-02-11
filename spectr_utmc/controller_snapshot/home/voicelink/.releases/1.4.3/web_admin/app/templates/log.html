@@ -1,0 +1,56 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript">
+  window.onload = function(){
+    document.getElementsByClassName("prokrutka")[0].scrollTop = 99999;
+  }
+</script>
+{% endblock %}
+
+{% block content %}
+<form method="get" name="log" action="">
+<h3>{{ _('Log of the traffic light.') }}</h3>
+<ul class="nav nav-tabs">
+  <li class="nav-item {{tab.info}}">
+    <a class="nav-link {{tab.info}} text-info bg-info" href="{{ url_for('log', type_log = 'info', whence = 0) }}">{{ _('Info log') }}</a>
+  </li>
+  <li class="nav-item {{tab.warn}}">
+    <a class="nav-link {{tab.warn}} text-warning bg-warning" href="{{ url_for('log', type_log = 'warn', whence = 0) }}">{{ _('Warning log') }}</a>
+  </li>
+  <li class="nav-item {{tab.error}}">
+    <a class="nav-link {{tab.error}} text-danger bg-danger" href="{{ url_for('log', type_log = 'error', whence = 0) }}">{{ _('Error log') }}</a>
+  </li>
+  {% if g.user.role == 2 %}
+  <li class="nav-item {{tab.full}}">
+    <a class="nav-link {{tab.full}} text-success bg-success" href="{{ url_for('log', type_log = 'full', whence = 0) }}">{{ _('Full log') }}</a>
+  </li>
+  {% endif %}
+  <li class="nav-item {{tab.timestamp_tact}}">
+    <a class="nav-link {{tab.timestamp_tact}} text-success bg-success" href="{{ url_for('log', type_log = 'timestamp_tact', whence = 0) }}">{{ _('Timestamp log') }}</a>
+  </li>
+</ul>
+<div class="prokrutka form-group" readonly>{{ log }}</div>
+
+<nav aria-label="...">
+  <ul class="pager">
+    {% if whence_min > 0 %}
+      <li class="previous"><a href="{{ url_for('log', type_log = type_log, whence = whence_min) }}"><span aria-hidden="true">&larr;</span> {{ _('Previous page') }}</a></li>
+    {% else %}
+      <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {{ _('Previous page') }}</a></li>
+    {% endif %}
+    {% if whence_max > 1 %}
+      <li class="next"><a href="{{ url_for('log', type_log = type_log, whence = whence_max) }}">{{ _('Next page') }} <span aria-hidden="true">&rarr;</span></a></li>
+    {% else %}
+      <li class="next disabled"><a href="#">{{ _('Next page') }} <span aria-hidden="true">&rarr;</span></a></li>
+    {% endif %}
+  </ul>
+</nav>
+<button type="submit" class="btn btn-custom" onclick='window.location.replace(window.location);'>{{ _('Refresh') }}</button>
+<!--<button type="button" class="btn btn-custom" onclick="window.location.pathname ='log_bakup'">{{ _('Save') }}</button>-->
+{% if g.user.role == 2 and type_log == 'full'%}
+<button type="button" class="btn btn-custom" onclick="window.location.href='info_bakup'">{{ _('Save') }}</button>
+{% endif %}
+</form>
+{% endblock %}

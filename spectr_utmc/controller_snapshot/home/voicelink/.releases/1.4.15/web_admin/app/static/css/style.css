@@ -1,0 +1,327 @@
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(235, 235, 235, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 1);
+    border-width: 0px;
+    border-radius: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    text-transform: uppercase;
+    color: rgba(235, 235, 235, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: orange;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: orange;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: orange;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: orange;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: orange;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #000000;
+}
+
+.btn-custom {background: rgba(0, 0, 0, 1); border-color: rgba(204, 204, 204, 1); color: rgba(235, 235, 235, 1); font-size: 14px; border-radius: 4px; border-width: 1px;}
+.btn-custom:hover {background: orange; border-color: rgba(173, 173, 173, 1); color: rgba(51, 51, 51, 1);}
+.btn-custom:active, .btn-custom:focus {background: rgba(0, 0, 0, 1); border-color: orange; color: rgba(235, 235, 235, 1);}
+
+.title-description {
+    margin: 10px auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.table-fixed thead {
+    overflow-y: scroll;
+    width: 100%;
+}
+.table-fixed tbody {
+    height: 360px;
+    overflow-y: auto;
+    width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+    display: block;
+}
+.table-fixed tr:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.table-fixed tbody td,
+.table-fixed thead > tr > th {
+    float: left;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+    /*font-size: .9em;
+    border-bottom: 0;
+    vertical-align: center;
+    padding: 8px;
+    text-transform: uppercase;*/
+    color: rgba(235, 235, 235, 1);
+    background-color: rgba(0, 0, 0, 1);
+}
+
+div.logo {
+background-image: url("../images/logo.png");
+background-repeat: no-repeat;
+background-position: center;
+width: 200px;
+height: 24px;
+padding: 10px;
+float: left;
+}
+
+div.tc_logo {
+background-image: url("../images/tc_logo.png");
+background-repeat: no-repeat;
+background-position: center;
+width: 267px;
+height: 66px;
+padding: 10px;
+float: left;
+}
+
+div.title {
+padding: 10px;
+text-align: left;
+float: left;
+}
+
+div.title span {
+font-size: large;
+font-weight: bold;
+color: black;
+}
+
+div.lang {
+padding: 7px 10px 7px 10px;
+text-align: right;
+float: right;
+}
+
+div.lang span {
+font-size: large;
+font-weight: bold;
+color: black;
+}
+
+div.welcome {
+padding: 10px;
+text-align: right;
+font-weight: bold;
+float: right;
+}
+
+div.welcome span {
+font-size: large;
+font-weight: bold;
+color: orange;
+}
+
+div.logout {
+padding: 10px;
+text-align: right;
+float: right;
+}
+
+div.logout a {
+font-size: large;
+font-weight: bold;
+}
+
+div.page_404 {
+font-size:122%;
+width:720px;
+margin:144px auto 0 auto;
+text-align:left;
+line-height:1.2;
+}
+
+div.message_404 {
+padding-right:400px;
+min-height:360px;
+background:transparent url("../images/404.png") right top no-repeat;
+}
+
+h1.h1_404 {
+font-size:300%;
+font-family:'Trebuchet MS', Verdana, sans-serif;
+color:#000;
+}
+
+body.body_404 {
+color:#222;
+font-size:13px;
+font-family: sans-serif;
+background:#fff url("../images/404bg.png") left top repeat-x;
+}
+
+/*body {
+margin:10px;
+background: #ddd;
+}
+
+div.body {
+padding: 10px;
+background: #ddd;
+//border: 1px #888899 solid;
+//border-top: none;
+}*/
+
+.gray-bg { background-color: #f5f5f5; }
+.white-bg { background-color: white; }
+
+.prokrutka {
+padding: 10px;
+width:100%; /* ширина нашего блока */
+height:360px; /* высота нашего блока */
+background: #fff; /* цвет фона, белый */
+border: 1px #ddd solid; /* размер и цвет границы блока */
+border-top: none;
+overflow: auto; /* свойство для прокрутки по горизонтали. Автоматом, если больше блока */
+}
+
+input[readonly]
+{
+    border:0;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.loader {
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  text-align: center;
+  margin: auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+}
+
+.icon {
+    height: 32px;
+    width:  32px;
+    background-repeat: no-repeat;
+    padding-top: 1px;
+    padding-left: 32px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    background-position: left;
+    border: none;
+    /*background-image: url("../images/flags/rus.png");*/
+}
+
+font.log {
+    color: black;
+}
+
+font.info {
+    color: #0000ff;
+}
+
+font.warn {
+    color: #E38400;
+}
+
+font.err {
+    color: #C80000;
+}
+
+.form-login {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand > img {
+  height: 100%;
+  padding: 5px;
+  width: auto;
+}
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}

@@ -1,0 +1,2127 @@
+# English translations for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-02-09 11:58+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: app/views.py:70 app/views.py:72
+msgid "Invalid login or password!"
+msgstr "¡Contraseña o usuario inválido!"
+
+#: app/views.py:105
+#, python-format
+msgid "Error restarting the program!"
+msgstr "¡Error al reiniciar el programa!"
+
+#: app/views.py:109
+#, python-format
+msgid "Error setting mode!"
+msgstr "¡Modo de configuración de error!"
+
+#: app/views.py:118 app/views.py:181 app/views.py:185 app/views.py:209
+#: app/views.py:226 app/views.py:278 app/views.py:298 app/views.py:320
+#: app/views.py:340 app/views.py:344 app/views.py:411 app/views.py:416
+#: app/views.py:448 app/views.py:467 app/views.py:473 app/views.py:569
+#: app/views.py:575 app/views.py:610 app/views.py:663 app/views.py:671
+#: app/views.py:690 app/views.py:716
+#, python-format
+msgid "Error! %(state)s"
+msgstr "¡Error! %(state)s"
+
+#: app/templates/base.html:84 app/views.py:152
+msgid "Home"
+msgstr "Inicio"
+
+#: app/views.py:220
+msgid "IP addresses and end-to-end numbering of cameras should be unique."
+msgstr ""
+"Las direcciones IP y la numeración de las cámaras de un extremo a otro deben "
+"ser únicas."
+
+#: app/views.py:236
+msgid "The IP addresses of the cameras must be on the same subnet as the hub."
+msgstr ""
+"Las direcciones IP de las cámaras deben estar en la misma subred que el "
+"concentrador."
+
+#: app/views.py:280 app/views.py:322 app/views.py:450 app/views.py:612
+msgid "Data saved."
+msgstr "Datos guardados."
+
+#: app/templates/base.html:85 app/views.py:283
+msgid "Detectors"
+msgstr "Detectores"
+
+#: app/views.py:310
+msgid "For the UG405 protocol, the SCN value is required!"
+msgstr "Para el protocolo UG405, se requiere el valor SCN!"
+
+#: app/views.py:311
+msgid ""
+"Format SCN = COX, where \"CO\" - required characters in Latin letters, and X "
+"- the number from 1 to 9999;"
+msgstr ""
+"Formato SCN = COX, donde \"CO\" - caracteres obligatorios en letras latinas "
+"y X - el número del 1 al 9999;"
+
+msgid ""
+"Format SCN = YX, where Y - the Latin letters from 1 to 2 characters, and X - "
+"the number from 1 to 99999;"
+msgstr ""
+"Formato SCN = YX, donde Y - las letras latinas de 1 a 2 caracteres, y X - el "
+"número de 1 a 99999;"
+
+#: app/templates/base.html:86 app/views.py:325
+msgid "Management controller"
+msgstr "Controlador de gestión"
+
+#: app/views.py:362
+#, python-format
+msgid "Network Scan Error!"
+msgstr "¡Error de escaneo de red!"
+
+#: app/views.py:404
+msgid "IP addresses must be unique."
+msgstr "Las direcciones IP deben ser únicas."
+
+#: app/views.py:407
+msgid "MAC addresses must be unique."
+msgstr "Las direcciones MAC deben ser únicas."
+
+msgid "ID number must be unique."
+msgstr "El número de identificación debe ser único."
+
+#: app/views.py:426
+msgid ""
+"The IP addresses of the countdown displays must be on the same subnet as the "
+"hub."
+msgstr ""
+"Las direcciones IP de las pantallas de cuenta atrás deben estar en la misma "
+"subred que el concentrador."
+
+msgid "The IP addresses must be on the same subnet as the hub."
+msgstr "Las direcciones IP deben estar en la misma subred que el concentrador."
+
+msgid "Centerless control"
+msgstr "Control sin centros"
+
+msgid "Setting centerless control."
+msgstr "Configuración control sin centros."
+
+msgid "Enable centerless control mode"
+msgstr "Activar modo de control sin centros"
+
+msgid "Controller type:"
+msgstr "Tipo controlador:"
+
+msgid "Master"
+msgstr "Maestro"
+
+msgid "Slave"
+msgstr "Esclavo"
+
+msgid "Controller type check interval (seconds):"
+msgstr "Intervalo de verificación del tipo de controlador (segundos):"
+
+msgid "Ip address of the master device:"
+msgstr "Dirección IP del dispositivo maestro:"
+
+msgid "Timeout command (seconds):"
+msgstr "Comando de tiempo de espera (segundos):"
+
+msgid "Communication check interval (seconds):"
+msgstr "Intervalo de verificación de comunicación (segundos):"
+
+msgid "State link"
+msgstr "Enlace de estado"
+
+msgid "State link:"
+msgstr "Enlace de estado:"
+
+msgid "State:"
+msgstr "Estado:"
+
+#: app/templates/base.html:87 app/views.py:453
+msgid "Countdown display"
+msgstr "Contador cuenta atrás"
+
+#: app/templates/base.html:88 app/views.py:479
+msgid "Network"
+msgstr "Red"
+
+#: app/views.py:504
+#, python-format
+msgid "State = %(state)s"
+msgstr "Estado =%(state)s"
+
+#: app/templates/base.html:89 app/views.py:549
+msgid "Log"
+msgstr "Registro"
+
+#: app/templates/base.html:90 app/views.py:618
+msgid "Lamps current"
+msgstr "Corriente de lámparas"
+
+#: app/views.py:641
+msgid "Password mismatch!"
+msgstr "¡Contraseña no coincide!"
+
+#: app/views.py:643
+msgid "The password must contain from 4 to 16 characters!"
+msgstr "¡La contraseña debe contener de 4 a 16 caracteres!"
+
+#: app/views.py:645
+#, python-format
+msgid "User %(nickname)s does not exist!"
+msgstr "¡El usuario %(nickname)s no existe!"
+
+#: app/templates/base.html:92 app/views.py:649
+msgid "Security"
+msgstr "Seguridad"
+
+#: app/templates/base.html:93 app/views.py:673
+msgid "Date and Time"
+msgstr "Fecha y Hora"
+
+#: app/templates/base.html:94 app/views.py:699
+msgid "Update"
+msgstr "Actualización"
+
+#: app/views.py:813
+msgid "Not found"
+msgstr "No encontrado"
+
+#: app/templates/404.html:9 app/templates/404.html:11 app/templates/base.html:9
+#: app/templates/base.html:11
+msgid "Traffic controller"
+msgstr "Controlador de tráfico"
+
+#: app/templates/404.html:20
+msgid ""
+"- It is not as if you entirely didn't hit the mark,- said Pooh,- but didn't "
+"hit the ballon!"
+msgstr ""
+"- No es como si no hubieras acertado por completo - dijo Pooh -, ¡pero no "
+"acertaste el globo!"
+
+#: app/templates/404.html:21
+msgid "Back"
+msgstr "Atrás"
+
+#: app/templates/base.html:68
+msgid "Intelligent traffic management system"
+msgstr "Sistema de gestión de tráfico inteligente"
+
+#: app/templates/base.html:70
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/base.html:71
+msgid "You are logged in as"
+msgstr "Has iniciado sesión como"
+
+#: app/templates/controller_management.html:29
+msgid "Management controller."
+msgstr "Controlador de gestión."
+
+#: app/templates/controller_management.html:34
+msgid "Protocol:"
+msgstr "Protocolo:"
+
+#: app/templates/controller_management.html:55
+#: app/templates/countdown_display.html:114 app/templates/current.html:118
+#: app/templates/detectors.html:80 app/templates/localtime.html:30
+#: app/templates/network.html:26 app/templates/security.html:31
+#: app/templates/upload.html:7
+msgid "Save"
+msgstr "Guardar"
+
+#: app/templates/countdown_display.html:47
+msgid "Setting countdown display."
+msgstr "Configuración de la pantalla de cuenta atrás."
+
+#: app/templates/countdown_display.html:51
+msgid "Please wait..."
+msgstr "Por favor espere...."
+
+#: app/templates/countdown_display.html:57
+msgid "Enable the countdown display"
+msgstr "Activar la pantalla del contador de cuenta atrás"
+
+msgid "ATTENTION!!!"
+msgstr "¡¡¡ATENCIÓN!!!"
+
+#: app/templates/countdown_display.html:60
+msgid "The IP address must be on the same subnet as the controller itself."
+msgstr ""
+"La dirección IP debe estar en la misma subred que el propio controlador."
+
+#: app/templates/countdown_display.html:63
+msgid "Default activation time (seconds):"
+msgstr "Tiempo de activación predeterminado (segundos):"
+
+#: app/templates/countdown_display.html:74
+msgid "MAC address:"
+msgstr "Dirección MAC:"
+
+#: app/templates/countdown_display.html:75 app/templates/detectors.html:55
+msgid "IP address"
+msgstr "Dirección IP"
+
+#: app/templates/countdown_display.html:77 app/templates/current.html:88
+msgid "№ group"
+msgstr "№ grupo"
+
+#: app/templates/countdown_display.html:78
+msgid "State"
+msgstr "Estado"
+
+#: app/templates/countdown_display.html:91
+msgid "Not selected"
+msgstr "No seleccionado"
+
+#: app/templates/countdown_display.html:93 app/templates/current.html:95
+msgid "Group"
+msgstr "Grupo"
+
+#: app/templates/countdown_display.html:97
+msgid "Ok"
+msgstr "Ok"
+
+#: app/templates/countdown_display.html:99
+#: app/templates/countdown_display.html:106
+msgid "Check"
+msgstr "Control"
+
+#: app/templates/countdown_display.html:100
+msgid "Add"
+msgstr "Añadir"
+
+#: app/templates/countdown_display.html:101
+msgid "Remove"
+msgstr "Eliminar"
+
+#: app/templates/countdown_display.html:106
+msgid "Scan"
+msgstr "Escanear"
+
+#: app/templates/current.html:69
+msgid "Threshold settings for group currents."
+msgstr "Ajustes de umbral para corrientes de grupo."
+
+#: app/templates/current.html:73
+msgid "Current monitoring"
+msgstr "Monitoreo de corriente"
+
+#: app/templates/current.html:76
+msgid "Voltage monitoring"
+msgstr "Monitoreo de voltaje"
+
+#: app/templates/current.html:79
+msgid "Threshold current value of lamps (mA):"
+msgstr "Valor de corriente de umbral de las lámparas (mA):"
+
+msgid "Delay check current of lamps (ms):"
+msgstr "Corriente de verificación de retardo de lámparas (ms):"
+
+#: app/templates/current.html:82
+msgid "Manual current setting"
+msgstr "Ajuste de corriente manual"
+
+#: app/templates/current.html:88
+msgid "Red"
+msgstr "Rojo"
+
+#: app/templates/current.html:88
+msgid "Yellow"
+msgstr "Amarillo"
+
+#: app/templates/current.html:88
+msgid "Green"
+msgstr "Verde"
+
+#: app/templates/current.html:91
+msgid "Installed(mA)"
+msgstr "Instalado(mA)"
+
+#: app/templates/current.html:91
+msgid "Current(mA)"
+msgstr "Corriente(mA)"
+
+msgid "from {0} to {1}"
+msgstr "de {0} a {1}"
+
+#: app/templates/detectors.html:27
+msgid "Configure the safety of detectors."
+msgstr "Configure la seguridad de los detectores."
+
+#: app/templates/detectors.html:32
+msgid "Enable security settings for detectors"
+msgstr "Habilitar la configuración de seguridad para detectores"
+
+#: app/templates/detectors.html:35
+msgid "Emergency activation time for the triggered detector (minute):"
+msgstr "Tiempo de activación de emergencia del detector activado (minutos):"
+
+#: app/templates/detectors.html:38
+msgid "Emergency activation time for the disconnected detector (minute):"
+msgstr "Tiempo de activación de emergencia del detector desconectado (minuto):"
+
+#: app/templates/detectors.html:44
+msgid "Configuring the detector for network operation."
+msgstr "Configuración del detector para funcionamiento en red."
+
+#: app/templates/detectors.html:55
+msgid "№ camera"
+msgstr "№ cámara"
+
+#: app/templates/detectors.html:55
+msgid "№ detectors"
+msgstr "№ detectores"
+
+msgid "№ detector"
+msgstr "№ detector"
+
+#: app/templates/index.html:9
+msgid ""
+"The traffic light will immediately be switched to the \\'all red\\' mode and "
+"will start from the first phase.\\n\\nDo you really want to restart the "
+"program?"
+msgstr ""
+"El semáforo se cambiará inmediatamente al modo \\'todo rojo \\' y comenzará "
+"desde la primera fase. \\n \\nRealmente desea reiniciar el programa?"
+
+#: app/templates/index.html:109
+msgid "Basic information about the traffic lights."
+msgstr "Información básica sobre los semáforos."
+
+#: app/templates/index.html:112
+msgid "Software version:"
+msgstr "Versión del software:"
+
+#: app/templates/index.html:115
+msgid "Time:"
+msgstr "Hora:"
+
+#: app/templates/index.html:118
+msgid "Date:"
+msgstr "Fecha:"
+
+#: app/templates/index.html:121
+msgid "Traffic light status:"
+msgstr "Estado del semáforo:"
+
+#: app/templates/index.html:124
+msgid "Main programm"
+msgstr "Programa principal"
+
+#: app/templates/index.html:126 app/templates/index.html:152
+msgid "Remote control"
+msgstr "Control remoto"
+
+#: app/templates/index.html:128
+msgid "Manual control"
+msgstr "Control manual"
+
+msgid "Modbus control"
+msgstr "Control Modbus"
+
+#: app/templates/index.html:130
+msgid "Off"
+msgstr "Apagado"
+
+#: app/templates/index.html:132
+msgid "All red"
+msgstr "Todo rojo"
+
+msgid "All red(alarm)"
+msgstr "Todo rojo(alarma)"
+
+#: app/templates/index.html:134
+msgid "Yellow flashing"
+msgstr "Amarillo intermitente"
+
+#: app/templates/index.html:136
+msgid "Yellow flashing(alarm)"
+msgstr "Amarillo intermitente(alarma)"
+
+#: app/templates/index.html:138
+msgid "Contactor off"
+msgstr "Contacto apagado"
+
+#: app/templates/index.html:145
+msgid "Traffic light mode:"
+msgstr "Modo semáforo:"
+
+#: app/templates/index.html:148
+#, python-format
+msgid "Fixed (Plan %(plan)s)"
+msgstr "Fijo (Plan %(plan)s)"
+
+#: app/templates/index.html:150
+#, python-format
+msgid "Adaptive (Plan %(plan)s)"
+msgstr "Adaptativo (Plan %(plan)s)"
+
+#: app/templates/index.html:154
+#, python-format
+msgid "Yellow flashing (Plan %(plan)s)"
+msgstr "Amarillo intermitente (Plan %(plan)s)"
+
+#: app/templates/index.html:156
+#, python-format
+msgid "All red (Plan %(plan)s)"
+msgstr "Todo rojo (Plan %(plan)s)"
+
+#: app/templates/index.html:158
+#, python-format
+msgid "Off (Plan %(plan)s)"
+msgstr "Apagado (Plan %(plan)s)"
+
+#: app/templates/index.html:160
+#, python-format
+msgid "Manual control (Plan %(plan)s)"
+msgstr "Control manual (Plan %(plan)s)"
+
+msgid "Modbus control (Plan %(plan)s)"
+msgstr "Control modbus (Plan %(plan)s)"
+
+#: app/templates/index.html:161
+#, python-format
+msgid "Remote control (Plan %(plan)s)"
+msgstr "Control remoto (Plan %(plan)s)"
+
+msgid "Synchronization (Plan %(plan)s)"
+msgstr "Sincronización (Plan %(plan)s)"
+
+#: app/templates/index.html:162
+msgid "Plan"
+msgstr "Plan"
+
+#: app/templates/index.html:167
+msgid "Current phase:"
+msgstr "Fase actual:"
+
+#: app/templates/index.html:170
+msgid "Number:"
+msgstr "Número:"
+
+#: app/templates/index.html:173
+msgid "Name:"
+msgstr "Nombre:"
+
+#: app/templates/index.html:176
+msgid "Address:"
+msgstr "Dirección:"
+
+#: app/templates/index.html:181
+msgid "Restart program"
+msgstr "Reiniciar programa"
+
+#: app/templates/index.html:183
+msgid "Fixed"
+msgstr "Fijo"
+
+#: app/templates/index.html:184
+msgid "Adaptive"
+msgstr "Adaptativo"
+
+#: app/templates/index.html:186
+msgid "Change mode"
+msgstr "Cambiar modo"
+
+#: app/templates/localtime.html:5
+msgid "Setting the date and time."
+msgstr "Configuración de fecha y hora."
+
+msgid "Time zone:"
+msgstr "Zona horaria:"
+
+#: app/templates/localtime.html:10
+msgid "DD.MM.YYYY-day.month.year"
+msgstr "DD.MM.AAAA-día.mes.año"
+
+#: app/templates/localtime.html:17
+msgid "hh:mm:ss-hours:minutes:seconds"
+msgstr "hh:mm:ss-horas:minutos:segundos"
+
+#: app/templates/log.html:13
+msgid "Log of the traffic light."
+msgstr "Registro del semáforo."
+
+#: app/templates/log.html:16
+msgid "Info log"
+msgstr "Registro de información"
+
+#: app/templates/log.html:17
+msgid "Warning log"
+msgstr "Registro de advertencias"
+
+#: app/templates/log.html:18
+msgid "Error log"
+msgstr "Registro de errores"
+
+#: app/templates/log.html:20
+msgid "Full log"
+msgstr "Registro completo"
+
+#: app/templates/log.html:25
+msgid "Refresh"
+msgstr "Refrescar"
+
+#: app/templates/log.html:26
+msgid "Previous page"
+msgstr "Pagina anterior"
+
+#: app/templates/log.html:27
+msgid "Next page"
+msgstr "Siguiente página"
+
+#: app/templates/login.html:8
+msgid "Authorization"
+msgstr "Autorización"
+
+#: app/templates/login.html:13 app/templates/security.html:11
+msgid "Login:"
+msgstr "Iniciar sesión:"
+
+#: app/templates/login.html:13
+msgid "Enter your login"
+msgstr "Ingrese su nombre de usuario"
+
+#: app/templates/login.html:16
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: app/templates/login.html:16
+msgid "Enter your password"
+msgstr "Introduce tu contraseña"
+
+#: app/templates/login.html:28
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: app/templates/network.html:5
+msgid "Network configuration."
+msgstr "Configuración de la red."
+
+#: app/templates/network.html:7
+msgid "After applying the settings, you must restart to the web interface."
+msgstr "Después de aplicar la configuración, debe reiniciar la interfaz web."
+
+#: app/templates/network.html:13
+msgid "IP address:"
+msgstr "Dirección IP:"
+
+#: app/templates/network.html:16
+msgid "Subnet mask:"
+msgstr "Máscara de subred:"
+
+#: app/templates/network.html:19
+msgid "Default gateway:"
+msgstr "Puerto de enlace predeterminado:"
+
+#: app/templates/security.html:5
+msgid "Change password."
+msgstr "Cambiar la contraseña."
+
+#: app/templates/security.html:6
+msgid "The password can contain from 4 to 16 non-whitespace characters."
+msgstr ""
+"La contraseña puede contener de 4 a 16 caracteres que no sean espacios en "
+"blanco."
+
+#: app/templates/security.html:19
+msgid "Enter password:"
+msgstr "Introduce la contraseña:"
+
+#: app/templates/security.html:19 app/templates/security.html:22
+msgid "from 4 to 16 characters"
+msgstr "de 4 a 16 caracteres"
+
+#: app/templates/security.html:22
+msgid "Confirm password:"
+msgstr "Confirmar Contraseña:"
+
+#: app/templates/upload.html:5
+msgid "Update traffic light configuration."
+msgstr "Actualice la configuración del semáforo."
+
+#: app/templates/upload.html:7
+msgid "Backup:"
+msgstr "Copia:"
+
+#: app/templates/upload.html:8
+msgid "Select the configuration file:"
+msgstr "Seleccione el archivo de configuración:"
+
+#: app/templates/upload.html:9
+msgid "Upload"
+msgstr "Subir"
+
+#: app/views.py:518
+msgid "info"
+msgstr "información"
+
+#: app/views.py:518
+msgid "warn"
+msgstr "advertencia"
+
+#: app/views.py:518
+msgid "err"
+msgstr "error"
+
+#: app/views.py:518
+msgid "log"
+msgstr "registro"
+
+# info
+msgid "Program №1 (fixed mode) is selected."
+msgstr "Se selecciona el programa №1 (modo fijo)."
+
+msgid "Program №2 (adaptive mode) is selected."
+msgstr "Se selecciona el programa №2 (modo adaptativo)."
+
+msgid "Program №3 (remote mode) is selected."
+msgstr "Se selecciona el programa №3 (modo remoto)."
+
+msgid "Initializing the program..."
+msgstr "Inicializando el programa ..."
+
+msgid "Running the program..."
+msgstr "Ejecutando el programa ..."
+
+msgid "Program №{0} is running."
+msgstr "El programa № {0} se está ejecutando."
+
+msgid "The program is stopped."
+msgstr "El programa se detiene."
+
+msgid "Beginning the program restart..."
+msgstr "Comenzando el reinicio del programa..."
+
+msgid "End of program restart..."
+msgstr "Fin del reinicio del programa..."
+
+msgid "Hardware initialization..."
+msgstr "Inicialización de hardware ..."
+
+msgid "Number of boards Security Processor: {0}"
+msgstr "Número de placas Procesador de seguridad: {0}"
+
+msgid "Number of boards Lamp Control: {0}"
+msgstr "Número de tableros de control de lámpara: {0}"
+
+msgid "Number of boards Remote Control Panel: {0}"
+msgstr "Número de placas Panel de control remoto: {0}"
+
+msgid "Number of boards Input-Output: {0}"
+msgstr "Número de placas Entrada-Salida: {0}"
+
+msgid "The general threshold current setting is set."
+msgstr "Se establece el ajuste de corriente de umbral general."
+
+msgid "The manual mode for setting the current thresholds is set."
+msgstr "Se establece el modo manual para establecer los umbrales actuales."
+
+msgid "The current threshold values are transmitted."
+msgstr "Se transmiten los valores de umbral actuales."
+
+msgid "Current control is not used."
+msgstr "No se utiliza el control de corriente."
+
+msgid "The size of the conflict matrix: {0}"
+msgstr "El tamaño de la matriz de conflictos: {0}"
+
+msgid "The conflict matrix is transferred."
+msgstr "Se transfiere la matriz de conflictos."
+
+msgid "The IP address is set to: {0}. Gateway: {1}."
+msgstr "La dirección IP está configurada en: {0}. Puerta: {1}."
+
+msgid "The IP address is set to: {0}"
+msgstr "La dirección IP está configurada en: {0}"
+
+msgid "Reset the device configuration to the factory settings..."
+msgstr ""
+"Restablecer la configuración del dispositivo a la configuración de "
+"fábrica ..."
+
+msgid "Phase enabled: {0}"
+msgstr "Fase habilitada: {0}"
+
+msgid "Call phase enabled: {0}"
+msgstr "Fase de llamada habilitada: {0}"
+
+msgid "Plan №{0} is started."
+msgstr "Se inicia el plan № {0}."
+
+msgid "Remote mode is disabled."
+msgstr "El modo remoto está desactivado."
+
+msgid "Remote mode is disabled. Reason: {0}."
+msgstr "El modo remoto está desactivado. Razón: {0}."
+
+msgid "ar_off"
+msgstr "\"Todo rojo\" desactivado"
+
+msgid "af_off"
+msgstr "\"Amarillo intermitente\" desactivado"
+
+msgid "off_off"
+msgstr "\"Desactivado\" desactivado"
+
+msgid "Timeout"
+msgstr "Tiempo de espera"
+
+msgid "Remote mode is launched using the {0} protocol."
+msgstr "El modo remoto se inicia mediante el protocolo {0}."
+
+msgid "Remote mode is launched using the {0} protocol. Reason: {1}."
+msgstr "El modo remoto se inicia mediante el protocolo {0}. Razón: {1}."
+
+msgid "Flashing yellow"
+msgstr "Amarillo intermitente"
+
+msgid "Manual control is started."
+msgstr "Se inicia el control manual."
+
+msgid "Modbus mode is disabled."
+msgstr "El modo Modbus está desactivado."
+
+msgid "Modbus mode launched."
+msgstr "Se inició el modo modbus."
+
+msgid "Centerless control is started."
+msgstr "Se inicia el control sin centros."
+
+msgid "Centerless control is disabled."
+msgstr "El control sin centros está desactivado."
+
+msgid "Starting the centerless control..."
+msgstr "Inicio del control sin centros ..."
+
+msgid "Stopping the centerless control..."
+msgstr "Detención del control centralizado ..."
+
+msgid "Off."
+msgstr "Apagado."
+
+msgid "All red."
+msgstr "Todo rojo."
+
+msgid "All red Alarm."
+msgstr "Todo rojo Alarma."
+
+msgid "Flashing yellow."
+msgstr "Amarillo intermitente."
+
+msgid "Flashing yellow Alarm."
+msgstr "Amarillo intermitente Alarma."
+
+msgid "Launching the GPIO Handler..."
+msgstr "Iniciar el controlador GPIO ..."
+
+msgid "Stopping the GPIO Handler..."
+msgstr "Detención del controlador GPIO ..."
+
+msgid "Starting the system bus..."
+msgstr "Inicio del bus del sistema ..."
+
+msgid "Stopping the system bus..."
+msgstr "Detención del bus del sistema ..."
+
+msgid "The system bus is started."
+msgstr "Se inicia el bus del sistema."
+
+msgid "The system bus is stopped."
+msgstr "El bus del sistema está parado."
+
+msgid "The configuration update was successful."
+msgstr "La actualización de la configuración se realizó correctamente."
+
+msgid "Initialization. Date and time set: {0}"
+msgstr "Inicialización. Fecha y hora configuradas: {0}"
+
+msgid "Date and time set: {0}. Difference: {1} sec."
+msgstr "Fecha y hora configuradas: {0}. Differencia: {1} seg."
+
+msgid "Date and time set: {0}"
+msgstr "Fecha y hora configuradas: {0}"
+
+msgid "Initializing the driver. Answer: {0}. Driver: {1}."
+msgstr "Inicializando el controlador. Respuesta: {0}. Conductor: {1}."
+
+msgid "Initializing the protocol. Answer: {0}. Driver: {1}."
+msgstr "Inicializando el protocolo. Respuesta: {0}. Conductor: {1}."
+
+# warning
+msgid "Error executing the command \"{0}\". Status = {1}. Data = {2}."
+msgstr "Error al ejecutar el comando \"{0}\". Estado = {1}. Datos = {2}."
+
+msgid "Error executing the command \"running the main program\""
+msgstr "Error al ejecutar el comando \"ejecutar el programa principal\""
+
+msgid "Error executing the command \"reset network settings\""
+msgstr "Error al ejecutar el comando \"restablecer la configuración de red\""
+
+msgid "Error executing the command \"call phase №{0}\""
+msgstr "Error al ejecutar el comando \"fase de llamada № {0}\""
+
+msgid "Malfunction of detectors. Switch to fixed mode."
+msgstr "Mal funcionamiento de detectores. Cambiar a modo fijo."
+
+msgid ""
+"Malfunction of the detector №{0}. The detector is constantly in a state of "
+"ON."
+msgstr ""
+"Mal funcionamiento del detector № {0}. El detector está constantemente "
+"encendido."
+
+msgid ""
+"Malfunction of the detector №{0}. The detector is constantly in a state of "
+"OFF."
+msgstr ""
+"Mal funcionamiento del detector № {0}. El detector está constantemente en "
+"estado de APAGADO."
+
+msgid ""
+"Lamps failure. Board Lamp Control №{0}. Group №{1}. Channel №{2}. Amperage = "
+"{3}. Voltage = {4}."
+msgstr ""
+"Fallo de lámparas. Control de lámpara de tablero № {0}. Grupo № {1}. Canal № "
+"{2}. Amperaje = {3}. Voltaje = {4}."
+
+msgid ""
+"Malfunction of the last red lamp. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Mal funcionamiento de la última lámpara roja. Control de lámpara de tablero "
+"№ {0}. Grupo № {1}. Canal № {2}. Amperaje = {3}. Voltaje = {4}."
+
+# error
+msgid "Buffer overflow."
+msgstr "Desbordamiento de búfer."
+
+msgid "There are no plans in the downloadable configuration."
+msgstr "No hay planes en la configuración descargable."
+
+msgid "The plan №{0} in the downloadable configuration is not correct."
+msgstr "El plan № {0} en la configuración descargable no es correcto."
+
+msgid "There is no main phase in plan №{0}."
+msgstr "No hay una fase principal en el plan № {0}."
+
+msgid "Failed to update the configuration."
+msgstr "No se pudo actualizar la configuración."
+
+msgid "Device configuration reset error on factory: {0}"
+msgstr ""
+"Error de restablecimiento de la configuración del dispositivo de fábrica: {0}"
+
+msgid "Configuration not loaded."
+msgstr "Configuración no cargada."
+
+msgid "Current thresholds are not set. Status = {0}. Data = {1}."
+msgstr ""
+"Los umbrales actuales no están establecidos. Estado = {0}. Datos = {1}."
+
+msgid "Error sending threshold currents. Status = {0}. Data = {1}."
+msgstr "Error al enviar corrientes de umbral. Estado = {0}. Datos = {1}."
+
+msgid "Timeout for setting current thresholds: {0}"
+msgstr "Tiempo de espera para establecer umbrales actuales: {0}"
+
+msgid "Failed to set the Date and Time. Status = {0}"
+msgstr "No se pudo establecer la fecha y la hora. Estado = {0}"
+
+msgid "Timeout Setting Dates and Times: {0}"
+msgstr "Tiempo de espera para establecer fechas y horas: {0}"
+
+msgid "There is no main phase."
+msgstr "No hay una fase principal."
+
+msgid "Program №{0} was not found."
+msgstr "No se encontró el programa № {0}."
+
+msgid "The operating system of type {0} is not supported."
+msgstr "El sistema operativo de tipo {0} no es compatible."
+
+msgid "The security processor was not found."
+msgstr "No se encontró el procesador de seguridad."
+
+msgid "Error setting the size of the conflict matrix."
+msgstr "Error al establecer el tamaño de la matriz de conflictos."
+
+msgid "Error sending the conflict matrix."
+msgstr "Error al enviar la matriz de conflictos."
+
+msgid "Lamps Control not found."
+msgstr "Control de lámparas no encontrado."
+
+msgid "The following boards Lamps Control were not found: {0}"
+msgstr "No se encontraron los siguientes tableros de control de lámparas: {0}"
+
+msgid ""
+"The number of Lamps Control ({0}) does not match the number of groups ({1})."
+msgstr ""
+"El número de control de lámparas ({0}) no coincide con el número de grupos "
+"({1})."
+
+msgid "The following boards Input-Output were not found: {0}"
+msgstr "No se encontraron las siguientes placas de entrada-salida: {0}"
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. Group №2: R-{5}. "
+"Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Apagado del contacto por error en la transferencia de datos a la placa de "
+"Control de Lámparas № {0}. Grupo №1: R- {1}. Y- {2}. G1- {3}. G2- {4}. Grupo "
+"№2: R- {5}. Y- {6}. G1- {7}. G2- {8}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. Group №2: R-{5}. "
+"Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Apagado del contacto por error en la recepción de datos en la placa de "
+"Control de Lámparas № {0}. Grupo №1: R- {1}. Y- {2}. G1- {3}. G2- {4}. Grupo "
+"№2: R- {5}. Y- {6}. G1- {7}. G2- {8}."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Input-Output №{0}."
+msgstr ""
+"Apagado del contacto por error en la transferencia de datos a la placa "
+"Entrada-Salida № {0}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Input-Output №{0}."
+msgstr ""
+"Apagado del contacto por error en la recepción de datos en la placa Entrada-"
+"Salida № {0}."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Remote Control Panel."
+msgstr ""
+"Apagado del contacto por error en la transferencia de datos a la placa Panel "
+"de Control Remoto."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Remote Control Panel."
+msgstr ""
+"Apagado del contacto por error en la recepción de datos en la placa Panel de "
+"Control Remoto."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Security Processor."
+msgstr ""
+"Apagado del contacto por error en la transferencia de datos a la placa "
+"Security Processor."
+
+msgid ""
+"Switching off the contactor due to an error in date and time transfer to the "
+"board Security Processor."
+msgstr ""
+"Apagado del contacto por error en la transferencia de fecha y hora a la "
+"placa Security Processor."
+
+msgid ""
+"Switching off the contactor due to an error in the transmission of threshold "
+"values to the board Security Processor."
+msgstr ""
+"Apagado del contacto por error en la transmisión de valores umbral a la "
+"placa Security Processor."
+
+msgid "Leakage current {0} channel {1}. Amperage: {2}mA."
+msgstr "{0} Canal {1} de corriente de fuga. Amperaje: {2} mA."
+
+msgid "Leakage current. Status = {0}. Data = {1}."
+msgstr "Corriente de fuga. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Conflict of groups: [{0}, {1}]. Channels: [{2}, {3}]. Amperage: [{4}mA, {5}"
+"mA]."
+msgstr ""
+"Conflicto de grupos: [{0}, {1}]. Canales: [{2}, {3}]. Amperaje: [{4} mA, {5} "
+"mA]."
+
+msgid "Conflict of groups. Status = {0}. Data = {1}."
+msgstr "Conflicto de grupos. Estado = {0}. Datos = {1}."
+
+msgid "Switch is broken {0} channel {1}. Amperage: {2}mA."
+msgstr "El interruptor está roto {0} canal {1}. Amperaje: {2} mA."
+
+msgid "Switch is broken. Status = {0}. Data = {1}."
+msgstr "El interruptor está roto. Estado = {0}. Datos = {1}."
+
+msgid "Unknown error. Status = {0}. Data = {1}."
+msgstr "Error desconocido. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Directions conflict. Board Lamp Control №{0}. Group №{1}. Channel №{2}. "
+"Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Conflicto de direcciones. Control de lámpara de tablero № {0}. Grupo № {1}. "
+"Canal № {2}. Amperaje = {3}. Voltaje = {4}."
+
+msgid ""
+"Malfunction of the electrical circuit. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Mal funcionamiento del circuito eléctrico. Control de lámpara de tablero № "
+"{0}. Grupo № {1}. Canal № {2}. Amperaje = {3}. Voltaje = {4}."
+
+msgid "The contactor is switched off."
+msgstr "El contacto está desconectado."
+
+msgid "Error receiving time from the bus controller. Status = {0}. Data = {1}."
+msgstr ""
+"Error al recibir la hora del controlador de bus. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Error receiving time from the security processor. Status = {0}. Data = {1}."
+msgstr ""
+"Error al recibir la hora del procesador de seguridad. Estado = {0}. Datos = "
+"{1}."
+
+msgid ""
+"Error sending data threshold current values to the bus controller. Status = "
+"{0}. Data = {1}."
+msgstr ""
+"Error al enviar valores de corriente de umbral de datos al controlador de "
+"bus. Estado = {0}. Datos = {1}."
+
+msgid "The manual mode for setting the voltage thresholds is set."
+msgstr "Se establece el modo manual para establecer los umbrales de voltaje."
+
+msgid "The general threshold voltage setting is set."
+msgstr "Se establece el ajuste de voltaje de umbral general."
+
+msgid "Voltage control is not used."
+msgstr "No se utiliza control de voltaje."
+
+msgid ""
+"Directions conflict. Board Lamp Control №{0}. Group №{1}. Channel №{2}. "
+"Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold amperage = {6}. "
+"Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Conflicto de direcciones. Control de lámpara de tablero № {0}. Grupo № {1}. "
+"Canal № {2}. Señal = {3}. Amperaje = {4}. Voltaje = {5}. Amperaje de umbral "
+"= {6}. Voltaje umbral = {7}. Razón = {8}."
+
+msgid ""
+"Malfunction of the last red lamp. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold "
+"amperage = {6}. Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Mal funcionamiento de la última lámpara roja. Control de lámpara de tablero "
+"№ {0}. Grupo № {1}. Canal № {2}. Señal = {3}. Amperaje = {4}. Voltaje = {5}. "
+"Amperaje de umbral = {6}. Voltaje umbral = {7}. Razón = {8}."
+
+msgid ""
+"Lamps failure. Board Lamp Control №{0}. Group №{1}. Channel №{2}. Signal = "
+"{3}. Amperage = {4}. Voltage = {5}. Threshold amperage = {6}. Threshold "
+"voltage = {7}. Reason = {8}."
+msgstr ""
+"Fallo de lámparas. Control de lámpara de tablero № {0}. Grupo № {1}. Canal № "
+"{2}. Señal = {3}. Amperaje = {4}. Voltaje = {5}. Amperaje de umbral = {6}. "
+"Voltaje umbral = {7}. Razón = {8}."
+
+msgid ""
+"Malfunction of the electrical circuit. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold "
+"amperage = {6}. Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Mal funcionamiento del circuito eléctrico. Control de lámpara de tablero № "
+"{0}. Grupo № {1}. Canal № {2}. Señal = {3}. Amperaje = {4}. Voltaje = {5}. "
+"Amperaje de umbral = {6}. Voltaje umbral = {7}. Razón = {8}."
+
+msgid ""
+"Critical error of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Error crítico de la placa de control de la lámpara №{0}. Estado = {1}. Datos "
+"= {2}."
+
+msgid "Critical error of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Error crítico de la placa IO №{0}. Estado = {1}. Datos = {2}."
+
+msgid ""
+"Critical error of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr ""
+"Error crítico de la placa del panel de control remoto. Estado = {0}. Datos = "
+"{1}."
+
+msgid ""
+"Critical error of the Security Processor board. Status = {0}. Data = {1}."
+msgstr ""
+"Error crítico de la placa del procesador de seguridad. Estado = {0}. Datos = "
+"{1}."
+
+msgid "XOR error of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Error XOR de la placa de control de la lámpara №{0}. Estado = {1}. Datos = "
+"{2}."
+
+msgid "XOR error of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Error XOR de la placa IO №{0}. Estado = {1}. Datos = {2}."
+
+msgid "XOR error of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr ""
+"Error XOR de la placa del panel de control remoto. Estado = {0}. Datos = {1}."
+
+msgid "XOR error of the Security Processor board. Status = {0}. Data = {1}."
+msgstr ""
+"Error XOR de la placa del procesador de seguridad. Estado = {0}. Datos = {1}."
+
+msgid "Timeout of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Tiempo de espera de la placa de control de la lámpara №{0}. Estado = {1}. "
+"Datos = {2}."
+
+msgid "Timeout of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Tiempo de espera de la placa IO №{0}. Estado = {1}. Datos = {2}."
+
+msgid "Timeout of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr ""
+"Tiempo de espera de la placa del panel de control remoto. Estado = {0}. "
+"Datos = {1}."
+
+msgid "Timeout of the Security Processor board. Status = {0}. Data = {1}."
+msgstr ""
+"Tiempo de espera de la placa del procesador de seguridad. Estado = {0}. "
+"Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Lamp Control). Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error de comunicación con el controlador de bus "
+"(Control de Lámparas). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Lamp Control). Status = "
+"{1}. Data = {2}."
+msgstr ""
+"Apagado del contacto por error en la obtención de información ampliada con "
+"el controlador de bus para el código {0} (Control de Lámparas). Estado = "
+"{1}. Datos = {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. "
+"Group №2: R-{5}. Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Apagado del contacto por error en la recepción / transmisión de datos a la "
+"placa de Control de Lámparas № {0}. Grupo №1: R- {1}. Y- {2}. G1- {3}. G2- "
+"{4}. Grupo №2: R- {5}. Y- {6}. G1- {7}. G2- {8}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Input-Output). Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error de comunicación con el controlador de bus "
+"(Entrada-Salida). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Input-Output). Status = "
+"{1}. Data = {2}."
+msgstr ""
+"Apagado del contacto por error en la obtención de información ampliada con "
+"el controlador de bus para el código {0} (Entrada-Salida). Estado = {1}. "
+"Datos = {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Input-Output №{0}. Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error en la recepción / transmisión de datos a la "
+"placa Entrada-Salida № {0}. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Remote Control Panel). Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error de comunicación con el controlador de bus "
+"(Panel de Control Remoto). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Remote Control Panel). "
+"Status = {1}. Data = {2}."
+msgstr ""
+"Apagado del contacto por error en la obtención de información ampliada con "
+"el controlador de bus por código {0} (Panel de Control Remoto). Estado = "
+"{1}. Datos = {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Remote Control Panel. Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error en la recepción / transmisión de datos a la "
+"placa Panel de Control Remoto. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Security Processor). Status = {0}. Data = {1}."
+msgstr ""
+"Desconexión del contacto por error de comunicación con el controlador de bus "
+"(Procesador de Seguridad). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Security Processor). "
+"Status = {1}. Data = {2}."
+msgstr ""
+"Apagado del contacto por error en la obtención de información ampliada con "
+"el controlador de bus para el código {0} (Procesador de Seguridad). Estado = "
+"{1}. Datos = {2}."
+
+msgid ""
+"Switching off the contactor due to an error in setting the time to the board "
+"Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error en el ajuste de la hora al panel Procesador "
+"de Seguridad. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in the transmission of current "
+"thresholds to the board Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error en la transmisión de los umbrales de "
+"corriente al panel Procesador de Seguridad. Estado = {0}. Datos = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Apagado del contacto por error en la recepción / transmisión de datos al "
+"panel Procesador de Seguridad. Estado = {0}. Datos = {1}."
+
+msgid "Beginning of protocol search..."
+msgstr "Inicio de la búsqueda de protocolos ..."
+
+msgid "Search for protocol {0}."
+msgstr "Busque el protocolo {0}."
+
+msgid "Protocol initialization. Answer: {0}. Protocol: {1}."
+msgstr "Inicialización del protocolo. Respuesta: {0}. Protocolo: {1}."
+
+msgid ""
+"Traffic Light Configurator {0} not supported. Please use Traffic Light "
+"Configurator {1}."
+msgstr ""
+"Configurador de semáforo {0} no compatible. Utilice el Configurador de "
+"semáforos {1}."
+
+msgid "The controller control protocol is set to: {0}. SCN: {1}. Version: {2}."
+msgstr ""
+"El protocolo de control del controlador se establece en: {0}. SCN: {1}. "
+"Versión: {2}."
+
+msgid "True"
+msgstr "Verdadero"
+
+msgid "False"
+msgstr "Falso"
+
+msgid "bus_controller"
+msgstr "Controlador bus"
+
+msgid "bus_boards"
+msgstr "Paneles bus"
+
+msgid "Extended information about the Bus Controller: {0}"
+msgstr "Información ampliada sobre el controlador de bus: {0}"
+
+msgid "Version of boards Lamp Control: {0}"
+msgstr "Versión de paneles de Control de Lámparas: {0}"
+
+msgid "Version of boards Input-Output: {0}"
+msgstr "Versión de las placas Entrada-Salida: {0}"
+
+msgid "Version of boards Remote Control Panel: {0}"
+msgstr "Versión de las placas Panel de control remoto: {0}"
+
+msgid "Version of boards Security Processor: {0}"
+msgstr "Versión del procesador de seguridad de placas: {0}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Lamp Control to version {0}: {1}"
+msgstr ""
+"Incompatibilidad de versiones de software. Debe actualizar el software de "
+"los siguientes paneles de Control de Lámparas a la versión {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Input-Output to version {0}: {1}"
+msgstr ""
+"Incompatibilidad de versiones de software. Necesita actualizar el software "
+"para las siguientes placas Entrada-Salida a la versión {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Remote Control Panel to version {0}: {1}"
+msgstr ""
+"Incompatibilidad de versiones de software. Debe actualizar el software del "
+"Panel de control remoto de las siguientes placas a la versión {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Security Processor to version {0}: {1}"
+msgstr ""
+"Incompatibilidad de versiones de software. Debe actualizar el software para "
+"las siguientes placas del procesador de seguridad a la versión {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Bus Controller to version {0}: {1}"
+msgstr ""
+"Incompatibilidad de versiones de software. Debe actualizar el software de "
+"las siguientes placas del controlador de bus a la versión {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Lamp Control to version {0}: {1}"
+msgstr ""
+"Se ha lanzado una nueva versión del software. Debe actualizar el software de "
+"los siguientes paneles de Control de Lámparas a la versión {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Input-Output to version {0}: {1}"
+msgstr ""
+"Se ha lanzado una nueva versión del software. Necesita actualizar el "
+"software para las siguientes placas Entrada-Salida a la versión {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Remote Control Panel to version {0}: {1}"
+msgstr ""
+"Se ha lanzado una nueva versión del software. Debe actualizar el software "
+"del Panel de control remoto de las siguientes placas a la versión {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Security Processor to version {0}: {1}"
+msgstr ""
+"Se ha lanzado una nueva versión del software. Debe actualizar el software "
+"para las siguientes placas del procesador de seguridad a la versión {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Bus Controller to version {0}: {1}"
+msgstr ""
+"Se ha lanzado una nueva versión del software. Debe actualizar el software de "
+"las siguientes placas del controlador de bus a la versión {0}: {1}"
+
+msgid ""
+"Error sending extension time signal to the bus controller (Input-Output). "
+"Status = {0}. Data = {1}."
+msgstr ""
+"Error al enviar la señal de tiempo de extensión al controlador de bus "
+"(Entrada-Salida). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Error in receiving / transmitting extension time signal to the board Input-"
+"Output №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Error al recibir / transmitir la señal de tiempo de extensión a la placa "
+"Entrada-Salida № {0}. Estado = {1}. Datos = {2}."
+
+msgid "Extension time signal for Input-Output boards is set: {0}ms"
+msgstr ""
+"La señal de tiempo de extensión para tarjetas de Entrada-Salida está "
+"configurada: {0} ms"
+
+msgid ""
+"Error sending extension time signal to the bus controller (Remote Control "
+"Panel). Status = {0}. Data = {1}."
+msgstr ""
+"Error al enviar la señal de tiempo de extensión al controlador de bus (Panel "
+"de control remoto). Estado = {0}. Datos = {1}."
+
+msgid ""
+"Error in receiving / transmitting extension time signal to the board Remote "
+"Control Panel №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Error al recibir / transmitir la señal de tiempo de extensión al tablero "
+"Panel de control remoto № {0}. Estado = {1}. Datos = {2}."
+
+msgid "Extension time signal for Remote Control Panel boards is set: {0}ms"
+msgstr ""
+"La señal de tiempo de extensión para las placas del Panel de control remoto "
+"está configurada: {0} ms"
+
+msgid "Attempt to reestablish connection on the bus."
+msgstr "Intento de restablecer la conexión en el autobús."
+
+msgid "Deny the use of the remote control panel: {0}."
+msgstr "Denegar el uso del panel de control remoto: {0}."
+
+msgid "Deny the use of the remote control panel"
+msgstr "Negar el uso del panel de control remoto"
+
+msgid "Deny the use of fixed time mode via STCIP: {0}."
+msgstr "Denegar el uso del modo de tiempo fijo a través de STCIP: {0}."
+
+msgid "Deny the use of fixed time mode via STCIP"
+msgstr "Denegar el uso del modo de tiempo fijo a través de STCIP"
+
+msgid "Police"
+msgstr "Policía"
+
+msgid "Police."
+msgstr "Policía."
+
+msgid "RCP:"
+msgstr "PCR:"
+
+msgid "Allow"
+msgstr "Permitir"
+
+msgid "Deny"
+msgstr "Denegar"
+
+msgid "Setting the mode of the traffic light."
+msgstr "Configuración del modo del semáforo."
+
+msgid "Device is busy by another user. IP address: %(ip)s."
+msgstr "El dispositivo está ocupado por otro usuario. Dirección IP: %(ip)s."
+
+msgid "Maximum number of sessions achieved."
+msgstr "Número máximo de sesiones alcanzado."
+
+msgid "Browse..."
+msgstr "Ver..."
+
+msgid "Connected"
+msgstr "Conectado"
+
+msgid "Disconnected"
+msgstr "Desconectado"
+
+msgid "Configured"
+msgstr "Configurado"
+
+msgid "Not configured"
+msgstr "No configurado"
+
+msgid "Detector status"
+msgstr "Estado detector"
+
+msgid "Detector status."
+msgstr "Estado detector."
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Installation mode"
+msgstr "Modo de instalación"
+
+msgid "Busy"
+msgstr "Ocupado"
+
+msgid "Not busy"
+msgstr "No ocupado"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "Traffic counting"
+msgstr "Recuento de tráfico"
+
+msgid "Traffic counting."
+msgstr "Recuento de tráfico."
+
+msgid "1 hour"
+msgstr "1 hora"
+
+msgid "24 hours"
+msgstr "24 horas"
+
+msgid "Ethernet detectors"
+msgstr "Detectores de Ethernet"
+
+msgid "№ inputs"
+msgstr "№ entradas"
+
+msgid "№ input"
+msgstr "№ entrada"
+
+msgid "Detectors recovered. Switch to adaptive mode."
+msgstr "Detectores recuperados. Cambia al modo adaptativo."
+
+msgid "IP address receiver:"
+msgstr "Receptor de dirección IP:"
+
+msgid "Port receiver:"
+msgstr "Receptor de puerto:"
+
+msgid "Please enter the receiver ip address."
+msgstr "Ingrese la dirección IP del receptor."
+
+msgid "Please enter the receiver port."
+msgstr "Ingrese el puerto del receptor."
+
+msgid "Please fill in all fields."
+msgstr "Por favor rellena todos los campos."
+
+msgid "Protocol version:"
+msgstr "Versión del protocolo:"
+
+msgid "Auth user:"
+msgstr "Usuario de autenticación:"
+
+msgid "Auth password:"
+msgstr "Contraseña de autenticación:"
+
+msgid "Private password:"
+msgstr "Contraseña privada:"
+
+msgid "SNMP-trap."
+msgstr "Trap SNMP."
+
+msgid "SNMP-notifications."
+msgstr "Notificaciones SNMP."
+
+msgid "Notification type:"
+msgstr "Tipo de notificación:"
+
+msgid "Error restarting SNMPD service: {0}"
+msgstr "Error al reiniciar el servicio SNMPD: {0}"
+
+msgid "Protocol not found."
+msgstr "Protocolo no encontrado."
+
+msgid "Changed settings detector security."
+msgstr "Se modificó la configuración del detector de seguridad."
+
+msgid "Update firmware."
+msgstr "Actualización del firmware."
+
+msgid "Current version:"
+msgstr "Versión actual:"
+
+msgid "Select the firmware file:"
+msgstr "Seleccione el archivo de firmware:"
+
+msgid "Firmware update in progress."
+msgstr "Actualización de firmware en curso."
+
+msgid ""
+"The delay time for checking the current is set: {0} ms, voltage: {1} ms."
+msgstr ""
+"El tiempo de retardo para verificar la corriente se establece: {0} ms, "
+"voltaje: {1} ms."
+
+msgid ""
+"Error in setting the delay time for checking current and voltage. Status = "
+"{0}. Data = {1}."
+msgstr ""
+"Error al configurar el tiempo de retardo para verificar corriente y voltaje. "
+"Estado = {0}. Datos = {1}."
+
+msgid "Disabled security settings for detectors. Switch to adaptive mode."
+msgstr ""
+"Configuración de seguridad deshabilitada para detectores. Cambia al modo "
+"adaptativo."
+
+msgid ""
+"Switching off the contactor due to current exceeded. Board Lamp Control "
+"№{0}. Group №{1}. Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. "
+"Threshold amperage = {6}. Threshold voltage = {7}."
+msgstr ""
+"Se ha superado el contactor debido a la corriente. Control de lámpara de "
+"tablero № {0}. Grupo № {1}. Canal № {2}. Señal = {3}. Amperaje = {4}. "
+"Voltaje = {5}. Amperaje de umbral = {6}. Voltaje umbral = {7}."
+
+msgid "System bus error."
+msgstr "Error del bus del sistema."
+
+msgid "System main program error."
+msgstr "Error del programa maestro."
+
+msgid "Firmware file is wrong."
+msgstr "El archivo de firmware es incorrecto."
+
+msgid "Firmware updated. Version: {0}. Previous version: {1}"
+msgstr "Firmware actualizado. Versión: {0}. Versión anterior: {1}"
+
+msgid "Login"
+msgstr "Usuario"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Deny the remote controll in case of amber flash error"
+msgstr "Denegar el control remoto en caso de error de flash ámbar"
+
+msgid "Deny the remote controll in case of amber flash error: {0}."
+msgstr "Denegar el control remoto en caso de error de flash ámbar: {0}."
+
+msgid "Phase counting"
+msgstr "Recuento de fases"
+
+msgid "Phase counting."
+msgstr "Recuento de fases."
+
+msgid "Timestamp log"
+msgstr "Timestamp"
+
+msgid "Phase: {0}. Tact: {1}. AR: {2}. AF: {3}. OFF: {4}."
+msgstr ""
+"Fase: {0}. Tacto: {1}. Todo rojo: {2}. Amarillo intermitente: {3}. Apagado: "
+"{4}."
+
+msgid "The sequential phases switching mode is running."
+msgstr "El modo de conmutación de fases secuenciales se está ejecutando."
+
+msgid ""
+"It is recommended to make a backup copy of the traffic light configuration "
+"file before updating the firmware."
+msgstr ""
+"Se recomienda hacer una copia de seguridad del archivo de configuración del "
+"semáforo antes de actualizar el firmware."
+
+msgid "Loading"
+msgstr "Cargando"
+
+msgid "The versions are the same."
+msgstr "Las versiones son las mismas."
+
+msgid ""
+"When upgrading the firmware to lower versions, it is possible to run the "
+"firmware at factory settings. It is recommended to update the traffic light "
+"configuration file after the update is completed."
+msgstr ""
+"Al actualizar el firmware a versiones inferiores, es posible ejecutar el "
+"firmware con la configuración de fábrica. Se recomienda actualizar el "
+"archivo de configuración del semáforo después de que se complete la "
+"actualización."
+
+msgid "Are you sure you want to rollback the firmware?"
+msgstr "Estás seguro de que quieres revertir el firmware?"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Boards"
+msgstr "Tableros"
+
+msgid "Faulty boards."
+msgstr "Tableros defectuosos."
+
+msgid "Board Lamp Control"
+msgstr "Control de la lámpara de tablero"
+
+msgid "№ Lamp Control:"
+msgstr "№ Control de Lámparas:"
+
+msgid "Before applying the settings, you must perform the following steps:"
+msgstr "Antes de aplicar la configuración, debe realizar los pasos siguientes:"
+
+msgid "Disconnect the power chains of the lamps."
+msgstr "Desconecte las cadenas eléctricas de las lámparas."
+
+msgid ""
+"Add faulty boards to the table. The remaining boards will be sorted in order."
+msgstr ""
+"Agregue tableros defectuosos a la tabla. Los tableros restantes se ordenarán "
+"en orden."
+
+msgid ""
+"Connect the power chains of the lamps according to a new order of boards."
+msgstr ""
+"Conecte las cadenas eléctricas de las lámparas de acuerdo con un nuevo orden "
+"de tableros."
+
+msgid "Reboot the traffic light controller."
+msgstr "Reinicie el controlador del semáforo."
+
+msgid "List of faulty boards Lamp Control: {0}."
+msgstr "Lista de tableros defectuosos Control de Lámparas: {0}."
+
+msgid ""
+"You have attempted to leave this page. Are you sure? Changes will not be "
+"saved!"
+msgstr ""
+"Ha intentado salir de esta página. ¿Está seguro? ¡Los cambios no se "
+"guardarán!"
+
+msgid "Result"
+msgstr "Resultado"
+
+msgid "Date and time:"
+msgstr "Fecha y hora:"
+
+msgid "CPU:"
+msgstr "CPU:"
+
+msgid "Critical temperature reached {0}°C."
+msgstr "Temperatura crítica alcanzada {0}°C."
+
+msgid "Operating temperature recovered up to {0}°C."
+msgstr "Temperatura de funcionamiento recuperada hasta {0}°C."
+
+msgid "Critical voltage of the board CPU reached {0}V."
+msgstr "El voltaje crítico de la CPU de la placa alcanzó {0}V."
+
+msgid "Operating voltage of the board CPU recovered up to {0}V."
+msgstr "Voltaje de funcionamiento de la CPU de la placa recuperado hasta {0}V."
+
+msgid "Priority:"
+msgstr "Una prioridad:"
+
+msgid "All red (sec.):"
+msgstr "Todo rojo (seg.):"
+
+msgid "Amber flash (sec.):"
+msgstr "Amarillo intermitente (seg.):"
+
+msgid "Yellow (sec.):"
+msgstr "Amarillo (seg.):"
+
+msgid "Starting traffic light."
+msgstr "Modo de inicio de semáforo."
+
+msgid "Starting"
+msgstr "Inicio."
+
+msgid "Time synchronization with NTP server: {0}."
+msgstr "Sincronización horaria con servidor NTP: {0}."
+
+msgid "Current Datetime:"
+msgstr "Tiempo actual:"
+
+msgid "Time mode:"
+msgstr "Modo de trabajo:"
+
+msgid "NTP Server:"
+msgstr "NTP servidor:"
+
+msgid "Sync time:"
+msgstr "Período de sincronización:"
+
+msgid "Last sync time:"
+msgstr "Hora de la última sincronización:"
+
+msgid "Daylight Saving Time:"
+msgstr "Horario de verano:"
+
+msgid "Time migration (min):"
+msgstr "Tiempo de migración (min.):"
+
+msgid "Start:"
+msgstr "Comienzo:"
+
+msgid "End:"
+msgstr "Final:"
+
+msgid "January"
+msgstr "Enero"
+
+msgid "February"
+msgstr "Febrero"
+
+msgid "March"
+msgstr "Marzo"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "May"
+msgstr "Mayo"
+
+msgid "June"
+msgstr "Junio"
+
+msgid "July"
+msgstr "Julio"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "September"
+msgstr "Septiembre"
+
+msgid "October"
+msgstr "Octubre"
+
+msgid "November"
+msgstr "Noviembre"
+
+msgid "December"
+msgstr "Diciembre"
+
+msgid "Monday"
+msgstr "Lunes"
+
+msgid "Tuesday"
+msgstr "Martes"
+
+msgid "Wednesday"
+msgstr "Miércoles"
+
+msgid "Thursday"
+msgstr "Jueves"
+
+msgid "Friday"
+msgstr "Viernes"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "First"
+msgstr "El primero"
+
+msgid "2nd"
+msgstr "2"
+
+msgid "3rd"
+msgstr "3"
+
+msgid "4th"
+msgstr "4"
+
+msgid "Last"
+msgstr "Reciente"
+
+msgid "Manual"
+msgstr "Manual"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "6 hours"
+msgstr "6 horas"
+
+msgid "12 hours"
+msgstr "12 horas"
+
+msgid "1 day"
+msgstr "1 día"
+
+msgid "1 week"
+msgstr "1 semana"
+
+msgid "10 minutes"
+msgstr "10 minutos"
+
+msgid "30 minutes"
+msgstr "30 minutos"
+
+msgid "disabled"
+msgstr "apagado"
+
+msgid "Backup sync with RTC:"
+msgstr "Sincronización de copia de seguridad con RTC:"
+
+msgid "Time synchronization with RTC."
+msgstr "Sincronización horaria con RTC."
+
+msgid ""
+"The controller startup sequence is set to: Amber Flash: {0} sec. Amber: {1} "
+"sec., , All Red: {2} sec."
+msgstr ""
+"La secuencia de inicio del controlador se establece en: Parpadeo ámbar: {0} "
+"seg., Ámbar: {1} seg., Todo rojo: {2} seg."
+
+msgid "Board initialization error."
+msgstr "Error de inicialización de la placa."
+
+msgid "Latest program update time"
+msgstr "Última hora de actualización del programa"
+
+msgid "Select the backup file:"
+msgstr "Seleccione el archivo de copia de seguridad:"
+
+msgid "Backup traffic light configuration."
+msgstr "Configuración del semáforo de respaldo."
+
+msgid "Backup"
+msgstr "Respaldo"
+
+msgid "The program will restart while the backup is being downloaded."
+msgstr "El programa se reiniciará mientras se descarga la copia de seguridad."
+
+msgid "Backup program:"
+msgstr "Programa de respaldo:"
+
+msgid "Update traffic light program."
+msgstr "Actualizar el programa de semáforos."
+
+msgid "Administration"
+msgstr "Administración"
+
+msgid "Select the program file:"
+msgstr "Seleccione el archivo del programa:"
+
+msgid "Reset to factory settings."
+msgstr "Restablecimiento a la configuración de fábrica."
+
+msgid "Reset"
+msgstr "Reiniciar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid ""
+"It is recommended to make a backup copy of the traffic light configuration "
+"file reset settings to default."
+msgstr ""
+"Se recomienda realizar una copia de seguridad del archivo de configuración "
+"del semáforo para restablecer los valores predeterminados."
+
+msgid "Factory settings"
+msgstr "Ajustes de fábrica"
+
+msgid "Wrong backup version"
+msgstr "Versión de copia de seguridad incorrecta"
+
+msgid "Wrong config version"
+msgstr "Versión de configuración incorrecta"
+
+msgid "Controller environment restored from backup file."
+msgstr ""
+"Entorno del controlador restaurado desde un archivo de copia de seguridad."
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Restoring controller configuration from backup failed."
+msgstr ""
+"Falló la restauración de la configuración del controlador desde la copia de "
+"seguridad."
+
+msgid "Restoring the controller configuration from a backup is started."
+msgstr ""
+"Se inicia la restauración de la configuración del controlador desde una "
+"copia de seguridad."
+
+msgid "Number of cameras"
+msgstr "Número de cámaras"
+
+msgid "Camera"
+msgstr "Cámara"
+
+msgid ""
+"The current setting data has been corrupted. Current control for groups {0} "
+"has been disabled. You need to reconfigure."
+msgstr ""
+"Los datos de configuración actuales se han dañado. El control actual para "
+"los grupos {0} ha sido deshabilitado. Necesita reconfigurar."
+
+msgid "Error saving group current settings."
+msgstr "Error al guardar la configuración actual del grupo."
+
+msgid "Group %(gr)s, channel %(color)s."
+msgstr "Grupo %(gr)s, canal %(color)s."
+
+msgid "Phase selection."
+msgstr "Selección de fases."
+
+msgid "Phase selection"
+msgstr "Selección de fases"
+
+msgid "NTP synchronization failed."
+msgstr "Error de sincronización de NTP."
+
+msgid "Invalid NTP server."
+msgstr "Servidor NTP no válido."
+
+msgid "Delete"
+msgstr "Suprimir"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "To"
+msgstr "Para"
+
+msgid "Remote scheduler"
+msgstr "Programador remoto"
+
+msgid "Disabling remote control."
+msgstr "Desactivación del control remoto."
+
+msgid "Deny the use of the remote control"
+msgstr "Prohibir el uso del control remoto"
+
+msgid "Deny the use of the remote control: {0}."
+msgstr "Prohibir el uso del control remoto: {0}."
+
+msgid "Wrong time value"
+msgstr "Valor de tiempo incorrecto"
+
+msgid "Times should not be the same"
+msgstr "Los tiempos no deben ser los mismos"
+
+msgid "Start time should not be greater then end time"
+msgstr "La hora de inicio no debe ser mayor que la hora de finalización"
+
+msgid "Day of the week"
+msgstr "Día de la semana"
+
+msgid "Blocked"
+msgstr "Bloqueado"
+
+msgid "The day of the week is not selected"
+msgstr "Día de la semana no seleccionado"
+
+msgid "Mo"
+msgstr "Lu"
+
+msgid "Tu"
+msgstr "Ma"
+
+msgid "We"
+msgstr "Mi"
+
+msgid "Th"
+msgstr "Ju"
+
+msgid "Fr"
+msgstr "Vi"
+
+msgid "Sa"
+msgstr "Sa"
+
+msgid "Su"
+msgstr "Su"
+
+#~ msgid "All red off"
+#~ msgstr "Todo rojo apagado"
+
+#~ msgid "Flashing yellow off"
+#~ msgstr "Amarillo intermitente apagado"
+
+#~ msgid "Off mode off"
+#~ msgstr "Modo Apagado apagado"
+
+#~ msgid "Remote control is disabled."
+#~ msgstr "El control remoto está deshabilitado."

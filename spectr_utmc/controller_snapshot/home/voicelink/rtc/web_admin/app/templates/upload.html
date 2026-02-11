@@ -1,0 +1,296 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="nav nav-tabs">
+
+  <li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('upload') }}">{{ _('Update') }}</a>
+  </li>
+
+  <li class="nav-item ">
+    <a class="nav-link active" href="{{ url_for('backup') }}">{{ _('Backup') }}</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link active" href="{{ url_for('security') }}">{{ _('Security') }}</a>
+  </li>
+
+</ul>
+<br>
+
+{% if updating %}
+  <div class="alert alert-warning" role="alert" style="display:none;">
+{% else %}
+  <div class="alert alert-warning" role="alert">
+{% endif %}
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('It is recommended to make a backup copy of the traffic light configuration file before updating the firmware.')}}
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<div class="alert alert-danger" id='sameVersions' role="alert" style="display:none;">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('The versions are the same.')}}
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form class="form-horizontal" method="post" enctype='multipart/form-data' action="">
+
+<h3>{{ _('Update traffic light program.') }}</h3>
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Backup program:') }}</label>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-custom" onclick="window.location.href='config_bakup'">{{ _('Save') }}</button>
+    </div>
+  </div>
+
+  <div class="form-group">
+  <label class="control-label col-sm-3">{{_('Latest program update time')}}:</label>
+    <div class="col-sm-9" style="padding-top: 7px;">
+      <div id="latestUpdate" style="font-weight : bold;">{{latest_update_time}}</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Select the program file:') }}</label>
+    <div class="col-sm-9">
+      {% if updating %}
+        <input type="file" id="upfile" name="upfile" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}" disabled="true">
+      {% else %}
+        <input type="file" id="upfile" name="upfile" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}">
+      {% endif %}
+      <!-- <input type="file" name="upfile" accept="multipart/form-data" class="btn btn-custom"> -->
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      {% if updating %}
+        <button type="submit" class="btn btn-custom" disabled='true'>{{ _('Upload') }}</button>
+      {% else %}
+        <button type="submit" class="btn btn-custom">{{ _('Upload') }}</button>
+      {% endif %}
+    </div>
+  </div>
+
+
+
+<div id="now" style="display: none;">{{now}}</div>
+<h3>{{ _('Update firmware.') }}</h3>
+  <div class="form-group">
+  <label class="control-label col-sm-3">{{_('Current version:')}}:</label>
+    <div class="col-sm-9" style="padding-top: 7px;">
+      <div id="versionString" style="font-weight : bold;">{{version}}</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Select the firmware file:') }}</label>
+    <div class="col-sm-9">
+      {% if updating %}
+        <input type="file" id="fileupload" name="file" data-url="upload_firmware" accept=".tar" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}" disabled='true'>
+      {% else %}
+        <input type="file" id="fileupload" name="file" data-url="upload_firmware" accept=".tar" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}">
+      {% endif %}
+      <!-- <input type="file" name="upfile" accept="multipart/form-data" class="btn btn-custom"> -->
+    </div>
+  </div>
+
+
+
+  {# <br> #}
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      {% if updating %}
+      <button id="up_btn" type="button" class="js-upload-photos btn btn-custom" disabled="true">
+        {{ _('Send') }}
+      </button>
+      {% else%}
+      <button id="up_btn" type="button" class="js-upload-photos btn btn-custom" data-toggle="tooltip" data-placement="right" title="{{_('It is recommended to make a backup copy of the traffic light configuration file before updating the firmware.')}}" >
+        {{ _('Send') }}
+      </button>
+      {% endif %}
+    </div>
+  </div>
+</form>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width: 100%">
+      <div class="modal-header">
+        <h4 class="modal-title"><h2>{{ _('Loading') }}</h2></h4>
+      </div>
+
+      <div class="modal-body">
+        <div id='modal-progress' class="progress-bar" role="progressbar" style="width: 0%; display: none; background-color: #000000">0%</div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div id='rollbackWarning' style="display:none;"></div>
+
+<div id="rollbackMessage" style="display: none">{{_('ATTENTION!!!')}}
+{{_('When upgrading the firmware to lower versions, it is possible to run the firmware at factory settings. It is recommended to update the traffic light configuration file after the update is completed.')}}
+{{_('Are you sure you want to rollback the firmware?')}}</div>
+
+<script type="text/javascript">
+$(function () {
+
+  // $(".js-upload-photos").click(function () {
+  //   $("#fileupload").click();
+  // });
+  $('#up_btn').tooltip();
+
+  $("#fileupload").fileupload({
+    dataType: 'json',
+    sequentialUploads: true,  /* 1. SEND THE FILES ONE BY ONE */
+    replaceFileInput: false,
+    singleFileUploads: true,
+    add: function (e, data) {
+        updateList(data);
+        $("#up_btn").off('click').on('click', function () {
+          if (document.getElementById("rollbackWarning").style.display == "block") {
+            if (!window.confirm(document.getElementById("rollbackMessage").innerHTML)) {
+              return 0;
+            }
+          };
+
+          data.submit();
+          $('#myModal').modal('show');
+          $("#myModal").css("z-index", "1500");
+          $("#modal-progress").show();
+          window.onbeforeunload = confirmExit;
+        });
+    },
+    // start: function (e) {   2. WHEN THE UPLOADING PROCESS STARTS, SHOW THE MODAL 
+    // },
+    stop: function (e) {  /* 3. WHEN THE UPLOADING PROCESS FINALIZE, HIDE THE MODAL */
+      $("#modal-progress").hide();
+      $('#myModal').modal('hide');    
+    },
+    progressall: function (e, data) {  /* 4. UPDATE THE PROGRESS BAR */
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      var strProgress = progress + "%";
+      $(".progress-bar").css({"width": strProgress});
+      $(".progress-bar").text(strProgress);
+    },
+    done: function (e, data) {
+      window.onbeforeunload = function () {
+        // blank function do nothing
+      }
+      console.log(data._response.result);
+      if (data._response.result.status == 'success'){
+        window.location.reload(false);
+      } else if (data._response.result.status == 'error'){
+        window.location.reload(false);
+      }
+      // if (data.result.is_valid) {
+      //   $("#gallery tbody").prepend(
+      //     "<tr><td><a href='" + data.result.url + "'>" + data.result.name + "</a></td></tr>"
+      //   )
+      // }
+    }
+
+  });
+
+});
+
+$("[data-hide]").on("click", function(){
+    $(this).closest('.alert').hide();
+});
+
+function confirmExit() {
+      return "You have attempted to leave this page. Are you sure? Changes will not be saved!";
+}
+
+function updateList(data) {
+  var currentVersion = document.getElementById('versionString');
+  var filename = data.files[0].name;
+  // console.log(filename.split('_')[0], currentVersion.innerText);
+  // console.log(versionCompare(currentVersion.innerText, filename.split('_')[0]))
+  compare_result = versionCompare(currentVersion.innerText, filename.split('_')[0])
+  // console.log(input.files, compare_result);
+  if (compare_result == 1)  {
+    document.getElementById("rollbackWarning").style.display = "block";
+  } 
+  else {
+    document.getElementById("rollbackWarning").style.display = "none";
+    document.getElementById("up_btn").disabled = false;
+  }
+  if (compare_result == 0)  {
+    document.getElementById("sameVersions").style.display = "block";
+    document.getElementById("up_btn").disabled = true;
+  } 
+  else {
+    document.getElementById("sameVersions").style.display = "none";
+    document.getElementById("up_btn").disabled = false;
+  }
+}
+
+function versionCompare(v1, v2, options) {
+    var lexicographical = options && options.lexicographical,
+        zeroExtend = options && options.zeroExtend,
+        v1parts = v1.split('.'),
+        v2parts = v2.split('.');
+
+    function isValidPart(x) {
+        return (lexicographical ? /^\d+[A-Za-z]*$/ : /^\d+$/).test(x);
+    }
+
+    if (!v1parts.every(isValidPart) || !v2parts.every(isValidPart)) {
+        return NaN;
+    }
+
+    if (zeroExtend) {
+        while (v1parts.length < v2parts.length) v1parts.push("0");
+        while (v2parts.length < v1parts.length) v2parts.push("0");
+    }
+
+    if (!lexicographical) {
+        v1parts = v1parts.map(Number);
+        v2parts = v2parts.map(Number);
+    }
+
+    for (var i = 0; i < v1parts.length; ++i) {
+        if (v2parts.length == i) {
+            return 1;
+        }
+
+        if (v1parts[i] == v2parts[i]) {
+            continue;
+        }
+        else if (v1parts[i] > v2parts[i]) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+
+    if (v1parts.length != v2parts.length) {
+        return -1;
+    }
+
+    return 0;
+}
+
+
+var updateInterval = 3000;
+
+window.setInterval(function(){
+  $.get('check_status', {} )
+  .done(function( data ) {
+    if (data.now !== Number($('#now').html())){
+      window.location.reload(false);
+    }
+  });
+
+}, updateInterval);
+</script>
+
+{% endblock %}

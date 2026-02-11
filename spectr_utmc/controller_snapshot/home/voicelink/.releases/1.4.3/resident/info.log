@@ -1,0 +1,46 @@
+03-11-2021 20:06:18;;0x1004;;Initializing the program...;;
+03-11-2021 20:06:18;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+03-11-2021 20:06:18;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+03-11-2021 20:06:18;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;False
+03-11-2021 20:06:18;;0x1031;;Beginning of protocol search...;;
+03-11-2021 20:06:18;;0x1030;;Search for protocol {0}.;;bus_boards
+03-11-2021 20:06:18;;0x100a;;Hardware initialization...;;
+03-11-2021 20:06:19;;0x100c;;Number of boards Lamp Control: {0};;6
+03-11-2021 20:06:19;;0x100d;;Number of boards Input-Output: {0};;0
+03-11-2021 20:06:19;;0x100d;;Number of boards Remote Control Panel: {0};;0
+03-11-2021 20:06:19;;0x100b;;Number of boards Security Processor: {0};;1
+03-11-2021 20:06:19;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+03-11-2021 20:06:33;;0x1028;;Initialization. Date and time set: {0};;03.11.2021 20:06:33
+03-11-2021 20:06:33;;0x1010;;The current threshold values are transmitted.;;
+03-11-2021 20:06:33;;0x1011;;Current control is not used.;;
+03-11-2021 20:06:33;;0x102d;;The general threshold voltage setting is set.;;
+03-11-2021 20:06:33;;0x1021;;Launching the GPIO Handler...;;
+03-11-2021 20:06:33;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+03-11-2021 20:06:33;;0x1023;;Starting the system bus...;;
+03-11-2021 20:06:33;;0x1025;;The system bus is started.;;
+03-11-2021 20:06:36;;0x1001;;Program №1 (fixed mode) is selected.;;
+03-11-2021 20:06:37;;0x1018;;Plan №{0} is started.;;1
+03-11-2021 20:06:37;;0x1006;;Program №{0} is running.;;1
+03-11-2021 20:06:11;;0x1004;;Initializing the program...;;
+03-11-2021 20:06:11;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+03-11-2021 20:06:11;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+03-11-2021 20:06:11;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;False
+03-11-2021 20:06:12;;0x1031;;Beginning of protocol search...;;
+03-11-2021 20:06:12;;0x1030;;Search for protocol {0}.;;bus_boards
+03-11-2021 20:06:12;;0x100a;;Hardware initialization...;;
+03-11-2021 20:06:12;;0x100c;;Number of boards Lamp Control: {0};;6
+03-11-2021 20:06:12;;0x100d;;Number of boards Input-Output: {0};;0
+03-11-2021 20:06:12;;0x100d;;Number of boards Remote Control Panel: {0};;0
+03-11-2021 20:06:12;;0x100b;;Number of boards Security Processor: {0};;1
+03-11-2021 20:06:12;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+12-01-2023 10:14:20;;0x1028;;Initialization. Date and time set: {0};;12.01.2023 10:14:20
+12-01-2023 10:14:20;;0x1010;;The current threshold values are transmitted.;;
+12-01-2023 10:14:20;;0x1011;;Current control is not used.;;
+12-01-2023 10:14:20;;0x102d;;The general threshold voltage setting is set.;;
+12-01-2023 10:14:20;;0x1021;;Launching the GPIO Handler...;;
+12-01-2023 10:14:20;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+12-01-2023 10:14:20;;0x1023;;Starting the system bus...;;
+12-01-2023 10:14:20;;0x1025;;The system bus is started.;;
+12-01-2023 10:14:23;;0x1001;;Program №1 (fixed mode) is selected.;;
+12-01-2023 10:14:24;;0x1018;;Plan №{0} is started.;;1
+12-01-2023 10:14:24;;0x1006;;Program №{0} is running.;;1

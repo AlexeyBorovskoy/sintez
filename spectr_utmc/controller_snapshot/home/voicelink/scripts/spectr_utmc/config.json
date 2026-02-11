@@ -1,0 +1,15 @@
+{
+  "its": {
+    "//host":"tl.ripas.ru",
+    "//port": 3344,
+
+    "host":"192.168.57.3",
+    "port": 3364,
+
+    "reconnectTimeout": 10
+  },
+  "community": "UTMC",
+  "objects": [
+    { "id":10101, "strid":"Test SINTEZ UTMC", "addr":"127.0.0.1", "//siteId":"CO1111", "fixGroupsOrder": true }
+  ]
+}

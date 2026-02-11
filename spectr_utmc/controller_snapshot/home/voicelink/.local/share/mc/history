@@ -1,0 +1,36 @@
+[input-def]
+0=*
+
+[cmdline]
+0=
+
+[Dir Hist New Right Panel]
+0=/home/voicelink/rtc
+1=/home/voicelink/.service
+2=/home/voicelink
+
+[Dir Hist New Left Panel]
+0=/home/voicelink/.service
+1=/home/voicelink/.releases
+2=/home/voicelink/.uploads
+3=/home/voicelink/rtc/modbus_tcp
+4=/home/voicelink/rtc/snmp_agent
+5=/home/voicelink/rtc/traffixtream2
+6=/home/voicelink/rtc/traficam
+7=/home/voicelink/rtc/web_admin
+8=/home/voicelink/rtc
+9=/home/voicelink/rtc/resident
+10=/home/voicelink
+11=/home
+
+[inpmc.fm.mkdir]
+0=arm-linux-gnueabihf
+
+[input2]
+0=/home/voicelink/
+1=config
+2=/home/voicelink/rtc/resident/
+3=/home/voicelink/.local/lib/arm-linux-gnueabihf
+4=/home/voicelink/.local/lib
+5=/home/voicelink/nodejs/lib
+6=/home/voicelink/nodejs/lib/

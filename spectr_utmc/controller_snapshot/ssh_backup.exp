@@ -1,0 +1,60 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set controller_ip "192.168.75.150"
+set controller_user "voicelink"
+set controller_pass "piX47xQm"
+set backup_dir "/home/alexey/shared_vm/spectr_utmc/spectr_utmc/controller_snapshot"
+
+spawn ssh -o StrictHostKeyChecking=no $controller_user@$controller_ip
+
+expect {
+    "password:" {
+        send "$controller_pass\r"
+    }
+    "yes/no" {
+        send "yes\r"
+        expect "password:"
+        send "$controller_pass\r"
+    }
+}
+
+expect "$ "
+send "mkdir -p /tmp/backup_script\r"
+expect "$ "
+
+# Сохраняем команды в файл на удалённой машине
+send "cat > /tmp/backup_script/backup.sh << 'ENDOFFILE'\r"
+expect "$ "
+send "#!/bin/bash\r"
+expect "$ "
+send "echo '=== System Info ===' > /tmp/backup_script/info.txt\r"
+expect "$ "
+send "uname -a >> /tmp/backup_script/info.txt\r"
+expect "$ "
+send "cat /etc/os-release >> /tmp/backup_script/info.txt\r"
+expect "$ "
+send "df -h >> /tmp/backup_script/info.txt\r"
+expect "$ "
+send "free -h >> /tmp/backup_script/info.txt\r"
+expect "$ "
+send "ps aux >> /tmp/backup_script/processes.txt\r"
+expect "$ "
+send "systemctl list-units --type=service --all > /tmp/backup_script/services.txt\r"
+expect "$ "
+send "dpkg -l > /tmp/backup_script/packages.txt\r"
+expect "$ "
+send "find /opt -name '*.launch' -o -name 'package.xml' 2>/dev/null | head -100 > /tmp/backup_script/ros_files.txt\r"
+expect "$ "
+send "env | grep ROS > /tmp/backup_script/ros_env.txt 2>&1\r"
+expect "$ "
+send "find / -name '*utmc*' -o -name '*sintez*' 2>/dev/null | head -100 > /tmp/backup_script/utmc_files.txt\r"
+expect "$ "
+send "ENDOFFILE\r"
+expect "$ "
+send "chmod +x /tmp/backup_script/backup.sh\r"
+expect "$ "
+send "/tmp/backup_script/backup.sh\r"
+expect "$ "
+send "exit\r"
+expect eof

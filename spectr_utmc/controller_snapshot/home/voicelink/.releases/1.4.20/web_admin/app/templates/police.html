@@ -1,0 +1,154 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript" src="/static/js/dynamicTableExcludeCL.js"></script>
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" method="post" name="police" action="">
+<ul class="nav nav-tabs">
+  <li class="nav-item {{tab.police}}">
+    <a class="nav-link {{tab.police}}" href="{{ url_for('police', type_tab = 'police') }}">{{ _('Police') }}</a>
+  </li>
+  {% if tl_lite %}
+  <li class="nav-item {{tab.boards}}">
+    <a class="nav-link {{tab.boards}}" href="{{ url_for('police', type_tab = 'boards') }}">{{ _('Boards') }}</a>
+  </li>
+  {% endif %}
+  <li class="nav-item {{tab.start_tl}}">
+    <a class="nav-link {{tab.start_tl}}" href="{{ url_for('police', type_tab = 'start_tl') }}">{{ _('Starting') }}</a>
+  </li>
+  {% if g.user.role != 0 %}
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('ping') }}">{{ _('Ping') }}</a>
+  </li>
+  {% endif %}
+
+</ul>
+<div class="tab-content">
+{% if type_tab == 'police' %}
+  <h3>{{ _('Police.') }}</h3>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input type="checkbox" name="onoff" value="1" {% if data.onoff %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Deny the use of the remote control panel') }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input type="checkbox" name="onoff_fix" value="1" {% if data.onoff_fix %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Deny the use of fixed time mode via STCIP') }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input type="checkbox" name="onoff_aferror" value="1" {% if data.onoff_aferror %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Deny the remote controll in case of amber flash error') }}</label>
+      </div>
+    </div>
+  </div>
+
+
+{% elif type_tab == 'boards' %}
+  {% if tl_lite %}
+  <h3>{{ _('Faulty boards.') }}</h3>
+  <div class="alert alert-warning alert-dismissible fade in">
+    <strong>{{ _('ATTENTION!!!') }}</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <br>{{ _('Before applying the settings, you must perform the following steps:') }}
+    <br>&nbsp;&nbsp;1. {{ _('Disconnect the power chains of the lamps.') }}
+    <br>&nbsp;&nbsp;2. {{ _('Add faulty boards to the table. The remaining boards will be sorted in order.') }}
+    <br>&nbsp;&nbsp;3. {{ _('Connect the power chains of the lamps according to a new order of boards.') }}
+    <br>&nbsp;&nbsp;4. {{ _('Reboot the traffic light controller.') }}
+  </div>
+  <div class="table-responsive">
+    <table rules="all" class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">{{ _('№ Lamp Control:') }}</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody id="dynamic">
+        {% for n, fault_cl in enumerate(data.get("boards", {}).get("fault_cl", [0])) %}
+        <tr>
+          <input name="number[]" type="hidden" value="{{ n+1 }}">
+          <td><p id="enumerate" class="form-control-static">{{ n+1 }}</p></td>
+          <td><select name="boards[]" class="form-control" style="min-width: 140px;">
+            <option value="0">{{ _('Not selected') }}</option>
+            {% for b in xrange(1, data.get("boards", {}).get("amount_boards", 0) + 1) %}
+            <option value={{ b }} {% if fault_cl == b %} selected {% endif %}>{{ _('Board Lamp Control') }} {{ b }}</option>
+            {% endfor %}
+            </select>
+          </td>
+          <td>
+            <button type="button" class="add btn btn-custom">{{ _('Add') }}</button>
+            <button type="button" class="del btn btn-custom">{{ _('Remove') }}</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+{% elif type_tab == 'start_tl' %}
+  <h3>{{ _('Starting traffic light.') }}</h3>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2">{{ _('Amber flash (sec.):') }}</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input maxlength=2 pattern="^(0|[3-9]|[1-9][0-9])$" type="text" name="af" value="{{data.startup_sequence.af[0]}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(0, 99) }}" class="form-control">
+          <span class="input-group-addon">{{ _('Priority:') }}</i></span>
+          <input class="form-control" type="text" name="af_priority" value="{{ data.startup_sequence.af[1] }}" disabled>
+
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">{{ _('Yellow (sec.):') }}</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input maxlength=2 pattern="^(0|[3-9]|[1-9][0-9])$" type="text" name="y" value="{{data.startup_sequence.y[0]}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(0, 99) }}" class="form-control">
+          <span class="input-group-addon">{{ _('Priority:') }}</span>
+          <input class="form-control" type="text" name="y_priority" value="{{ data.startup_sequence.y[1] }}" disabled>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">{{ _('All red (sec.):') }}</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input maxlength=2 pattern="^([3-9]|[1-9][0-9])$" type="text" name="ar" value="{{data.startup_sequence.ar[0]}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(1, 99) }}" class="form-control">
+          <span class="input-group-addon">{{ _('Priority:') }}</span>
+          <input class="form-control" type="text" name="ar_priority" value="{{ data.startup_sequence.ar[1] }}" disabled>
+
+        </div>
+      </div>
+    </div>
+{% else %}
+  <h3>{{ type_tab }}</h3>
+{% endif %}
+</div>
+
+{% if g.user.role %}
+<div class="form-group">
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+  </div>
+</div>
+{% endif %}
+{% if type_tab == 'boards' %}
+<script type="text/javascript">
+    new DynamicTable( document.getElementById("dynamic") );
+</script>
+{% endif %}
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<form class="form-horizontal" method="post" name="security" action="">
+<h3>{{ _('Change password.') }}</h3>
+<!-- <p>{{ _('The password can contain from 4 to 16 non-whitespace characters.') }}</p> -->
+{{form.hidden_tag()}}
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Login:') }}</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="login">
+        <option value="operator">operator</option>
+        <option value="guest">guest</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Enter password:') }}</label>
+    <div class="col-sm-10">
+      <input required pattern="^\S{4,16}$" type="password" name="password" class="form-control" placeholder="{{ _('from 4 to 16 characters') }}">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Confirm password:') }}</label>
+    <div class="col-sm-10">
+      <input required pattern="^\S{4,16}$" type="password" name="repassword" class="form-control" placeholder="{{ _('from 4 to 16 characters') }}">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    {% for error in form.errors.login %}
+      <span class="text-danger">{{error}}</span>
+    {% endfor %}
+    </div>
+  </div>
+  <div class="form-group">
+    <!--<div class="col-sm-offset-2 col-sm-10">-->
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

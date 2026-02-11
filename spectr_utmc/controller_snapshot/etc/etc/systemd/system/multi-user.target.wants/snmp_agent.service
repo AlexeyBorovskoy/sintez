@@ -1,0 +1,12 @@
+[Unit]
+Description = SNMP agent service
+After = network.target
+
+[Service]
+Nice=5
+WorkingDirectory = /home/voicelink/rtc/snmp_agent
+ExecStart = /bin/sh -c 'cd /home/voicelink/rtc/snmp_agent && ./snmp_agent' 
+Restart=always
+
+[Install]
+WantedBy = multi-user.target

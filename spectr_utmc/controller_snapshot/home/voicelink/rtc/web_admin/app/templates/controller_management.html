@@ -1,0 +1,181 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript">
+  function Selected(a) {
+    var label = a.value;
+      if (label=="UG405" || label=="UG405_SCOOT") {
+        document.getElementById("id_scn").style.display='block';
+      } else if (label=="UTMC" || label=="STCIP") {
+        document.getElementById("id_scn").style.display='none';
+        document.getElementById("scn").value='';
+      } else {
+        document.getElementById("id_scn").style.display='none';
+        alert('error');
+      }
+  }
+  function SelectedVersion(a) {
+    var label = a.value;
+      if (label=="v3") {
+        document.getElementById("id_v3").style.display='block';
+      } else if (label=="v2c") {
+        document.getElementById("id_v3").style.display='none';
+        document.getElementById("user").value='';
+        document.getElementById("authpass").value='';
+        document.getElementById("auth_encryp_type").value='';
+        document.getElementById("privpass").value='';
+        document.getElementById("priv_encryp_type").value='';
+      } else {
+        document.getElementById("id_v3").style.display='none';
+        alert('error');
+      }
+  }
+  function LoadPage() {
+    Selected(document.getElementById('proto'));
+    SelectedVersion(document.getElementById('protoversion'));
+  }
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+<body class="gray-bg" onLoad="LoadPage();">
+{% endblock %}
+
+{% block content %}
+
+
+<ul class="nav nav-tabs">
+
+  <li class="nav-item active">
+    <a class="nav-link active" href="{{ url_for('controller_management') }}">{{ _('Management controller') }}</a>
+  </li>
+
+  <li class="nav-item ">
+    <a class="nav-link" href="{{ url_for('ignore_remote') }}">{{ _('Remote scheduler') }}</a>
+  </li>
+
+</ul>
+<br>
+
+<h3>{{ _('Management controller.') }}</h3>
+<form class="form-horizontal" method="post" name="controller_management" action="">
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Protocol:') }}</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="proto" id="proto" onChange="Selected(this)" {% if not g.user.role %} disabled {% endif %}>
+        <option value="UG405" {% if data.proto == "UG405" %} selected="selected" {% endif %}>UG405</option>
+        <option value="UG405_SCOOT" {% if data.proto == "UG405_SCOOT" %} selected="selected" {% endif %}>UG405_SCOOT</option>
+        <option value="UTMC" {% if data.proto == "UTMC" %} selected="selected" {% endif %}>UTMC</option>
+        <option value="STCIP" {% if data.proto == "STCIP" %} selected="selected" {% endif %}>STCIP</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group" id="id_scn">
+    <label class="control-label col-sm-2">SCN:</label>
+    <div class="col-sm-10">
+      <input id="scn" pattern="^[A-Za-z]{1,2}\d{1,5}$" type="text" name="scn" placeholder="CO11111" value="{{ data.scn }}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Protocol version:') }}</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="protoversion" id="protoversion" onChange="SelectedVersion(this)" {% if not g.user.role %} disabled {% endif %}>
+        <option value="v2c" {% if data.protoversion == "v2c" %} selected="selected" {% endif %}>v1,v2c</option>
+        <option value="v3" {% if data.protoversion == "v3" %} selected="selected" {% endif %}>v3</option>
+      </select>
+    </div>
+  </div>
+  <div id="id_v3">
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Auth user:') }}</label>
+    <div class="col-sm-10">
+      <input maxlength=20 pattern="^[0-9a-zA-Z!@#$%^&*]{4,20}$" type="text" id="user" name="user" value="{{data.user}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(4, 20) }}" class="form-control">
+    </div>
+  </div>
+  <!--
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Auth password:') }}</label>
+    <div class="col-sm-8">
+      <input type="text" name="authpass" value="{{data.authpass}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+    <div class="col-sm-2">
+        <select class="form-control" name="auth_encryp_type" id="auth_encryp_type" {% if not g.user.role %} disabled {% endif %}>
+          <option value="MD5" {% if data.auth_encryp_type == "MD5" %} selected="selected" {% endif %}>MD5</option>
+          <option value="SHA" {% if data.auth_encryp_type == "SHA" %} selected="selected" {% endif %}>SHA</option>
+        </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Private password:') }}</label>
+    <div class="col-sm-8">
+      <input type="text" name="privpass" value="{{data.privpass}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+    <div class="col-sm-2">
+        <select class="form-control" name="priv_encryp_type" id="priv_encryp_type" {% if not g.user.role %} disabled {% endif %}>
+          <option value="DES" {% if data.priv_encryp_type == "DES" %} selected="selected" {% endif %}>DES</option>
+          <option value="AES" {% if data.priv_encryp_type == "AES" %} selected="selected" {% endif %}>AES</option>
+        </select>
+    </div>
+  </div>
+  -->
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Auth password:') }}</label>
+    <div class="col-sm-10">
+      <div class="input-group">
+        <input maxlength=20 pattern="^[0-9a-zA-Z!@#$%^&*]{8,20}$" type="password" id="authpass" name="authpass" value="{{data.authpass}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(8, 20) }}" class="form-control">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <select class="form-control" name="auth_encryp_type" id="auth_encryp_type" {% if not g.user.role %} disabled {% endif %}>
+          <option value="MD5" {% if data.auth_encryp_type == "MD5" %} selected="selected" {% endif %}>MD5</option>
+          <option value="SHA" {% if data.auth_encryp_type == "SHA" %} selected="selected" {% endif %}>SHA</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Private password:') }}</label>
+    <div class="col-sm-10">
+      <div class="input-group">
+        <input maxlength=20 pattern="^[0-9a-zA-Z!@#$%^&*]{8,20}$" type="password" id="privpass" name="privpass" value="{{data.privpass}}" {% if not g.user.role %} readonly {% endif %} placeholder="{{ _('from {0} to {1}').format(8, 20) }}" class="form-control">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <select class="form-control" name="priv_encryp_type" id="priv_encryp_type" {% if not g.user.role %} disabled {% endif %}>
+          <option value="DES" {% if data.priv_encryp_type == "DES" %} selected="selected" {% endif %}>DES</option>
+          <option value="AES" {% if data.priv_encryp_type == "AES" %} selected="selected" {% endif %}>AES</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <h3>{{ _('SNMP-notifications.') }}</h3>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Notification type:') }}</label>
+    <div class="col-sm-10">
+      <select class="form-control" name="notify_type" id="notify_type" {% if not g.user.role %} disabled {% endif %}>
+        <option value="trap" {% if data.notify_type == "trap" %} selected="selected" {% endif %}>TRAP</option>
+        <option value="inform" {% if data.notify_type == "inform" %} selected="selected" {% endif %}>INFORM</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('IP address receiver:') }}</label>
+    <div class="col-sm-10">
+      <input pattern="((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)" type="text" id="ip_receiver" name="ip_receiver" value="{{data.ip_receiver}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2">{{ _('Port receiver:') }}</label>
+    <div class="col-sm-10">
+      <input pattern="^((6553[0-5])|(655[0-2][0-9])|(65[0-4][0-9]{2})|(6[0-4][0-9]{3})|([1-5][0-9]{4})|([1-9][0-9]{0,4}))$" type="text" id="port_receiver" name="port_receiver" value="{{data.port_receiver}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+  </div>
+  {% if g.user.role %}
+  <div class="form-group">
+    <!--<div class="col-sm-offset-2 col-sm-10">-->
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+  {% endif %}
+</form>
+{% endblock %}

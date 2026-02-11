@@ -1,0 +1,299 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript">
+  function mysubmit(f, button)
+  {
+    if (button == 'restart') {
+      var ret = confirm('{{ _('The traffic light will immediately be switched to the \\\'all red\\\' mode and will start from the first phase.\\n\\nDo you really want to restart the program?') }}');
+      if (ret == false){
+        return;
+      }
+      f.elements.restart.value = 1;
+      } else {
+        <!--  alert(f.elements.mode.value); -->
+      }
+      f.submit();
+  }
+</script>
+<script type="text/javascript">
+    {% if data.status != 'rp' and 0 %}
+    var c = 0;
+    {% else %}
+    var c = {{remaining_time}};
+    {% endif %}
+    var hours = {{time.get("hour", 0)}};
+    var minutes = {{time.get("minute", 0)}};
+    var seconds = {{time.get("second", 0)}};
+    function timedCount() {
+      if (c == -1) return;
+      document.getElementById("tl_timer").innerHTML = c;
+      //if (c == 0) window.location.replace(window.location);
+        c=c+1;
+    }
+    function startTime() {
+      seconds += 1;
+      if (seconds >= 60) {
+        seconds = 0;
+        minutes += 1;
+      }
+      if (minutes >= 60) {
+        minutes = 0;
+        hours += 1;
+      }
+      if (hours >= 24) {
+        hours = 0;
+        window.location.replace(window.location);
+      }
+      if (hours < 10)
+        hours2display = "0" + hours;
+      else
+        hours2display = hours;
+      if (minutes < 10)
+        minutes2display = "0" + minutes;
+      else
+        minutes2display = minutes;
+      if (seconds < 10)
+        seconds2display = "0" + seconds;
+      else
+        seconds2display = seconds;
+      
+      document.getElementById("tl_time").innerHTML = hours2display + ":" + minutes2display + ":" + seconds2display;
+      timedCount();
+      //setTimeout("startTime();", 1000);
+    }
+    
+    function updateHome(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", window.location, true);
+        xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+            if (this.status != 200) {
+                // обработать ошибку
+                //alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+                return;
+            }
+            if (window.location != this.responseURL) {
+                //console.log(this.responseURL);
+                //window.location.replace(this.responseURL);
+                return;
+            }
+            // получить результат из this.responseText или this.responseXML
+            var ans = this.responseText;
+            var doc = new DOMParser().parseFromString(this.responseText, "text/html");  // преобразовать текст в HTML
+            document.getElementById("tl_version").innerHTML = doc.getElementById("tl_version").innerHTML;
+            //document.getElementById("tl_time").innerHTML = doc.getElementById("tl_time").innerHTML;
+            document.getElementById("tl_cpu").innerHTML = doc.getElementById("tl_cpu").innerHTML;
+            document.getElementById("tl_date").innerHTML = doc.getElementById("tl_date").innerHTML;
+            document.getElementById("tl_status").innerHTML = doc.getElementById("tl_status").innerHTML;
+            document.getElementById("tl_mode").innerHTML = doc.getElementById("tl_mode").innerHTML;
+            if (parseInt(document.getElementById("tl_timer").innerHTML, 10) > parseInt(doc.getElementById("tl_timer").innerHTML, 10) || document.getElementById("tl_status").innerHTML != doc.getElementById("tl_status").innerHTML) {
+                c = parseInt(doc.getElementById("tl_timer").innerHTML, 10);
+            }
+            if (document.getElementById("tl_phase").innerHTML != doc.getElementById("tl_phase").innerHTML) {
+                c = 0;
+                document.getElementById("tl_timer").innerHTML = c;
+            }
+            document.getElementById("tl_status").innerHTML = doc.getElementById("tl_status").innerHTML;
+            document.getElementById("tl_phase").innerHTML = doc.getElementById("tl_phase").innerHTML;
+            document.getElementById("tl_phases").innerHTML = doc.getElementById("tl_phases").innerHTML;
+            //document.getElementById("tl_timer").innerHTML = doc.getElementById("tl_timer").innerHTML;
+            document.getElementById("tl_number").innerHTML = doc.getElementById("tl_number").innerHTML;
+            document.getElementById("tl_name").innerHTML = doc.getElementById("tl_name").innerHTML;
+            document.getElementById("tl_address").innerHTML = doc.getElementById("tl_address").innerHTML;
+            document.getElementById("tl_deny_rcp").innerHTML = doc.getElementById("tl_deny_rcp").innerHTML;
+            //var elements = document.getElementsByName("mode");
+            //var elements_new = doc.getElementsByName("mode");
+            //for (var i = 0; i < elements.length; i++) {
+            //    if (elements[i].value == "local" || elements[i].value == "adaptive") {
+            //        elements[i].checked = elements_new[i].checked
+            //    }
+            //}
+            setTimeout("updateHome();", 1000);
+        }
+        xhr.send();
+        //setTimeout("updateHome();", 1000);
+    }
+    //setTimeout("updateHome();", 1000);
+    setInterval("startTime();", 1000);
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+<body class="gray-bg" onLoad="updateHome();">
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" method="post" name="restart" action="">
+<h3>{{ _('Basic information about the traffic lights.') }}</h3>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Software version:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label"><span class="text-normal" id="tl_version">{{data.version}}</span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('CPU:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label">
+          <span class="text-normal" id="tl_cpu">
+          {% if data.cpu.temp %}
+              {{data.cpu.temp}}&deg;C
+          {% endif %}
+          {% if data.cpu.cpu %}
+              &nbsp;{{data.cpu.cpu}}V
+          {% endif %}
+          </span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Date and time:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label"><span class="text-normal" id="tl_date">{{datetime.date}}</span>&nbsp;<span class="text-normal" id="tl_time">{{datetime.time}}</span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Traffic light status:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label">
+        <span class="text-normal" id="tl_status">
+          {% if data.status == 'contactor_on' %}
+              {{ _('Contactor off') }}
+          {% elif data.status == 'manual' and data.snmp_connect and not data.manual_control_mod and not data.modbus_control_mod%}
+              {{ _('Remote control') }}
+          {% elif data.status == 'manual' and data.manual_control_mod %}
+              {{ _('Manual control') }}
+          {% elif data.status == 'manual' and data.modbus_control_mod %}
+              {{ _('Modbus control') }}
+          {% elif data.status == 'rp' %}
+              {{ _('Main programm') }}
+          {% elif data.status == 'af_error' %}
+              {{ _('Yellow flashing(alarm)') }}
+          {% elif data.status == 'af' %}
+              {{ _('Yellow flashing') }}
+          {% elif data.status == 'y' %}
+              {{ _('Yellow') }}
+          {% elif data.status == 'ar_error' %}
+              {{ _('All red(alarm)') }}
+          {% elif data.status == 'ar' %}
+              {{ _('All red') }}
+          {% elif data.status == 'off' %}
+              {{ _('Off') }}
+          {% elif data.status == 'manual' and data.centerless_control_mod %}
+              {{ _('Centerless control') }}
+          {% elif data.status %}
+              {{ _(data.status) }}
+          {% else %}
+              {{ data.status }}
+          {% endif %}
+        </span>
+      </label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Traffic light mode:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label">
+        <span class="text-normal" id="tl_mode">
+          {% if data.status in ['manual', 'af', 'af_error', 'ar', 'off'] and data.snmp_connect and not data.manual_control_mod and not data.modbus_control_mod %}
+              {{ _('Remote control (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% elif data.status in ['manual', 'af', 'af_error', 'ar', 'off'] and data.manual_control_mod or data.current_mode in ['manual', 'af', 'ar', 'off'] %}
+              {{ _('Manual control (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% elif data.status in ['manual', 'af', 'af_error', 'ar', 'ar_error', 'off'] and data.modbus_control_mod %}
+              {{ _('Modbus control (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% elif data.status == 'manual' and data.centerless_control_mod and not data.manual_control_mod %}
+              {{ _('Synchronization (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% elif data.current_mode == 'local' %}
+              {{ _('Fixed (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% elif data.current_mode == 'adaptive' %}
+              {{ _('Adaptive (Plan %(plan)s)', plan = data.plan.keys()[0]) }}
+          {% else %}
+              {{ data.current_mode }}({{ _('Plan') }} {{ data.plan.keys()[0] }})
+          {% endif %}
+        </span>
+      </label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Current phase:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label">
+        <span class="text-normal" id="tl_phase">{{data.current_phase}}</span>/<span class="text-normal" id="tl_phases">{{count_phases}}</span> - (<span class="text-normal" id="tl_timer">{{remaining_time}}</span>)
+      </label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Number:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label"><span class="text-normal" id="tl_number">{{desc.number}}</span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Name:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label"><span class="text-normal" id="tl_name">{{desc.name}}</span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('Address:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label"><span class="text-normal" id="tl_address">{{desc.address}}</span></label>
+    <!-- </div> -->
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label col-sm-2">{{ _('RCP:') }}</label>
+  <div class="col-sm-10">
+    <!-- <div class="row"> -->
+      <label class="control-label">
+          <span class="text-normal" id="tl_deny_rcp">
+            {% if data.deny_rcp %}
+                {{ _('Deny') }}
+            {% else %}
+                {{ _('Allow') }}
+            {% endif %}
+        </span>
+      </label>
+    <!-- </div> -->
+  </div>
+</div>
+{% if g.user.role %}
+<div class="form-group">
+  <div class="col-sm-12">
+    <button type="submit" name="mode" class="btn btn-custom" onclick="mysubmit(this.form, 'restart');">{{ _('Restart program') }}</button>
+  </div>
+</div>
+<h3>{{ _('Setting the mode of the traffic light.') }}</h3>
+<div class="form-group">
+  <div class="col-sm-12">
+    <input type="hidden" name="restart" value="">
+    <label class="radio-inline"><input type="radio" name="mode" value="local" {% if data.current_mode == 'local' %} checked {% endif %}>{{ _('Fixed') }}</label>
+    <label class="radio-inline"><input type="radio" name="mode" value="adaptive" {% if data.current_mode == 'adaptive' %} checked {% endif %} {% if not adaptive %} disabled {% endif %}>{{ _('Adaptive') }}</label>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-12">
+    <button type="submit" name="mode" class="btn btn-custom" onclick="mysubmit(this.form, 'mode');">{{ _('Change mode') }}</button>
+  </div>
+</div>
+{% endif %}
+</form>
+{% endblock %}

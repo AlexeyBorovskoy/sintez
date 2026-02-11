@@ -1,0 +1,12 @@
+[Unit]
+Description = TrafiCam service
+After = network.target
+
+[Service]
+WorkingDirectory = /home/voicelink/rtc/traficam
+ExecStart = /bin/sh -c 'cd /home/voicelink/rtc/traficam && ./traficam' 
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
+

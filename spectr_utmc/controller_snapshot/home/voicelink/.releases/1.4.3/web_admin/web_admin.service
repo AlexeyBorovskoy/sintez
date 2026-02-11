@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn instance to serve web_admin
+After=network.target
+
+[Service]
+User=voicelink
+Group=www-data
+WorkingDirectory=/home/voicelink/rtc/web_admin
+ExecStart=/usr/local/bin/gunicorn --workers 1 --bind unix:web_admin.sock --timeout 300 -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

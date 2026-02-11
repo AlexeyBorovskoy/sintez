@@ -1,0 +1,16 @@
+[Unit]
+Description=UMTC to Spectr-ITS bridge
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node spectr_utmc.js config.json
+WorkingDirectory=/home/voicelink/scripts/spectr_utmc
+Type=simple
+Restart=always
+RestartSec=30
+
+User=voicelink
+Group=voicelink
+
+[Install]
+WantedBy=multi-user.target

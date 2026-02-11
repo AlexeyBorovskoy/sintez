@@ -1,0 +1,132 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-warning" role="alert">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('It is recommended to make a backup copy of the traffic light configuration file before updating the firmware.')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form class="form-horizontal" method="post" enctype='multipart/form-data' action="">
+
+<h3>{{ _('Update traffic light configuration.') }}</h3>
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Backup:') }}</label>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-custom" onclick="window.location.href='config_bakup'">{{ _('Save') }}</button>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Select the configuration file:') }}</label>
+    <div class="col-sm-9">
+      <input type="file" id="upfile" name="upfile" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}">
+      <!-- <input type="file" name="upfile" accept="multipart/form-data" class="btn btn-custom"> -->
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-custom">{{ _('Upload') }}</button>
+    </div>
+  </div>
+
+
+
+<div id="now" style="display: none;">{{now}}</div>
+<h3>{{ _('Update firmware.') }}</h3>
+  <div class="form-group">
+  <label class="control-label col-sm-3">{{_('Current version:')}}:</label>
+    <div class="col-sm-9" style="padding-top: 7px;">
+      <b>{{version}}</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3">{{ _('Select the firmware file:') }}</label>
+    <div class="col-sm-9">
+      {# <input id="fileupload" type="file" name="file" data-url="/upload_firmware" accept=".tar"> #}
+      <input type="file" id="fileupload" name="file" data-url="/upload_firmware" accept=".tar" accept="multipart/form-data" class="filestyle" data-buttonName="btn btn-custom" data-icon="false" data-buttonText="{{ _('Browse...') }}">
+      <!-- <input type="file" name="upfile" accept="multipart/form-data" class="btn btn-custom"> -->
+    </div>
+  </div>
+
+  <div id='modal-progress' class="progress-bar" role="progressbar" style="width: 0%; display: none; background-color: #000000">0%</div>
+  <br>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      {% if updating %}
+      <button id="up_btn" type="button" class="js-upload-photos btn btn-custom" disabled="true">
+        {{ _('Update') }}
+      </button>
+      {% else%}
+      <button id="up_btn" type="button" class="js-upload-photos btn btn-custom" data-toggle="tooltip" data-placement="right" title="{{_('It is recommended to make a backup copy of the traffic light configuration file before updating the firmware.')}}" >
+        {{ _('Update') }}
+      </button>
+      {% endif %}
+    </div>
+  </div>
+</form>
+
+
+<script type="text/javascript">
+$(function () {
+
+  // $(".js-upload-photos").click(function () {
+  //   $("#fileupload").click();
+  // });
+  $('#up_btn').tooltip();
+
+  $("#fileupload").fileupload({
+    dataType: 'json',
+    sequentialUploads: true,  /* 1. SEND THE FILES ONE BY ONE */
+    add: function (e, data) {            
+        $("#up_btn").off('click').on('click', function () {
+            data.submit();
+          $("#modal-progress").show()
+        });
+    },
+    // start: function (e) {   2. WHEN THE UPLOADING PROCESS STARTS, SHOW THE MODAL 
+    // },
+    stop: function (e) {  /* 3. WHEN THE UPLOADING PROCESS FINALIZE, HIDE THE MODAL */
+      $("#modal-progress").hide();
+    },
+    progressall: function (e, data) {  /* 4. UPDATE THE PROGRESS BAR */
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      var strProgress = progress + "%";
+      $(".progress-bar").css({"width": strProgress});
+      $(".progress-bar").text(strProgress);
+    },
+    done: function (e, data) {
+      console.log(data._response.result);
+      if (data._response.result.status == 'success'){
+        window.location.reload(false);
+      } else if (data._response.result.status == 'error'){
+        window.location.reload(false);
+      }
+      // if (data.result.is_valid) {
+      //   $("#gallery tbody").prepend(
+      //     "<tr><td><a href='" + data.result.url + "'>" + data.result.name + "</a></td></tr>"
+      //   )
+      // }
+    }
+
+  });
+
+});
+
+
+var updateInterval = 3000;
+
+window.setInterval(function(){
+  $.get('/check_status', {} )
+  .done(function( data ) {
+    if (data.now !== Number($('#now').html())){
+      window.location.reload(false);
+    }
+  });
+
+}, updateInterval);
+</script>
+
+{% endblock %}

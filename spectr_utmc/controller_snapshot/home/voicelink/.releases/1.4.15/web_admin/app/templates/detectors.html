@@ -1,0 +1,411 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript">
+  function updateDetectors(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", window.location, true);
+    xhr.onreadystatechange = function() {
+      if (this.readyState != 4) return;
+      if (this.status != 200) {
+        // обработать ошибку
+        //alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+        window.location.href = '/index';
+        return;
+      }
+      if (window.location != this.responseURL) {
+        //console.log(this.responseURL);
+        //window.location.replace(this.responseURL);
+        window.location.href = '/index';
+        return;
+      }
+      // получить результат из this.responseText или this.responseXML
+      //var ans = this.responseText;
+      var doc = new DOMParser().parseFromString(this.responseText, "text/html");  // преобразовать текст в HTML
+      var tBody = document.getElementById("table_detectors");
+      for (var i = 0; i < tBody.rows.length; i += 1) {
+        var det_status = doc.getElementsByName('status[]')[i];
+        var det_state = doc.getElementsByName('state[]')[i];
+        if (!det_status || !det_state) {
+          //console.log('BREAKK...........');
+          break;
+        }
+        var row = tBody.rows[i];
+        var elements = row.getElementsByTagName("*");
+        for (var j = 0; j < elements.length; j += 1) {
+          if (elements.item(j).id &&
+              elements.item(j).id === "det_status")
+            {
+              elements.item(j).innerText = det_status.value;
+              if (+det_status.value === 1 && +det_state.value === 2) {
+                elements.item(j).className = "label label-warning";
+              } else if (+det_status.value === 0 && +det_state.value === 2) {
+                elements.item(j).className = "label label-default";
+              } else if ((+det_status.value === 0 || +det_status.value === 1) && +det_state.value === 0) {
+                elements.item(j).className = "label label-info";
+              } else if ((+det_status.value === 0 || +det_status.value === 1) && +det_state.value === 1) {
+                elements.item(j).className = "label label-primary";
+              }
+            }
+        }
+      }
+      setTimeout("updateDetectors();", 300);
+    }
+    xhr.timeout = 10000;
+    xhr.send();
+    //setTimeout("updateDetectors();", 300);
+  }
+  function setEnabled() {
+    cb = document.getElementsByName("onoff")[0];
+    detector_time_on = document.getElementsByName("detector_time_on[]");
+    detector_time_off = document.getElementsByName("detector_time_off[]");
+    for (var i = 0; i < detector_time_on.length; i++) {
+      if (cb.checked) {
+        detector_time_on[i].readOnly = false;
+      } else {
+        detector_time_on[i].readOnly = true;
+      }
+    }
+    for (var i = 0; i < detector_time_off.length; i++) {
+      if (cb.checked) {
+        detector_time_off[i].readOnly = false;
+      } else {
+        detector_time_off[i].readOnly = true;
+      }
+    }
+  }
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+{% if type_tab == 'status' %}
+<body class="gray-bg" onLoad="updateDetectors();">
+{% elif type_tab == 'traffic_counting' %}
+<body class="gray-bg">
+{% elif type_tab == 'security' %}
+<body class="gray-bg" onLoad="setEnabled();">
+{% elif type_tab == 'eth_detectors' %}
+<body class="gray-bg">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" method="post" name="detectors" action="">
+<ul class="nav nav-tabs">
+  <li class="nav-item {{tab.status}}">
+    <a class="nav-link {{tab.status}}" href="{{ url_for('detectors', type_tab = 'status') }}">{{ _('Detector status') }}</a>
+  </li>
+  <li class="nav-item {{tab.traffic_counting}}">
+    <a class="nav-link {{tab.traffic_counting}}" href="{{ url_for('detectors', type_tab = 'traffic_counting') }}">{{ _('Traffic counting') }}</a>
+  </li>
+  <li class="nav-item {{tab.security}}">
+    <a class="nav-link {{tab.security}}" href="{{ url_for('detectors', type_tab = 'security') }}">{{ _('Security') }}</a>
+  </li>
+  <li class="nav-item {{tab.eth_detectors}}">
+    <a class="nav-link {{tab.eth_detectors}}" href="{{ url_for('detectors', type_tab = 'eth_detectors') }}">{{ _('Ethernet detectors') }}</a>
+  </li>
+</ul>
+<div class="tab-content">
+{% if type_tab == 'status' %}
+  <h3>{{ _('Detector status.') }}</h3>
+  <div class="table-responsive">
+    <table rules="all" class="table table-condensed table-striped ">
+      <thead>
+        <tr>
+          <th style="width:10%">{{ _('№ detector') }}</th>
+          <th style="width:10%">{{ _('№ input') }}</th>
+          <th style="width:10%">{{ _('Status') }}</th>
+          <th style="width:60%">{{ _('Installation mode') }}</th>
+        </tr>
+      </thead>
+      <tbody id="table_detectors">
+      {% for det in data.get("adaptive_control", []) %}
+        <tr>
+          <input name="detectors[]" type="hidden" value="{{ det.num_detector }}">
+          <td><p class="form-control-static">{{ det.num_detector }}</p></td>
+          <td><p class="form-control-static">{{ det.num_in_for_io }}</p></td>
+          <input name="status[]" type="hidden" value="{{ det.detector_status }}">
+          <td><p class="form-control-static"><span id="det_status" class="label {% if det.detector_status == 1 and det.detector_state == 2 %} label-warning {% elif det.detector_status == 0 and det.detector_state == 2 %} label-default {% elif det.detector_status in [0, 1] and det.detector_state == 0 %} label-info {% elif det.detector_status in [0, 1] and det.detector_state == 1 %} label-primary {% endif %}">{{det.detector_status}}</span></p></td>
+          <td><select class="form-control" name="state[]" {% if not g.user.role %} disabled readonly {% endif %}>
+            <option value="0" {% if det.detector_state == 0 %} selected="selected" {% endif %}>{{ _('Not busy') }}</option>
+            <option value="1" {% if det.detector_state == 1 %} selected="selected" {% endif %}>{{ _('Busy') }}</option>
+            <option value="2" {% if det.detector_state == 2 %} selected="selected" {% endif %}>{{ _('Normal') }}</option>
+          </select></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% elif type_tab == 'traffic_counting' %}
+  <h3>{{ _('Traffic counting.') }}</h3>
+  <div class="panel-group">
+    {% for cnt, timestamps in data.get("traffic_counting", {}).items() %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href={% if cnt == '1h' %} "#collapse1" {% elif cnt == '24h' %} "#collapse2" {% else %} "#" {% endif %}>{% if cnt == '1h' %} {{ _('1 hour') }} {% elif cnt == '24h' %} {{ _('24 hours') }} {% else %} {% endif %}</a>
+        </h4>
+      </div>
+      <div id={% if cnt == '1h' %} "collapse1" {% elif cnt == '24h' %} "collapse2" {% else %} "" {% endif %} class="panel-collapse collapse in">
+        <div class="table-responsive">
+          <table rules="all" class="table table-condensed table-striped ">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>{{ _('Date and Time') }}</th>
+                {# {% for n in sorted(timestamps[0].values()[0].keys(), key = int) %} #}
+                {% for n in sorted(timestamps[0].values()[0], key = int) %}
+                  <th>D{{ n }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+            {% for n, tmstamp in enumerate(timestamps[-24 if cnt == '1h' else -7:]) %}
+              {% for timestamp, cnt_dets in tmstamp.items() %}
+                <tr>
+                  <input name="detectors[]" type="hidden" value="{{ n }}">
+                  <td><p class="form-control-static">{{ n+1 }}</p></td>
+                  <td><p class="form-control-static">{{ timestamp }}</p></td>
+                  {% for n, cnt_det in sorted(cnt_dets.items(), key = lm) %}
+                  <td><p class="form-control-static">{{ cnt_det }}</p></td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!--<div class="panel-footer">Panel Footer</div>-->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <h3>{{ _('Phase counting.') }}</h3>
+  <div class="panel-group">
+    {% for cnt, timestamps in data.get("phase_counting", {}).items() %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href={% if cnt == '1h' %} "#collapse3" {% elif cnt == '24h' %} "#collapse4" {% else %} "#" {% endif %}>{% if cnt == '1h' %} {{ _('1 hour') }} {% elif cnt == '24h' %} {{ _('24 hours') }} {% else %} {% endif %}</a>
+        </h4>
+      </div>
+      <div id={% if cnt == '1h' %} "collapse3" {% elif cnt == '24h' %} "collapse4" {% else %} "" {% endif %} class="panel-collapse collapse in">
+        <div class="table-responsive">
+          <table rules="all" class="table table-condensed table-striped ">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>{{ _('Date and Time') }}</th>
+                {# {% for n in sorted(timestamps[0].values()[0].keys(), key = int) %} #}
+                {% for n in sorted(timestamps[0].values()[0], key = int) %}
+                  <th>S{{ n }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+            {% for n, tmstamp in enumerate(timestamps[-24 if cnt == '1h' else -7:]) %}
+              {% for timestamp, cnt_dets in tmstamp.items() %}
+                <tr>
+                  <input name="detectors[]" type="hidden" value="{{ n }}">
+                  <td><p class="form-control-static">{{ n+1 }}</p></td>
+                  <td><p class="form-control-static">{{ timestamp }}</p></td>
+                  {% for n, cnt_det in sorted(cnt_dets.items(), key = lm) %}
+                  <td><p class="form-control-static">{{ cnt_det }}</p></td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!--<div class="panel-footer">Panel Footer</div>-->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+{% elif type_tab == 'security' %}
+  <h3>{{ _('Configure the safety of detectors.') }}</h3>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input onchange="setEnabled();" type="checkbox" name="onoff" value="1" {% if data.onoff %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Enable security settings for detectors') }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table rules="all" class="table table-condensed table-striped ">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>{{ _('Emergency activation time for the triggered detector (minute):') }}</th>
+          <th>{{ _('Emergency activation time for the disconnected detector (minute):') }}</th>
+        </tr>
+      </thead>
+      <tbody id="table_safety_detectors">
+      {% for det in data.get("adaptive_control", []) %}
+        <tr>
+          <input name="detectors[]" type="hidden" value="{{ det.num_detector }}">
+          <td><p class="form-control-static">{{ det.num_detector }}</p></td>
+          <td><input required pattern="0|[1-9]|[1-9][0-9]{1,2}|[1-9][0-9]{3}|10[0-7][0-9]{2}|10800" type="text" name="detector_time_on[]" value="{{det.detector_time_on}}" placeholder="{{ _('from {0} to {1}').format(0, 10800) }}" {% if not g.user.role %} readonly {% endif %} class="form-control"></td>
+          <td><input required pattern="0|[1-9]|[1-9][0-9]{1,2}|[1-9][0-9]{3}|10[0-7][0-9]{2}|10800" type="text" name="detector_time_off[]" value="{{det.detector_time_off}}" placeholder="{{ _('from {0} to {1}').format(0, 10800) }}" {% if not g.user.role %} readonly {% endif %} class="form-control"></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+{% elif type_tab == 'eth_detectors' %}
+  <h3>{{ _('Configuring the detector for network operation.') }}</h3>
+  {% if g.user.role %}
+  <div class="alert alert-warning alert-dismissible fade in">
+    <strong>{{ _('ATTENTION!!!') }}</strong> {{ _('The IP address must be on the same subnet as the controller itself.') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+  <ul class="nav nav-tabs">
+    <li class="nav-item {{tab.smartvision}}">
+      <a class="nav-link {{tab.smartvision}}" href="{{ url_for('detectors', type_tab = 'eth_detectors', type_eth_detectors = 'smartvision') }}">{{ _('SmartVision') }}</a>
+    </li>
+    <li class="nav-item {{tab.traficam}}">
+      <a class="nav-link {{tab.traficam}}" href="{{ url_for('detectors', type_tab = 'eth_detectors', type_eth_detectors = 'traficam') }}">{{ _('TrafiCam x-stream') }}</a>
+    </li>
+    <li class="nav-item {{tab.traffixtream2}}">
+      <a class="nav-link {{tab.traffixtream2}}" href="{{ url_for('detectors', type_tab = 'eth_detectors', type_eth_detectors = 'traffixtream2') }}">{{ _('TraffiXtream-2') }}</a>
+    </li>
+    <li class="nav-item {{tab.netvision_thor_x}}">
+      <a class="nav-link {{tab.netvision_thor_x}}" href="{{ url_for('detectors', type_tab = 'eth_detectors', type_eth_detectors = 'netvision_thor_x') }}">{{ _('Netvision Thor-X') }}</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+  {% if type_eth_detectors == 'smartvision' %}
+    <div class="table-responsive">
+      <table rules="all" class="table table-condensed table-striped ">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>{{ _('IP address') }}</th>
+            <th>{{ _('№ camera') }}</th>
+            <th>{{ _('№ inputs') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for n in data.get("number", range(1,33)) %}
+          <tr>
+            <input name="number[]" type="hidden" value="{{ n }}">
+            <td><p class="form-control-static">{{ n }}</p></td>
+            <td><input maxlength=15 pattern="(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))|(^$)" name="ip[]" type="text" value="{{data.ip[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+            <td><input maxlength=3 pattern="(\d{1,3})|(^$)" name="alias[]" type="text" value="{{data.alias[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+            <td><p class="form-control-static">{% for ii in range(1,5) %}{{ 200+ii+(4*(n-1)) }}{% if ii < 4 %},&nbsp;{% endif %}{% endfor %}</p></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% elif type_eth_detectors == 'traficam' %}
+    <div class="table-responsive">
+      <table rules="all" class="table table-condensed table-striped ">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>{{ _('IP address') }}</th>
+            <th>{{ _('№ camera') }}</th>
+            <th>{{ _('№ inputs') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for n in data.get("number_traficam", range(1,33)) %}
+          <tr>
+            <input name="number_traficam[]" type="hidden" value="{{ n }}">
+            <td><p class="form-control-static">{{ n }}</p></td>
+            <td><input maxlength=20 pattern="(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))|(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?):[0-9]+)|(^$)" name="ip_traficam[]" type="text" value="{{data.ip_traficam[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+            <td><input maxlength=3 pattern="(\d{1,3})|(^$)" name="alias_traficam[]" type="text" value="{{data.alias_traficam[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+            <td><p class="form-control-static">{% for ii in range(1,17) %}{{ 400+ii+(16*(n-1)) }}{% if ii < 16 %},&nbsp;{% endif %}{% endfor %}</p></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% elif type_eth_detectors == 'traffixtream2' %}
+    <div class="table-responsive">
+      <table rules="all" class="table table-condensed table-striped ">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>{{ _('IP address') }}</th>
+            <th>{{ _('№ camera') }}</th>
+            <th>{{ _('Login') }}</th>
+            <th>{{ _('Password') }}</th>
+            <th>{{ _('№ inputs') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for n in data.get("number_traffixtream2", range(1,33)) %}
+          <tr>
+            <input name="number_traffixtream2[]" type="hidden" value="{{ n }}">
+            <td><p class="form-control-static">{{ n }}</p></td>
+            <td><input maxlength=20 pattern="(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))|(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?):[0-9]+)|(^$)" name="ip_traffixtream2[]" type="text" value="{{data.ip_traffixtream2[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+            <td><input maxlength=3 pattern="(\d{1,3})|(^$)" name="alias_traffixtream2[]" type="text" value="{{data.alias_traffixtream2[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+            <td><input maxlength=16 name="login_traffixtream2[]" type="text" value="{{data.login_traffixtream2[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+            <td><input maxlength=16 name="password_traffixtream2[]" type="password" value="{{data.password_traffixtream2[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+            <td><p class="form-control-static">{% for ii in range(1,11) %}{{ 960+ii+(10*(n-1)) }}{% if ii < 10 %},&nbsp;{% endif %}{% endfor %}</p></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% elif type_eth_detectors == 'netvision_thor_x' %}
+    <div class="table-responsive">
+      <table rules="all" class="table table-condensed table-striped ">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>{{ _('IP address') }}</th>
+            <th>{{ _('Number of cameras') }}</th>
+            <th>{{ _('№ inputs') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for n in data.get("number_netvision_thor_x", range(1,13)) %}
+          <tr>
+            <input name="number_netvision_thor_x[]" type="hidden" value="{{ n }}">
+            <td><p class="form-control-static">{{ n }}</p></td>
+            <td><input maxlength=15 pattern="(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))|(^$)" name="ip_netvision_thor_x[]" type="text" value="{{data.ip_netvision_thor_x[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+            <!--<td><input maxlength=3 pattern="(\d{1,3})|(^$)" name="alias_netvision_thor_x[]" type="text" value="{{data.alias_netvision_thor_x[n-1]}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>-->
+            <td><select class="form-control" name="num_cams_netvision_thor_x[]" {% if not g.user.role %} disabled readonly {% endif %}>
+                  <option value="0" {% if data.num_cams_netvision_thor_x[n-1] == 0 %} selected="selected" {% endif %}>0</option>
+                  <option value="1" {% if data.num_cams_netvision_thor_x[n-1] == 1 %} selected="selected" {% endif %}>1</option>
+                  <option value="2" {% if data.num_cams_netvision_thor_x[n-1] == 2 %} selected="selected" {% endif %}>2</option>
+                  <option value="3" {% if data.num_cams_netvision_thor_x[n-1] == 3 %} selected="selected" {% endif %}>3</option>
+                  <option value="4" {% if data.num_cams_netvision_thor_x[n-1] == 4 %} selected="selected" {% endif %}>4</option>
+                </select>
+            </td>
+            <td><p class="form-control-static">{% for ii in range(1,49) %}{% if (ii+11)%12==0 %}{{ _('Camera') }}&nbsp;{{ ii//12 + 1}}:&nbsp;{% endif %}{{ 1300+ii+(48*(n-1)) }}{% if ii < 48 %},&nbsp;{% if ii%12==0 %}<br>{% endif %}{% endif %}{% endfor %}</p></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+  </div>
+{% else %}
+  <h3>{{ type_tab }}</h3>
+{% endif %}
+</div>
+{% if g.user.role %}
+<div class="form-group">
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+  </div>
+</div>
+{% endif %}
+</form>
+{% endblock %}

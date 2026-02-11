@@ -1,0 +1,129 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<script type="text/javascript" src="/static/js/dynamicTable.js"></script>
+<script type="text/javascript">
+  function setEnabled() {
+    var cb = document.getElementsByName("onoff")[0];
+    var timeout = document.getElementById("timeout");
+    var timeout_desc = document.getElementById("timeout_desc");
+    var countdown_table = document.getElementById("countdown_table");
+    var attention = document.getElementById("attention");
+    if (cb.checked) {
+      timeout.style.display = '';
+      timeout_desc.style.display = '';
+      countdown_table.style.display = '';
+      attention.style.display = '';
+    }
+    else {
+      timeout.style.display = 'none';
+      timeout_desc.style.display = 'none';
+      countdown_table.style.display = 'none';
+      attention.style.display = 'none';
+    }
+    timeout.required = cb.checked;
+    var tBody = document.getElementById("dynamic");
+    for (var i = 0; i < tBody.rows.length; i += 1) {
+      var row = tBody.rows[i];
+      var elements = row.getElementsByTagName("*");
+      for (var j = 0; j < elements.length; j += 1) {
+        if (elements.item(j).type &&
+          elements.item(j).type === "text" &&
+          (elements.item(j).name === "ip[]" || elements.item(j).name === "mac[]"))
+          {
+            elements.item(j).required = cb.checked;
+          }
+      }
+    }
+  }
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+<body class="gray-bg" onLoad="setEnabled();">
+{% endblock %}
+
+{% block content %}
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="loader"></div>
+    <div>{{ _('Please wait...') }}</div>
+  </div>
+</div>
+
+<form class="form-horizontal" method="post" name="countdown" action="">
+  <h3>{{ _('Setting countdown display.') }}</h3>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input onchange="setEnabled();" type="checkbox" name="onoff" value="1" {% if data.onoff %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Enable the countdown display') }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-warning alert-dismissible fade in" id="attention">
+    <strong>{{ _('ATTENTION!!!') }}</strong> {{ _('The IP address must be on the same subnet as the controller itself.') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4" id="timeout_desc">{{ _('Default activation time (seconds):') }}</label>
+    <div class="col-sm-8">
+      <input required pattern="\d{1,3}" type="text" name="timeout" value="{{data.timeout}}" id="timeout" {% if not g.user.role %} readonly {% endif %} class="form-control">
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table width="100%" id="countdown_table" rules="all" class="table table-condensed table-striped">
+      <thead>
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">{{ _('MAC address:') }}</th>
+          <th scope="col">{{ _('IP address') }}</th>
+          <!--<th scope="col">Производитель</th>-->
+          <th scope="col">{{ _('№ group') }}</th>
+          <th scope="col">{{ _('State') }}</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody id="dynamic">
+        {% for n, countdown in enumerate(data.get("countdown", [{}])) %}
+        <tr>
+          <input name="number[]" type="hidden" value="{{ n+1 }}">
+          <td><p id="enumerate" class="form-control-static">{{ n+1 }}</p></td>
+          <td><input required maxlength=17 pattern="^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$" name="mac[]" type="text" value="{{countdown.mac}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+          <td><input required maxlength=15 pattern="^(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))$" name="ip[]" type="text" value="{{countdown.ip}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+          <!--<td><input size=50 name="vendor[]" type="text" value="{{ countdown.vendor }}"></td>-->
+          <td><select name="group[]" class="form-control" style="min-width: 140px;">
+            <option value="0">{{ _('Not selected') }}</option>
+            {% for g in data.get("groups", []) %}
+            <option value={{ g }} {% if countdown.group == g %} selected {% endif %}>{{ _('Group') }} {{ g }}</option>
+            {% endfor %}
+            </select>
+          </td>
+          <td><p id="status" class="form-control-static">{{ _('Ok') }}</p></td>
+          <td>
+            <button type="button" class="check btn btn-custom">{{ _('Check') }}</button>
+            <button type="button" class="add btn btn-custom">{{ _('Add') }}</button>
+            <button type="button" class="del btn btn-custom">{{ _('Remove') }}</button>
+          </td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td colspan="6"><button type="button" class="rescan btn btn-custom">{{ _('Scan') }} \ {{ _('Check') }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  {% if g.user.role %}
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+  {% endif %}
+<script type="text/javascript">
+    new DynamicTable( document.getElementById("dynamic") );
+</script>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Firmware updater service
+
+[Service]
+Nice=-10
+WorkingDirectory = /home/voicelink/
+ExecStart = /bin/sh -c 'cd /home/voicelink/ && ./firmware_updater'
+Restart=always
+
+[Install]
+WantedBy = multi-user.target

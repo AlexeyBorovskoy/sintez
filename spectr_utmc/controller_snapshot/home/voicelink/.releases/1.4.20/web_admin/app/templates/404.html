@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    {% if title %}
+    <title>{{title}} - {{ _('Traffic controller') }}</title>
+    {% else %}
+    <title>{{ _('Traffic controller') }}</title>
+    {% endif %}
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" media="all" />
+</head>
+<body class="body_404">
+<div class="page_404">
+    <div class="message_404">
+    <h1 class="h1_404">404</h1>
+        <p>{{ _("- It is not as if you entirely didn't hit the mark,- said Pooh,- but didn't hit the ballon!") }}</p>
+        <p><a href="{{url_for('index')}}">{{ _('Back') }}</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os
+import smbus
+
+UNAME = os.uname()[1].lower()
+
+
+#----------------------------------------------------------------------
+def brd_info_read(bus):
+    """"""
+    if not UNAME.startswith('sintez'):
+        return
+    
+    block = []
+    for i in xrange(256):
+        block.append(bus.read_byte_data(0x50, i))
+    
+    return block
+
+#----------------------------------------------------------------------
+def main():
+    """"""
+    bus = smbus.SMBus(1)    # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1
+    block = brd_info_read(bus)
+    
+    header = (block[3] << 24) | (block[2] << 16) | (block[1] << 8) | block[0]
+    if header != 0x4f4caa55:
+        print('Invalid EEPROM data') # 0x50-0x57 - the address of the EEPROM 2KB
+        print('Header = {}; should be 0x4f4caa55'.format(hex(header)))
+        return
+    
+    #print 'Raw data: {}'.format(['%02X' % b for b in block])
+    
+    brd_id = (block[7] << 24) | (block[6] << 16) | (block[5] << 8) | block[4]
+    
+    brd_name = ''
+    if brd_id == 7739: brd_name = 'A20-OLinuXino-LIME'
+    if brd_id == 7743: brd_name = 'A20-OLinuXino-LIME-n4GB'
+    if brd_id == 8934: brd_name = 'A20-OLinuXino-LIME-n8GB'
+    if brd_id == 9076: brd_name = 'A20-OLinuXino-LIME-s16MB'
+    if brd_id == 7701: brd_name = 'A20-OLinuXino-LIME2'
+    if brd_id == 8340: brd_name = 'A20-OLinuXino-LIME2-e4GB'
+    if brd_id == 8978: brd_name = 'A20-OLinuXino-Lime2-Light-e4GB'
+    if brd_id == 7624: brd_name = 'A20-OLinuXino-LIME2-n4GB'
+    if brd_id == 8910: brd_name = 'A20-OLinuXino-LIME2-n8GB'
+    if brd_id == 8946: brd_name = 'A20-OLinuXino-LIME2-s16MB'
+    if brd_id == 4614: brd_name = 'A20-OLinuXino-MICRO'
+    if brd_id == 9042: brd_name = 'A20-OLinuXino-MICRO-e16GB'
+    if brd_id == 8832: brd_name = 'A20-OLinuXino-MICRO-e4GB'
+    if brd_id == 8661: brd_name = 'A20-OLinuXino-MICRO-e4GB-IND'
+    if brd_id == 8828: brd_name = 'A20-OLinuXino-MICRO-IND'
+    if brd_id == 4615: brd_name = 'A20-OLinuXino-MICRO-n4GB'
+    if brd_id == 8918: brd_name = 'A20-OLinuXino-MICRO-n8GB'
+    if brd_id == 8991: brd_name = 'A20-SOM204-1G'
+    if brd_id == 8958: brd_name = 'A20-SOM204-1Gs16Me16G-MC'
+    
+    if (block[9] == 255):
+        block[9] = 0
+    brd_rev = chr(block[8]) + chr(block[9])
+    
+    brd_serial = (block[13] << 24) | (block[12] << 16) | (block[11] << 8) | block[10]
+    
+    print('Board: {} Rev.{}, Serial: {}, ID: {}'.format(brd_name, brd_rev, hex(brd_serial), brd_id))
+    
+    brd_ext_mem_type = ''
+    brd_ext_mem_size = ''
+    brd_ext_mem_size_measure = ''
+    if block[14] == 0x00:
+        brd_ext_mem_type = None
+    elif block[14] == 0x65:  #0x65 = 'e'
+        brd_ext_mem_type = 'eMMC'
+    elif block[14] == 0x6E:  #0x6E = 'n'
+        brd_ext_mem_type = 'NAND'
+    elif block[14] == 0x73:  #0x73 = 's'
+        brd_ext_mem_type = 'SPI Flash'
+    
+    if brd_ext_mem_type:
+        if (block[15] >= 30):
+            brd_ext_mem_size = 1<<(block[15]-30)
+            brd_ext_mem_size_measure = 'GB'
+        elif block[15] >= 20:
+            brd_ext_mem_size = 1<<(block[15]-20)
+            brd_ext_mem_size_measure = 'MB'
+        elif block[15] >= 10:
+            brd_ext_mem_size = 1<<(block[15]-10)
+            brd_ext_mem_size_measure = 'KB'
+        else:
+            brd_ext_mem_size = 1<<block[15]
+            brd_ext_mem_size_measure = 'B'
+    
+    print('External memory: {} {} {}'.format(brd_ext_mem_type, brd_ext_mem_size, brd_ext_mem_size_measure))
+    
+    brd_ram_size = ''
+    brd_ram_size_measure = ''
+    if (block[16] >= 30):
+        brd_ram_size = 1<<(block[16]-30)
+        brd_ram_size_measure = 'GB'
+    elif (block[16] >= 20):
+        brd_ram_size = 1<<(block[16]-20)
+        brd_ram_size_measure = 'MB'
+    elif (block[16] >= 10):
+        brd_ram_size = 1<<(block[16]-10)
+        brd_ram_size_measure = 'KB'
+    else:
+        brd_ram_size = 1<<(block[16])
+        brd_ram_size_measure = 'B'
+    
+    print('RAM size: {} {}'.format(brd_ram_size, brd_ram_size_measure))
+    
+    brd_grade = block[17]
+    
+    print('Industrial grade (-45+85) degrees Celsius' if brd_grade == 1 else 'Commercial grade (0-70) degrees Celsius')
+    
+    brd_mac = '{}{}:{}{}:{}{}:{}{}:{}{}:{}{}'.format(chr(block[18]), chr(block[19]), chr(block[20]), chr(block[21]), chr(block[22]), chr(block[23]), chr(block[24]), chr(block[25]), chr(block[26]), chr(block[27]), chr(block[28]), chr(block[29]))
+    
+    print('MAC address: {}'.format(brd_mac))
+    
+
+if __name__ == "__main__":
+    main()

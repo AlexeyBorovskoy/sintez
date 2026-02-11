@@ -1,0 +1,111 @@
+ 
+  UNIT                                                        LOAD      ACTIVE   SUB     DESCRIPTION                                                       
+  alsa-restore.service                                        loaded    active   exited  Save/Restore Sound Card State                                     
+  alsa-state.service                                          loaded    active   running Manage Sound Card State (restore and store)                       
+● apparmor.service                                            not-found inactive dead    apparmor.service                                                  
+  apt-daily-upgrade.service                                   loaded    inactive dead    Daily apt upgrade and clean activities                            
+  apt-daily.service                                           loaded    inactive dead    Daily apt download activities                                     
+  arp_link.service                                            loaded    active   running Arp link service                                                  
+● auditd.service                                              not-found inactive dead    auditd.service                                                    
+  auth-rpcgss-module.service                                  loaded    inactive dead    Kernel Module supporting RPCSEC_GSS                               
+  avahi-daemon.service                                        loaded    active   running Avahi mDNS/DNS-SD Stack                                           
+  brd_init.service                                            loaded    inactive dead    Board init service                                                
+● connman.service                                             not-found inactive dead    connman.service                                                   
+● console-screen.service                                      not-found inactive dead    console-screen.service                                            
+  console-setup.service                                       loaded    active   exited  Set console font and keymap                                       
+  cron.service                                                loaded    active   running Regular background program processing daemon                      
+  dbus.service                                                loaded    active   running D-Bus System Message Bus                                          
+  dhcpcd.service                                              loaded    inactive dead    dhcpcd on all interfaces                                          
+● display-manager.service                                     not-found inactive dead    display-manager.service                                           
+  dphys-swapfile.service                                      loaded    active   exited  dphys-swapfile - set up, mount/unmount, and delete a swap file    
+  emergency.service                                           loaded    inactive dead    Emergency Shell                                                   
+  fake-hwclock.service                                        loaded    active   exited  Restore / save the current clock                                  
+  firmware-updater.service                                    loaded    active   running Firmware updater service                                          
+  getty-static.service                                        loaded    inactive dead    getty on tty2-tty6 if dbus and logind are not available           
+  getty@tty1.service                                          loaded    active   running Getty on tty1                                                     
+● gssproxy.service                                            not-found inactive dead    gssproxy.service                                                  
+  hciuart.service                                             loaded    inactive dead    Configure Bluetooth Modems connected by UART                      
+  ifupdown-pre.service                                        loaded    active   exited  Helper to synchronize boot up for ifupdown                        
+● kbd.service                                                 not-found inactive dead    kbd.service                                                       
+  keyboard-setup.service                                      loaded    active   exited  Set the console keyboard layout                                   
+  kmod-static-nodes.service                                   loaded    active   exited  Create list of required static device nodes for the current kernel
+  logrotate.service                                           loaded    inactive dead    Rotate log files                                                  
+  man-db.service                                              loaded    inactive dead    Daily man-db regeneration                                         
+  modbus_tcp.service                                          loaded    active   running Modbus TCP service                                                
+● mountkernfs.service                                         masked    inactive dead    mountkernfs.service                                               
+  networking.service                                          loaded    active   exited  Raise network interfaces                                          
+● NetworkManager.service                                      not-found inactive dead    NetworkManager.service                                            
+● nfs-blkmap.service                                          not-found inactive dead    nfs-blkmap.service                                                
+  nfs-config.service                                          loaded    inactive dead    Preprocess NFS configuration                                      
+● nfs-server.service                                          not-found inactive dead    nfs-server.service                                                
+  nfs-utils.service                                           loaded    inactive dead    NFS server and client services                                    
+  nginx.service                                               loaded    active   running A high performance web server and a reverse proxy server          
+● plymouth-quit-wait.service                                  not-found inactive dead    plymouth-quit-wait.service                                        
+● plymouth-start.service                                      not-found inactive dead    plymouth-start.service                                            
+  raspberrypi-net-mods.service                                loaded    inactive dead    Copy user wpa_supplicant.conf                                     
+  raspi-config.service                                        loaded    active   exited  LSB: Switch to ondemand cpu governor (unless shift key is pressed)
+  rc-local.service                                            loaded    active   exited  /etc/rc.local Compatibility                                       
+  regenerate_ssh_host_keys.service                            loaded    inactive dead    Regenerate SSH host keys                                          
+  rescue.service                                              loaded    inactive dead    Rescue Shell                                                      
+  resident.service                                            loaded    active   running Resident service                                                  
+  restart_frozen_phase.service                                loaded    active   running Restart resident service                                          
+  rng-tools.service                                           loaded    active   running rng-tools.service                                                 
+  rpc-gssd.service                                            loaded    inactive dead    RPC security service for NFS client and server                    
+  rpc-svcgssd.service                                         loaded    inactive dead    RPC security service for NFS server                               
+  rpi-eeprom-update.service                                   loaded    active   exited  Check for Raspberry Pi EEPROM updates                             
+  rsync.service                                               loaded    inactive dead    fast remote file copy program daemon                              
+  rsyslog.service                                             loaded    active   running System Logging Service                                            
+  snmp_agent.service                                          loaded    active   running SNMP agent service                                                
+  snmpd.service                                               loaded    active   running Simple Network Management Protocol (SNMP) Daemon.                 
+  snmpd_config_ping_nginx.service                             loaded    active   exited  SNMPD config copy service                                         
+  spectr_utmc.service                                         loaded    active   running UMTC to Spectr-ITS bridge                                         
+  ssh.service                                                 loaded    active   running OpenBSD Secure Shell server                                       
+  sshswitch.service                                           loaded    inactive dead    Turn on SSH if /boot/ssh is present                               
+  systemd-ask-password-console.service                        loaded    inactive dead    Dispatch Password Requests to Console                             
+  systemd-ask-password-wall.service                           loaded    inactive dead    Forward Password Requests to Wall                                 
+  systemd-binfmt.service                                      loaded    inactive dead    Set Up Additional Binary Formats                                  
+  systemd-fsck-root.service                                   loaded    active   exited  File System Check on Root Device                                  
+  systemd-fsck@dev-disk-by\x2dpartuuid-c4f969cb\x2d01.service loaded    active   exited  File System Check on /dev/disk/by-partuuid/c4f969cb-01            
+  systemd-fsckd.service                                       loaded    inactive dead    File System Check Daemon to report status                         
+  systemd-hwdb-update.service                                 loaded    inactive dead    Rebuild Hardware Database                                         
+  systemd-initctl.service                                     loaded    inactive dead    initctl Compatibility Daemon                                      
+  systemd-journal-flush.service                               loaded    active   exited  Flush Journal to Persistent Storage                               
+  systemd-journald.service                                    loaded    active   running Journal Service                                                   
+  systemd-logind.service                                      loaded    active   running Login Service                                                     
+  systemd-machine-id-commit.service                           loaded    inactive dead    Commit a transient machine-id on disk                             
+  systemd-modules-load.service                                loaded    active   exited  Load Kernel Modules                                               
+● systemd-networkd.service                                    masked    inactive dead    systemd-networkd.service                                          
+  systemd-quotacheck.service                                  loaded    inactive dead    File System Quota Check                                           
+  systemd-random-seed.service                                 loaded    active   exited  Load/Save Random Seed                                             
+  systemd-remount-fs.service                                  loaded    active   exited  Remount Root and Kernel File Systems                              
+  systemd-rfkill.service                                      loaded    inactive dead    Load/Save RF Kill Switch Status                                   
+  systemd-sysctl.service                                      loaded    active   exited  Apply Kernel Variables                                            
+  systemd-sysusers.service                                    loaded    active   exited  Create System Users                                               
+  systemd-tmpfiles-clean.service                              loaded    inactive dead    Cleanup of Temporary Directories                                  
+  systemd-tmpfiles-setup-dev.service                          loaded    active   exited  Create Static Device Nodes in /dev                                
+  systemd-tmpfiles-setup.service                              loaded    active   exited  Create Volatile Files and Directories                             
+  systemd-udev-trigger.service                                loaded    active   exited  udev Coldplug all Devices                                         
+  systemd-udevd.service                                       loaded    active   running udev Kernel Device Manager                                        
+● systemd-update-done.service                                 not-found inactive dead    systemd-update-done.service                                       
+  systemd-update-utmp-runlevel.service                        loaded    inactive dead    Update UTMP about System Runlevel Changes                         
+  systemd-update-utmp.service                                 loaded    active   exited  Update UTMP about System Boot/Shutdown                            
+  systemd-user-sessions.service                               loaded    active   exited  Permit User Sessions                                              
+● systemd-vconsole-setup.service                              not-found inactive dead    systemd-vconsole-setup.service                                    
+  timestamp.service                                           loaded    active   running Timestamp service                                                 
+  traffixtream2.service                                       loaded    active   running TraffiXtream-2 service                                            
+  traficam.service                                            loaded    active   running TrafiCam service                                                  
+  triggerhappy.service                                        loaded    active   running triggerhappy global hotkey daemon                                 
+  user-runtime-dir@1000.service                               loaded    active   exited  User Runtime Directory /run/user/1000                             
+  user@1000.service                                           loaded    active   running User Manager for UID 1000                                         
+  web_admin.service                                           loaded    active   running Gunicorn instance to serve web_admin                              
+  web_detect.service                                          loaded    active   running Gunicorn instance to serve web_detect                             
+  web_detect_fix.service                                      loaded    active   exited  SNMPD config copy service                                         
+  web_detect_nginx.service                                    loaded    active   exited  SNMPD config copy service                                         
+  wpa_supplicant.service                                      loaded    active   running WPA supplicant                                                    
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+
+102 loaded units listed.
+To show all installed unit files use 'systemctl list-unit-files'.

@@ -1,0 +1,337 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block javascript %}
+<!-- <script type="text/javascript" src="{{ url_for('static', filename='js/dynamicTableCenterless.js') }}"></script> -->
+<script type="text/javascript" src="{{ url_for('dynamicTableCenterlessUrl') }}"></script>
+<script type="text/javascript">
+  var interval_master = null;
+  var interval_slave = null;
+  function myTimerMaster() {
+    var tBody = document.getElementById("dynamic");
+    for (var i = 0; i < tBody.rows.length; i += 1) {
+      var row = tBody.rows[i];
+      var elements = row.getElementsByTagName("*");
+      for (var j = 0; j < elements.length; j += 1) {
+        //alert(elements.item(j).className + elements.item(j).type);
+        if (elements.item(j).type &&
+          elements.item(j).type === "button" &&
+          (elements.item(j).className.indexOf("check") !== -1))
+          {
+            elements.item(j).click();
+            break;
+          }
+      }
+    }
+  }
+  function myTimerSlave() {
+    var master_ip = document.getElementsByName("master_ip")[0];
+    var status_link_slave = document.getElementById("status_link_slave");
+    var status_slave = document.getElementById("status_slave");
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (this.readyState != 4) return;
+      if (this.status != 200) {
+        // обработать ошибку
+        //alert( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+        window.location.href = '/path';
+        return;
+      }
+      // получить результат из this.responseText или this.responseXML
+      try {
+        var ans = JSON.parse(this.responseText);
+      } catch (err) {
+        //alert(this.responseText);
+        //alert(err.name);
+        //alert(err.message);
+        //alert(err.stack);
+        if (window.location != this.responseURL) {
+            //console.log(this.responseURL);
+            window.location.replace(this.responseURL);
+            return;
+        }
+        return;
+      }
+      //alert(JSON.stringify(ans));
+      if (ans[master_ip.value][0] === "check_ok") {
+        status_link_slave.innerText = "{{ _('Connected') }}";
+        status_link_slave.className = "label label-success";
+      } else {
+        status_link_slave.innerText = "{{ _('Disconnected') }}";
+        status_link_slave.className = "label label-danger";
+      }
+      if (ans[master_ip.value][1] === "check_ok") {
+        status_slave.innerText = "{{ _('Configured') }}";
+        status_slave.className = "label label-success";
+      } else {
+        status_slave.innerText = "{{ _('Not configured') }}";
+        status_slave.className = "label label-danger";
+      }
+    }
+    xhr.timeout = 10000;
+    xhr.send("check=2&ip="+ master_ip.value);
+  }
+  function stopAllInterval() {
+    if (interval_master !== null) {
+      clearInterval(interval_master);
+      interval_master = null;
+    }
+    if (interval_slave !== null) {
+      clearInterval(interval_slave);
+      interval_slave = null;
+    }
+  }
+  function setEnabled() {
+    var cb = document.getElementsByName("onoff")[0];
+    var centerless_control = document.getElementById("centerless_control");
+    var control_mode = document.getElementById("control_mode");
+    //Selected(control_mode);
+    if (cb.checked) {
+      //centerless_control.style.display = '';
+      var nodes = centerless_control.getElementsByTagName('*');
+      for(var i = 0; i < nodes.length; i++){
+        if (nodes[i].type && nodes[i].type === "button" || nodes[i].id === "control_mode") {
+          nodes[i].disabled = false;
+        }
+        nodes[i].readOnly = false;
+      }
+    }
+    else {
+      //centerless_control.style.display = 'none';
+      var nodes = centerless_control.getElementsByTagName('*');
+      for(var i = 0; i < nodes.length; i++){
+        if (nodes[i].id && nodes[i].id.indexOf("status") !== -1) {
+          nodes[i].className = "label label-default";
+        }
+        if (nodes[i].type && nodes[i].type === "button" || nodes[i].id === "control_mode") {
+          nodes[i].disabled = true;
+        }
+        nodes[i].readOnly = true;
+      }
+      stopAllInterval();
+    }
+    Selected(control_mode);
+  }
+  
+  function Selected(a) {
+    var cb = document.getElementsByName("onoff")[0];
+    var label = a.value;
+    var master = document.getElementById("master");
+    var slave = document.getElementById("slave");
+    var master_req = false;
+    var slave_req = false;
+    
+    master.style.display = 'none';
+    slave.style.display = 'none';
+    document.getElementById("hidden_control_mode").value = label;
+    if (label=="master") {
+      master.style.display = '';
+      slave.style.display = 'none';
+      master_req = true;
+      slave_req = false;
+      var master_timeout = 1;
+      var obj_mt = document.getElementsByName("master_timeout")[0];
+      if (cb.checked) {
+        if (obj_mt.value) {
+          master_timeout = obj_mt.value * 1000;
+          interval_master = setInterval("myTimerMaster();", master_timeout);
+        }
+        myTimerMaster();
+      }
+      if (interval_slave)
+        clearInterval(interval_slave);
+    
+    } else if (label=="slave") {
+      master.style.display = 'none';
+      slave.style.display = '';
+      master_req = false;
+      slave_req = true;
+      var slave_timeout = 1;
+      var obj_st = document.getElementsByName("slave_timeout_link")[0];
+      if (cb.checked) {
+        if (obj_st.value) {
+          slave_timeout = obj_st.value * 1000;
+          interval_slave = setInterval("myTimerSlave();", slave_timeout);
+        }
+        myTimerSlave();
+      }
+      if (interval_master)
+        clearInterval(interval_master);
+    }
+    
+    if (!cb.checked) {
+      master_req = false;
+      slave_req = false;
+    }
+    
+    var elements = master.getElementsByTagName("*");
+    for (var i = 0; i < elements.length; i += 1) {
+      if (elements.item(i).type &&
+          elements.item(i).type === "text")
+      {
+        elements.item(i).required = master_req;
+      }
+    }
+    var tBody = document.getElementById("dynamic");
+    for (var i = 0; i < tBody.rows.length; i += 1) {
+      var row = tBody.rows[i];
+      var elements = row.getElementsByTagName("*");
+      for (var j = 0; j < elements.length; j += 1) {
+        if (elements.item(j).type &&
+          elements.item(j).type === "text" &&
+          (elements.item(j).name === "ip[]" || elements.item(j).name === "id[]"))
+          {
+            elements.item(j).required = master_req;
+          }
+      }
+    }
+    
+    var elements = slave.getElementsByTagName("*");
+    for (var i = 0; i < elements.length; i += 1) {
+      if (elements.item(i).type &&
+          elements.item(i).type === "text")
+      {
+        elements.item(i).required = slave_req;
+      }
+    }
+  }
+</script>
+{% endblock %}
+
+{% block start_javascript %}
+<body class="gray-bg" onLoad="setEnabled();">
+{% endblock %}
+
+{% block content %}
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="loader"></div>
+    <div>{{ _('Please wait...') }}</div>
+  </div>
+</div>
+
+<form class="form-horizontal" method="post" name="master_slave" action="">
+  <h3>{{ _('Setting centerless control.') }}</h3>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label><input onchange="setEnabled();" type="checkbox" name="onoff" value="1" {% if data.onoff %} checked {% endif %} {% if not g.user.role %} disabled readonly {% endif %}>{{ _('Enable centerless control mode') }}</label>
+      </div>
+    </div>
+  </div>
+  <div id="centerless_control">
+    <div class="alert alert-warning alert-dismissible fade in">
+      <strong>{{ _('ATTENTION!!!') }}</strong> {{ _('The IP address must be on the same subnet as the controller itself.') }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4">{{ _('Controller type:') }}</label>
+      <div class="col-sm-8">
+        <select onChange="Selected(this)" class="form-control" id="control_mode" {% if not g.user.role %} disabled readonly {% endif %}>
+          <option value="" {% if data.control_mode == "" %} selected="selected" {% endif %}>{{ _('Not selected') }}</option>
+          <option value="master" {% if data.control_mode == "master" %} selected="selected" {% endif %}>{{ _('Master') }}</option>
+          <option value="slave" {% if data.control_mode == "slave" %} selected="selected" {% endif %}>{{ _('Slave') }}</option>
+        </select>
+        <input type="hidden" id="hidden_control_mode" name="control_mode" value=""/>
+      </div>
+    </div>
+    <div id="master">
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('Controller type check interval (seconds):') }}</label>
+        <div class="col-sm-8">
+          <input required pattern="\d{1,3}" type="text" name="master_timeout" value="{{data.master.master_timeout}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table rules="all" class="table table-condensed table-striped">
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">{{ _('ID') }}</th>
+              <th scope="col">{{ _('IP address') }}</th>
+              <th scope="col">{{ _('State link') }}</th>
+              <th scope="col">{{ _('State') }}</th>
+              <th scope="col">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody id="dynamic">
+            {% for n, slave in enumerate(data.master.get("slaves", [{}])) %}
+            <tr>
+              <input name="slave_number[]" type="hidden" value="{{ n+1 }}">
+              <td><p id="enumerate" class="form-control-static">{{ n+1 }}</p></td>
+              <td><input required maxlength=4 pattern="^[0-9]{1,4}$" name="slave_id[]" type="text" value="{{slave.id}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 100px;"></td>
+              <td><input required maxlength=15 pattern="^(((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))$" name="slave_ip[]" type="text" value="{{slave.ip}}" {% if not g.user.role %} readonly {% endif %} class="form-control" style="min-width: 150px;"></td>
+              <td><p class="form-control-static"><span id="status_link"></span></p></td>
+              <td><p class="form-control-static"><span id="status"></span></p></td>
+              <td>
+                <button type="button" class="check btn btn-custom">{{ _('Check') }}</button>
+                <button type="button" class="add btn btn-custom">{{ _('Add') }}</button>
+                <button type="button" class="del btn btn-custom">{{ _('Remove') }}</button>
+              </td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td colspan="6"><button type="button" class="rescan btn btn-custom">{{ _('Scan') }} \ {{ _('Check') }}</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="slave">
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('Ip address of the master device:') }}</label>
+        <div class="col-sm-8">
+          <input required pattern="((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)" type="text" name="master_ip" value="{{data.slave.get("master_ip", "") }}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('Timeout command (seconds):') }}</label>
+        <div class="col-sm-8">
+          <input required pattern="\d{1,3}" type="text" name="slave_timeout_command" value="{{data.slave.timeout_command}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('Communication check interval (seconds):') }}</label>
+        <div class="col-sm-8">
+          <input required pattern="\d{1,3}" type="text" name="slave_timeout_link" value="{{data.slave.timeout_link}}" {% if not g.user.role %} readonly {% endif %} class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('State link:') }}</label>
+        <div class="col-sm-8">
+          <!-- <div class="row"> -->
+            <label class="control-label">
+                <span class="text-normal" id="status_link_slave"></span>
+            </label>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4">{{ _('State:') }}</label>
+        <div class="col-sm-8">
+          <!-- <div class="row"> -->
+            <label class="control-label">
+                <span class="text-normal" id="status_slave"></span>
+            </label>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if g.user.role %}
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+  {% endif %}
+  
+  <script type="text/javascript">
+    new DynamicTableCenterless( document.getElementById("dynamic") );
+  </script>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Modbus TCP service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/voicelink/rtc/modbus_tcp
+ExecStart=/bin/sh -c 'cd /home/voicelink/rtc/modbus_tcp && ./modbus_tcp'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

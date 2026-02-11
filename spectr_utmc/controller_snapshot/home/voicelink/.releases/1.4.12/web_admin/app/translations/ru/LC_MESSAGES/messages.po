@@ -1,0 +1,1860 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-02-09 11:58+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: app/views.py:70 app/views.py:72
+msgid "Invalid login or password!"
+msgstr "Неправильный логин или пароль!"
+
+#: app/views.py:105
+#, python-format
+msgid "Error restarting the program!"
+msgstr "Ошибка перезапуска программы!"
+
+#: app/views.py:109
+#, python-format
+msgid "Error setting mode!"
+msgstr "Ошибка установки режима!"
+
+#: app/views.py:118 app/views.py:181 app/views.py:185 app/views.py:209
+#: app/views.py:226 app/views.py:278 app/views.py:298 app/views.py:320
+#: app/views.py:340 app/views.py:344 app/views.py:411 app/views.py:416
+#: app/views.py:448 app/views.py:467 app/views.py:473 app/views.py:569
+#: app/views.py:575 app/views.py:610 app/views.py:663 app/views.py:671
+#: app/views.py:690 app/views.py:716
+#, python-format
+msgid "Error! %(state)s"
+msgstr "Ошибка! %(state)s"
+
+#: app/templates/base.html:84 app/views.py:152
+msgid "Home"
+msgstr "Главная"
+
+#: app/views.py:220
+msgid "IP addresses and end-to-end numbering of cameras should be unique."
+msgstr "IP-адреса и сквозная нумерация камер должны быть уникальными."
+
+#: app/views.py:236
+msgid "The IP addresses of the cameras must be on the same subnet as the hub."
+msgstr "IP-адреса камер должны находиться в одной подсети, что и концентратор."
+
+#: app/views.py:280 app/views.py:322 app/views.py:450 app/views.py:612
+msgid "Data saved."
+msgstr "Данные сохранены."
+
+#: app/templates/base.html:85 app/views.py:283
+msgid "Detectors"
+msgstr "Детекторы"
+
+#: app/views.py:310
+msgid "For the UG405 protocol, the SCN value is required!"
+msgstr "Для протокола UG405 значение SCN обязательно для заполнения!"
+
+#: app/views.py:311
+msgid ""
+"Format SCN = COX, where \"CO\" - required characters in Latin letters, and X "
+"- the number from 1 to 9999;"
+msgstr ""
+"Формат SCN = COX, где \"CO\" обязательные символы латинскими буквами, а X - "
+"число от 1 до 9999;"
+
+msgid ""
+"Format SCN = YX, where Y - the Latin letters from 1 to 2 characters, and X - "
+"the number from 1 to 99999;"
+msgstr ""
+"Формат SCN = YX, где Y - латинские буквы от 1 до 2 символов, а X - число от "
+"1 до 99999;"
+
+#: app/templates/base.html:86 app/views.py:325
+msgid "Management controller"
+msgstr "Управление контроллером"
+
+#: app/views.py:362
+#, python-format
+msgid "Network Scan Error!"
+msgstr "Ошибка сканирования сети!"
+
+#: app/views.py:404
+msgid "IP addresses must be unique."
+msgstr "IP-адреса должны быть уникальными."
+
+#: app/views.py:407
+msgid "MAC addresses must be unique."
+msgstr "MAC-адреса должны быть уникальными."
+
+msgid "ID number must be unique."
+msgstr "ID номера должны быть уникальными."
+
+#: app/views.py:426
+msgid ""
+"The IP addresses of the countdown displays must be on the same subnet as the "
+"hub."
+msgstr "IP-адреса ТОО должны находиться в одной подсети, что и концентратор."
+
+msgid "The IP addresses must be on the same subnet as the hub."
+msgstr "IP-адреса должны находиться в одной подсети, что и концентратор."
+
+msgid "Centerless control"
+msgstr "Бесцентровая координация"
+
+msgid "Setting centerless control."
+msgstr "Настройки бесцентровой координации."
+
+msgid "Enable centerless control mode"
+msgstr "Включить бесцентровую координацию"
+
+msgid "Controller type:"
+msgstr "Тип контроллера:"
+
+msgid "Master"
+msgstr "Управляющий"
+
+msgid "Slave"
+msgstr "Подчиненный"
+
+msgid "Controller type check interval (seconds):"
+msgstr "Интервал проверки типа контроллера(сек.):"
+
+msgid "Ip address of the master device:"
+msgstr "IP-адрес управляющего контроллера:"
+
+msgid "Timeout command (seconds):"
+msgstr "Время ожидания команды(сек.):"
+
+msgid "Communication check interval (seconds):"
+msgstr "Интервал проверки связи(сек.):"
+
+msgid "State link"
+msgstr "Статус соединения"
+
+msgid "State link:"
+msgstr "Статус соединения:"
+
+msgid "State:"
+msgstr "Статус:"
+
+#: app/templates/base.html:87 app/views.py:453
+msgid "Countdown display"
+msgstr "Управление ТОО"
+
+#: app/templates/base.html:88 app/views.py:479
+msgid "Network"
+msgstr "Сеть"
+
+#: app/views.py:504
+#, python-format
+msgid "State = %(state)s"
+msgstr "Статус = %(state)s"
+
+#: app/templates/base.html:89 app/views.py:549
+msgid "Log"
+msgstr "Журнал"
+
+#: app/templates/base.html:90 app/views.py:618
+msgid "Lamps current"
+msgstr "Токи групп"
+
+#: app/views.py:641
+msgid "Password mismatch!"
+msgstr "Пароли не совпадают!"
+
+#: app/views.py:643
+msgid "The password must contain from 4 to 16 characters!"
+msgstr "Пароль должен содержать от 4 до 16 символов!"
+
+#: app/views.py:645
+#, python-format
+msgid "User %(nickname)s does not exist!"
+msgstr "Пользователя %(nickname)s не существует!"
+
+#: app/templates/base.html:92 app/views.py:649
+msgid "Security"
+msgstr "Безопасность"
+
+#: app/templates/base.html:93 app/views.py:673
+msgid "Date and Time"
+msgstr "Дата и время"
+
+#: app/templates/base.html:94 app/views.py:699
+msgid "Update"
+msgstr "Обновление"
+
+#: app/views.py:813
+msgid "Not found"
+msgstr "Не найдено"
+
+#: app/templates/404.html:9 app/templates/404.html:11 app/templates/base.html:9
+#: app/templates/base.html:11
+msgid "Traffic controller"
+msgstr "Дорожный контроллер"
+
+#: app/templates/404.html:20
+msgid ""
+"- It is not as if you entirely didn't hit the mark,- said Pooh,- but didn't "
+"hit the ballon!"
+msgstr ""
+"— Не то чтобы совсем не попал,— сказал Пух,— но только не попал в шарик!"
+
+#: app/templates/404.html:21
+msgid "Back"
+msgstr "Назад"
+
+#: app/templates/base.html:68
+msgid "Intelligent traffic management system"
+msgstr "Интеллектуальная система управления дорожным движением"
+
+#: app/templates/base.html:70
+msgid "Logout"
+msgstr "Выйти"
+
+#: app/templates/base.html:71
+msgid "You are logged in as"
+msgstr "Вы вошли как"
+
+#: app/templates/controller_management.html:29
+msgid "Management controller."
+msgstr "Управление контроллером."
+
+#: app/templates/controller_management.html:34
+msgid "Protocol:"
+msgstr "Протокол:"
+
+#: app/templates/controller_management.html:55
+#: app/templates/countdown_display.html:114 app/templates/current.html:118
+#: app/templates/detectors.html:80 app/templates/localtime.html:30
+#: app/templates/network.html:26 app/templates/security.html:31
+#: app/templates/upload.html:7
+msgid "Save"
+msgstr "Сохранить"
+
+#: app/templates/countdown_display.html:47
+msgid "Setting countdown display."
+msgstr "Настройка табло обратного отсчета."
+
+#: app/templates/countdown_display.html:51
+msgid "Please wait..."
+msgstr "Пожалуйста подождите..."
+
+#: app/templates/countdown_display.html:57
+msgid "Enable the countdown display"
+msgstr "Включить табло обратного отсчета"
+
+msgid "ATTENTION!!!"
+msgstr "ВНИМАНИЕ!!!"
+
+#: app/templates/countdown_display.html:60
+msgid "The IP address must be on the same subnet as the controller itself."
+msgstr "IP-адреса должны находиться в одной подсети с контроллером."
+
+#: app/templates/countdown_display.html:63
+msgid "Default activation time (seconds):"
+msgstr "Время активации режима по умолчанию(сек.):"
+
+#: app/templates/countdown_display.html:74
+msgid "MAC address:"
+msgstr "MAC-адрес:"
+
+#: app/templates/countdown_display.html:75 app/templates/detectors.html:55
+msgid "IP address"
+msgstr "IP-адрес"
+
+#: app/templates/countdown_display.html:77 app/templates/current.html:88
+msgid "№ group"
+msgstr "№ Группы"
+
+#: app/templates/countdown_display.html:78
+msgid "State"
+msgstr "Статус"
+
+#: app/templates/countdown_display.html:91
+msgid "Not selected"
+msgstr "Не выбрано"
+
+#: app/templates/countdown_display.html:93 app/templates/current.html:95
+msgid "Group"
+msgstr "Группа"
+
+#: app/templates/countdown_display.html:97
+msgid "Ok"
+msgstr "Ок"
+
+#: app/templates/countdown_display.html:99
+#: app/templates/countdown_display.html:106
+msgid "Check"
+msgstr "Проверить"
+
+#: app/templates/countdown_display.html:100
+msgid "Add"
+msgstr "Добавить"
+
+#: app/templates/countdown_display.html:101
+msgid "Remove"
+msgstr "Удалить"
+
+#: app/templates/countdown_display.html:106
+msgid "Scan"
+msgstr "Сканировать"
+
+#: app/templates/current.html:69
+msgid "Threshold settings for group currents."
+msgstr "Настройки пороговых значений токов групп."
+
+#: app/templates/current.html:73
+msgid "Current monitoring"
+msgstr "Контроль тока"
+
+#: app/templates/current.html:76
+msgid "Voltage monitoring"
+msgstr "Контроль напряжения"
+
+#: app/templates/current.html:79
+msgid "Threshold current value of lamps (mA):"
+msgstr "Пороговое значение тока ламп(мА):"
+
+msgid "Delay check current of lamps (ms):"
+msgstr "Задержка проверки значения тока ламп(мс):"
+
+#: app/templates/current.html:82
+msgid "Manual current setting"
+msgstr "Ручная настройка тока"
+
+#: app/templates/current.html:88
+msgid "Red"
+msgstr "Красный"
+
+#: app/templates/current.html:88
+msgid "Yellow"
+msgstr "Желтый"
+
+#: app/templates/current.html:88
+msgid "Green"
+msgstr "Зеленый"
+
+#: app/templates/current.html:91
+msgid "Installed(mA)"
+msgstr "Установленный(мА)"
+
+#: app/templates/current.html:91
+msgid "Current(mA)"
+msgstr "Текущий(мА)"
+
+msgid "from {0} to {1}"
+msgstr "от {0} до {1}"
+
+#: app/templates/detectors.html:27
+msgid "Configure the safety of detectors."
+msgstr "Настройка безопасности детекторов."
+
+#: app/templates/detectors.html:32
+msgid "Enable security settings for detectors"
+msgstr "Включить настройки безопасности по детекторам"
+
+#: app/templates/detectors.html:35
+msgid "Emergency activation time for the triggered detector (minute):"
+msgstr "Время активации аварийного режима для включенного детектора(м.):"
+
+#: app/templates/detectors.html:38
+msgid "Emergency activation time for the disconnected detector (minute):"
+msgstr "Время активации аварийного режима для отключенного детектора(м.):"
+
+#: app/templates/detectors.html:44
+msgid "Configuring the detector for network operation."
+msgstr "Настройка детекторов для работы по сети."
+
+#: app/templates/detectors.html:55
+msgid "№ camera"
+msgstr "№ камеры"
+
+#: app/templates/detectors.html:55
+msgid "№ detectors"
+msgstr "№ детекторов"
+
+#: app/templates/index.html:9
+msgid ""
+"The traffic light will immediately be switched to the \\'all red\\' mode and "
+"will start from the first phase.\\n\\nDo you really want to restart the "
+"program?"
+msgstr ""
+"Светофор будет немедленно переведен в режим \\'кругом красный\\' и начнет "
+"работу с первой фазы.\\n\\nВы действительно хотите перезапустить программу?"
+
+#: app/templates/index.html:109
+msgid "Basic information about the traffic lights."
+msgstr "Основная информация о светофоре."
+
+#: app/templates/index.html:112
+msgid "Software version:"
+msgstr "Версия ПО:"
+
+#: app/templates/index.html:115
+msgid "Time:"
+msgstr "Время:"
+
+#: app/templates/index.html:118
+msgid "Date:"
+msgstr "Дата:"
+
+#: app/templates/index.html:121
+msgid "Traffic light status:"
+msgstr "Состояние СО:"
+
+#: app/templates/index.html:124
+msgid "Main programm"
+msgstr "Рабочая программа"
+
+#: app/templates/index.html:126 app/templates/index.html:152
+msgid "Remote control"
+msgstr "Удаленное управление"
+
+#: app/templates/index.html:128
+msgid "Manual control"
+msgstr "Ручное управление"
+
+msgid "Modbus control"
+msgstr "Modbus управление"
+
+#: app/templates/index.html:130
+msgid "Off"
+msgstr "Выключено"
+
+#: app/templates/index.html:132
+msgid "All red"
+msgstr "Кругом красный"
+
+msgid "All red(alarm)"
+msgstr "Кругом красный(ЧП)."
+
+#: app/templates/index.html:134
+msgid "Yellow flashing"
+msgstr "Желтое мигание"
+
+#: app/templates/index.html:136
+msgid "Yellow flashing(alarm)"
+msgstr "Желтое мигание(авария)"
+
+#: app/templates/index.html:138
+msgid "Contactor off"
+msgstr "Сработал контактор"
+
+#: app/templates/index.html:145
+msgid "Traffic light mode:"
+msgstr "Режим работы:"
+
+#: app/templates/index.html:148
+#, python-format
+msgid "Fixed (Plan %(plan)s)"
+msgstr "Фиксированный (План %(plan)s)"
+
+#: app/templates/index.html:150
+#, python-format
+msgid "Adaptive (Plan %(plan)s)"
+msgstr "Адаптивный (План %(plan)s)"
+
+#: app/templates/index.html:154
+#, python-format
+msgid "Yellow flashing (Plan %(plan)s)"
+msgstr "Желтое мигание (План %(plan)s)"
+
+#: app/templates/index.html:156
+#, python-format
+msgid "All red (Plan %(plan)s)"
+msgstr "Кругом красный (План %(plan)s)"
+
+#: app/templates/index.html:158
+#, python-format
+msgid "Off (Plan %(plan)s)"
+msgstr "Выключено (План %(plan)s)"
+
+#: app/templates/index.html:160
+#, python-format
+msgid "Manual control (Plan %(plan)s)"
+msgstr "Ручное управление (План %(plan)s)"
+
+msgid "Modbus control (Plan %(plan)s)"
+msgstr "Modbus управление (План %(plan)s)"
+
+#: app/templates/index.html:161
+#, python-format
+msgid "Remote control (Plan %(plan)s)"
+msgstr "Удаленное управление (План %(plan)s)"
+
+msgid "Synchronization (Plan %(plan)s)"
+msgstr "Синхронизация (План %(plan)s)"
+
+#: app/templates/index.html:162
+msgid "Plan"
+msgstr "План"
+
+#: app/templates/index.html:167
+msgid "Current phase:"
+msgstr "Текущая фаза:"
+
+#: app/templates/index.html:170
+msgid "Number:"
+msgstr "Номер:"
+
+#: app/templates/index.html:173
+msgid "Name:"
+msgstr "Имя:"
+
+#: app/templates/index.html:176
+msgid "Address:"
+msgstr "Адрес:"
+
+#: app/templates/index.html:181
+msgid "Restart program"
+msgstr "Перезапуск программы"
+
+#: app/templates/index.html:183
+msgid "Fixed"
+msgstr "Фиксированный"
+
+#: app/templates/index.html:184
+msgid "Adaptive"
+msgstr "Адаптивный"
+
+#: app/templates/index.html:186
+msgid "Change mode"
+msgstr "Переключить режим"
+
+#: app/templates/localtime.html:5
+msgid "Setting the date and time."
+msgstr "Настройка даты и времени."
+
+msgid "Time zone:"
+msgstr "Часовой пояс:"
+
+#: app/templates/localtime.html:10
+msgid "DD.MM.YYYY-day.month.year"
+msgstr "DD.MM.YYYY-день.месяц.год"
+
+#: app/templates/localtime.html:17
+msgid "hh:mm:ss-hours:minutes:seconds"
+msgstr "hh:mm:ss-часы:минуты:секунды"
+
+#: app/templates/log.html:13
+msgid "Log of the traffic light."
+msgstr "Журнал работы светофора."
+
+#: app/templates/log.html:16
+msgid "Info log"
+msgstr "Информация"
+
+#: app/templates/log.html:17
+msgid "Warning log"
+msgstr "Предупреждение"
+
+#: app/templates/log.html:18
+msgid "Error log"
+msgstr "Авария"
+
+#: app/templates/log.html:20
+msgid "Full log"
+msgstr "Полный"
+
+#: app/templates/log.html:25
+msgid "Refresh"
+msgstr "Обновить"
+
+#: app/templates/log.html:26
+msgid "Previous page"
+msgstr "Предыдущая страница"
+
+#: app/templates/log.html:27
+msgid "Next page"
+msgstr "Следующая страница"
+
+#: app/templates/login.html:8
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: app/templates/login.html:13 app/templates/security.html:11
+msgid "Login:"
+msgstr "Логин:"
+
+#: app/templates/login.html:13
+msgid "Enter your login"
+msgstr "Введите ваш логин"
+
+#: app/templates/login.html:16
+msgid "Password:"
+msgstr "Пароль:"
+
+#: app/templates/login.html:16
+msgid "Enter your password"
+msgstr "Введите ваш пароль"
+
+#: app/templates/login.html:28
+msgid "Sign in"
+msgstr "Войти"
+
+#: app/templates/network.html:5
+msgid "Network configuration."
+msgstr "Настройка сети."
+
+#: app/templates/network.html:7
+msgid "After applying the settings, you must restart to the web interface."
+msgstr "После применения настроек необходимо перезайти на веб-интерфейс."
+
+#: app/templates/network.html:13
+msgid "IP address:"
+msgstr "IP-адрес:"
+
+#: app/templates/network.html:16
+msgid "Subnet mask:"
+msgstr "Маска подсети:"
+
+#: app/templates/network.html:19
+msgid "Default gateway:"
+msgstr "Основной шлюз:"
+
+#: app/templates/security.html:5
+msgid "Change password."
+msgstr "Изменение пароля."
+
+#: app/templates/security.html:6
+msgid "The password can contain from 4 to 16 non-whitespace characters."
+msgstr "Пароль может содержать от 4 до 16 непробельных символов."
+
+#: app/templates/security.html:19
+msgid "Enter password:"
+msgstr "Введите пароль:"
+
+#: app/templates/security.html:19 app/templates/security.html:22
+msgid "from 4 to 16 characters"
+msgstr "от 4 до 16 символов"
+
+#: app/templates/security.html:22
+msgid "Confirm password:"
+msgstr "Подтвердите пароль:"
+
+#: app/templates/upload.html:5
+msgid "Update traffic light configuration."
+msgstr "Обновление конфигурации светофора."
+
+#: app/templates/upload.html:7
+msgid "Backup:"
+msgstr "Резервная копия:"
+
+#: app/templates/upload.html:8
+msgid "Select the configuration file:"
+msgstr "Выберите файл конфигурации:"
+
+#: app/templates/upload.html:9
+msgid "Upload"
+msgstr "Загрузить"
+
+#: app/views.py:518
+msgid "info"
+msgstr "ИНФОРМАЦИЯ"
+
+#: app/views.py:518
+msgid "warn"
+msgstr "ПРЕДУПРЕЖДЕНИЯ"
+
+#: app/views.py:518
+msgid "err"
+msgstr "ОШИБКА"
+
+#: app/views.py:518
+msgid "log"
+msgstr "СЕРВИС"
+
+# info
+msgid "Program №1 (fixed mode) is selected."
+msgstr "Программа №1(фиксированный режим) выбрана."
+
+msgid "Program №2 (adaptive mode) is selected."
+msgstr "Программа №2(адаптивный режим) выбрана."
+
+msgid "Program №3 (remote mode) is selected."
+msgstr "Программа №3(удаленный режим) выбрана."
+
+msgid "Initializing the program..."
+msgstr "Инициализация программы..."
+
+msgid "Running the program..."
+msgstr "Запуск программы..."
+
+msgid "Program №{0} is running."
+msgstr "Программа №{0} запущена."
+
+msgid "The program is stopped."
+msgstr "Программа остановлена."
+
+msgid "Beginning the program restart..."
+msgstr "Начало перезапуска программы..."
+
+msgid "End of program restart..."
+msgstr "Окончание перезапуска программы..."
+
+msgid "Hardware initialization..."
+msgstr "Инициализация оборудования..."
+
+msgid "Number of boards Security Processor: {0}"
+msgstr "Количество плат ПБ: {0}"
+
+msgid "Number of boards Lamp Control: {0}"
+msgstr "Количество плат управления: {0}"
+
+msgid "Number of boards Remote Control Panel: {0}"
+msgstr "Количество плат ВПУ: {0}"
+
+msgid "Number of boards Input-Output: {0}"
+msgstr "Количество плат ВВ: {0}"
+
+msgid "The general threshold current setting is set."
+msgstr "Общие настройки пороговых значений токов установлены."
+
+msgid "The manual mode for setting the current thresholds is set."
+msgstr "Ручной режим настройки пороговых значений токов установлен."
+
+msgid "The current threshold values are transmitted."
+msgstr "Данные пороговых значений токов переданы."
+
+msgid "Current control is not used."
+msgstr "Режим контроля токов не используется."
+
+msgid "The size of the conflict matrix: {0}"
+msgstr "Размер матрицы конфликтов = {0}"
+
+msgid "The conflict matrix is transferred."
+msgstr "Матрица конфликтов передана."
+
+msgid "The IP address is set to: {0}. Gateway: {1}."
+msgstr "IP-адрес установлен: {0}. Шлюз: {1}."
+
+msgid "The IP address is set to: {0}"
+msgstr "IP-адрес установлен: {0}"
+
+msgid "Reset the device configuration to the factory settings..."
+msgstr "Сброс конфигурации устройства на заводские настройки..."
+
+msgid "Phase enabled: {0}"
+msgstr "Включена фаза: {0}"
+
+msgid "Call phase enabled: {0}"
+msgstr "Включена вызывная фаза: {0}"
+
+msgid "Plan №{0} is started."
+msgstr "План №{0} запущен."
+
+msgid "Remote mode is disabled."
+msgstr "Удаленный режим выключен."
+
+msgid "Remote mode is launched using the {0} protocol."
+msgstr "Удаленный режим запущен по протоколу {0}"
+
+msgid "Manual control is started."
+msgstr "Ручное управление запущено."
+
+msgid "Modbus mode is disabled."
+msgstr "Режим Modbus выключен."
+
+msgid "Modbus mode launched."
+msgstr "Запущен режим Modbus."
+
+msgid "Centerless control is started."
+msgstr "Бесцентровая координация запущена."
+
+msgid "Centerless control is disabled."
+msgstr "Бесцентровая координация выключена."
+
+msgid "Starting the centerless control..."
+msgstr "Запуск бесцентровой координации..."
+
+msgid "Stopping the centerless control..."
+msgstr "Остановка бесцентровой координации..."
+
+msgid "Off."
+msgstr "Выключено."
+
+msgid "All red."
+msgstr "Кругом красный."
+
+msgid "All red Alarm."
+msgstr "Кругом красный(ЧП)."
+
+msgid "Flashing yellow."
+msgstr "Мигающий желтый."
+
+msgid "Flashing yellow Alarm."
+msgstr "Мигающий желтый Аварийный."
+
+msgid "Launching the GPIO Handler..."
+msgstr "Запуск обработчика GPIO..."
+
+msgid "Stopping the GPIO Handler..."
+msgstr "Остановка обработчика GPIO..."
+
+msgid "Starting the system bus..."
+msgstr "Запуск системной шины..."
+
+msgid "Stopping the system bus..."
+msgstr "Остановка системной шины..."
+
+msgid "The system bus is started."
+msgstr "Системная шина запущена."
+
+msgid "The system bus is stopped."
+msgstr "Системная шина остановлена."
+
+msgid "The configuration update was successful."
+msgstr "Обновление конфигурации прошло успешно."
+
+msgid "Initialization. Date and time set: {0}"
+msgstr "Инициализация. Дата и время установлены: {0}"
+
+msgid "Date and time set: {0}"
+msgstr "Дата и время установлены: {0}"
+
+msgid "Initializing the driver. Answer: {0}. Driver: {1}."
+msgstr "Инициализация драйвера. Ответ: {0}. Драйвер: {1}."
+
+msgid "Initializing the protocol. Answer: {0}. Driver: {1}."
+msgstr "Инициализация протокола. Ответ: {0}. Драйвер: {1}."
+
+# warning
+msgid "Error executing the command \"{0}\". Status = {1}. Data = {2}."
+msgstr "Ошибка выполнения команды \"{0}\". Статус = {1}. Данные = {2}."
+
+msgid "Error executing the command \"running the main program\""
+msgstr "Ошибка выполнения команды \"запуск рабочей программы\""
+
+msgid "Error executing the command \"reset network settings\""
+msgstr "Ошибка выполнения команды \"сброс сетевых настроек\""
+
+msgid "Error executing the command \"call phase №{0}\""
+msgstr "Ошибка выполнения команды \"вызов фазы №{0}\""
+
+msgid "Malfunction of detectors. Switch to fixed mode."
+msgstr ""
+"Неисправность детекторов. Переключение в режим с фиксированным временем фаз."
+
+msgid ""
+"Malfunction of the detector №{0}. The detector is constantly in a state of "
+"ON."
+msgstr "Неисправность детектора № {0}. Детектор постоянно в состоянии Вкл."
+
+msgid ""
+"Malfunction of the detector №{0}. The detector is constantly in a state of "
+"OFF."
+msgstr "Неисправность детектора № {0}. Детектор постоянно в состоянии Выкл."
+
+msgid ""
+"Lamps failure. Board Lamp Control №{0}. Group №{1}. Channel №{2}. Amperage = "
+"{3}. Voltage = {4}."
+msgstr ""
+"Неисправность ламп. Плата управления №{0}. Группа №{1}. Канал №{2}. Ток = "
+"{3}. Напряжение = {4}."
+
+msgid ""
+"Malfunction of the last red lamp. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Неисправность последнего красного. Плата управления №{0}. Группа №{1}. Канал "
+"№{2}. Ток = {3}. Напряжение = {4}."
+
+# error
+msgid "Buffer overflow."
+msgstr "Переполнение буфера."
+
+msgid "There are no plans in the downloadable configuration."
+msgstr "В загружаемой конфигурации отсутствуют планы."
+
+msgid "The plan №{0} in the downloadable configuration is not correct."
+msgstr "В загружаемой конфигурации план {0} не корректный."
+
+msgid "There is no main phase in plan №{0}."
+msgstr "Отсутствует основная фаза в плане №{0}."
+
+msgid "Failed to update the configuration."
+msgstr "Ошибка обновления конфигурации."
+
+msgid "Device configuration reset error on factory: {0}"
+msgstr "Ошибка сброса конфигурации устройства на заводские: {0}"
+
+msgid "Configuration not loaded."
+msgstr "Конфигурация не загружена."
+
+msgid "Current thresholds are not set. Status = {0}. Data = {1}."
+msgstr "Пороговые значения токов не установлены. Статус = {0}. Данные = {1}."
+
+msgid "Error sending threshold currents. Status = {0}. Data = {1}."
+msgstr "Ошибка передачи пороговых значений токов. Статус = {0}. Данные = {1}."
+
+msgid "Timeout for setting current thresholds: {0}"
+msgstr "Таймаут установки пороговых значений тока: {0}"
+
+msgid "Failed to set the Date and Time. Status = {0}"
+msgstr "Ошибка установки Даты и Времени. Статус = {0}"
+
+msgid "Timeout Setting Dates and Times: {0}"
+msgstr "Таймаут установки Даты и Времени: {0}"
+
+msgid "There is no main phase."
+msgstr "Отсутствует основная фаза."
+
+msgid "Program №{0} was not found."
+msgstr "Программа №{0} не найдена."
+
+msgid "The operating system of type {0} is not supported."
+msgstr "Операционная система типа {0} не поддерживается."
+
+msgid "The security processor was not found."
+msgstr "Процессор безопасности не найден."
+
+msgid "Error setting the size of the conflict matrix."
+msgstr "Ошибка установки размера матрицы конфликтов."
+
+msgid "Error sending the conflict matrix."
+msgstr "Ошибка передачи матрицы конфликтов."
+
+msgid "Lamps Control not found."
+msgstr "Платы управления не найдены."
+
+msgid "The following boards Lamps Control were not found: {0}"
+msgstr "Не найдены следующие платы управления: {0}"
+
+msgid ""
+"The number of Lamps Control ({0}) does not match the number of groups ({1})."
+msgstr ""
+"Количество плат управления ({0}) не соответствует количеству групп ({1})."
+
+msgid "The following boards Input-Output were not found: {0}"
+msgstr "Отсутствуют следующие платы ВВ: {0}"
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. Group №2: R-{5}. "
+"Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Отключение контактора из-за ошибки передачи данных на плату управления №{0}. "
+"Группа №1: к-{1}. ж-{2}. з1-{3}. з2-{4}. Группа №2: к-{5}. ж-{6}. з1-{7}. з2-"
+"{8}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. Group №2: R-{5}. "
+"Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Отключение контактора из-за ошибки приема данных с платы управления №{0}. "
+"Группа №1: к-{1}. ж-{2}. з1-{3}. з2-{4}. Группа №2: к-{5}. ж-{6}. з1-{7}. з2-"
+"{8}."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Input-Output №{0}."
+msgstr "Отключение контактора из-за ошибки передачи данных на плату ВВ №{0}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Input-Output №{0}."
+msgstr "Отключение контактора из-за ошибки приема данных с платы ВВ №{0}."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Remote Control Panel."
+msgstr "Отключение контактора из-за ошибки передачи данных на плату ВПУ."
+
+msgid ""
+"Switching off the contactor due to an error in receiving data on the board "
+"Remote Control Panel."
+msgstr "Отключение контактора из-за ошибки приема данных с платы ВПУ."
+
+msgid ""
+"Switching off the contactor due to an error in data transfer to the board "
+"Security Processor."
+msgstr "Отключение контактора из-за ошибки передачи данных на плату ПБ."
+
+msgid ""
+"Switching off the contactor due to an error in date and time transfer to the "
+"board Security Processor."
+msgstr "Отключение контактора из-за ошибки установки времени в плату ПБ."
+
+msgid ""
+"Switching off the contactor due to an error in the transmission of threshold "
+"values to the board Security Processor."
+msgstr ""
+"Отключение контактора из-за ошибки передачи пороговых значений на плату ПБ."
+
+msgid "Leakage current {0} channel {1}. Amperage: {2}mA."
+msgstr "Утечка тока {0} канал {1}. Ток: {2}mA."
+
+msgid "Leakage current. Status = {0}. Data = {1}."
+msgstr "Утечка тока. Статус = {0}. Данные = {1}."
+
+msgid ""
+"Conflict of groups: [{0}, {1}]. Channels: [{2}, {3}]. Amperage: [{4}mA, {5}"
+"mA]."
+msgstr "Конфликт групп: [{0}, {1}]. Каналы: [{2}, {3}]. Ток: [{4}mA, {5}mA]."
+
+msgid "Conflict of groups. Status = {0}. Data = {1}."
+msgstr "Конфликт групп. Статус = {0}. Данные = {1}."
+
+msgid "Switch is broken {0} channel {1}. Amperage: {2}mA."
+msgstr "Неисправность силового ключа {0} канал {1}. Ток: {2}mA."
+
+msgid "Switch is broken. Status = {0}. Data = {1}."
+msgstr "Неисправность силового ключа. Статус = {0}. Данные = {1}."
+
+msgid "Unknown error. Status = {0}. Data = {1}."
+msgstr "Неизвестная ошибка. Статус = {0}. Данные = {1}."
+
+msgid ""
+"Directions conflict. Board Lamp Control №{0}. Group №{1}. Channel №{2}. "
+"Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Конфликт направлений. Плата управления №{0}. Группа №{1}. Канал №{2}. Ток = "
+"{3}. Напряжение = {4}."
+
+msgid ""
+"Malfunction of the electrical circuit. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Amperage = {3}. Voltage = {4}."
+msgstr ""
+"Неисправность электрической цепи. Плата управления №{0}. Группа №{1}. Канал "
+"№{2}. Ток = {3}. Напряжение = {4}."
+
+msgid "The contactor is switched off."
+msgstr "Контактор выключен."
+
+msgid "Error receiving time from the bus controller. Status = {0}. Data = {1}."
+msgstr ""
+"Ошибка получения времени от контроллера шины. Статус: {0}. Данные: {1}."
+
+msgid ""
+"Error receiving time from the security processor. Status = {0}. Data = {1}."
+msgstr "Ошибка получения времени от платы ПБ. Статус: {0}. Данные: {1}."
+
+msgid ""
+"Error sending data threshold current values to the bus controller. Status = "
+"{0}. Data = {1}."
+msgstr ""
+"Ошибка передачи данных пороговых значений токов на контроллер шины. Статус = "
+"{0}. Данные = {1}."
+
+msgid "The manual mode for setting the voltage thresholds is set."
+msgstr "Ручной режим настройки пороговых значений напряжения установлен."
+
+msgid "The general threshold voltage setting is set."
+msgstr "Общие настройки пороговых значений напряжения установлены."
+
+msgid "Voltage control is not used."
+msgstr "Режим контроля напряжения не используется."
+
+msgid ""
+"Directions conflict. Board Lamp Control №{0}. Group №{1}. Channel №{2}. "
+"Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold amperage = {6}. "
+"Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Конфликт направлений. Плата управления №{0}. Группа №{1}. Канал №{2}. Сигнал "
+"= {3}. Ток = {4}. Напряжение = {5}. Порог тока = {6}. Порог напряжения = "
+"{7}. Причина = {8}."
+
+msgid ""
+"Malfunction of the last red lamp. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold "
+"amperage = {6}. Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Неисправность последнего красного. Плата управления №{0}. Группа №{1}. Канал "
+"№{2}. Сигнал = {3}. Ток = {4}. Напряжение = {5}. Порог тока = {6}. Порог "
+"напряжения = {7}. Причина = {8}."
+
+msgid ""
+"Lamps failure. Board Lamp Control №{0}. Group №{1}. Channel №{2}. Signal = "
+"{3}. Amperage = {4}. Voltage = {5}. Threshold amperage = {6}. Threshold "
+"voltage = {7}. Reason = {8}."
+msgstr ""
+"Неисправность ламп. Плата управления №{0}. Группа №{1}. Канал №{2}. Сигнал = "
+"{3}. Ток = {4}. Напряжение = {5}. Порог тока = {6}. Порог напряжения = {7}. "
+"Причина = {8}."
+
+msgid ""
+"Malfunction of the electrical circuit. Board Lamp Control №{0}. Group №{1}. "
+"Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. Threshold "
+"amperage = {6}. Threshold voltage = {7}. Reason = {8}."
+msgstr ""
+"Неисправность электрической цепи. Плата управления №{0}. Группа №{1}. Канал "
+"№{2}. Сигнал = {3}. Ток = {4}. Напряжение = {5}. Порог тока = {6}. Порог "
+"напряжения = {7}. Причина = {8}."
+
+msgid ""
+"Critical error of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr "Критическая ошибка платы ПУ №{0}. Статус = {1}. Данные = {2}."
+
+msgid "Critical error of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Критическая ошибка платы ВВ №{0}. Статус = {1}. Данные = {2}."
+
+msgid ""
+"Critical error of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr "Критическая ошибка платы ВПУ. Статус = {0}. Данные = {1}."
+
+msgid ""
+"Critical error of the Security Processor board. Status = {0}. Data = {1}."
+msgstr "Критическая ошибка платы ПБ. Статус = {0}. Данные = {1}."
+
+msgid "XOR error of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr "Ошибка XOR платы ПУ №{0}. Статус = {1}. Данные = {2}."
+
+msgid "XOR error of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Ошибка XOR платы ВВ №{0}. Статус = {1}. Данные = {2}."
+
+msgid "XOR error of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr "Ошибка XOR платы ВПУ. Статус = {0}. Данные = {1}."
+
+msgid "XOR error of the Security Processor board. Status = {0}. Data = {1}."
+msgstr "Ошибка XOR платы ПБ. Статус = {0}. Данные = {1}."
+
+msgid "Timeout of the Lamp Control board №{0}. Status = {1}. Data = {2}."
+msgstr "Таймаут платы ПУ №{0}. Статус = {1}. Данные = {2}."
+
+msgid "Timeout of the IO board №{0}. Status = {1}. Data = {2}."
+msgstr "Таймаут платы ВВ №{0}. Статус = {1}. Данные = {2}."
+
+msgid "Timeout of the Remote Control Panel board. Status = {0}. Data = {1}."
+msgstr "Таймаут платы ВПУ. Статус = {0}. Данные = {1}."
+
+msgid "Timeout of the Security Processor board. Status = {0}. Data = {1}."
+msgstr "Таймаут платы ПБ. Статус = {0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Lamp Control). Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки обмена данными с контроллером шины (Плата "
+"ПУ). Статус = {0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Lamp Control). Status = "
+"{1}. Data = {2}."
+msgstr ""
+"Отключение контактора из-за ошибки получения расширенной информации с "
+"контроллером шины для кода {0}(Плата ПУ). Статус = {1}. Данные = {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Lamp Control №{0}. Group №1: R-{1}. Y-{2}. G1-{3}. G2-{4}. "
+"Group №2: R-{5}. Y-{6}. G1-{7}. G2-{8}."
+msgstr ""
+"Отключение контактора из-за ошибки приема/передачи данных на плату "
+"управления №{0}. Группа №1: к-{1}. ж-{2}. з1-{3}. з2-{4}. Группа №2: к-{5}. "
+"ж-{6}. з1-{7}. з2-{8}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Input-Output). Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки обмена данными с контроллером шины (Плата "
+"ВВ). Статус: {0}. Данные: {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Input-Output). Status = "
+"{1}. Data = {2}."
+msgstr ""
+"Отключение контактора из-за ошибки получения расширенной информации с "
+"контроллером шины для кода {0}(Плата ВВ). Статус: {1}. Данные: {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Input-Output №{0}. Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки приема/передачи данных с платы ВВ. Статус "
+"= {0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Remote Control Panel). Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки обмена данными с контроллером шины (Плата "
+"ВПУ). Статус: {0}. Данные: {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Remote Control Panel). "
+"Status = {1}. Data = {2}."
+msgstr ""
+"Отключение контактора из-за ошибки получения расширенной информации с "
+"контроллером шины для кода {0}(Плата ВПУ). Статус: {1}. Данные: {2}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Remote Control Panel. Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки приема/передачи данных с платы ВПУ. "
+"Статус = {0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to communication error with the bus "
+"controller (Security Processor). Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки обмена данными с контроллером шины (Плата "
+"ПБ). Статус: {0}. Данные: {1}."
+
+msgid ""
+"Switching off the contactor due to an error in obtaining extended "
+"information with the bus controller for code {0} (Security Processor). "
+"Status = {1}. Data = {2}."
+msgstr ""
+"Отключение контактора из-за ошибки получения расширенной информации с "
+"контроллером шины для кода {0}(Плата ПБ). Статус: {1}. Данные: {2}."
+
+msgid ""
+"Switching off the contactor due to an error in setting the time to the board "
+"Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки установки времени в плату ПБ. Статус = "
+"{0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in the transmission of current "
+"thresholds to the board Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки передачи пороговых значений на плату ПБ. "
+"Статус = {0}. Данные = {1}."
+
+msgid ""
+"Switching off the contactor due to an error in receiving / transmitting data "
+"to the board Security Processor. Status = {0}. Data = {1}."
+msgstr ""
+"Отключение контактора из-за ошибки приема/передачи данных с платы ПБ. Статус "
+"= {0}. Данные = {1}."
+
+msgid "Beginning of protocol search..."
+msgstr "Начало поиска протокола..."
+
+msgid "Search for protocol {0}."
+msgstr "Поиск протокола {0}."
+
+msgid "Protocol initialization. Answer: {0}. Protocol: {1}."
+msgstr "Инициализация протокола. Ответ: {0}. Протокол: {1}."
+
+msgid ""
+"Traffic Light Configurator {0} not supported. Please use Traffic Light "
+"Configurator {1}."
+msgstr ""
+"Traffic Light Configurator {0} не поддерживается. Пажалуйста используйте "
+"Traffic Light Configurator {1}."
+
+msgid "The controller control protocol is set to: {0}. SCN: {1}. Version: {2}."
+msgstr ""
+"Протокол управления контроллером установлен: {0}. SCN: {1}. Версия: {2}."
+
+msgid "True"
+msgstr "Да"
+
+msgid "False"
+msgstr "Нет"
+
+msgid "bus_controller"
+msgstr "Контроллер шины"
+
+msgid "bus_boards"
+msgstr "Контроллер платы"
+
+msgid "Extended information about the Bus Controller: {0}"
+msgstr "Дополнительная информация о КШ: {0}"
+
+msgid "Version of boards Lamp Control: {0}"
+msgstr "Версии плат управления: {0}"
+
+msgid "Version of boards Input-Output: {0}"
+msgstr "Версии плат ВВ: {0}"
+
+msgid "Version of boards Remote Control Panel: {0}"
+msgstr "Версии плат ВПУ: {0}"
+
+msgid "Version of boards Security Processor: {0}"
+msgstr "Версии плат ПБ: {0}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Lamp Control to version {0}: {1}"
+msgstr ""
+"Несовместимость версий ПО. Необходимо обновить ПО для следующих плат "
+"управления до версии {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Input-Output to version {0}: {1}"
+msgstr ""
+"Несовместимость версий ПО. Необходимо обновить ПО для следующих плат ВВ до "
+"версии {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Remote Control Panel to version {0}: {1}"
+msgstr ""
+"Несовместимость версий ПО. Необходимо обновить ПО для следующих плат ВПУ до "
+"версии {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Security Processor to version {0}: {1}"
+msgstr ""
+"Несовместимость версий ПО. Необходимо обновить ПО для следующих плат ПБ до "
+"версии {0}: {1}"
+
+msgid ""
+"Incompatibility of software versions. You need to upgrade the software for "
+"the following boards Bus Controller to version {0}: {1}"
+msgstr ""
+"Несовместимость версий ПО. Необходимо обновить ПО для следующих плат КШ до "
+"версии {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Lamp Control to version {0}: {1}"
+msgstr ""
+"Выпущена новая версия ПО. Необходимо обновить ПО для следующих плат "
+"управления до версии {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Input-Output to version {0}: {1}"
+msgstr ""
+"Выпущена новая версия ПО. Необходимо обновить ПО для следующих плат ВВ до "
+"версии {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Remote Control Panel to version {0}: {1}"
+msgstr ""
+"Выпущена новая версия ПО. Необходимо обновить ПО для следующих плат ВПУ до "
+"версии {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Security Processor to version {0}: {1}"
+msgstr ""
+"Выпущена новая версия ПО. Необходимо обновить ПО для следующих плат ПБ до "
+"версии {0}: {1}"
+
+msgid ""
+"A new version of the software has been released. You need to upgrade the "
+"software for the following boards Bus Controller to version {0}: {1}"
+msgstr ""
+"Выпущена новая версия ПО. Необходимо обновить ПО для следующих плат КШ до "
+"версии {0}: {1}"
+
+msgid ""
+"Error sending extension time signal to the bus controller (Input-Output). "
+"Status = {0}. Data = {1}."
+msgstr ""
+"Ошибка передачи времени расширения длительности сигнала на контроллер шины "
+"(Плата ВВ). Статус = {0}. Данные = {1}."
+
+msgid ""
+"Error in receiving / transmitting extension time signal to the board Input-"
+"Output №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Ошибка приема/передачи времени расширения длительности сигнала с платы ВВ "
+"№{0}. Статус = {1}. Данные = {2}."
+
+msgid "Extension time signal for Input-Output boards is set: {0}ms"
+msgstr "Время расширения длительности сигнала для плат ВВ установлено: {0}мс"
+
+msgid ""
+"Error sending extension time signal to the bus controller (Remote Control "
+"Panel). Status = {0}. Data = {1}."
+msgstr ""
+"Ошибка передачи времени расширения длительности сигнала на контроллер шины "
+"(Плата ВПУ). Статус = {0}. Данные = {1}."
+
+msgid ""
+"Error in receiving / transmitting extension time signal to the board Remote "
+"Control Panel №{0}. Status = {1}. Data = {2}."
+msgstr ""
+"Ошибка приема/передачи времени расширения длительности сигнала с платы ВПУ "
+"№{0}. Статус = {1}. Данные = {2}."
+
+msgid "Extension time signal for Remote Control Panel boards is set: {0}ms"
+msgstr "Время расширения длительности сигнала для платы ВПУ установлено: {0}мс"
+
+msgid "Attempt to reestablish connection on the bus."
+msgstr "Попытка восстановить соединение по шине."
+
+msgid "Deny the use of the remote control panel: {0}."
+msgstr "Запрет использования ВПУ: {0}."
+
+msgid "Deny the use of the remote control panel"
+msgstr "Запрет использования ВПУ"
+
+msgid "Deny the use of fixed time mode via STCIP: {0}."
+msgstr ""
+"Запрет использования режима фиксированного времени по протоколу STCIP: {0}."
+
+msgid "Deny the use of fixed time mode via STCIP"
+msgstr "Запрет использования режима фиксированного времени по протоколу STCIP"
+
+msgid "Police"
+msgstr "Оператор"
+
+msgid "Police."
+msgstr "Настройка оператора."
+
+msgid "RCP:"
+msgstr "ВПУ:"
+
+msgid "Allow"
+msgstr "Разрешено"
+
+msgid "Deny"
+msgstr "Запрещено"
+
+msgid "Setting the mode of the traffic light."
+msgstr "Установка режима светофора."
+
+msgid "Device is busy by another user. IP address: %(ip)s."
+msgstr "Устройство используется другим пользователем. IP-адрес: %(ip)s."
+
+msgid "Maximum number of sessions achieved."
+msgstr "Достигнуто максимальное количество сессий."
+
+msgid "Browse..."
+msgstr "Обзор..."
+
+msgid "Connected"
+msgstr "Подключено"
+
+msgid "Disconnected"
+msgstr "Отключено"
+
+msgid "Configured"
+msgstr "Сконфигурировано"
+
+msgid "Not configured"
+msgstr "Не сконфигурировано"
+
+msgid "Detector status"
+msgstr "Состояние детекторов"
+
+msgid "Detector status."
+msgstr "Состояние детекторов."
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Installation mode"
+msgstr "Режим установки"
+
+msgid "Busy"
+msgstr "Занят"
+
+msgid "Not busy"
+msgstr "Не занят"
+
+msgid "Normal"
+msgstr "Нормальный"
+
+msgid "Traffic counting"
+msgstr "Подсчет трафика"
+
+msgid "Traffic counting."
+msgstr "Подсчет трафика."
+
+msgid "1 hour"
+msgstr "1 час"
+
+msgid "24 hours"
+msgstr "24 часа"
+
+msgid "Ethernet detectors"
+msgstr "Детекторы Ethernet"
+
+msgid "№ inputs"
+msgstr "№ входов"
+
+msgid "Detectors recovered. Switch to adaptive mode."
+msgstr "Детекторы востановлены. Переключение в адаптивный режим."
+
+msgid "IP address receiver:"
+msgstr "IP-адрес получателя:"
+
+msgid "Port receiver:"
+msgstr "Порт получателя:"
+
+msgid "Please enter the receiver ip address."
+msgstr "Пожалуйста, введите ip-адрес получателя."
+
+msgid "Please enter the receiver port."
+msgstr "Пожалуйста, введите порт получателя."
+
+msgid "Please fill in all fields."
+msgstr "Пожалуйста, заполните все поля."
+
+msgid "Protocol version:"
+msgstr "Версия протокола:"
+
+msgid "Auth user:"
+msgstr "Пользователь:"
+
+msgid "Auth password:"
+msgstr "Пароль пользователя:"
+
+msgid "Private password:"
+msgstr "Пароль шифрования:"
+
+msgid "SNMP-trap."
+msgstr "SNMP-ловушка."
+
+msgid "SNMP-notifications."
+msgstr "SNMP-уведомления."
+
+msgid "Notification type:"
+msgstr "Тип уведомления:"
+
+msgid "Error restarting SNMPD service: {0}"
+msgstr "Ошибка перезапуска SNMPD службы: {0}"
+
+msgid "Protocol not found."
+msgstr "Протокол не найден."
+
+msgid "Changed settings detector security."
+msgstr "Изменены настройки безопасности детектора."
+
+msgid "Update firmware."
+msgstr "Обновление прошивки."
+
+msgid "Current version:"
+msgstr "Текущая версия:"
+
+msgid "Select the firmware file:"
+msgstr "Выберите файл прошивки:"
+
+msgid "Firmware update in progress."
+msgstr "Выполняется обновление прошивки."
+
+msgid ""
+"The delay time for checking the current is set: {0} ms, voltage: {1} ms."
+msgstr ""
+"Время задержки для проверки тока установлено: {0} мс, напряжения: {1} мс."
+
+msgid ""
+"Error in setting the delay time for checking current and voltage. Status = "
+"{0}. Data = {1}."
+msgstr ""
+"Ошибка установки времени задержки для проверки тока и напряжения. Статус = "
+"{0}. Данные = {1}."
+
+msgid "Disabled security settings for detectors. Switch to adaptive mode."
+msgstr ""
+"Отключены настройки безопасности детекторов. Переключение в адаптивный режим."
+
+msgid ""
+"Switching off the contactor due to current exceeded. Board Lamp Control "
+"№{0}. Group №{1}. Channel №{2}. Signal = {3}. Amperage = {4}. Voltage = {5}. "
+"Threshold amperage = {6}. Threshold voltage = {7}."
+msgstr ""
+"Выключение контактора из-за превышения тока. Плата управления №{0}. Группа "
+"№{1}. Канал №{2}. Сигнал = {3}. Ток = {4}. Напряжение = {5}. Порог тока = "
+"{6}. Порог напряжения = {7}."
+
+msgid "System bus error."
+msgstr "Ошибка системной шины."
+
+msgid "System main program error."
+msgstr "Ошибка рабочей программы."
+
+msgid "Firmware file is wrong."
+msgstr "Неверный файл прошивки."
+
+msgid "Firmware updated. Version: {0}. Previous version: {1}"
+msgstr "Прошивка обновлена. Версия: {0}. Предыдущая версия: {1}"
+
+msgid "Login"
+msgstr "Логин"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Deny the remote controll in case of amber flash error"
+msgstr "Запрет удаленного управления при аварийном ЖМ"
+
+msgid "Deny the remote controll in case of amber flash error: {0}."
+msgstr "Запрет удаленного управления при аварийном ЖМ: {0}."
+
+msgid "Phase counting"
+msgstr "Подсчет фаз"
+
+msgid "Phase counting."
+msgstr "Подсчет фаз."
+
+msgid "Timestamp log"
+msgstr "Отметка времени фаз"
+
+msgid "Phase: {0}. Tact: {1}. AR: {2}. AF: {3}. OFF: {4}."
+msgstr ""
+"Фаза: {0}. Такт: {1}. Кругом красный: {2}. Желтое мигание: {3}. Выключено: "
+"{4}."
+
+msgid "The sequential phases switching mode is running."
+msgstr "Запущен режим последовательного переключения фаз."
+
+msgid ""
+"It is recommended to make a backup copy of the traffic light configuration "
+"file before updating the firmware."
+msgstr ""
+"Перед обновлением прошивки рекомендуется сделать резервную копию "
+"конфигурационного файла светофора."
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "The versions are the same."
+msgstr "Версии одинаковые."
+
+msgid ""
+"When upgrading the firmware to lower versions, it is possible to run the "
+"firmware at factory settings. It is recommended to update the traffic light "
+"configuration file after the update is completed."
+msgstr ""
+"При обновлении прошивки на более раннюю версию возможен запуск встроенного "
+"ПО на заводских настройках. После завершения обновления рекомендуется "
+"обновить файл конфигурации светофора."
+
+msgid "Are you sure you want to rollback the firmware?"
+msgstr "Вы действительно хотите откатить прошивку?"
+
+msgid "Send"
+msgstr "Отправить"
+
+msgid "Boards"
+msgstr "Платы"
+
+msgid "Faulty boards."
+msgstr "Неисправные платы."
+
+msgid "Board Lamp Control"
+msgstr "Плата управления"
+
+msgid "№ Lamp Control:"
+msgstr "№ Платы управления:"
+
+msgid "Before applying the settings, you must perform the following steps:"
+msgstr "Перед применением настроек необходимо выполнить следующие шаги:"
+
+msgid "Disconnect the power chains of the lamps."
+msgstr "Отсоедините силовые цепи ламп."
+
+msgid ""
+"Add faulty boards to the table. The remaining boards will be sorted in order."
+msgstr ""
+"Добавьте неисправные платы в таблицу. Оставшиеся платы будут отсортированы "
+"по порядку."
+
+msgid ""
+"Connect the power chains of the lamps according to a new order of boards."
+msgstr "Подключите силовые цепи ламп согласно нового порядка плат."
+
+msgid "Reboot the traffic light controller."
+msgstr "Перезагрузите дорожный контроллер."
+
+msgid "List of faulty boards Lamp Control: {0}."
+msgstr "Список неисправных плат управления: {0}."
+
+msgid ""
+"You have attempted to leave this page. Are you sure? Changes will not be "
+"saved!"
+msgstr ""
+"Вы пытаетесь закрыть страницу. Вы уверены? Изменения не будут сохранены!"
+
+msgid "Result"
+msgstr "Результат"
+
+msgid "Date and time:"
+msgstr "Дата и время:"
+
+msgid "CPU:"
+msgstr "ЦПУ:"
+
+msgid "Critical temperature reached {0}°C."
+msgstr "Критическая температура достигла {0}°C."
+
+msgid "Operating temperature recovered up to {0}°C."
+msgstr "Рабочая температура восстановилась до {0}°C."
+
+msgid "Critical voltage of the board CPU reached {0}V."
+msgstr "Критическое напряжение платы ЦПУ достигло {0}В."
+
+msgid "Operating voltage of the board CPU recovered up to {0}V."
+msgstr "Рабочее напряжение платы ЦПУ восстановлено до {0}В."
+
+msgid "Priority:"
+msgstr "Приоритет"
+
+msgid "All red (sec.):"
+msgstr "Кругом красный (сек.):"
+
+msgid "Amber flash (sec.):"
+msgstr "Мигающий желтый (сек.):"
+
+msgid "Yellow (sec.):"
+msgstr "Желтый (сек.):"
+
+msgid "Starting traffic light."
+msgstr "Режим запуска светофора."
+
+msgid "Starting"
+msgstr "Запуск"
+
+msgid "Time synchronization with NTP server: {0}."
+msgstr "Синхронизация времени с NTP сервером: {0}."
+
+msgid "Current Datetime:"
+msgstr "Текущее время:"
+
+msgid "Time mode:"
+msgstr "Режим:"
+
+msgid "NTP Server:"
+msgstr "NTP сервер:"
+
+msgid "Sync time:"
+msgstr "Период синхронизации:"
+
+msgid "Last sync time:"
+msgstr "Последняя синхронизация:"
+
+msgid "Daylight Saving Time:"
+msgstr "Летнее время:"
+
+msgid "Time migration (min):"
+msgstr "Время перевода (мин.):"
+
+msgid "Start:"
+msgstr "Начало:"
+
+msgid "End:"
+msgstr "Конец:"
+
+msgid "January"
+msgstr "Январь"
+
+msgid "February"
+msgstr "Февраль"
+
+msgid "March"
+msgstr "Март"
+
+msgid "April"
+msgstr "Апрель"
+
+msgid "May"
+msgstr "Май"
+
+msgid "June"
+msgstr "Июнь"
+
+msgid "July"
+msgstr "Июль"
+
+msgid "August"
+msgstr "Август"
+
+msgid "September"
+msgstr "Сентябрь"
+
+msgid "October"
+msgstr "Октябрь"
+
+msgid "November"
+msgstr "Ноябрь"
+
+msgid "December"
+msgstr "Декабрь"
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "First"
+msgstr "Первый"
+
+msgid "2nd"
+msgstr "2"
+
+msgid "3rd"
+msgstr "3"
+
+msgid "4th"
+msgstr "4"
+
+msgid "Last"
+msgstr "Последний"
+
+msgid "Manual"
+msgstr "Ручной"
+
+msgid "Auto"
+msgstr "Автоматический"
+
+msgid "6 hours"
+msgstr "6 часов"
+
+msgid "12 hours"
+msgstr "12 часов"
+
+msgid "1 day"
+msgstr "1 день"
+
+msgid "1 week"
+msgstr "1 неделя"
+
+msgid "disabled"
+msgstr "отключено"
+
+msgid "Backup sync with RTC:"
+msgstr "Резервная синхронизация с RTC:"
+
+msgid "Time synchronization with RTC."
+msgstr "Синхронизация времени с RTC."
+
+#~ msgid ""
+#~ "ATTENTION!!! IP addresses must be on the same subnet as the controller "
+#~ "itself."
+#~ msgstr ""
+#~ "ВНИМАНИЕ!!! IP-адреса должны находиться в одной подсети, что и сам "
+#~ "контроллер."
+
+#~ msgid "Leakage current..."
+#~ msgstr "Утечка тока..."
+
+#~ msgid "Conflict of groups..."
+#~ msgstr "Конфликт групп..."
+
+#~ msgid "Switch is broken..."
+#~ msgstr "Неисправность силового ключа..."

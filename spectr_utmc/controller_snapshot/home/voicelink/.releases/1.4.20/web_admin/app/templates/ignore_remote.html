@@ -1,0 +1,368 @@
+<!-- extend base layout -->
+
+{% extends "base.html" %}
+{% block javascript %}
+<script type="text/javascript">
+
+function change_time(obj){
+  obj.defaultValue = obj.value;
+}
+
+function change_checkbox(obj){
+  obj.defaultChecked = obj.checked;
+}
+
+function getSelectedOptions(sel) {
+  var len = sel.options.length;
+  for (var i = 0; i < len; i++) {
+    opt = sel.options[i];
+    if (!opt.disabled){
+      opt.defaultSelected = opt.selected;
+    }
+  }
+}
+
+function change_state(obj){
+  if (count_timediv() == 0 ){
+    if (obj.checked == true){
+      document.getElementById('buttons').style.display = 'block';
+      // document.getElementById('tablehead').style.display = 'block';
+      create_timediv();
+    } else {
+      document.getElementById('buttons').style.display = 'none';
+      // document.getElementById('tablehead').style.display = 'none';
+      delete_timediv();
+    }
+  } 
+  var arr = document.getElementsByClassName("active-disable");
+  var state = true;
+  if (obj.checked == true) {
+    state = false;
+  }
+  for (var i=0; i < arr.length; i++) {
+      arr[i].disabled = state;
+  }
+
+
+  var arr = document.getElementsByClassName("active-readonly");
+  var state = true;
+  if (obj.checked == true) {
+    state = false;
+  }
+  for (var i=0; i < arr.length; i++) {
+      arr[i].readOnly = state;
+  }
+  
+  if (count_timediv() < 10){
+    document.getElementById('add_button').disabled = !obj.checked;
+  }
+}
+function count_timediv(){
+  var elements = document.getElementsByClassName("timediv");
+  return elements.length;
+}
+
+function create_timediv() {
+  var index = count_timediv() + 1;
+  var html = `
+    <div id="timediv_${index}" class="timediv form-group">
+      <label class="control-label col-sm-1">{{ _('From') }}:</label>
+      <div class="col-sm-2 start-time">
+        <input required type="time" name="starttime_${index}" value="" class="active-readonly form-control" onchange="change_time(this)">
+      </div>
+      <label class="control-label col-sm-1">{{ _('To') }}:</label>
+      <div class="col-sm-2 end-time">
+        <input required type="time" name="endtime_${index}" value="" class="active-readonly form-control" onchange="change_time(this)">
+      </div>
+      <div class="col-sm-4 ignore-right">
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="mo_${index}" value="1"> {{ _('Mo') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="tu_${index}" value="2"> {{ _('Tu') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="we_${index}" value="3"> {{ _('We') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="th_${index}" value="4"> {{ _('Th') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="fr_${index}" value="5"> {{ _('Fr') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="sa_${index}" value="6"> {{ _('Sa') }}
+        </label>
+        <label>
+          <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="su_${index}" value="7"> {{ _('Su') }}
+        </label>
+        <input id="days_${index}" name="days_${index}" hidden="true" value="">
+      </div>
+      <div class="col-sm-2">
+        <button type="button" id="del_button" class="active-disable btn btn-custom" onclick="delete_timediv(this)">{{ _('Delete') }}</button>
+      </div>
+    </div>
+  `;
+  if (index == 10){
+    document.getElementById('add_button').disabled = true;
+  }
+  if (index < 11){
+    var target = document.getElementById("time_container");
+    target.innerHTML += html;
+    $('option').mousedown(function(e) {
+      e.preventDefault();
+      $(this).prop('selected', !$(this).prop('selected'));
+      return false;
+    });
+  }
+}
+
+function delete_timediv(obj){
+  var index = count_timediv();
+  if (index > 0){
+
+    var target = obj.parentElement.parentElement;
+    target.remove();
+    if (index == 1){
+      var buttons = document.getElementById('buttons');
+      change_state(buttons);
+      document.getElementById('onoff').checked = false;
+    }
+  }
+  if (index == 10){
+    document.getElementById('add_button').disabled = false;
+  }
+  change_index();
+}
+
+function toDate(dStr,format) {
+  var now = new Date();
+  if (format == "h:m") {
+    now.setHours(dStr.substr(0,dStr.indexOf(":")));
+    now.setMinutes(dStr.substr(dStr.indexOf(":")+1));
+    now.setSeconds(0);
+    return now;
+  } else {
+    return "Invalid Format";
+  }
+}
+
+function change_index(){
+  var index = count_timediv() + 1;
+  for (var i=1; i < index; i++) {
+    var item = document.getElementsByClassName("timediv")[i - 1];
+    var current_index = item.id.split('_')[1]
+    item.id = `timediv_${i}`
+    var start_string = item.getElementsByTagName('div')[0].children[0];
+    var end_string = item.getElementsByTagName('div')[1].children[0];
+    start_string.name = `starttime_${i}`;
+    end_string.name = `endtime_${i}`;
+    var days = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su'];
+    for (let day of days){
+      document.getElementsByName(`${day}_${current_index}`)[0].name = `${day}_${i}`;
+    }
+    var days_input = document.getElementById(`days_${current_index}`);
+    days_input.name = `days_${i}`;
+    days_input.id = `days_${i}`;
+  }
+}
+
+function validateForm(){
+  document.getElementById("sameTimes").style.display = "none";
+  document.getElementById("wrongTimes").style.display = "none";
+
+  var elements = document.getElementsByClassName("timediv");
+  for (let item of elements) {
+    var start_string = item.getElementsByTagName('div')[0].children[0].value;
+    var end_string = item.getElementsByTagName('div')[1].children[0].value;
+    var start_time = toDate(start_string, "h:m");
+    var end_time = toDate(end_string, "h:m");
+    if (start_string != '00:00' && end_string != '00:00'){
+      if (end_string != '00:00' && start_time > end_time) {
+        console.log('Start time should not be greater then end time');
+        document.getElementById("wrongTimes").style.display = "block";
+        return false;
+      }
+      if (start_time.getTime() === end_time.getTime()) {
+        console.log('Times should not be the same');
+        document.getElementById("sameTimes").style.display = "block";
+        return false;
+      }
+    }  
+
+    var index = count_timediv() + 1;
+
+    for (var i=1; i < index; i++) {
+      var days = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su'];
+      var indexes = [];
+      for (let day of days) {
+        checkboxes = document.getElementsByName(`${day}_${i}`);
+        if (checkboxes[0].checked){
+          indexes.push(checkboxes[0].value)
+        }
+      }
+      document.getElementsByName(`days_${i}`)[0].value = indexes.join(',')
+    }
+
+    for (var i=1; i < index; i++) {
+      var days = ['mo', 'tu', 'we', 'th', 'fr', 'sa', 'su'];
+      var is_checked = false; 
+      for (let day of days) {
+        checkboxes = document.getElementsByName(`${day}_${i}`);
+        if (checkboxes[0].checked){
+          is_checked = true; 
+        }
+      }
+      if (!is_checked){
+        document.getElementById("dayRequired").style.display = "block";
+        return false;
+      }
+    }
+  }
+
+  return true
+}
+window.onload = function(){
+  $('option').mousedown(function(e) {
+      e.preventDefault();
+      $(this).prop('selected', !$(this).prop('selected'));
+      return false;
+  });
+
+  var add_button = document.getElementById('add_button');
+  add_button.addEventListener("click", create_timediv);
+  // var del_button = document.getElementById('del_button');
+  // del_button.addEventListener("click", delete_timediv);
+  var onoff = document.getElementById('onoff');
+  var arr = document.getElementsByClassName("active-readonly");
+  var state = true;
+  if (onoff.checked == true) {
+    state = false;
+  }
+  for (var i=0; i < arr.length; i++) {
+      arr[i].readOnly = state;
+  }
+  var arr = document.getElementsByClassName("active-disable");
+  var state = true;
+  if (onoff.checked == true) {
+    state = false;
+  }
+  for (var i=0; i < arr.length; i++) {
+      arr[i].disabled = state;
+  }
+
+}
+</script>
+{% endblock %}
+{% block content %}
+<ul class="nav nav-tabs">
+
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('controller_management') }}">{{ _('Management controller') }}</a>
+  </li>
+
+  <li class="nav-item  active">
+    <a class="nav-link active" href="{{ url_for('ignore_remote') }}">{{ _('Remote scheduler') }}</a>
+  </li>
+
+</ul>
+
+
+<br>
+<h3>{{ _('Disabling remote control.') }}</h3>
+
+<div class="alert alert-danger" id='sameTimes' role="alert" style="display:none;">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('Times should not be the same')}}.
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-danger" id='dayRequired' role="alert" style="display:none;">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('The day of the week is not selected')}}.
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-danger" id='wrongTimes' role="alert" style="display:none;">
+    <strong>{{_('ATTENTION!!!')}}</strong> {{_('Start time should not be greater then end time')}}.
+  <button type="button" class="close" data-hide="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form class="form-horizontal" method="post" onsubmit="return validateForm()" name="remote_scheduler" action="ignore_remote" autocomplete="off">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="onoff" id="onoff" value="1" onchange="change_state(this)" {% if data.remote_onoff %} checked {% endif %}>{{ _('Deny the use of the remote control') }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div id="time_container">
+
+    {% for d in data.remote_scheduler %}
+    {% set list1 = d[2].split(',') %}
+    <div id="timediv_{{loop.index}}" class="timediv form-group">
+      <label class="control-label col-sm-1">{{ _('From') }}:</label>  
+      <div class="col-sm-2">
+        <input required type="time" name="starttime_{{loop.index}}" value="{{d[0]}}" class="active-readonly form-control" onchange="change_time(this)">
+      </div>
+      <label class="control-label col-sm-1">{{ _('To') }}:</label>  
+      <div class="col-sm-2">
+        <input required type="time" name="endtime_{{loop.index}}" value="{{d[1]}}" class="active-readonly form-control" onchange="change_time(this)">
+      </div>
+      <div class="col-sm-4 ignore-right">
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="mo_{{loop.index}}" value="1" {% if '1' in list1 %} checked {% endif %}> {{ _('Mo') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="tu_{{loop.index}}" value="2" {% if '2' in list1 %} checked {% endif %}> {{ _('Tu') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="we_{{loop.index}}" value="3" {% if '3' in list1 %} checked {% endif %}> {{ _('We') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="th_{{loop.index}}" value="4" {% if '4' in list1 %} checked {% endif %}> {{ _('Th') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="fr_{{loop.index}}" value="5" {% if '5' in list1 %} checked {% endif %}> {{ _('Fr') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="sa_{{loop.index}}" value="6" {% if '6' in list1 %} checked {% endif %}> {{ _('Sa') }}
+          </label>
+          <label>
+            <input class="active-disable" onchange="change_checkbox(this)" type="checkbox" name="su_{{loop.index}}" value="7" {% if '7' in list1 %} checked {% endif %}> {{ _('Su') }}
+          </label>
+          <input id="days_{{loop.index}}" name="days_{{loop.index}}" hidden="true" value="">
+      </div>
+      <div class="col-sm-2">
+        <button type="button" id="del_button" class="active-disable btn btn-custom" onclick="delete_timediv(this)">{{ _('Delete') }}</button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% if g.user.role == 2 %}
+  {% if data.remote_scheduler %}
+  <div class="form-group" id="buttons">
+  {% else %}
+  <div class="form-group" id="buttons" style="display: none;">
+  {% endif %}
+    <div class="col-sm-1">
+      {% if data.remote_scheduler|length == 10 %}
+      <button type="button" id="add_button" class="btn btn-custom" disabled>{{ _('Add') }}</button>
+      {% else %}
+      <button type="button" id="add_button" class="btn btn-custom">{{ _('Add') }}</button>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button type="submit" class="btn btn-custom">{{ _('Save') }}</button>
+    </div>
+  </div>
+{% endif %}
+</form>
+{% endblock %}

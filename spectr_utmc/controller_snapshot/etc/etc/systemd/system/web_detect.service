@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn instance to serve web_detect
+After=network.target
+
+[Service]
+User=voicelink
+Group=www-data
+WorkingDirectory=/home/voicelink/rtc/web_detect
+ExecStart=/usr/bin/gunicorn --workers 8 --bind unix:web_detect.sock -m 007 --timeout 300 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Board init service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/voicelink/.service
+ExecStart=/bin/sh -c '/usr/bin/brd_init'
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target

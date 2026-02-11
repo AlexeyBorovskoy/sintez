@@ -1,0 +1,13 @@
+[Unit]
+Description=Restart resident service
+After=resident.service
+
+[Service]
+Nice=-10
+WorkingDirectory = /home/voicelink/.service/
+ExecStart = /bin/sh -c 'cd /home/voicelink/.service/ && ./restart_frozen_phase'
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
+
