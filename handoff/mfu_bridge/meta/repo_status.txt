@@ -1,0 +1,10 @@
+ M handoff/mfu_bridge/README.md
+?? handoff/mfu_bridge/BUILD_IPK_WITH_SDK.sh
+?? handoff/mfu_bridge/VERIFY_LOCAL_BUILD.sh
+?? handoff/mfu_bridge/docs/
+?? handoff/mfu_bridge/examples/
+?? handoff/mfu_bridge/kit/
+?? handoff/mfu_bridge/meta/
+?? handoff/mfu_bridge/openwrt/
+?? handoff/mfu_bridge/spectr_utmc_cpp/
+?? handoff/mfu_bridge/tools/

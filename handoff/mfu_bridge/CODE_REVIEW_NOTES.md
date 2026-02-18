@@ -1,37 +1,36 @@
-# C++ Code Review Notes (For External Engineer)
+# Заметки по ревью C++ (для внешнего инженера)
 
-Scope reviewed:
+Проверенный объем:
 - `spectr_utmc/spectr_utmc_cpp/src/*.cpp`
 - `spectr_utmc/spectr_utmc_cpp/include/*.h`
 
-## Key Findings And Fixes Applied
+## Ключевые находки и внесенные исправления
 
-1. `TcpClient` data race on `sendQueue_`
-- Previous code checked `sendQueue_.empty()` without holding `sendMutex_`.
-- Fixed by taking the mutex before checking emptiness (prevents UB under C++ memory model).
+1. Data race в `TcpClient` на `sendQueue_`
+- Ранее код проверял `sendQueue_.empty()` без удержания `sendMutex_`.
+- Исправлено: теперь мьютекс берется до проверки (устраняет UB по модели памяти C++).
 
-2. `ConfigLoader::load` did not reset output object
-- If `ConfigLoader::load()` is called multiple times on the same `Config` instance, old values could accumulate.
-- Fixed by resetting `config` at function start and clearing `objects`.
-- Removed duplicated `No objects configured` check.
+2. `ConfigLoader::load` не сбрасывал выходной объект
+- При повторном вызове `ConfigLoader::load()` на одном и том же объекте `Config` могли “накопиться” старые значения.
+- Исправлено: в начале загрузки делается сброс `config` и очистка `objects`.
+- Убран дублирующийся чек `No objects configured`.
 
-3. `object_manager.h` header self-sufficiency
-- Header used `std::thread` but did not include `<thread>`.
-- Fixed by adding the include.
+3. Самодостаточность заголовка `object_manager.h`
+- Заголовок использовал `std::thread`, но не включал `<thread>`.
+- Исправлено добавлением `#include <thread>`.
 
-4. `main.cpp` unused variable
-- Removed unused `targetId` variable.
+4. Неиспользуемая переменная в `main.cpp`
+- Удалена неиспользуемая переменная `targetId`.
 
-## Behavioral Notes
+## Поведенческие заметки
 
-- The bridge currently acts as a Spectr stream client (connects out to `its.host:its.port`).
-- Yellow Flashing (`SET_YF`) is implemented with keepalive logic:
-  - reasserts `utcControlFF=1` periodically while active
-  - tries to confirm by `utcReplyFR` within `yf.confirmTimeoutSec`
-  - keepalive is stopped when other control commands are issued (`SET_LOCAL`, `SET_OS`, `SET_PHASE`, `SET_START`)
+- Мост сейчас работает как клиент Spectr stream (сам подключается к `its.host:its.port`).
+- ЖМ (`SET_YF`) реализовано через keepalive-логику:
+  - периодически (пере)посылает `utcControlFF=1`, пока ЖМ активно,
+  - пытается подтвердить включение по `utcReplyFR` за время `yf.confirmTimeoutSec`,
+  - keepalive останавливается при приходе других управляющих команд (`SET_LOCAL`, `SET_OS`, `SET_PHASE`, `SET_START`).
 
-## Known Gaps / Follow-Ups
+## Известные пробелы / что проверить дальше
 
-- OpenWrt packaging is a skeleton: you must build in the correct SDK and validate `libnetsnmp` package naming for OpenWrt 19.07 feeds.
-- `ConfigLoader` is a minimal JSON parser; for production, consider switching to a real JSON library or UCI-based config.
-
+- OpenWrt упаковка сейчас в формате “скелет”: сборку нужно делать в корректном SDK и проверить реальные имена/зависимости пакетов `libnetsnmp` для фидов OpenWrt 19.07.
+- `ConfigLoader` это минималистичный JSON-парсер; для промышленной эксплуатации стоит перейти на полноценную JSON-библиотеку либо на UCI-конфиг (OpenWrt-канонично).

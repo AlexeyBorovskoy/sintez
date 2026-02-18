@@ -1,0 +1,13 @@
+build/
+*.o
+*.a
+*.so
+*.dylib
+spectr_utmc_cpp
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.swp
+*~
+.DS_Store

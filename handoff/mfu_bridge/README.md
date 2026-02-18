@@ -1,73 +1,112 @@
-# Handoff: MFU (OpenWrt) Bridge Testing Kit
+# Передача инженеру: МФУ (OpenWrt) мост Spectr-ITS <-> SINTEZ UTMC (полный комплект)
 
-This folder is prepared for a third-party engineer who will test the solution on a real MFU (OpenWrt).
+Эта папка предназначена для передачи стороннему инженеру, который будет проверять решение на реальном МФУ (OpenWrt).
 
-Goal:
-- MFU runs a service that replaces the ASUDD-side "node" logic and bridges Spectr command stream to SINTEZ UTMC controller.
+## Назначение решения (в двух словах)
 
-## What To Use In This Repo
+МФУ устанавливается “между” АСУДД «СПЕКТР» и контроллером «Синтез» и выполняет роль сервиса-моста:
 
-1. C++ bridge sources:
-- `spectr_utmc/spectr_utmc_cpp/`
+- в сторону АСУДД: поддерживает протокол/команды Spectr-ITS (стрим команд `SET_*`/`GET_*` и ответы `>O.K.`, `>NOT_EXEC ...` и т.п.);
+- в сторону контроллера: выполняет управление по UTMC/SNMP (GET/SET нужных OID), включая устойчивую логику ЖМ (жёлтого мигания).
 
-Main binary built by CMake:
-- `spectr_utmc_cpp` (bridge)
-- `test_controller` (diagnostic CLI; optional on MFU)
+ЖМ здесь рассматривается как один из режимов, по которому хорошо видно, что “команда принята” не всегда означает “физически сработало”, поэтому подтверждение делается по `utcReplyFR`.
 
-2. OpenWrt package skeleton (`.ipk`):
-- `openwrt/package/spectr-utmc-bridge/`
-- `openwrt/README.md`
+## Состав комплекта
 
-3. Where the ASUDD "node" logic lives (RoadCenter installation notes):
-- `docs/ASUDD_NODE_DISCOVERY.md`
+- Исходники C++ (демон-мост + диагностические утилиты): `spectr_utmc_cpp/`
+- OpenWrt пакет `.ipk` (включая локальный tarball с исходниками для сборки без интернета): `openwrt/package/spectr-utmc-bridge/`
+- Инструменты/скрипты, использованные на стенде (снятие логов, прогоны): `tools/`
+- Заметки по поиску логики “ноды” в установленной АСУДД (RoadCenter/Spectr): `docs/ASUDD_NODE_DISCOVERY.md`
+- Примеры логов/отчетов: `examples/`
 
-## OpenWrt Target (From MFU Dump)
+## Целевая платформа МФУ (по дампу)
 
 - OpenWrt: 19.07.x
 - Target: `ramips/mt7620`
 - Arch: `mipsel_24kc`
 
-## Build And Install (High Level)
+Важно: бинарники, собранные на x86_64 Linux, на МФУ не запустятся. Для МФУ сборка должна быть через OpenWrt SDK под `mipsel_24kc`.
 
-1. Build `.ipk` in OpenWrt SDK (matching the MFU firmware target).
-2. Install `.ipk` on MFU using `opkg`.
-3. Edit config: `/etc/spectr-utmc/config.json`
-4. Enable/start service:
+## Быстрая проверка сборки на ПК (Linux x86_64)
+
 ```sh
+./VERIFY_LOCAL_BUILD.sh
+```
+
+## Сборка `.ipk` (через OpenWrt SDK)
+
+1. Скачайте OpenWrt SDK, соответствующий прошивке МФУ: `19.07.x`, `ramips/mt7620`, `mipsel_24kc`.
+2. Соберите пакет:
+
+```sh
+OPENWRT_SDK=/path/to/openwrt-sdk-19.07.*-ramips-mt7620_* \
+  ./BUILD_IPK_WITH_SDK.sh
+```
+
+Результат: файл вида `spectr-utmc-bridge_*.ipk` внутри `SDK/bin/packages/mipsel_24kc/.../`.
+
+## Установка на МФУ
+
+```sh
+opkg install /tmp/spectr-utmc-bridge_*.ipk
 /etc/init.d/spectr-utmc-bridge enable
 /etc/init.d/spectr-utmc-bridge start
 logread -f
 ```
 
-## Configuration
-
-Config file installed by package:
+Файл конфигурации (на МФУ):
 - `/etc/spectr-utmc/config.json`
 
-Important keys:
-- `its.host`, `its.port` (Spectr server on ASUDD side)
-- `community` (UTMC SNMP community)
-- `objects[].addr` (controller IP)
-- `yf.*` (Yellow Flashing behavior)
+Шаблон (в этом комплекте):
+- `CONFIG_TEMPLATE.json`
 
-## Notes On Yellow Flashing (SET_YF)
+## Что именно конфигурируется в `config.json`
 
-Observed reliable behavior for this controller:
-1. `operationMode=3`
-2. re-send `utcControlFF=1` until confirmed by `utcReplyFR != 0`
-3. keep re-sending `utcControlFF=1` periodically while YF is active
-4. stop the keepalive when another control command is issued (`SET_LOCAL`, `SET_OS`, `SET_PHASE`, `SET_START`)
+Ключевые поля:
 
-## Smoke Tests (Suggested)
+- `its.host`, `its.port`
+  - адрес/порт сервера Spectr (на стороне АСУДД), куда мост должен подключиться по TCP;
+- `community`
+  - SNMP community для UTMC;
+- `objects[]`
+  - список контроллеров (минимум один), где `addr` это IP контроллера;
+- `yf.*`
+  - параметры поведения ЖМ:
+  - `confirmTimeoutSec` сколько ждать подтверждение `utcReplyFR != 0`;
+  - `keepPeriodMs` период переотправки `utcControlFF=1` во время удержания;
+  - `maxHoldSec` максимальное удержание ЖМ (0 = удерживать до смены режима другой командой).
 
-1. Connectivity:
-- MFU can reach `its.host:its.port` (TCP)
-- MFU can reach controller (SNMP UDP/161)
+## Как смотреть логи на МФУ
 
-2. Protocol:
-- Send `GET_STAT` and verify `>O.K.` response
-- Send `SET_YF` and verify:
-  - controller enters YF (visual) and `utcReplyFR` becomes non-zero
-  - bridge keeps YF active
-- Send `SET_LOCAL` (or `SET_OS`) and verify YF keepalive stops and controller returns to expected mode
+Сервис запускается через `procd` и пишет в системный лог:
 
+```sh
+logread -f
+```
+
+При проблемах полезно дополнительно проверить:
+
+```sh
+/etc/init.d/spectr-utmc-bridge status
+ps w | grep spectr-utmc-bridge
+netstat -tnp | grep -E ':3000|:3364'   # зависит от its.port
+```
+
+## Инструменты диагностики (локально, со стенда)
+
+1. Снятие read-only захвата с контроллера (логи resident + snmp_poll):
+- `tools/dk_capture.sh start|stop|pull|status`
+
+2. Проверка связности (ping + ssh + локальные snmpget на контроллере):
+- `tools/connectivity_check.sh`
+
+3. Сценарные прогоны ЖМ (через SSH и локальный SNMP на контроллере):
+- `tools/yf_scripted_test.sh --confirm`
+- отчет формируется автоматически в `report.md`
+
+## Примечание по `SET_YF` (ЖМ, жёлтое мигание)
+
+В реализации используется “подтверждение по `utcReplyFR`” и “удержание” (пере)посылкой `utcControlFF=1` с периодом `yf.keepPeriodMs` на время активного ЖМ.
+Удержание останавливается при приходе другой управляющей команды режима (`SET_LOCAL`, `SET_OS`, `SET_PHASE`, `SET_START`) и/или по таймауту, если он задан.
+
+Смысл: на практике встречается состояние “SNMP SET принят, но ЖМ фактически не включилось”. Поэтому “успех” фиксируется только по подтверждению (`utcReplyFR`).
