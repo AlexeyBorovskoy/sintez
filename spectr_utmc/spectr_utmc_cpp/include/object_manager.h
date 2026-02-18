@@ -32,7 +32,11 @@ struct ObjectState {
 
 class SpectrObject {
 public:
-    SpectrObject(const ObjectConfig& config, const std::string& community, SNMPHandler* snmpHandler, TcpClient* tcpClient);
+    SpectrObject(const ObjectConfig& config,
+                 const std::string& community,
+                 const YFConfig& yfConfig,
+                 SNMPHandler* snmpHandler,
+                 TcpClient* tcpClient);
     ~SpectrObject();
     
     // Обработка SNMP notification
@@ -71,6 +75,7 @@ public:
 private:
     ObjectConfig config_;
     std::string community_;
+    YFConfig yfConfig_;
     ObjectState state_;
     SNMPHandler* snmpHandler_;
     TcpClient* tcpClient_;

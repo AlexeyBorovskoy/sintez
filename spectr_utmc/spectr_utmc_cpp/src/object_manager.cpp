@@ -7,6 +7,7 @@
 #include <chrono>
 #include <thread>
 #include <cctype>
+#include <set>
 extern "C" {
 #include <net-snmp/library/asn1.h>
 }
@@ -67,9 +68,12 @@ bool parseFirstHexByte(const std::string& input, uint8_t& out) {
 }
 } // namespace
 
-SpectrObject::SpectrObject(const ObjectConfig& config, const std::string& community,
-                           SNMPHandler* snmpHandler, TcpClient* tcpClient)
-    : config_(config), community_(community), snmpHandler_(snmpHandler), tcpClient_(tcpClient),
+SpectrObject::SpectrObject(const ObjectConfig& config,
+                           const std::string& community,
+                           const YFConfig& yfConfig,
+                           SNMPHandler* snmpHandler,
+                           TcpClient* tcpClient)
+    : config_(config), community_(community), yfConfig_(yfConfig), snmpHandler_(snmpHandler), tcpClient_(tcpClient),
       eventCounter_(0), eventMask_(1), stageStartTime_(0), cycleStartTime_(0),
       yfHoldActive_(false), yfStop_(false), savedOperationMode_(3) {  // По умолчанию remote (3)
     
@@ -157,7 +161,8 @@ void SpectrObject::processNotification(const SNMPNotification& notification) {
     if (hasStage && stateChanges.find("stage") != stateChanges.end()) {
         stateChanges["stageLen"] = 255;
         stateChanges["algorithm"] = 1;
-        stateChanges["regime"] = 3;
+        // keyRegime: 0=OS (normal). For UTMC we infer normal regime when stage info is present.
+        stateChanges["regime"] = 0;
     }
     
     if (hasRegime) {
@@ -207,6 +212,23 @@ void SpectrObject::processCommand(const SpectrProtocol::ParsedCommand& command) 
     }
     
     SpectrError result = SpectrError::UNINDENT; // Unknown command by default
+
+    auto isKnownButUnsupported = [](const std::string& cmd) -> bool {
+        // Keep in sync with command list used by ASUDD (Spectr protocol).
+        // We reply NOT_EXEC_4 instead of UNINDENT so the upstream sees "known command but not possible".
+        static const std::set<std::string> k = {
+            // SET_ (unsupported)
+            "SET_TOUT", "SET_PROG", "SET_GROUP", "SET_DATE", "SET_TIME", "SET_TDTIME",
+            "SET_VERB", "SET_DPROG", "SET_DDMAP", "SET_DSDY", "SET_CONFIG", "SET_VPU",
+            "SET_EVTCFG", "SET_QUERY", "SET_PASSKY", "SET_STRAT", "SET_ASTATE", "SET_APSTATE",
+            "SET_DEFAULT", "SET_ADEFAULT",
+            // GET_ (unsupported)
+            "GET_GROUP", "GET_SENS", "GET_SWITCH", "GET_TWP", "GET_TDET", "GET_JRNL",
+            "GET_POWER", "GET_VPU", "GET_QUERY", "GET_PASSDB", "GET_PASSKY", "GET_STATE",
+            "GET_DPROG", "GET_CONFIG_HASH", "GET_CONFIG_SIZE",
+        };
+        return k.find(cmd) != k.end();
+    };
     
     if (command.command == "SET_PHASE") {
         if (!command.params.empty()) {
@@ -227,19 +249,6 @@ void SpectrObject::processCommand(const SpectrProtocol::ParsedCommand& command) 
         result = setLocal(command.requestId);
     } else if (command.command == "SET_START") {
         result = setStart(command.requestId);
-    } else if (command.command == "SET_TOUT" ||
-               command.command == "SET_PROG" ||
-               command.command == "SET_GROUP" ||
-               command.command == "SET_DATE" ||
-               command.command == "SET_TIME" ||
-               command.command == "SET_TDTIME" ||
-               command.command == "SET_VERB" ||
-               command.command == "SET_DPROG" ||
-               command.command == "SET_DDMAP" ||
-               command.command == "SET_DSDY" ||
-               command.command == "SET_CONFIG" ||
-               command.command == "SET_VPU") {
-        result = SpectrError::NOT_EXEC_4; // Execution not possible
     } else if (command.command == "GET_STAT") {
         std::string response = getStat(command.requestId);
         sendToITS(response);
@@ -248,14 +257,6 @@ void SpectrObject::processCommand(const SpectrProtocol::ParsedCommand& command) 
         std::string response = getRefer(command.requestId);
         sendToITS(response);
         return;
-    } else if (command.command == "GET_GROUP" ||
-               command.command == "GET_SWITCH" ||
-               command.command == "GET_TWP" ||
-               command.command == "GET_TDET" ||
-               command.command == "GET_JRNL" ||
-               command.command == "GET_POWER" ||
-               command.command == "GET_VPU") {
-        result = SpectrError::NOT_EXEC_4; // Execution not possible
     } else if (command.command == "GET_CONFIG") {
         if (command.params.size() >= 2) {
             try {
@@ -294,25 +295,7 @@ void SpectrObject::processCommand(const SpectrProtocol::ParsedCommand& command) 
         } else {
             result = SpectrError::BAD_PARAM;
         }
-    } else if (command.command == "SET_TOUT" ||
-               command.command == "SET_PROG" ||
-               command.command == "SET_GROUP" ||
-               command.command == "SET_DATE" ||
-               command.command == "SET_TIME" ||
-               command.command == "SET_TDTIME" ||
-               command.command == "SET_VERB" ||
-               command.command == "SET_DPROG" ||
-               command.command == "SET_DDMAP" ||
-               command.command == "SET_DSDY" ||
-               command.command == "SET_CONFIG" ||
-               command.command == "SET_VPU" ||
-               command.command == "GET_GROUP" ||
-               command.command == "GET_SWITCH" ||
-               command.command == "GET_TWP" ||
-               command.command == "GET_TDET" ||
-               command.command == "GET_JRNL" ||
-               command.command == "GET_POWER" ||
-               command.command == "GET_VPU") {
+    } else if (isKnownButUnsupported(command.command)) {
         result = SpectrError::NOT_EXEC_4;
     }
     
@@ -411,6 +394,9 @@ void SpectrObject::changeState(const std::map<std::string, uint8_t>& changes) {
 }
 
 SpectrError SpectrObject::setPhase(const std::string& requestId, uint8_t phase) {
+    // Any manual control command should stop YF keepalive.
+    stopYFHold();
+
     if (phase < 1 || phase > 7) {
         return SpectrError::BAD_PARAM;
     }
@@ -490,6 +476,9 @@ SpectrError SpectrObject::setOS(const std::string& requestId) {
     if (!snmpHandler_) {
         return SpectrError::NOT_EXEC_5;
     }
+
+    // Turning outputs off must stop YF keepalive.
+    stopYFHold();
     
     std::vector<SNMPVarbind> varbinds;
     
@@ -519,6 +508,9 @@ SpectrError SpectrObject::setLocal(const std::string& requestId) {
     if (!snmpHandler_) {
         return SpectrError::NOT_EXEC_5;
     }
+
+    // Leaving remote control must stop YF keepalive.
+    stopYFHold();
     
     std::vector<SNMPVarbind> varbinds;
     
@@ -554,6 +546,9 @@ SpectrError SpectrObject::setStart(const std::string& requestId) {
     if (!snmpHandler_) {
         return SpectrError::NOT_EXEC_5;
     }
+
+    // Restart/other actions must stop YF keepalive.
+    stopYFHold();
     
     std::vector<SNMPVarbind> varbinds;
     
@@ -581,6 +576,52 @@ SpectrError SpectrObject::setStart(const std::string& requestId) {
 }
 
 std::string SpectrObject::getStat(const std::string& requestId) {
+    // Best-effort refresh from controller to avoid relying on traps.
+    if (snmpHandler_) {
+        snmpHandler_->get(config_.addr,
+                          {SNMPOID::UTC_REPLY_GN, SNMPOID::UTC_REPLY_FR, SNMPOID::UTC_TYPE2_OPERATION_MODE},
+                          [&](bool error, const std::vector<SNMPVarbind>& vbs) {
+                              if (error || vbs.size() < 3) return;
+
+                              // Stage from GN bitmask (first hex byte)
+                              uint8_t stage = 255;
+                              uint8_t byte = 0;
+                              if (parseFirstHexByte(vbs[0].value, byte)) {
+                                  for (int i = 0; i < 8; i++) {
+                                      if (byte & (1 << i)) {
+                                          stage = static_cast<uint8_t>(i + 1);
+                                          break;
+                                      }
+                                  }
+                              }
+                              if (stage != 255) {
+                                  state_.stage = stage;
+                                  state_.stageLen = 255;
+                                  state_.transition = 0;
+                                  if (state_.regime != 2) {
+                                      state_.algorithm = 1;
+                                  }
+                              }
+
+                              // YF regime from FR
+                              int fr = 0;
+                              if (parseIntValue(vbs[1].value, fr) && fr != 0) {
+                                  state_.regime = 2;   // keyRegime=ЖМ
+                                  state_.algorithm = 0; // controlAlgorithm=ЖМ
+                              } else if (state_.regime == 2) {
+                                  // If FR dropped, return to unknown/normal regime
+                                  state_.regime = 0;
+                                  if (state_.algorithm == 0) state_.algorithm = 1;
+                              }
+
+                              // controlSource from operationMode: 3=ASUDD(remote), otherwise local
+                              int mode = 0;
+                              if (parseIntValue(vbs[2].value, mode)) {
+                                  state_.controlSource = (mode == 3) ? 3 : 1;
+                              }
+                          });
+    }
+
     updateState();
     
     std::stringstream ss;
@@ -769,8 +810,10 @@ void SpectrObject::startYFHold() {
     yfHoldActive_ = true;
     yfStop_ = false;
     
-    std::cout << "[YF_HOLD] Start: object=" << config_.id 
-              << ", duration=60s, savedMode=" << static_cast<int>(savedOperationMode_) << std::endl;
+    std::cout << "[YF_HOLD] Start: object=" << config_.id
+              << ", confirmTimeoutSec=" << yfConfig_.confirmTimeoutSec
+              << ", keepPeriodMs=" << yfConfig_.keepPeriodMs
+              << ", maxHoldSec=" << yfConfig_.maxHoldSec << std::endl;
     
     // Запуск фонового потока удержания
     yfHoldThread_ = std::thread(&SpectrObject::yfHoldThread, this);
@@ -794,18 +837,21 @@ void SpectrObject::stopYFHold() {
 }
 
 void SpectrObject::yfHoldThread() {
-    // Короткий "страховщик" активации ЖМ:
-    // - пытается отправлять SET_YF только в "стабильный момент" (transition==0),
-    // - подтверждает по utcReplyFR (!=0),
-    // - НЕ выполняет деактивацию (мы не хотим менять режим обратно автоматически).
+    // Keepalive thread for Yellow Flashing (ЖМ).
+    // Controller behavior observed: require periodic reassert utcControlFF=1.
+    // We:
+    //  - switch to operationMode=3 once,
+    //  - reassert FF=1 periodically,
+    //  - confirm by utcReplyFR (!=0) within confirmTimeoutSec (best-effort),
+    //  - keep reasserting until stopYFHold() or maxHoldSec (if >0).
 
-    const auto ensureDuration = std::chrono::seconds(15);
-    const auto sendInterval = std::chrono::milliseconds(800);
-    const auto pollInterval = std::chrono::milliseconds(200);
+    const int confirmTimeoutSec = (yfConfig_.confirmTimeoutSec > 0) ? yfConfig_.confirmTimeoutSec : 120;
+    const auto sendInterval = std::chrono::milliseconds((yfConfig_.keepPeriodMs > 0) ? yfConfig_.keepPeriodMs : 2000);
+    const int maxHoldSec = (yfConfig_.maxHoldSec >= 0) ? yfConfig_.maxHoldSec : 0;
 
     auto startTime = std::chrono::steady_clock::now();
     auto lastSendTime = startTime - sendInterval;
-    auto lastPollTime = startTime - pollInterval;
+    auto lastPollTime = startTime - std::chrono::milliseconds(200);
 
     int sendCount = 0;
     int errorCount = 0;
@@ -826,63 +872,40 @@ void SpectrObject::yfHoldThread() {
         return ok;
     };
 
-    auto readPhase = [&](uint8_t& phaseOut) -> bool {
-        bool ok = false;
-        snmpHandler_->get(config_.addr, {SNMPOID::UTC_REPLY_GN}, [&](bool error, const std::vector<SNMPVarbind>& varbinds) {
-            if (error || varbinds.empty()) {
-                return;
-            }
-            uint8_t byte = 0;
-            if (parseFirstHexByte(varbinds[0].value, byte)) {
-                for (int i = 0; i < 8; i++) {
-                    if (byte & (1 << i)) {
-                        phaseOut = static_cast<uint8_t>(i + 1);
-                        ok = true;
-                        return;
-                    }
-                }
-            }
-        });
-        return ok;
-    };
+    std::cout << "[YF_HOLD] Thread started" << std::endl;
 
-    std::cout << "[YF_HOLD] Ensure thread started" << std::endl;
+    // Enter remote mode once.
+    if (snmpHandler_) {
+        snmpHandler_->set(config_.addr, {{SNMPOID::UTC_TYPE2_OPERATION_MODE, ASN_INTEGER, "3"}}, nullptr);
+    }
 
-    while (!yfStop_ && (std::chrono::steady_clock::now() - startTime) < ensureDuration) {
+    bool confirmed = false;
+
+    while (!yfStop_) {
         if (!snmpHandler_) {
             break;
         }
 
         auto now = std::chrono::steady_clock::now();
         auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(now - startTime).count();
+        auto elapsedSec = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
 
-        // Poll current state frequently for logging/confirmation.
-        if ((now - lastPollTime) >= pollInterval) {
+        if (maxHoldSec > 0 && elapsedSec >= maxHoldSec) {
+            std::cout << "[YF_HOLD] Max hold reached (" << maxHoldSec << "s), stopping" << std::endl;
+            break;
+        }
+
+        // Poll for confirmation for a bounded time.
+        if (!confirmed && elapsedSec <= confirmTimeoutSec && (now - lastPollTime) >= std::chrono::milliseconds(200)) {
             lastPollTime = now;
 
             int fr = 0;
             if (readIntOID(SNMPOID::UTC_REPLY_FR, fr) && fr != 0) {
                 std::cout << "[YF_HOLD] Confirmed: utcReplyFR=" << fr << " (elapsed=" << elapsedMs << "ms)" << std::endl;
-                break;
+                confirmed = true;
+                state_.regime = 2;
+                state_.algorithm = 0;
             }
-        }
-
-        // Try to align with stable moment: transition==0
-        int transition = -1;
-        int stageCounter = -1;
-        uint8_t phase = 0;
-        bool gotTransition = readIntOID(SNMPOID::UTC_REPLY_TRANSITION, transition);
-        bool gotStageCounter = readIntOID(SNMPOID::UTC_REPLY_STAGE_COUNTER, stageCounter);
-        bool gotPhase = readPhase(phase);
-
-        if (gotTransition && transition != 0) {
-            // In transition - just wait, but log sometimes.
-            std::cout << "[YF_HOLD] Skip send (transition=" << transition
-                      << ", stageCounter=" << (gotStageCounter ? std::to_string(stageCounter) : "?")
-                      << ", phase=" << (gotPhase ? std::to_string(static_cast<int>(phase)) : "?")
-                      << ", elapsed=" << elapsedMs << "ms)" << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            continue;
         }
 
         if ((now - lastSendTime) >= sendInterval) {
@@ -909,11 +932,10 @@ void SpectrObject::yfHoldThread() {
                               << ", elapsed=" << elapsedMs << "ms)" << std::endl;
                 } else {
                     errorCount = 0;
-                    std::cout << "[YF_HOLD] Send #" << sendCount << " ok (transition="
-                              << (gotTransition ? std::to_string(transition) : "?")
-                              << ", stageCounter=" << (gotStageCounter ? std::to_string(stageCounter) : "?")
-                              << ", phase=" << (gotPhase ? std::to_string(static_cast<int>(phase)) : "?")
-                              << ", elapsed=" << elapsedMs << "ms)" << std::endl;
+                    // Keep logs light: print occasionally.
+                    if (sendCount == 1 || (sendCount % 30) == 0) {
+                        std::cout << "[YF_HOLD] Send #" << sendCount << " ok (elapsed=" << elapsedMs << "ms)" << std::endl;
+                    }
                 }
             });
 
@@ -929,7 +951,8 @@ void SpectrObject::yfHoldThread() {
     auto totalElapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::steady_clock::now() - startTime).count();
 
-    std::cout << "[YF_HOLD] Ensure complete: sends=" << sendCount
+    std::cout << "[YF_HOLD] Thread complete: confirmed=" << (confirmed ? "yes" : "no")
+              << ", sends=" << sendCount
               << ", elapsed=" << totalElapsedMs << "ms" << std::endl;
 
     yfHoldActive_ = false;

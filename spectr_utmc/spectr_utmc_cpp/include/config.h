@@ -11,6 +11,15 @@ struct ITSConfig {
     int reconnectTimeout;
 };
 
+struct YFConfig {
+    // How long to try confirming Yellow Flashing by utcReplyFR before giving up.
+    int confirmTimeoutSec;
+    // How often to reassert utcControlFF=1 while YF is enabled.
+    int keepPeriodMs;
+    // 0 = infinite (until another command disables/overrides YF).
+    int maxHoldSec;
+};
+
 struct ObjectConfig {
     uint32_t id;
     std::string strid;
@@ -21,6 +30,7 @@ struct ObjectConfig {
 struct Config {
     ITSConfig its;
     std::string community;
+    YFConfig yf;
     std::vector<ObjectConfig> objects;
 };
 

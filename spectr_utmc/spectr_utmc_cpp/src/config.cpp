@@ -82,6 +82,24 @@ bool ConfigLoader::load(const std::string& filename, Config& config) {
     // Парсинг community
     config.community = extractString(json, "community");
 
+    // Парсинг yf конфигурации
+    config.yf.confirmTimeoutSec = 120;
+    config.yf.keepPeriodMs = 2000;
+    config.yf.maxHoldSec = 0;
+    size_t yfStart = json.find("\"yf\"");
+    if (yfStart != std::string::npos) {
+        size_t yfEnd = json.find("}", yfStart);
+        if (yfEnd != std::string::npos) {
+            std::string yfSection = json.substr(yfStart, yfEnd - yfStart);
+            int confirmTimeoutSec = extractInt(yfSection, "confirmTimeoutSec");
+            int keepPeriodMs = extractInt(yfSection, "keepPeriodMs");
+            int maxHoldSec = extractInt(yfSection, "maxHoldSec");
+            if (confirmTimeoutSec > 0) config.yf.confirmTimeoutSec = confirmTimeoutSec;
+            if (keepPeriodMs > 0) config.yf.keepPeriodMs = keepPeriodMs;
+            if (maxHoldSec >= 0) config.yf.maxHoldSec = maxHoldSec;
+        }
+    }
+
     // Парсинг objects
     size_t objectsStart = json.find("\"objects\"");
     if (objectsStart != std::string::npos) {

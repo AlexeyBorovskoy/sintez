@@ -106,6 +106,9 @@ int main(int argc, char* argv[]) {
     std::cout << "Loaded configuration:" << std::endl;
     std::cout << "  ITS: " << config.its.host << ":" << config.its.port << std::endl;
     std::cout << "  Community: " << config.community << std::endl;
+    std::cout << "  YF: confirmTimeoutSec=" << config.yf.confirmTimeoutSec
+              << " keepPeriodMs=" << config.yf.keepPeriodMs
+              << " maxHoldSec=" << config.yf.maxHoldSec << std::endl;
     std::cout << "  Objects: " << config.objects.size() << std::endl;
     
     // Инициализация SNMP handler
@@ -133,7 +136,7 @@ int main(int argc, char* argv[]) {
         std::string key = objConfig.addr.empty() ? objConfig.siteId : objConfig.addr;
         
         auto tcpClientPtr = tcpClient.get();
-        auto obj = std::make_unique<SpectrObject>(objConfig, config.community, snmpHandler.get(), tcpClientPtr);
+        auto obj = std::make_unique<SpectrObject>(objConfig, config.community, config.yf, snmpHandler.get(), tcpClientPtr);
         
         objects[key] = std::move(obj);
         
