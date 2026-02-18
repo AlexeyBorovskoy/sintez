@@ -82,8 +82,13 @@ void TcpClient::workerThread() {
             FD_ZERO(&readFds);
             FD_ZERO(&writeFds);
             FD_SET(socketFd_, &readFds);
-            
-            if (!sendQueue_.empty()) {
+
+            bool wantWrite = false;
+            {
+                std::lock_guard<std::mutex> lock(sendMutex_);
+                wantWrite = !sendQueue_.empty();
+            }
+            if (wantWrite) {
                 FD_SET(socketFd_, &writeFds);
             }
             

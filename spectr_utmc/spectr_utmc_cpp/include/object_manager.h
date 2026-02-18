@@ -9,6 +9,7 @@
 #include <map>
 #include <atomic>
 #include <cstdint>
+#include <thread>
 
 struct ObjectState {
     uint8_t damage = 0;

@@ -62,6 +62,10 @@ bool ConfigLoader::load(const std::string& filename, Config& config) {
         return false;
     }
 
+    // Reset output to avoid leaking values across reloads.
+    config = Config{};
+    config.objects.clear();
+
     std::stringstream buffer;
     buffer << file.rdbuf();
     std::string json = buffer.str();
@@ -147,11 +151,6 @@ bool ConfigLoader::load(const std::string& filename, Config& config) {
     }
 
     // Валидация
-    if (config.objects.empty()) {
-        std::cerr << "No objects configured" << std::endl;
-        return false;
-    }
-
     if (config.objects.empty()) {
         std::cerr << "No objects configured" << std::endl;
         return false;

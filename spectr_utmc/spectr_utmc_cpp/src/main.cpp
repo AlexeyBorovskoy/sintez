@@ -57,8 +57,6 @@ void processITSData(const std::string& data) {
         // Попытка определить ID объекта из команды
         // В протоколе Spectr-ITS команды могут содержать ID объекта
         // Если не указан, используем первый объект
-        uint32_t targetId = 0;
-        
         // Поиск объекта по ID (если указан в команде)
         // В production нужна более сложная логика определения объекта
         SpectrObject* targetObject = nullptr;
