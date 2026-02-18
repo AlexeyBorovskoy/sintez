@@ -1,0 +1,17 @@
+{
+  "its": {
+    "host": "commserver.cudd",
+    "port": 3000,
+    "reconnectTimeout": 10
+  },
+  "community": "UTMC",
+  "yf": {
+    "confirmTimeoutSec": 120,
+    "keepPeriodMs": 2000,
+    "maxHoldSec": 0
+  },
+  "objects": [
+    { "id": 10101, "strid": "SINTEZ UTMC", "addr": "192.168.75.150", "siteId": "CO11111" }
+  ]
+}
+
