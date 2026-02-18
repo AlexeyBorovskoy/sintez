@@ -4,7 +4,9 @@
 
 ## Описание
 
-Это C++ реализация моста между системами UTMC (SNMP протокол) и Spectr-ITS (TCP/IP протокол). Приложение принимает SNMP traps/informs от контроллеров и транслирует их в протокол Spectr-ITS, а также обрабатывает команды управления от ITS сервера.
+Это C++ реализация моста между системами UTMC (SNMP) и Spectr-ITS (TCP). Приложение подключается к ITS-серверу, парсит команды Spectr (`SET_*`/`GET_*`) и выполняет управление контроллером через UTMC/SNMP, возвращая ответы в формате Spectr (`>O.K.`, `>NOT_EXEC ...`, и т.п.).
+
+Отдельно усилена логика ЖМ (Yellow Flashing): подтверждение по `utcReplyFR` и удержание `utcControlFF=1` с периодом.
 
 ## Требования
 
@@ -48,6 +50,11 @@ make
     "reconnectTimeout": 10
   },
   "community": "UTMC",
+  "yf": {
+    "confirmTimeoutSec": 120,
+    "keepPeriodMs": 2000,
+    "maxHoldSec": 0
+  },
   "objects": [
     {
       "id": 10101,
@@ -64,6 +71,8 @@ make
 ```bash
 ./spectr_utmc_cpp config.json
 ```
+
+Логи идут в stdout/stderr (удобно запускать под `systemd`/`procd`).
 
 ## Архитектура
 
