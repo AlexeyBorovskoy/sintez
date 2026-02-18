@@ -4,6 +4,10 @@
 #include <iomanip>
 #include <thread>
 #include <chrono>
+#include <cstdio>
+#include <cstdlib>
+#include <fstream>
+#include <sstream>
 #include <signal.h>
 
 extern "C" {
@@ -15,6 +19,32 @@ static bool running = true;
 void signalHandler(int signal) {
     std::cout << "\nReceived signal " << signal << ", shutting down..." << std::endl;
     running = false;
+}
+
+static bool parseIntValue(const std::string& input, int& out) {
+    std::string num;
+    bool started = false;
+    for (char ch : input) {
+        if (!started) {
+            if (ch == '-' || std::isdigit(static_cast<unsigned char>(ch))) {
+                num.push_back(ch);
+                started = true;
+            }
+        } else if (std::isdigit(static_cast<unsigned char>(ch))) {
+            num.push_back(ch);
+        } else {
+            break;
+        }
+    }
+    if (num.empty() || num == "-") {
+        return false;
+    }
+    try {
+        out = std::stoi(num);
+        return true;
+    } catch (...) {
+        return false;
+    }
 }
 
 void printVarbind(const SNMPVarbind& vb, int index = -1) {
@@ -373,6 +403,317 @@ void testSetMultiple(SNMPHandler& handler, const std::string& address, const std
     }
 }
 
+// High-level helper: SET_YF can be accepted by SNMP but not always activates flashing.
+// This wraps SET_YF with confirmation using utcReplyFR and optional retries.
+void testSetYFWithConfirm(SNMPHandler& handler, const std::string& address, int attempts, int timeoutSec) {
+    std::cout << "\n=== Testing SET_YF (with confirm) ===" << std::endl;
+    std::cout << "⚠️  WARNING: This will modify controller state!" << std::endl;
+    std::cout << "Address: " << address << std::endl;
+    std::cout << "Attempts: " << attempts << ", confirmTimeout: " << timeoutSec << "s" << std::endl;
+
+    if (attempts < 1) attempts = 1;
+    if (timeoutSec < 1) timeoutSec = 1;
+
+    for (int i = 1; i <= attempts; i++) {
+        std::cout << "\nAttempt " << i << "/" << attempts << ": SNMP SET operationMode=3 + utcControlFF=1" << std::endl;
+
+        std::vector<SNMPVarbind> varbinds = {
+            {SNMPOID::UTC_TYPE2_OPERATION_MODE, ASN_INTEGER, "3"},
+            {SNMPOID::UTC_CONTROL_FF, ASN_INTEGER, "1"},
+        };
+
+        bool setOk = handler.set(address, varbinds, [](bool error, const std::vector<SNMPVarbind>& resultVarbinds) {
+            if (error) {
+                std::cerr << "SET_YF: SET failed" << std::endl;
+            } else {
+                std::cout << "SET_YF: SET accepted (response varbinds: " << resultVarbinds.size() << ")" << std::endl;
+            }
+        });
+
+        if (!setOk) {
+            std::cerr << "ERROR: SET request failed at transport level" << std::endl;
+            return;
+        }
+
+        auto start = std::chrono::steady_clock::now();
+        bool confirmed = false;
+        while ((std::chrono::steady_clock::now() - start) < std::chrono::seconds(timeoutSec)) {
+            int frValue = 0;
+            bool getOk = handler.get(address, {SNMPOID::UTC_REPLY_FR}, [&](bool error, const std::vector<SNMPVarbind>& vbs) {
+                if (error || vbs.empty()) {
+                    return;
+                }
+                int v = 0;
+                if (parseIntValue(vbs[0].value, v)) {
+                    frValue = v;
+                }
+            });
+
+            if (getOk && frValue != 0) {
+                std::cout << "CONFIRMED: utcReplyFR=" << frValue << " (flashing)" << std::endl;
+                confirmed = true;
+                break;
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        }
+
+        if (confirmed) {
+            std::cout << "OK: Flashing confirmed" << std::endl;
+            return;
+        }
+
+        std::cout << "WARN: Flashing not confirmed within timeout" << std::endl;
+    }
+
+    std::cerr << "ERROR: SET_YF accepted but flashing never confirmed (utcReplyFR)" << std::endl;
+}
+
+static std::string shQuote(const std::string& s) {
+    // Quote for /bin/sh -c using single quotes.
+    std::string out;
+    out.reserve(s.size() + 2);
+    out.push_back('\'');
+    for (char c : s) {
+        if (c == '\'') {
+            out.append("'\\''");
+        } else {
+            out.push_back(c);
+        }
+    }
+    out.push_back('\'');
+    return out;
+}
+
+static int runCmdCapture(const std::string& cmd, std::string& out) {
+    out.clear();
+    // Force stderr into stdout so we can show one combined trace on error.
+    std::string full = cmd + " 2>&1";
+    FILE* fp = popen(full.c_str(), "r");
+    if (!fp) {
+        out = "popen() failed";
+        return 127;
+    }
+    char buf[4096];
+    while (fgets(buf, sizeof(buf), fp)) {
+        out.append(buf);
+    }
+    int rc = pclose(fp);
+    if (WIFEXITED(rc)) {
+        return WEXITSTATUS(rc);
+    }
+    return 128;
+}
+
+static bool sshRemote(const std::string& ip,
+                      const std::string& user,
+                      const std::string& pass,
+                      const std::string& community,
+                      const std::string& body,
+                      std::string& out) {
+    // We run controller-local SNMP via SSH:
+    //   COMM=UTMC bash -lc '<body>'
+    std::string remote = "COMM=" + community + " bash -lc " + shQuote(body);
+
+    std::ostringstream cmd;
+    cmd << "sshpass -p " << shQuote(pass) << " ssh"
+        << " -o StrictHostKeyChecking=no"
+        << " -o UserKnownHostsFile=/dev/null"
+        << " -o LogLevel=ERROR"
+        << " -o IdentitiesOnly=yes"
+        << " -o PreferredAuthentications=password"
+        << " -o PubkeyAuthentication=no"
+        << " -o ConnectTimeout=5"
+        << " " << user << "@" << ip
+        << " " << shQuote(remote);
+
+    int rc = runCmdCapture(cmd.str(), out);
+    return rc == 0;
+}
+
+static bool sshRestoreNormal(const std::string& ip,
+                             const std::string& user,
+                             const std::string& pass,
+                             const std::string& community,
+                             std::string& out) {
+    (void)community;
+    // operationMode=1, LO=0, FF=0
+    const std::string body =
+        "set -euo pipefail\n"
+        "snmpset -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 "
+        + SNMPOID::UTC_CONTROL_LO + " i 0 "
+        + SNMPOID::UTC_CONTROL_FF + " i 0 "
+        + SNMPOID::UTC_TYPE2_OPERATION_MODE + " i 1 >/dev/null\n"
+        "sleep 1\n"
+        "echo mode=$(snmpget -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_TYPE2_OPERATION_MODE + " 2>/dev/null || echo ?)"
+        " fr=$(snmpget -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_REPLY_FR + " 2>/dev/null || echo ?)\n";
+
+    return sshRemote(ip, user, pass, community, body, out);
+}
+
+static bool sshEnableYFUntilConfirm(const std::string& ip,
+                                   const std::string& user,
+                                   const std::string& pass,
+                                   const std::string& community,
+                                   int confirmTimeoutSec,
+                                   int setPeriodSec,
+                                   int& outFrValue,
+                                   bool& outEnteredRemote,
+                                   std::string& trace) {
+    outFrValue = 0;
+    trace.clear();
+    outEnteredRemote = false;
+
+    // Enter UTC control once.
+    {
+        std::string out;
+        const std::string body =
+            "set -euo pipefail\n"
+            "snmpset -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_TYPE2_OPERATION_MODE + " i 3 >/dev/null\n"
+            "echo mode_set_3\n";
+        if (!sshRemote(ip, user, pass, community, body, out)) {
+            trace += out;
+            return false;
+        }
+        trace += out;
+        outEnteredRemote = true;
+    }
+
+    if (confirmTimeoutSec < 1) confirmTimeoutSec = 1;
+    if (setPeriodSec < 1) setPeriodSec = 1;
+
+    auto start = std::chrono::steady_clock::now();
+    while (running && (std::chrono::steady_clock::now() - start) < std::chrono::seconds(confirmTimeoutSec)) {
+        std::string out;
+        const std::string body =
+            "set -euo pipefail\n"
+            "snmpset -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_CONTROL_FF + " i 1 >/dev/null\n"
+            "snmpget -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_REPLY_FR + " 2>/dev/null || echo ?\n";
+
+        if (!sshRemote(ip, user, pass, community, body, out)) {
+            trace += out;
+            return false;
+        }
+        trace += out;
+
+        int v = 0;
+        if (parseIntValue(out, v) && v != 0) {
+            outFrValue = v;
+            return true;
+        }
+
+        std::this_thread::sleep_for(std::chrono::seconds(setPeriodSec));
+    }
+
+    if (!running) {
+        trace += "interrupted by signal\n";
+        return false;
+    }
+    trace += "timeout waiting for utcReplyFR != 0\n";
+    return false;
+}
+
+static int testSshYellowFlashingFor(const std::string& ip,
+                                   const std::string& community,
+                                   int holdSec,
+                                   const std::string& user,
+                                   int confirmTimeoutSec,
+                                   int keepPeriodSec,
+                                   const std::string& passFileOpt) {
+    std::string pass;
+    if (!passFileOpt.empty()) {
+        std::ifstream in(passFileOpt);
+        if (!in) {
+            std::cerr << "ERROR: cannot read pass file: " << passFileOpt << "\n";
+            return 2;
+        }
+        std::getline(in, pass);
+    } else if (const char* passFileEnv = std::getenv("DK_PASS_FILE"); passFileEnv && *passFileEnv) {
+        std::ifstream in(passFileEnv);
+        if (!in) {
+            std::cerr << "ERROR: cannot read DK_PASS_FILE: " << passFileEnv << "\n";
+            return 2;
+        }
+        std::getline(in, pass);
+    } else if (const char* passEnv = std::getenv("DK_PASS"); passEnv && *passEnv) {
+        pass = passEnv;
+    }
+    if (pass.empty()) {
+        std::cerr << "ERROR: SSH password required for ssh_yf_for.\n";
+        std::cerr << "Provide one of:\n";
+        std::cerr << "  - env DK_PASS=...\n";
+        std::cerr << "  - env DK_PASS_FILE=/path/to/file\n";
+        std::cerr << "  - optional last arg <passFile>\n";
+        std::cerr << "Target: " << user << "@" << ip << "\n";
+        return 2;
+    }
+
+    if (holdSec < 1) holdSec = 1;
+    if (confirmTimeoutSec < 1) confirmTimeoutSec = 1;
+    if (keepPeriodSec < 1) keepPeriodSec = 1;
+
+    std::cout << "\n=== ssh_yf_for: Yellow Flashing for " << holdSec << "s ===\n";
+    std::cout << "Controller: " << ip << "\n";
+    std::cout << "Community: " << community << "\n";
+    std::cout << "SSH user: " << user << "\n";
+    std::cout << "Confirm timeout: " << confirmTimeoutSec << "s, keepPeriod: " << keepPeriodSec << "s\n";
+    std::cout << "⚠️  WARNING: This will modify controller state!\n";
+
+    bool enteredRemote = false;
+    bool restoreArmed = false;
+    struct RestoreGuard {
+        const std::string& ip;
+        const std::string& user;
+        const std::string& pass;
+        const std::string& community;
+        bool& armed;
+        std::string out;
+        ~RestoreGuard() {
+            if (!armed) return;
+            // Best-effort restore; ignore errors.
+            sshRestoreNormal(ip, user, pass, community, out);
+        }
+    } restoreGuard{ip, user, pass, community, restoreArmed};
+
+    int fr = 0;
+    std::string trace;
+    if (!sshEnableYFUntilConfirm(ip, user, pass, community, confirmTimeoutSec, keepPeriodSec, fr, enteredRemote, trace)) {
+        restoreArmed = enteredRemote;
+        std::cerr << "ERROR: Failed to enable/confirm Yellow Flashing (utcReplyFR)\n";
+        if (!trace.empty()) std::cerr << "Trace:\n" << trace << std::endl;
+        return 3;
+    }
+    restoreArmed = true;
+
+    std::cout << "CONFIRMED: utcReplyFR=" << fr << "\n";
+    std::cout << "Holding for " << holdSec << " seconds (reassert utcControlFF=1 every " << keepPeriodSec << "s)\n";
+
+    auto holdStart = std::chrono::steady_clock::now();
+    while (running && (std::chrono::steady_clock::now() - holdStart) < std::chrono::seconds(holdSec)) {
+        std::string out;
+        const std::string body =
+            "set -euo pipefail\n"
+            "snmpset -v1 -c \"$COMM\" -t 2 -r 1 -Oqv 127.0.0.1 " + SNMPOID::UTC_CONTROL_FF + " i 1 >/dev/null\n"
+            "echo ff_keep_1\n";
+        if (!sshRemote(ip, user, pass, community, body, out)) {
+            std::cerr << "WARN: keepalive set failed (continuing)\n" << out << std::endl;
+        }
+        std::this_thread::sleep_for(std::chrono::seconds(keepPeriodSec));
+    }
+
+    if (!running) {
+        std::cout << "Interrupted: restoring normal\n";
+    }
+    std::cout << "Restoring normal (operationMode=1, LO=0, FF=0)\n";
+    std::string out;
+    if (!sshRestoreNormal(ip, user, pass, community, out)) {
+        std::cerr << "ERROR: restore normal failed\n" << out << std::endl;
+        return 4;
+    }
+    restoreArmed = false; // already restored
+    std::cout << out;
+    return 0;
+}
+
 void printUsage(const char* progName) {
     std::cout << "Usage: " << progName << " <command> [options]" << std::endl;
     std::cout << "\nCommands:" << std::endl;
@@ -382,6 +723,10 @@ void printUsage(const char* progName) {
     std::cout << "  set <ip> <community> <oid> <type> <value> - Test SET for specific OID" << std::endl;
     std::cout << "    Types: 2=INTEGER, 4=OCTET_STR" << std::endl;
     std::cout << "  setmulti <ip> <community> <oid1> <type1> <value1> [oid2 type2 value2 ...] - Test SET with multiple varbinds" << std::endl;
+    std::cout << "  set_yf <ip> <community> [attempts] [timeoutSec] - SET_YF with confirm using utcReplyFR" << std::endl;
+    std::cout << "  ssh_yf_for <ip> <community> <seconds> [user] [confirmTimeoutSec] [keepPeriodSec] [passFile]" << std::endl;
+    std::cout << "                               - Run Yellow Flashing for N seconds using SSH + controller-local SNMP." << std::endl;
+    std::cout << "                                 Password via DK_PASS, DK_PASS_FILE, or optional passFile arg." << std::endl;
     std::cout << "  walk <ip> <community> <oidPrefix> - Walk OID subtree using GETNEXT" << std::endl;
     std::cout << "  traps <port> <community>       - Test trap receiver (default port: 10162)" << std::endl;
     std::cout << "\nExamples:" << std::endl;
@@ -390,6 +735,9 @@ void printUsage(const char* progName) {
     std::cout << "  " << progName << " get 192.168.4.77 UTMC 1.3.6.1.4.1.13267.3.2.4.1" << std::endl;
     std::cout << "  " << progName << " set 192.168.4.77 UTMC 1.3.6.1.4.1.13267.3.2.4.1 2 3" << std::endl;
     std::cout << "  " << progName << " setmulti 192.168.4.77 UTMC 1.3.6.1.4.1.13267.3.2.4.1 2 3 1.3.6.1.4.1.13267.3.2.4.2.1.20 2 1" << std::endl;
+    std::cout << "  " << progName << " set_yf 192.168.4.77 UTMC 3 10" << std::endl;
+    std::cout << "  DK_PASS=... " << progName << " ssh_yf_for 192.168.75.150 UTMC 30 voicelink 120 2" << std::endl;
+    std::cout << "  " << progName << " ssh_yf_for 192.168.75.150 UTMC 30 voicelink 120 2 /tmp/dk_pass" << std::endl;
     std::cout << "  " << progName << " walk 192.168.4.77 UTMC 1.3.6.1.4.1.13267.3.2.4.2.1" << std::endl;
     std::cout << "  " << progName << " traps 10162 UTMC" << std::endl;
 }
@@ -465,7 +813,7 @@ int main(int argc, char* argv[]) {
         testGetOID(handler, address, oid);
         
     } else if (command == "set") {
-        if (argc < 6) {
+        if (argc < 7) {
             std::cerr << "Error: IP address, community, OID, type and value required" << std::endl;
             printUsage(argv[0]);
             return 1;
@@ -505,6 +853,38 @@ int main(int argc, char* argv[]) {
         
         SNMPHandler handler(community);
         testSetMultiple(handler, address, varbindSpecs);
+
+    } else if (command == "set_yf") {
+        if (argc < 4) {
+            std::cerr << "Error: IP address and community required" << std::endl;
+            printUsage(argv[0]);
+            return 1;
+        }
+
+        std::string address = argv[2];
+        std::string community = argv[3];
+        int attempts = (argc >= 5) ? std::stoi(argv[4]) : 3;
+        int timeoutSec = (argc >= 6) ? std::stoi(argv[5]) : 10;
+
+        SNMPHandler handler(community);
+        testSetYFWithConfirm(handler, address, attempts, timeoutSec);
+
+    } else if (command == "ssh_yf_for") {
+        if (argc < 5) {
+            std::cerr << "Error: IP address, community and duration seconds required" << std::endl;
+            printUsage(argv[0]);
+            return 1;
+        }
+
+        std::string ip = argv[2];
+        std::string community = argv[3];
+        int seconds = std::stoi(argv[4]);
+        std::string user = (argc >= 6) ? argv[5] : "voicelink";
+        int confirmTimeoutSec = (argc >= 7) ? std::stoi(argv[6]) : 120;
+        int keepPeriodSec = (argc >= 8) ? std::stoi(argv[7]) : 2;
+        std::string passFile = (argc >= 9) ? argv[8] : "";
+
+        return testSshYellowFlashingFor(ip, community, seconds, user, confirmTimeoutSec, keepPeriodSec, passFile);
         
     } else if (command == "walk") {
         if (argc < 5) {

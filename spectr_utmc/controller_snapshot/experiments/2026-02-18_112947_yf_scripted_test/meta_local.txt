@@ -1,0 +1,8 @@
+run_dir=/tmp/yf_scripted_test_20260218_112456
+controller_ip=192.168.75.150
+ssh_user=voicelink
+community=UTMC
+yf_enable_timeout_sec=120
+yf_set_period_sec=2
+yf_hold_sec=60
+between_sec=120

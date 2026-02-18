@@ -1,0 +1,802 @@
+controller_time_start=2026-02-17T12:21:00+03:00
+uptime=up 5 weeks, 1 day, 2 hours, 55 minutes
+
+### ss -lun
+State     Recv-Q    Send-Q       Local Address:Port        Peer Address:Port    
+UNCONN    0         0                  0.0.0.0:161              0.0.0.0:*       
+UNCONN    0         0                  0.0.0.0:5353             0.0.0.0:*       
+UNCONN    0         0                  0.0.0.0:56714            0.0.0.0:*       
+UNCONN    0         0                  0.0.0.0:59306            0.0.0.0:*       
+UNCONN    0         0                  0.0.0.0:10162            0.0.0.0:*       
+UNCONN    0         0                        *:5353                   *:*       
+UNCONN    0         0                        *:55362                  *:*       
+
+### snmp sysUpTime (community UTMC)
+36:2:54:57.54
+
+### resident config (head)
+-rw-r--r-- 1 voicelink voicelink 65512 Feb 17 12:05 /home/voicelink/rtc/resident/config
+{
+    "deny_rcp": false, 
+    "datetime": {
+        "start_month": "1", 
+        "start_day": "1", 
+        "sync_fallback": "", 
+        "end_month": "1", 
+        "ntpserver": "", 
+        "end_day_of_the_week": "0", 
+        "synctime": "disabled", 
+        "start_day_of_the_week": "0", 
+        "end_day": "1", 
+        "dst_enabled": "", 
+        "end_time": "0", 
+        "time_migration": "60", 
+        "time_mode": "manual", 
+        "synctimentp": "disabled", 
+        "last_sync_time": "2025-02-25 20:22:14.000000", 
+        "start_time": "0"
+    }, 
+    "snmp_proto": "UTMC", 
+    "current_lamps": {
+        "ext_curr_val": false, 
+        "manual": false, 
+        "voltage_onoff": true, 
+        "delay": 400, 
+        "master": 50, 
+        "currents": {
+            "11": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "10": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "12": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "1": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "3": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "2": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "5": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "4": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "7": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "6": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "9": [
+                0, 
+                0, 
+                0, 
+                0
+            ], 
+            "8": [
+                0, 
+                0, 
+                0, 
+                0
+            ]
+        }, 
+        "onoff": false
+    }, 
+    "fix_version": "", 
+    "remote_onoff": false, 
+    "program_latest_update": "20250225143357Z", 
+    "network": {
+        "gw": "192.168.75.1", 
+        "status_link": null, 
+        "iface": "eth0", 
+        "ip": "192.168.75.150", 
+        "mask": "255.255.255.0", 
+        "broadcast": "192.168.75.255", 
+        "mac": "b8:27:eb:3f:0c:78", 
+        "link_encap": "Ethernet"
+    }, 
+    "snmp_priv_encryp_type": "", 
+    "snmp_port_reciver": 10162, 
+    "snmp_privpass": "", 
+    "snmp_auth_encryp_type": "", 
+    "snmp_notify_type": "inform", 
+    "snmp_scn": "", 
+    "snmp_tail": "", 
+    "eth_detectors": {
+        "login_traffixtream2": [
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            ""
+        ], 
+        "number_traffixtream2": [
+            1, 
+            2, 
+            3, 
+            4, 
+            5, 
+            6, 
+            7, 
+            8, 
+            9, 
+            10, 
+            11, 
+            12, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18, 
+            19, 
+            20, 
+            21, 
+            22, 
+            23, 
+            24, 
+            25, 
+            26, 
+            27, 
+            28, 
+            29, 
+            30, 
+            31, 
+            32
+        ], 
+        "alias_traficam": [
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+
+### spectr_utmc recent (last 15 min)
+-- Logs begin at Wed 2026-02-11 14:28:09 +03, end at Tue 2026-02-17 12:21:00 +03. --
+2026-02-17T12:06:04+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:03 EVENT (63863) 4 4 255 255$7c\r'
+2026-02-17T12:06:06+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:05 EVENT (63864) 4 4 255 0$5f\r'
+2026-02-17T12:06:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:15 EVENT (63865) 4 4 255 255$1d\r'
+2026-02-17T12:06:22+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:22 EVENT (63866) 4 5 255 255$57\r'
+2026-02-17T12:06:24+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:24 EVENT (63867) 4 5 255 0$16\r'
+2026-02-17T12:06:34+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:34 EVENT (63868) 4 5 255 255$f7\r'
+2026-02-17T12:06:40+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:40 EVENT (63869) 4 6 255 255$2a\r'
+2026-02-17T12:06:42+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:41 EVENT (63870) 4 6 255 0$48\r'
+2026-02-17T12:06:52+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:52 EVENT (63871) 4 6 255 255$c8\r'
+2026-02-17T12:06:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1593) 0 $99\r'
+2026-02-17T12:06:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:57 REFER (1593) "Spectr" 10101 "Test SINTEZ UTMC"$48\r'
+2026-02-17T12:06:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:06:58 EVENT (63872) 4 7 255 255$3b\r'
+2026-02-17T12:07:00+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:00 EVENT (63873) 4 7 255 0$f6\r'
+2026-02-17T12:07:10+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:10 EVENT (63874) 4 7 255 255$7b\r'
+2026-02-17T12:07:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:16 EVENT (63875) 4 8 255 255$ed\r'
+2026-02-17T12:07:19+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:18 EVENT (63876) 4 8 255 0$bb\r'
+2026-02-17T12:07:29+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:28 EVENT (63877) 4 8 255 255$8e\r'
+2026-02-17T12:07:35+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:34 EVENT (63878) 4 9 255 255$c0\r'
+2026-02-17T12:07:36+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:36 EVENT (63879) 4 9 255 0$70\r'
+2026-02-17T12:07:47+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:46 EVENT (63880) 4 9 255 255$5f\r'
+2026-02-17T12:07:52+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:52 EVENT (63881) 4 10 255 255$5f\r'
+2026-02-17T12:07:55+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:54 EVENT (63882) 4 10 255 0$2c\r'
+2026-02-17T12:07:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1594) 0 $B9\r'
+2026-02-17T12:07:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:07:57 REFER (1594) "Spectr" 10101 "Test SINTEZ UTMC"$60\r'
+2026-02-17T12:08:05+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:04 EVENT (63883) 4 10 255 255$60\r'
+2026-02-17T12:08:11+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:10 EVENT (63884) 4 11 255 255$c2\r'
+2026-02-17T12:08:13+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:12 EVENT (63885) 4 11 255 0$05\r'
+2026-02-17T12:08:23+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:23 EVENT (63886) 4 11 255 255$14\r'
+2026-02-17T12:08:29+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:28 EVENT (63887) 4 12 255 255$e6\r'
+2026-02-17T12:08:31+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:31 EVENT (63888) 4 12 255 0$f1\r'
+2026-02-17T12:08:41+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:41 EVENT (63889) 4 12 255 255$b7\r'
+2026-02-17T12:08:47+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:46 EVENT (63890) 4 1 255 255$10\r'
+2026-02-17T12:08:49+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:48 EVENT (63891) 4 1 255 0$44\r'
+2026-02-17T12:08:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1595) 0 $D9\r'
+2026-02-17T12:08:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:57 REFER (1595) "Spectr" 10101 "Test SINTEZ UTMC"$78\r'
+2026-02-17T12:08:59+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:08:59 EVENT (63892) 4 1 255 255$b8\r'
+2026-02-17T12:09:05+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:05 EVENT (63893) 4 2 255 255$ca\r'
+2026-02-17T12:09:07+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:07 EVENT (63894) 4 2 255 0$f2\r'
+2026-02-17T12:09:17+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:17 EVENT (63895) 4 2 255 255$6b\r'
+2026-02-17T12:09:24+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:23 EVENT (63896) 4 3 255 255$9d\r'
+2026-02-17T12:09:26+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:25 EVENT (63897) 4 3 255 0$a7\r'
+2026-02-17T12:09:35+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:35 EVENT (63898) 4 3 255 255$3e\r'
+2026-02-17T12:09:42+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:41 EVENT (63899) 4 4 255 255$70\r'
+2026-02-17T12:09:43+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:43 EVENT (63900) 4 4 255 0$da\r'
+2026-02-17T12:09:54+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:53 EVENT (63901) 4 4 255 255$0b\r'
+2026-02-17T12:09:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1596) 0 $F9\r'
+2026-02-17T12:09:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:57 REFER (1596) "Spectr" 10101 "Test SINTEZ UTMC"$90\r'
+2026-02-17T12:10:00+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:09:59 EVENT (63902) 4 5 255 255$7d\r'
+2026-02-17T12:10:02+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:01 EVENT (63903) 4 5 255 0$07\r'
+2026-02-17T12:10:12+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:11 EVENT (63904) 4 5 255 255$bb\r'
+2026-02-17T12:10:18+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:17 EVENT (63905) 4 6 255 255$2e\r'
+2026-02-17T12:10:20+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:19 EVENT (63906) 4 6 255 0$cb\r'
+2026-02-17T12:10:30+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:29 EVENT (63907) 4 6 255 255$ce\r'
+2026-02-17T12:10:36+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:36 EVENT (63908) 4 7 255 255$09\r'
+2026-02-17T12:10:38+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:38 EVENT (63909) 4 7 255 0$82\r'
+2026-02-17T12:10:48+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:48 EVENT (63910) 4 7 255 255$a7\r'
+2026-02-17T12:10:54+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:53 EVENT (63911) 4 8 255 255$d1\r'
+2026-02-17T12:10:56+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:55 EVENT (63912) 4 8 255 0$b4\r'
+2026-02-17T12:10:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1597) 0 $1A\r'
+2026-02-17T12:10:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:10:57 REFER (1597) "Spectr" 10101 "Test SINTEZ UTMC"$68\r'
+2026-02-17T12:11:06+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:05 EVENT (63913) 4 8 255 255$52\r'
+2026-02-17T12:11:12+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:11 EVENT (63914) 4 9 255 255$84\r'
+2026-02-17T12:11:14+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:14 EVENT (63915) 4 9 255 0$63\r'
+2026-02-17T12:11:24+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:24 EVENT (63916) 4 9 255 255$2d\r'
+2026-02-17T12:11:30+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:30 EVENT (63917) 4 10 255 255$fa\r'
+2026-02-17T12:11:32+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:32 EVENT (63918) 4 10 255 0$13\r'
+2026-02-17T12:11:42+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:42 EVENT (63919) 4 10 255 255$3c\r'
+2026-02-17T12:11:49+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:48 EVENT (63920) 4 11 255 255$1b\r'
+2026-02-17T12:11:51+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:50 EVENT (63921) 4 11 255 0$fa\r'
+2026-02-17T12:11:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1598) 0 $3A\r'
+2026-02-17T12:11:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:11:57 REFER (1598) "Spectr" 10101 "Test SINTEZ UTMC"$80\r'
+2026-02-17T12:12:00+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:00 EVENT (63922) 4 11 255 255$9b\r'
+2026-02-17T12:12:06+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:06 EVENT (63923) 4 12 255 255$7e\r'
+2026-02-17T12:12:08+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:08 EVENT (63924) 4 12 255 0$f3\r'
+2026-02-17T12:12:19+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:18 EVENT (63925) 4 12 255 255$bf\r'
+2026-02-17T12:12:24+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:24 EVENT (63926) 4 1 255 255$dd\r'
+2026-02-17T12:12:27+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:26 EVENT (63927) 4 1 255 0$b7\r'
+2026-02-17T12:12:37+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:36 EVENT (63928) 4 1 255 255$7e\r'
+2026-02-17T12:12:43+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:42 EVENT (63929) 4 2 255 255$b0\r'
+2026-02-17T12:12:45+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:44 EVENT (63930) 4 2 255 0$eb\r'
+2026-02-17T12:12:55+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:54 EVENT (63931) 4 2 255 255$4f\r'
+2026-02-17T12:12:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1599) 0 $5A\r'
+2026-02-17T12:12:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:12:57 REFER (1599) "Spectr" 10101 "Test SINTEZ UTMC"$98\r'
+2026-02-17T12:13:01+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:00 EVENT (63932) 4 3 255 255$61\r'
+2026-02-17T12:13:03+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:03 EVENT (63933) 4 3 255 0$9a\r'
+2026-02-17T12:13:13+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:12 EVENT (63934) 4 3 255 255$02\r'
+2026-02-17T12:13:19+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:19 EVENT (63935) 4 4 255 255$7c\r'
+2026-02-17T12:13:21+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:21 EVENT (63936) 4 4 255 0$4f\r'
+2026-02-17T12:13:31+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:31 EVENT (63937) 4 4 255 255$dc\r'
+2026-02-17T12:13:37+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:37 EVENT (63938) 4 5 255 255$4f\r'
+2026-02-17T12:13:39+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:39 EVENT (63939) 4 5 255 0$14\r'
+2026-02-17T12:13:49+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:48 EVENT (63940) 4 5 255 255$e5\r'
+2026-02-17T12:13:55+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:55 EVENT (63941) 4 6 255 255$20\r'
+2026-02-17T12:13:57+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:56 EVENT (63942) 4 6 255 0$46\r'
+2026-02-17T12:13:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1600) 0 $77\r'
+2026-02-17T12:13:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:13:57 REFER (1600) "Spectr" 10101 "Test SINTEZ UTMC"$2f\r'
+2026-02-17T12:14:07+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:07 EVENT (63943) 4 6 255 255$a0\r'
+2026-02-17T12:14:14+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:13 EVENT (63944) 4 7 255 255$d2\r'
+2026-02-17T12:14:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:15 EVENT (63945) 4 7 255 0$f4\r'
+2026-02-17T12:14:26+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:25 EVENT (63946) 4 7 255 255$73\r'
+2026-02-17T12:14:31+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:31 EVENT (63947) 4 8 255 255$a5\r'
+2026-02-17T12:14:34+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:33 EVENT (63948) 4 8 255 0$a9\r'
+2026-02-17T12:14:44+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:43 EVENT (63949) 4 8 255 255$46\r'
+2026-02-17T12:14:50+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:49 EVENT (63950) 4 9 255 255$b6\r'
+2026-02-17T12:14:51+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:51 EVENT (63951) 4 9 255 0$dd\r'
+2026-02-17T12:14:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1601) 0 $97\r'
+2026-02-17T12:14:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:14:57 REFER (1601) "Spectr" 10101 "Test SINTEZ UTMC"$47\r'
+2026-02-17T12:15:02+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:01 EVENT (63952) 4 9 255 255$f6\r'
+2026-02-17T12:15:08+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:07 EVENT (63953) 4 10 255 255$0f\r'
+2026-02-17T12:15:10+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:09 EVENT (63954) 4 10 255 0$18\r'
+2026-02-17T12:15:20+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:19 EVENT (63955) 4 10 255 255$50\r'
+2026-02-17T12:15:26+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:25 EVENT (63956) 4 11 255 255$b2\r'
+2026-02-17T12:15:28+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:28 EVENT (63957) 4 11 255 0$05\r'
+2026-02-17T12:15:38+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:38 EVENT (63958) 4 11 255 255$04\r'
+2026-02-17T12:15:44+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:43 EVENT (63959) 4 12 255 255$56\r'
+2026-02-17T12:15:46+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:45 EVENT (63960) 4 12 255 0$e8\r'
+2026-02-17T12:15:56+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:56 EVENT (63961) 4 12 255 255$a3\r'
+2026-02-17T12:15:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1602) 0 $B7\r'
+2026-02-17T12:15:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:15:57 REFER (1602) "Spectr" 10101 "Test SINTEZ UTMC"$5f\r'
+2026-02-17T12:16:02+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:02 EVENT (63962) 4 1 255 255$af\r'
+2026-02-17T12:16:04+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:04 EVENT (63963) 4 1 255 0$2c\r'
+2026-02-17T12:16:14+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:14 EVENT (63964) 4 1 255 255$50\r'
+2026-02-17T12:16:20+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:20 EVENT (63965) 4 2 255 255$82\r'
+2026-02-17T12:16:22+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:22 EVENT (63966) 4 2 255 0$e0\r'
+2026-02-17T12:16:32+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:32 EVENT (63967) 4 2 255 255$23\r'
+2026-02-17T12:16:38+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:38 EVENT (63968) 4 3 255 255$95\r'
+2026-02-17T12:16:40+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:40 EVENT (63969) 4 3 255 0$95\r'
+2026-02-17T12:16:50+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:50 EVENT (63970) 4 3 255 255$f3\r'
+2026-02-17T12:16:57+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:56 EVENT (63971) 4 4 255 255$66\r'
+2026-02-17T12:16:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1603) 0 $D7\r'
+2026-02-17T12:16:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:57 REFER (1603) "Spectr" 10101 "Test SINTEZ UTMC"$77\r'
+2026-02-17T12:16:59+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:16:58 EVENT (63972) 4 4 255 0$d9\r'
+2026-02-17T12:17:08+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:08 EVENT (63973) 4 4 255 255$e6\r'
+2026-02-17T12:17:15+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:14 EVENT (63974) 4 5 255 255$19\r'
+2026-02-17T12:17:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:16 EVENT (63975) 4 5 255 0$86\r'
+2026-02-17T12:17:27+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:26 EVENT (63976) 4 5 255 255$b9\r'
+2026-02-17T12:17:32+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:32 EVENT (63977) 4 6 255 255$eb\r'
+2026-02-17T12:17:35+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:35 EVENT (63978) 4 6 255 0$3d\r'
+2026-02-17T12:17:45+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:44 EVENT (63979) 4 6 255 255$8c\r'
+2026-02-17T12:17:51+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:50 EVENT (63980) 4 7 255 255$bc\r'
+2026-02-17T12:17:53+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:52 EVENT (63981) 4 7 255 0$6f\r'
+2026-02-17T12:17:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1604) 0 $F7\r'
+2026-02-17T12:17:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:17:57 REFER (1604) "Spectr" 10101 "Test SINTEZ UTMC"$8f\r'
+2026-02-17T12:18:03+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:02 EVENT (63982) 4 7 255 255$3d\r'
+2026-02-17T12:18:09+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:09 EVENT (63983) 4 8 255 255$b7\r'
+2026-02-17T12:18:11+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:11 EVENT (63984) 4 8 255 0$1e\r'
+2026-02-17T12:18:21+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:21 EVENT (63985) 4 8 255 255$18\r'
+2026-02-17T12:18:27+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:27 EVENT (63986) 4 9 255 255$8a\r'
+2026-02-17T12:18:29+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:29 EVENT (63987) 4 9 255 0$e2\r'
+2026-02-17T12:18:39+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:39 EVENT (63988) 4 9 255 255$2b\r'
+2026-02-17T12:18:45+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:45 EVENT (63989) 4 10 255 255$f6\r'
+2026-02-17T12:18:48+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:47 EVENT (63990) 4 10 255 0$11\r'
+2026-02-17T12:18:57+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:57 EVENT (63991) 4 10 255 255$34\r'
+2026-02-17T12:18:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1605) 0 $18\r'
+2026-02-17T12:18:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:18:57 REFER (1605) "Spectr" 10101 "Test SINTEZ UTMC"$a7\r'
+2026-02-17T12:19:03+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:03 EVENT (63992) 4 11 255 255$56\r'
+2026-02-17T12:19:05+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:05 EVENT (63993) 4 11 255 0$e9\r'
+2026-02-17T12:19:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:15 EVENT (63994) 4 11 255 255$97\r'
+2026-02-17T12:19:22+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:21 EVENT (63995) 4 12 255 255$f9\r'
+2026-02-17T12:19:24+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:23 EVENT (63996) 4 12 255 0$d2\r'
+2026-02-17T12:19:34+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:33 EVENT (63997) 4 12 255 255$3b\r'
+2026-02-17T12:19:40+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:39 EVENT (63998) 4 1 255 255$db\r'
+2026-02-17T12:19:42+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:41 EVENT (63999) 4 1 255 0$27\r'
+2026-02-17T12:19:52+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:51 EVENT (64000) 4 1 255 255$2e\r'
+2026-02-17T12:19:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:57 EVENT (64001) 4 2 255 255$a0\r'
+2026-02-17T12:19:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1606) 0 $38\r'
+2026-02-17T12:19:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:57 REFER (1606) "Spectr" 10101 "Test SINTEZ UTMC"$bf\r'
+2026-02-17T12:20:00+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:19:59 EVENT (64002) 4 2 255 0$68\r'
+2026-02-17T12:20:10+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:09 EVENT (64003) 4 2 255 255$1f\r'
+2026-02-17T12:20:16+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:15 EVENT (64004) 4 3 255 255$51\r'
+2026-02-17T12:20:18+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:17 EVENT (64005) 4 3 255 0$94\r'
+2026-02-17T12:20:28+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:28 EVENT (64006) 4 3 255 255$f9\r'
+2026-02-17T12:20:34+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:33 EVENT (64007) 4 4 255 255$24\r'
+2026-02-17T12:20:36+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:36 EVENT (64008) 4 4 255 0$4b\r'
+2026-02-17T12:20:46+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:45 EVENT (64009) 4 4 255 255$c4\r'
+2026-02-17T12:20:52+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:52 EVENT (64010) 4 5 255 255$fc\r'
+2026-02-17T12:20:54+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:54 EVENT (64011) 4 5 255 0$7f\r'
+2026-02-17T12:20:58+0300 sintez-lite-3b node[458]: 10101 '->' '#GET_REFER (1607) 0 $58\r'
+2026-02-17T12:20:58+0300 sintez-lite-3b node[458]: 10101 '<-' '#12:20:57 REFER (1607) "Spectr" 10101 "Test SINTEZ UTMC"$97\r'
+
+### resident full.log tail
+22-09-2025 00:00:05;;0x1018;;Plan №{0} is started.;;1
+27-09-2025 00:00:07;;0x1018;;Plan №{0} is started.;;2
+29-09-2025 00:00:09;;0x1018;;Plan №{0} is started.;;1
+04-10-2025 00:00:15;;0x1018;;Plan №{0} is started.;;2
+06-10-2025 00:00:10;;0x1018;;Plan №{0} is started.;;1
+11-10-2025 00:00:08;;0x1018;;Plan №{0} is started.;;2
+13-10-2025 00:00:10;;0x1018;;Plan №{0} is started.;;1
+18-10-2025 00:00:01;;0x1018;;Plan №{0} is started.;;2
+20-10-2025 00:00:10;;0x1018;;Plan №{0} is started.;;1
+25-10-2025 00:00:05;;0x1018;;Plan №{0} is started.;;2
+27-10-2025 00:00:02;;0x1018;;Plan №{0} is started.;;1
+01-11-2025 00:00:15;;0x1018;;Plan №{0} is started.;;2
+03-11-2025 00:00:04;;0x1018;;Plan №{0} is started.;;1
+08-11-2025 00:00:08;;0x1018;;Plan №{0} is started.;;2
+10-11-2025 00:00:01;;0x1018;;Plan №{0} is started.;;1
+15-11-2025 00:00:06;;0x1018;;Plan №{0} is started.;;2
+17-11-2025 00:00:07;;0x1018;;Plan №{0} is started.;;1
+22-11-2025 00:00:13;;0x1018;;Plan №{0} is started.;;2
+24-11-2025 00:00:02;;0x1018;;Plan №{0} is started.;;1
+29-11-2025 00:00:08;;0x1018;;Plan №{0} is started.;;2
+01-12-2025 00:00:06;;0x1018;;Plan №{0} is started.;;1
+06-12-2025 00:00:16;;0x1018;;Plan №{0} is started.;;2
+08-12-2025 00:00:11;;0x1018;;Plan №{0} is started.;;1
+13-12-2025 00:00:09;;0x1018;;Plan №{0} is started.;;2
+15-12-2025 00:00:07;;0x1018;;Plan №{0} is started.;;1
+20-12-2025 00:00:16;;0x1018;;Plan №{0} is started.;;2
+22-12-2025 00:00:07;;0x1018;;Plan №{0} is started.;;1
+
+================================================
+Software version: 1.4.20
+Last shutdown: 26-12-2025 16:36:58
+Started: 26-12-2025 16:17:12
+System Information: ('Linux', 'sintez-lite-3b', '5.10.63-v7+', '#1459 SMP Wed Oct 6 16:41:10 BST 2021', 'armv7l', '')
+
+26-12-2025 16:17:15;;0x1004;;Initializing the program...;;
+26-12-2025 16:17:15;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+26-12-2025 16:17:15;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+26-12-2025 16:17:15;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+26-12-2025 16:17:15;;0x1031;;Beginning of protocol search...;;
+26-12-2025 16:17:15;;0x1030;;Search for protocol {0}.;;bus_controller
+26-12-2025 16:17:16;;0x100a;;Hardware initialization...;;
+26-12-2025 16:17:18;;0x100b;;Number of boards Security Processor: {0};;0
+26-12-2025 16:17:18;;0x100c;;Number of boards Lamp Control: {0};;0
+26-12-2025 16:17:18;;0x100d;;Number of boards Remote Control Panel: {0};;0
+26-12-2025 16:17:18;;0x100d;;Number of boards Input-Output: {0};;0
+26-12-2025 16:17:18;;0x0000;;Version of boards Lamp Control: {0};;
+26-12-2025 16:17:18;;0x0000;;Version of boards Input-Output: {0};;
+26-12-2025 16:17:18;;0x0000;;Version of boards Remote Control Panel: {0};;
+26-12-2025 16:17:18;;0x0000;;Version of boards Security Processor: {0};;
+26-12-2025 16:17:18;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+26-12-2025 16:17:18;;0x1030;;Search for protocol {0}.;;bus_boards
+26-12-2025 16:17:18;;0x100a;;Hardware initialization...;;
+26-12-2025 16:17:18;;0x100b;;Number of boards Security Processor: {0};;1
+26-12-2025 16:17:19;;0x100c;;Number of boards Lamp Control: {0};;6
+26-12-2025 16:17:19;;0x100d;;Number of boards Remote Control Panel: {0};;0
+26-12-2025 16:17:19;;0x100d;;Number of boards Input-Output: {0};;0
+26-12-2025 16:17:19;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+26-12-2025 16:17:19;;0x0000;;Version of boards Input-Output: {0};;
+26-12-2025 16:17:19;;0x0000;;Version of boards Remote Control Panel: {0};;
+26-12-2025 16:17:19;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+26-12-2025 16:17:19;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+26-12-2025 16:17:19;;0x1028;;Initialization. Date and time set: {0};;12.01.2026 09:24:34.002
+12-01-2026 09:24:34;;0x1010;;The current threshold values are transmitted.;;
+12-01-2026 09:24:34;;0x1011;;Current control is not used.;;
+12-01-2026 09:24:34;;0x102d;;The general threshold voltage setting is set.;;
+12-01-2026 09:24:34;;0x1021;;Launching the GPIO Handler...;;
+12-01-2026 09:24:34;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+12-01-2026 09:24:34;;0x1023;;Starting the system bus...;;
+12-01-2026 09:24:34;;0x1025;;The system bus is started.;;
+12-01-2026 09:24:37;;0x1001;;Program №1 (fixed mode) is selected.;;
+12-01-2026 09:24:38;;0x1018;;Plan №{0} is started.;;1
+12-01-2026 09:24:38;;0x1006;;Program №{0} is running.;;1
+17-01-2026 00:00:10;;0x1018;;Plan №{0} is started.;;2
+28-01-2026 14:44:46;;0x101b;;Manual control is started.;;
+28-01-2026 14:45:03;;0x101c;;Off.;;
+28-01-2026 14:45:33;;0x1006;;Program №{0} is running.;;1
+28-01-2026 16:34:08;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+28-01-2026 16:34:15;;0x101f;;Flashing yellow.;;
+28-01-2026 16:34:22;;0x1047;;Remote mode is disabled. Reason: {0}.;;Main programm
+28-01-2026 16:34:26;;0x1006;;Program №{0} is running.;;1
+31-01-2026 00:00:06;;0x1018;;Plan №{0} is started.;;2
+03-02-2026 14:46:41;;0x1002;;Program №2 (adaptive mode) is selected.;;
+03-02-2026 14:46:41;;0x1018;;Plan №{0} is started.;;1
+03-02-2026 14:50:22;;0x1001;;Program №1 (fixed mode) is selected.;;
+03-02-2026 15:27:43;;0x1008;;Beginning the program restart...;;
+03-02-2026 15:27:44;;0x1007;;The program is stopped.;;
+03-02-2026 15:27:44;;0x1024;;Stopping the system bus...;;
+03-02-2026 15:27:45;;0x1026;;The system bus is stopped.;;
+03-02-2026 15:27:45;;0x1022;;Stopping the GPIO Handler...;;
+03-02-2026 15:27:45;;0x1004;;Initializing the program...;;
+03-02-2026 15:27:45;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+03-02-2026 15:27:45;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+03-02-2026 15:27:45;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+03-02-2026 15:27:45;;0x1031;;Beginning of protocol search...;;
+03-02-2026 15:27:45;;0x1030;;Search for protocol {0}.;;bus_controller
+03-02-2026 15:27:45;;0x100a;;Hardware initialization...;;
+03-02-2026 15:27:46;;0x100b;;Number of boards Security Processor: {0};;0
+03-02-2026 15:27:46;;0x100c;;Number of boards Lamp Control: {0};;0
+03-02-2026 15:27:46;;0x100d;;Number of boards Remote Control Panel: {0};;0
+03-02-2026 15:27:46;;0x100d;;Number of boards Input-Output: {0};;0
+03-02-2026 15:27:46;;0x0000;;Version of boards Lamp Control: {0};;
+03-02-2026 15:27:46;;0x0000;;Version of boards Input-Output: {0};;
+03-02-2026 15:27:46;;0x0000;;Version of boards Remote Control Panel: {0};;
+03-02-2026 15:27:46;;0x0000;;Version of boards Security Processor: {0};;
+03-02-2026 15:27:46;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+03-02-2026 15:27:46;;0x1030;;Search for protocol {0}.;;bus_boards
+03-02-2026 15:27:47;;0x100a;;Hardware initialization...;;
+03-02-2026 15:27:47;;0x100b;;Number of boards Security Processor: {0};;1
+03-02-2026 15:27:48;;0x100c;;Number of boards Lamp Control: {0};;6
+03-02-2026 15:27:48;;0x100d;;Number of boards Remote Control Panel: {0};;0
+03-02-2026 15:27:48;;0x100d;;Number of boards Input-Output: {0};;0
+03-02-2026 15:27:48;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+03-02-2026 15:27:48;;0x0000;;Version of boards Input-Output: {0};;
+03-02-2026 15:27:48;;0x0000;;Version of boards Remote Control Panel: {0};;
+03-02-2026 15:27:48;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+03-02-2026 15:27:48;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+03-02-2026 15:27:48;;0x1028;;Initialization. Date and time set: {0};;03.02.2026 15:28:50.002
+03-02-2026 15:28:50;;0x1010;;The current threshold values are transmitted.;;
+03-02-2026 15:28:50;;0x1011;;Current control is not used.;;
+03-02-2026 15:28:50;;0x102d;;The general threshold voltage setting is set.;;
+03-02-2026 15:28:50;;0x1021;;Launching the GPIO Handler...;;
+03-02-2026 15:28:50;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+03-02-2026 15:28:50;;0x1023;;Starting the system bus...;;
+03-02-2026 15:28:50;;0x1025;;The system bus is started.;;
+03-02-2026 15:28:50;;0x1009;;End of program restart...;;
+03-02-2026 15:28:53;;0x1001;;Program №1 (fixed mode) is selected.;;
+03-02-2026 15:28:54;;0x1018;;Plan №{0} is started.;;1
+03-02-2026 15:28:54;;0x1006;;Program №{0} is running.;;1
+07-02-2026 00:00:09;;0x1018;;Plan №{0} is started.;;2
+10-02-2026 18:42:54;;0x1008;;Beginning the program restart...;;
+10-02-2026 18:42:54;;0x1007;;The program is stopped.;;
+10-02-2026 18:42:54;;0x1024;;Stopping the system bus...;;
+10-02-2026 18:42:56;;0x1026;;The system bus is stopped.;;
+10-02-2026 18:42:56;;0x1022;;Stopping the GPIO Handler...;;
+10-02-2026 18:42:56;;0x1004;;Initializing the program...;;
+10-02-2026 18:42:56;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+10-02-2026 18:42:56;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+10-02-2026 18:42:56;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+10-02-2026 18:42:56;;0x1031;;Beginning of protocol search...;;
+10-02-2026 18:42:56;;0x1030;;Search for protocol {0}.;;bus_controller
+10-02-2026 18:42:56;;0x100a;;Hardware initialization...;;
+10-02-2026 18:42:57;;0x100b;;Number of boards Security Processor: {0};;0
+10-02-2026 18:42:57;;0x100c;;Number of boards Lamp Control: {0};;0
+10-02-2026 18:42:57;;0x100d;;Number of boards Remote Control Panel: {0};;0
+10-02-2026 18:42:57;;0x100d;;Number of boards Input-Output: {0};;0
+10-02-2026 18:42:57;;0x0000;;Version of boards Lamp Control: {0};;
+10-02-2026 18:42:57;;0x0000;;Version of boards Input-Output: {0};;
+10-02-2026 18:42:57;;0x0000;;Version of boards Remote Control Panel: {0};;
+10-02-2026 18:42:57;;0x0000;;Version of boards Security Processor: {0};;
+10-02-2026 18:42:57;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+10-02-2026 18:42:57;;0x1030;;Search for protocol {0}.;;bus_boards
+10-02-2026 18:42:57;;0x100a;;Hardware initialization...;;
+10-02-2026 18:42:57;;0x100b;;Number of boards Security Processor: {0};;1
+10-02-2026 18:42:59;;0x100c;;Number of boards Lamp Control: {0};;6
+10-02-2026 18:42:59;;0x100d;;Number of boards Remote Control Panel: {0};;0
+10-02-2026 18:42:59;;0x100d;;Number of boards Input-Output: {0};;0
+10-02-2026 18:42:59;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+10-02-2026 18:42:59;;0x0000;;Version of boards Input-Output: {0};;
+10-02-2026 18:42:59;;0x0000;;Version of boards Remote Control Panel: {0};;
+10-02-2026 18:42:59;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+10-02-2026 18:42:59;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+10-02-2026 18:42:59;;0x1028;;Initialization. Date and time set: {0};;10.02.2026 18:43:20.002
+10-02-2026 18:43:20;;0x1010;;The current threshold values are transmitted.;;
+10-02-2026 18:43:20;;0x1011;;Current control is not used.;;
+10-02-2026 18:43:20;;0x102d;;The general threshold voltage setting is set.;;
+10-02-2026 18:43:20;;0x1021;;Launching the GPIO Handler...;;
+10-02-2026 18:43:20;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+10-02-2026 18:43:20;;0x1023;;Starting the system bus...;;
+10-02-2026 18:43:20;;0x1025;;The system bus is started.;;
+10-02-2026 18:43:20;;0x1009;;End of program restart...;;
+10-02-2026 18:43:23;;0x1001;;Program №1 (fixed mode) is selected.;;
+10-02-2026 18:43:24;;0x1018;;Plan №{0} is started.;;1
+10-02-2026 18:43:24;;0x1006;;Program №{0} is running.;;1
+11-02-2026 09:12:16;;0x1008;;Beginning the program restart...;;
+11-02-2026 09:12:16;;0x1007;;The program is stopped.;;
+11-02-2026 09:12:16;;0x1024;;Stopping the system bus...;;
+11-02-2026 09:12:17;;0x1026;;The system bus is stopped.;;
+11-02-2026 09:12:17;;0x1022;;Stopping the GPIO Handler...;;
+11-02-2026 09:12:17;;0x1004;;Initializing the program...;;
+11-02-2026 09:12:17;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+11-02-2026 09:12:17;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+11-02-2026 09:12:17;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+11-02-2026 09:12:17;;0x1031;;Beginning of protocol search...;;
+11-02-2026 09:12:17;;0x1030;;Search for protocol {0}.;;bus_controller
+11-02-2026 09:12:17;;0x100a;;Hardware initialization...;;
+11-02-2026 09:12:19;;0x100b;;Number of boards Security Processor: {0};;0
+11-02-2026 09:12:19;;0x100c;;Number of boards Lamp Control: {0};;0
+11-02-2026 09:12:19;;0x100d;;Number of boards Remote Control Panel: {0};;0
+11-02-2026 09:12:19;;0x100d;;Number of boards Input-Output: {0};;0
+11-02-2026 09:12:19;;0x0000;;Version of boards Lamp Control: {0};;
+11-02-2026 09:12:19;;0x0000;;Version of boards Input-Output: {0};;
+11-02-2026 09:12:19;;0x0000;;Version of boards Remote Control Panel: {0};;
+11-02-2026 09:12:19;;0x0000;;Version of boards Security Processor: {0};;
+11-02-2026 09:12:19;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+11-02-2026 09:12:19;;0x1030;;Search for protocol {0}.;;bus_boards
+11-02-2026 09:12:19;;0x100a;;Hardware initialization...;;
+11-02-2026 09:12:19;;0x100b;;Number of boards Security Processor: {0};;1
+11-02-2026 09:12:21;;0x100c;;Number of boards Lamp Control: {0};;6
+11-02-2026 09:12:21;;0x100d;;Number of boards Remote Control Panel: {0};;0
+11-02-2026 09:12:21;;0x100d;;Number of boards Input-Output: {0};;0
+11-02-2026 09:12:21;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+11-02-2026 09:12:21;;0x0000;;Version of boards Input-Output: {0};;
+11-02-2026 09:12:21;;0x0000;;Version of boards Remote Control Panel: {0};;
+11-02-2026 09:12:21;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+11-02-2026 09:12:21;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+11-02-2026 09:12:23;;0x1028;;Initialization. Date and time set: {0};;11.02.2026 09:12:23.002
+11-02-2026 09:12:23;;0x1010;;The current threshold values are transmitted.;;
+11-02-2026 09:12:23;;0x1011;;Current control is not used.;;
+11-02-2026 09:12:23;;0x102d;;The general threshold voltage setting is set.;;
+11-02-2026 09:12:23;;0x1021;;Launching the GPIO Handler...;;
+11-02-2026 09:12:23;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+11-02-2026 09:12:23;;0x1023;;Starting the system bus...;;
+11-02-2026 09:12:23;;0x1025;;The system bus is started.;;
+11-02-2026 09:12:23;;0x1009;;End of program restart...;;
+11-02-2026 09:12:26;;0x1001;;Program №1 (fixed mode) is selected.;;
+11-02-2026 09:12:27;;0x1018;;Plan №{0} is started.;;1
+11-02-2026 09:12:27;;0x1006;;Program №{0} is running.;;1
+14-02-2026 00:00:18;;0x1018;;Plan №{0} is started.;;2
+17-02-2026 11:10:03;;0x1008;;Beginning the program restart...;;
+17-02-2026 11:10:03;;0x1007;;The program is stopped.;;
+17-02-2026 11:10:03;;0x1024;;Stopping the system bus...;;
+17-02-2026 11:10:04;;0x1026;;The system bus is stopped.;;
+17-02-2026 11:10:04;;0x1022;;Stopping the GPIO Handler...;;
+17-02-2026 11:10:04;;0x1004;;Initializing the program...;;
+17-02-2026 11:10:04;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+17-02-2026 11:10:04;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+17-02-2026 11:10:04;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+17-02-2026 11:10:04;;0x1031;;Beginning of protocol search...;;
+17-02-2026 11:10:04;;0x1030;;Search for protocol {0}.;;bus_controller
+17-02-2026 11:10:04;;0x100a;;Hardware initialization...;;
+17-02-2026 11:10:06;;0x100b;;Number of boards Security Processor: {0};;0
+17-02-2026 11:10:06;;0x100c;;Number of boards Lamp Control: {0};;0
+17-02-2026 11:10:06;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:10:06;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:10:06;;0x0000;;Version of boards Lamp Control: {0};;
+17-02-2026 11:10:06;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:10:06;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:10:06;;0x0000;;Version of boards Security Processor: {0};;
+17-02-2026 11:10:06;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+17-02-2026 11:10:06;;0x1030;;Search for protocol {0}.;;bus_boards
+17-02-2026 11:10:06;;0x100a;;Hardware initialization...;;
+17-02-2026 11:10:06;;0x100b;;Number of boards Security Processor: {0};;1
+17-02-2026 11:10:08;;0x100c;;Number of boards Lamp Control: {0};;6
+17-02-2026 11:10:08;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:10:08;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:10:08;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+17-02-2026 11:10:08;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:10:08;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:10:08;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+17-02-2026 11:10:08;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+17-02-2026 11:10:08;;0x1028;;Initialization. Date and time set: {0};;17.02.2026 11:10:26.002
+17-02-2026 11:10:26;;0x1010;;The current threshold values are transmitted.;;
+17-02-2026 11:10:26;;0x1011;;Current control is not used.;;
+17-02-2026 11:10:26;;0x102d;;The general threshold voltage setting is set.;;
+17-02-2026 11:10:26;;0x1021;;Launching the GPIO Handler...;;
+17-02-2026 11:10:26;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+17-02-2026 11:10:26;;0x1023;;Starting the system bus...;;
+17-02-2026 11:10:26;;0x1025;;The system bus is started.;;
+17-02-2026 11:10:26;;0x1009;;End of program restart...;;
+17-02-2026 11:10:29;;0x1001;;Program №1 (fixed mode) is selected.;;
+17-02-2026 11:10:30;;0x1018;;Plan №{0} is started.;;1
+17-02-2026 11:10:30;;0x1006;;Program №{0} is running.;;1
+17-02-2026 11:54:29;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+17-02-2026 11:54:35;;0x101f;;Flashing yellow.;;
+17-02-2026 11:55:13;;0x1008;;Beginning the program restart...;;
+17-02-2026 11:55:13;;0x1007;;The program is stopped.;;
+17-02-2026 11:55:13;;0x1024;;Stopping the system bus...;;
+17-02-2026 11:55:14;;0x1026;;The system bus is stopped.;;
+17-02-2026 11:55:14;;0x1022;;Stopping the GPIO Handler...;;
+17-02-2026 11:55:14;;0x1004;;Initializing the program...;;
+17-02-2026 11:55:14;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+17-02-2026 11:55:14;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+17-02-2026 11:55:14;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+17-02-2026 11:55:14;;0x1031;;Beginning of protocol search...;;
+17-02-2026 11:55:14;;0x1030;;Search for protocol {0}.;;bus_controller
+17-02-2026 11:55:15;;0x100a;;Hardware initialization...;;
+17-02-2026 11:55:16;;0x100b;;Number of boards Security Processor: {0};;0
+17-02-2026 11:55:16;;0x100c;;Number of boards Lamp Control: {0};;0
+17-02-2026 11:55:16;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:55:16;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:55:16;;0x0000;;Version of boards Lamp Control: {0};;
+17-02-2026 11:55:16;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:55:16;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:55:16;;0x0000;;Version of boards Security Processor: {0};;
+17-02-2026 11:55:16;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+17-02-2026 11:55:16;;0x1030;;Search for protocol {0}.;;bus_boards
+17-02-2026 11:55:16;;0x100a;;Hardware initialization...;;
+17-02-2026 11:55:16;;0x100b;;Number of boards Security Processor: {0};;1
+17-02-2026 11:55:18;;0x100c;;Number of boards Lamp Control: {0};;6
+17-02-2026 11:55:18;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:55:18;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:55:18;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+17-02-2026 11:55:18;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:55:18;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:55:18;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+17-02-2026 11:55:18;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+17-02-2026 11:55:18;;0x1028;;Initialization. Date and time set: {0};;17.02.2026 11:55:18.002
+17-02-2026 11:55:18;;0x1010;;The current threshold values are transmitted.;;
+17-02-2026 11:55:18;;0x1011;;Current control is not used.;;
+17-02-2026 11:55:18;;0x102d;;The general threshold voltage setting is set.;;
+17-02-2026 11:55:18;;0x1021;;Launching the GPIO Handler...;;
+17-02-2026 11:55:18;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+17-02-2026 11:55:18;;0x1023;;Starting the system bus...;;
+17-02-2026 11:55:18;;0x1025;;The system bus is started.;;
+17-02-2026 11:55:18;;0x1009;;End of program restart...;;
+17-02-2026 11:55:21;;0x1001;;Program №1 (fixed mode) is selected.;;
+17-02-2026 11:55:22;;0x1018;;Plan №{0} is started.;;1
+17-02-2026 11:55:22;;0x1006;;Program №{0} is running.;;1
+17-02-2026 11:57:55;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+17-02-2026 11:58:01;;0x101f;;Flashing yellow.;;
+17-02-2026 11:58:35;;0x1008;;Beginning the program restart...;;
+17-02-2026 11:58:35;;0x1007;;The program is stopped.;;
+17-02-2026 11:58:35;;0x1024;;Stopping the system bus...;;
+17-02-2026 11:58:36;;0x1026;;The system bus is stopped.;;
+17-02-2026 11:58:36;;0x1022;;Stopping the GPIO Handler...;;
+17-02-2026 11:58:36;;0x1004;;Initializing the program...;;
+17-02-2026 11:58:36;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+17-02-2026 11:58:36;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+17-02-2026 11:58:36;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+17-02-2026 11:58:36;;0x1031;;Beginning of protocol search...;;
+17-02-2026 11:58:36;;0x1030;;Search for protocol {0}.;;bus_controller
+17-02-2026 11:58:36;;0x100a;;Hardware initialization...;;
+17-02-2026 11:58:38;;0x100b;;Number of boards Security Processor: {0};;0
+17-02-2026 11:58:38;;0x100c;;Number of boards Lamp Control: {0};;0
+17-02-2026 11:58:38;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:58:38;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:58:38;;0x0000;;Version of boards Lamp Control: {0};;
+17-02-2026 11:58:38;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:58:38;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:58:38;;0x0000;;Version of boards Security Processor: {0};;
+17-02-2026 11:58:38;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+17-02-2026 11:58:38;;0x1030;;Search for protocol {0}.;;bus_boards
+17-02-2026 11:58:38;;0x100a;;Hardware initialization...;;
+17-02-2026 11:58:38;;0x100b;;Number of boards Security Processor: {0};;1
+17-02-2026 11:58:40;;0x100c;;Number of boards Lamp Control: {0};;6
+17-02-2026 11:58:40;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 11:58:40;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 11:58:40;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+17-02-2026 11:58:40;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 11:58:40;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 11:58:40;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+17-02-2026 11:58:40;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+17-02-2026 11:58:40;;0x1028;;Initialization. Date and time set: {0};;17.02.2026 11:58:41.002
+17-02-2026 11:58:41;;0x1010;;The current threshold values are transmitted.;;
+17-02-2026 11:58:41;;0x1011;;Current control is not used.;;
+17-02-2026 11:58:41;;0x102d;;The general threshold voltage setting is set.;;
+17-02-2026 11:58:41;;0x1021;;Launching the GPIO Handler...;;
+17-02-2026 11:58:41;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+17-02-2026 11:58:41;;0x1023;;Starting the system bus...;;
+17-02-2026 11:58:41;;0x1025;;The system bus is started.;;
+17-02-2026 11:58:41;;0x1009;;End of program restart...;;
+17-02-2026 11:58:44;;0x1001;;Program №1 (fixed mode) is selected.;;
+17-02-2026 11:58:45;;0x1018;;Plan №{0} is started.;;1
+17-02-2026 11:58:45;;0x1006;;Program №{0} is running.;;1
+17-02-2026 12:04:22;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+17-02-2026 12:04:28;;0x101f;;Flashing yellow.;;
+17-02-2026 12:05:00;;0x1008;;Beginning the program restart...;;
+17-02-2026 12:05:00;;0x1007;;The program is stopped.;;
+17-02-2026 12:05:00;;0x1024;;Stopping the system bus...;;
+17-02-2026 12:05:01;;0x1026;;The system bus is stopped.;;
+17-02-2026 12:05:01;;0x1022;;Stopping the GPIO Handler...;;
+17-02-2026 12:05:01;;0x1004;;Initializing the program...;;
+17-02-2026 12:05:01;;0x1038;;Deny the use of the remote control panel: {0}.;;False
+17-02-2026 12:05:01;;0x103d;;Deny the use of fixed time mode via STCIP: {0}.;;False
+17-02-2026 12:05:01;;0x1042;;Deny the remote controll in case of amber flash error: {0}.;;True
+17-02-2026 12:05:01;;0x1031;;Beginning of protocol search...;;
+17-02-2026 12:05:01;;0x1030;;Search for protocol {0}.;;bus_controller
+17-02-2026 12:05:01;;0x100a;;Hardware initialization...;;
+17-02-2026 12:05:03;;0x100b;;Number of boards Security Processor: {0};;0
+17-02-2026 12:05:03;;0x100c;;Number of boards Lamp Control: {0};;0
+17-02-2026 12:05:03;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 12:05:03;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 12:05:03;;0x0000;;Version of boards Lamp Control: {0};;
+17-02-2026 12:05:03;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 12:05:03;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 12:05:03;;0x0000;;Version of boards Security Processor: {0};;
+17-02-2026 12:05:03;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;False,,None
+17-02-2026 12:05:03;;0x1030;;Search for protocol {0}.;;bus_boards
+17-02-2026 12:05:03;;0x100a;;Hardware initialization...;;
+17-02-2026 12:05:03;;0x100b;;Number of boards Security Processor: {0};;1
+17-02-2026 12:05:04;;0x100c;;Number of boards Lamp Control: {0};;6
+17-02-2026 12:05:04;;0x100d;;Number of boards Remote Control Panel: {0};;0
+17-02-2026 12:05:05;;0x100d;;Number of boards Input-Output: {0};;0
+17-02-2026 12:05:05;;0x0000;;Version of boards Lamp Control: {0};;\n№1 1.0.132 2021-05-07 15:26:36.705, \n№2 1.0.132 2021-05-07 15:26:36.705, \n№3 1.0.132 2021-05-07 15:26:36.705, \n№4 1.0.132 2021-05-07 15:26:36.705, \n№5 1.0.132 2021-05-07 15:26:36.705, \n№6 1.0.132 2021-05-07 15:26:36.705
+17-02-2026 12:05:05;;0x0000;;Version of boards Input-Output: {0};;
+17-02-2026 12:05:05;;0x0000;;Version of boards Remote Control Panel: {0};;
+17-02-2026 12:05:05;;0x0000;;Version of boards Security Processor: {0};;\n№1 3.0.103 2021-05-07 16:01:28.002
+17-02-2026 12:05:05;;0x102a;;Initializing the driver. Answer: {0}. Driver: {1}.;;True,,rs485
+17-02-2026 12:05:05;;0x1028;;Initialization. Date and time set: {0};;17.02.2026 12:05:05.002
+17-02-2026 12:05:05;;0x1010;;The current threshold values are transmitted.;;
+17-02-2026 12:05:05;;0x1011;;Current control is not used.;;
+17-02-2026 12:05:05;;0x102d;;The general threshold voltage setting is set.;;
+17-02-2026 12:05:05;;0x1021;;Launching the GPIO Handler...;;
+17-02-2026 12:05:05;;0x102b;;Protocol initialization. Answer: {0}. Protocol: {1}.;;True,,bus_boards
+17-02-2026 12:05:05;;0x1023;;Starting the system bus...;;
+17-02-2026 12:05:05;;0x1025;;The system bus is started.;;
+17-02-2026 12:05:05;;0x1009;;End of program restart...;;
+17-02-2026 12:05:08;;0x1001;;Program №1 (fixed mode) is selected.;;
+17-02-2026 12:05:09;;0x1018;;Plan №{0} is started.;;1
+17-02-2026 12:05:09;;0x1006;;Program №{0} is running.;;1

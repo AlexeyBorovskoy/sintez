@@ -80,7 +80,8 @@ SpectrObject::SpectrObject(const ObjectConfig& config, const std::string& commun
 }
 
 SpectrObject::~SpectrObject() {
-    // Остановка удержания команды при уничтожении объекта
+    // Останавливаем наш фоновой поток, но не посылаем никаких "команд остановки"
+    // контроллеру при завершении процесса.
     stopYFHold();
 }
 
@@ -453,29 +454,35 @@ SpectrError SpectrObject::setYF(const std::string& requestId) {
         return SpectrError::NOT_EXEC_5;
     }
     
-    // Точное копирование Node.js логики: просто отправляем две команды один раз
-    // Без проверок режима, фазы, времени
-    // Без удержания команды
-    
+    // Важно: SNMP SET может пройти, но физическое ЖМ включается не всегда сразу.
+    // Поэтому делаем 1 SET + запускаем фонового "страховщика" (yfHoldThread),
+    // который в течение короткого окна повторит SET_YF в "удобный момент" и
+    // подтвердит включение по utcReplyFR. В ответ на команду ITS возвращаемся сразу.
+
     std::vector<SNMPVarbind> varbinds;
-    
+
     SNMPVarbind modeVarbind;
     modeVarbind.oid = SNMPOID::UTC_TYPE2_OPERATION_MODE;
     modeVarbind.type = ASN_INTEGER;
     modeVarbind.value = "3";
     varbinds.push_back(modeVarbind);
-    
+
     SNMPVarbind ffVarbind;
     ffVarbind.oid = SNMPOID::UTC_CONTROL_FF;
     ffVarbind.type = ASN_INTEGER;
     ffVarbind.value = "1";
     varbinds.push_back(ffVarbind);
-    
+
     bool submitted = snmpHandler_->set(config_.addr, varbinds, [this, requestId](bool error, const std::vector<SNMPVarbind>&) {
         SpectrError result = error ? SpectrError::NOT_EXEC_5 : SpectrError::OK;
         sendToITS(SpectrProtocol::formatResult(result, requestId));
+
+        if (!error) {
+            // Не блокируем основной поток обработки команд.
+            startYFHold();
+        }
     });
-    
+
     return submitted ? SpectrError::OK : SpectrError::NOT_EXEC_5;
 }
 
@@ -782,200 +789,148 @@ void SpectrObject::stopYFHold() {
     }
     
     yfHoldActive_ = false;
-    
-    // Немедленное отключение мигания при прерывании
-    if (snmpHandler_) {
-        std::vector<SNMPVarbind> varbinds;
-        SNMPVarbind modeVarbind;
-        modeVarbind.oid = SNMPOID::UTC_TYPE2_OPERATION_MODE;
-        modeVarbind.type = ASN_INTEGER;
-        modeVarbind.value = "3";
-        varbinds.push_back(modeVarbind);
-        
-        SNMPVarbind ffVarbind;
-        ffVarbind.oid = SNMPOID::UTC_CONTROL_FF;
-        ffVarbind.type = ASN_INTEGER;
-        ffVarbind.value = "0";
-        varbinds.push_back(ffVarbind);
-        
-        snmpHandler_->set(config_.addr, varbinds, [](bool error, const std::vector<SNMPVarbind>&) {
-            if (error) {
-                std::cerr << "[YF_HOLD] Error disabling flash on stop" << std::endl;
-            }
-        });
-    }
-    
+
     std::cout << "[YF_HOLD] Stopped" << std::endl;
 }
 
 void SpectrObject::yfHoldThread() {
-    const auto holdDuration = std::chrono::seconds(60);  // 1 минута
-    const auto sendInterval = std::chrono::seconds(2);   // Интервал отправки
-    const auto checkInterval = std::chrono::seconds(5); // Интервал проверки состояния
-    
+    // Короткий "страховщик" активации ЖМ:
+    // - пытается отправлять SET_YF только в "стабильный момент" (transition==0),
+    // - подтверждает по utcReplyFR (!=0),
+    // - НЕ выполняет деактивацию (мы не хотим менять режим обратно автоматически).
+
+    const auto ensureDuration = std::chrono::seconds(15);
+    const auto sendInterval = std::chrono::milliseconds(800);
+    const auto pollInterval = std::chrono::milliseconds(200);
+
     auto startTime = std::chrono::steady_clock::now();
-    auto lastSendTime = startTime;
-    auto lastCheckTime = startTime;
-    
+    auto lastSendTime = startTime - sendInterval;
+    auto lastPollTime = startTime - pollInterval;
+
     int sendCount = 0;
     int errorCount = 0;
     const int maxErrors = 5;
-    
-    std::cout << "[YF_HOLD] Thread started" << std::endl;
-    
-    // ФАЗА 1: Активация и удержание мигания (0-60 секунд)
-    while (!yfStop_ && (std::chrono::steady_clock::now() - startTime) < holdDuration) {
+
+    auto readIntOID = [&](const std::string& oid, int& out) -> bool {
+        bool ok = false;
+        snmpHandler_->get(config_.addr, {oid}, [&](bool error, const std::vector<SNMPVarbind>& varbinds) {
+            if (error || varbinds.empty()) {
+                return;
+            }
+            int v = 0;
+            if (parseIntValue(varbinds[0].value, v)) {
+                out = v;
+                ok = true;
+            }
+        });
+        return ok;
+    };
+
+    auto readPhase = [&](uint8_t& phaseOut) -> bool {
+        bool ok = false;
+        snmpHandler_->get(config_.addr, {SNMPOID::UTC_REPLY_GN}, [&](bool error, const std::vector<SNMPVarbind>& varbinds) {
+            if (error || varbinds.empty()) {
+                return;
+            }
+            uint8_t byte = 0;
+            if (parseFirstHexByte(varbinds[0].value, byte)) {
+                for (int i = 0; i < 8; i++) {
+                    if (byte & (1 << i)) {
+                        phaseOut = static_cast<uint8_t>(i + 1);
+                        ok = true;
+                        return;
+                    }
+                }
+            }
+        });
+        return ok;
+    };
+
+    std::cout << "[YF_HOLD] Ensure thread started" << std::endl;
+
+    while (!yfStop_ && (std::chrono::steady_clock::now() - startTime) < ensureDuration) {
+        if (!snmpHandler_) {
+            break;
+        }
+
         auto now = std::chrono::steady_clock::now();
-        auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - startTime).count();
-        
-        // Периодическая отправка команды включения (каждые 2 секунды)
-        if ((now - lastSendTime) >= sendInterval) {
-            if (!snmpHandler_) {
+        auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(now - startTime).count();
+
+        // Poll current state frequently for logging/confirmation.
+        if ((now - lastPollTime) >= pollInterval) {
+            lastPollTime = now;
+
+            int fr = 0;
+            if (readIntOID(SNMPOID::UTC_REPLY_FR, fr) && fr != 0) {
+                std::cout << "[YF_HOLD] Confirmed: utcReplyFR=" << fr << " (elapsed=" << elapsedMs << "ms)" << std::endl;
                 break;
             }
-            
+        }
+
+        // Try to align with stable moment: transition==0
+        int transition = -1;
+        int stageCounter = -1;
+        uint8_t phase = 0;
+        bool gotTransition = readIntOID(SNMPOID::UTC_REPLY_TRANSITION, transition);
+        bool gotStageCounter = readIntOID(SNMPOID::UTC_REPLY_STAGE_COUNTER, stageCounter);
+        bool gotPhase = readPhase(phase);
+
+        if (gotTransition && transition != 0) {
+            // In transition - just wait, but log sometimes.
+            std::cout << "[YF_HOLD] Skip send (transition=" << transition
+                      << ", stageCounter=" << (gotStageCounter ? std::to_string(stageCounter) : "?")
+                      << ", phase=" << (gotPhase ? std::to_string(static_cast<int>(phase)) : "?")
+                      << ", elapsed=" << elapsedMs << "ms)" << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+            continue;
+        }
+
+        if ((now - lastSendTime) >= sendInterval) {
+            lastSendTime = now;
+
             std::vector<SNMPVarbind> varbinds;
             SNMPVarbind modeVarbind;
             modeVarbind.oid = SNMPOID::UTC_TYPE2_OPERATION_MODE;
             modeVarbind.type = ASN_INTEGER;
             modeVarbind.value = "3";
             varbinds.push_back(modeVarbind);
-            
+
             SNMPVarbind ffVarbind;
             ffVarbind.oid = SNMPOID::UTC_CONTROL_FF;
             ffVarbind.type = ASN_INTEGER;
             ffVarbind.value = "1";
             varbinds.push_back(ffVarbind);
-            
+
             sendCount++;
-            bool sendSuccess = false;
-            
-            snmpHandler_->set(config_.addr, varbinds, [&sendSuccess, &errorCount, sendCount, elapsed](bool error, const std::vector<SNMPVarbind>&) {
-                sendSuccess = !error;
+            snmpHandler_->set(config_.addr, varbinds, [&](bool error, const std::vector<SNMPVarbind>&) {
                 if (error) {
                     errorCount++;
-                    std::cerr << "[YF_HOLD] Activate #" << sendCount 
-                              << " failed (elapsed=" << elapsed << "s)" << std::endl;
+                    std::cerr << "[YF_HOLD] Send #" << sendCount << " failed (errors=" << errorCount
+                              << ", elapsed=" << elapsedMs << "ms)" << std::endl;
                 } else {
-                    errorCount = 0; // Сброс счётчика при успехе
-                    std::cout << "[YF_HOLD] Activate #" << sendCount 
-                              << " success (elapsed=" << elapsed << "s)" << std::endl;
+                    errorCount = 0;
+                    std::cout << "[YF_HOLD] Send #" << sendCount << " ok (transition="
+                              << (gotTransition ? std::to_string(transition) : "?")
+                              << ", stageCounter=" << (gotStageCounter ? std::to_string(stageCounter) : "?")
+                              << ", phase=" << (gotPhase ? std::to_string(static_cast<int>(phase)) : "?")
+                              << ", elapsed=" << elapsedMs << "ms)" << std::endl;
                 }
             });
-            
-            lastSendTime = now;
-            
-            // Проверка на множественные ошибки
+
             if (errorCount >= maxErrors) {
-                std::cerr << "[YF_HOLD] Too many errors (" << errorCount 
-                          << "), stopping hold" << std::endl;
+                std::cerr << "[YF_HOLD] Too many errors (" << errorCount << "), stopping ensure thread" << std::endl;
                 break;
             }
         }
-        
-        // Периодическая проверка состояния (каждые 5 секунд)
-        if ((now - lastCheckTime) >= checkInterval) {
-            if (!snmpHandler_) {
-                break;
-            }
-            
-            // Проверка utcReplyFR (режим мигания)
-            std::vector<std::string> oids = {SNMPOID::UTC_REPLY_FR};
-            snmpHandler_->get(config_.addr, oids, [elapsed](bool error, const std::vector<SNMPVarbind>& varbinds) {
-                if (!error && !varbinds.empty()) {
-                    try {
-                        int value = std::stoi(varbinds[0].value);
-                        if (value == 1) {
-                            std::cout << "[YF_HOLD] Check: utcReplyFR=1 (FLASHING ACTIVATED, elapsed=" 
-                                      << elapsed << "s)" << std::endl;
-                        } else {
-                            std::cout << "[YF_HOLD] Check: utcReplyFR=0 (not activated yet, elapsed=" 
-                                      << elapsed << "s)" << std::endl;
-                        }
-                    } catch (...) {
-                        // Игнорируем ошибки парсинга
-                    }
-                }
-            });
-            
-            lastCheckTime = now;
-        }
-        
-        // Небольшая пауза перед следующей итерацией
+
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
-    
-    auto totalElapsed = std::chrono::duration_cast<std::chrono::seconds>(
+
+    auto totalElapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::steady_clock::now() - startTime).count();
-    
-    std::cout << "[YF_HOLD] Phase 1 complete: " << sendCount 
-              << " sends, total time=" << totalElapsed << "s" << std::endl;
-    
-    // ФАЗА 2: Отключение мигания (после 60 секунд)
-    if (!yfStop_) {
-        std::cout << "[YF_HOLD] Phase 2: Starting deactivation" << std::endl;
-        
-        // Отправка команды отключения (3 попытки)
-        for (int i = 1; i <= 3; i++) {
-            if (yfStop_ || !snmpHandler_) {
-                break;
-            }
-            
-            std::vector<SNMPVarbind> varbinds;
-            SNMPVarbind modeVarbind;
-            modeVarbind.oid = SNMPOID::UTC_TYPE2_OPERATION_MODE;
-            modeVarbind.type = ASN_INTEGER;
-            modeVarbind.value = "3";
-            varbinds.push_back(modeVarbind);
-            
-            SNMPVarbind ffVarbind;
-            ffVarbind.oid = SNMPOID::UTC_CONTROL_FF;
-            ffVarbind.type = ASN_INTEGER;
-            ffVarbind.value = "0";
-            varbinds.push_back(ffVarbind);
-            
-            bool deactivateSuccess = false;
-            snmpHandler_->set(config_.addr, varbinds, [&deactivateSuccess, i](bool error, const std::vector<SNMPVarbind>&) {
-                deactivateSuccess = !error;
-                if (error) {
-                    std::cerr << "[YF_HOLD] Deactivate #" << i << " failed" << std::endl;
-                } else {
-                    std::cout << "[YF_HOLD] Deactivate #" << i << " success" << std::endl;
-                }
-            });
-            
-            // Пауза между попытками (кроме последней)
-            if (i < 3) {
-                std::this_thread::sleep_for(std::chrono::seconds(2));
-            }
-        }
-        
-        // Восстановление режима работы (если был изменён)
-        if (savedOperationMode_ != 3 && !yfStop_ && snmpHandler_) {
-            std::cout << "[YF_HOLD] Restoring operation mode: " 
-                      << static_cast<int>(savedOperationMode_) << std::endl;
-            
-            std::vector<SNMPVarbind> varbinds;
-            SNMPVarbind modeVarbind;
-            modeVarbind.oid = SNMPOID::UTC_TYPE2_OPERATION_MODE;
-            modeVarbind.type = ASN_INTEGER;
-            modeVarbind.value = std::to_string(savedOperationMode_);
-            varbinds.push_back(modeVarbind);
-            
-            snmpHandler_->set(config_.addr, varbinds, [](bool error, const std::vector<SNMPVarbind>&) {
-                if (error) {
-                    std::cerr << "[YF_HOLD] Error restoring operation mode" << std::endl;
-                } else {
-                    std::cout << "[YF_HOLD] Operation mode restored" << std::endl;
-                }
-            });
-        }
-    }
-    
+
+    std::cout << "[YF_HOLD] Ensure complete: sends=" << sendCount
+              << ", elapsed=" << totalElapsedMs << "ms" << std::endl;
+
     yfHoldActive_ = false;
-    auto finalElapsed = std::chrono::duration_cast<std::chrono::seconds>(
-        std::chrono::steady_clock::now() - startTime).count();
-    
-    std::cout << "[YF_HOLD] Complete: total time=" << finalElapsed 
-              << "s, sends=" << sendCount << std::endl;
 }

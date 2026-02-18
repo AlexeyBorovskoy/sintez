@@ -1,0 +1,1 @@
+stopped_remote_dir=/tmp/dk_capture_20260218_100608

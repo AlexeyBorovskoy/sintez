@@ -1,0 +1,970 @@
+2026-02-17T15:13:42+03:00 sysUpTime=0:1:53:05.82 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:43+03:00 sysUpTime=0:1:53:06.49 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:44+03:00 sysUpTime=0:1:53:07.18 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:44+03:00 sysUpTime=0:1:53:07.89 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:45+03:00 sysUpTime=0:1:53:08.62 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:46+03:00 sysUpTime=0:1:53:09.24 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:46+03:00 sysUpTime=0:1:53:09.96 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:47+03:00 sysUpTime=0:1:53:10.62 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:48+03:00 sysUpTime=0:1:53:11.21 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:48+03:00 sysUpTime=0:1:53:11.75 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:49+03:00 sysUpTime=0:1:53:12.32 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:49+03:00 sysUpTime=0:1:53:12.85 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:50+03:00 sysUpTime=0:1:53:13.44 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:50+03:00 sysUpTime=0:1:53:14.13 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:51+03:00 sysUpTime=0:1:53:14.82 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:52+03:00 sysUpTime=0:1:53:15.62 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:53+03:00 sysUpTime=0:1:53:16.32 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:53+03:00 sysUpTime=0:1:53:16.93 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:54+03:00 sysUpTime=0:1:53:17.65 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:55+03:00 sysUpTime=0:1:53:18.41 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:55+03:00 sysUpTime=0:1:53:19.01 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:56+03:00 sysUpTime=0:1:53:19.70 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:57+03:00 sysUpTime=0:1:53:20.43 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:57+03:00 sysUpTime=0:1:53:21.12 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:58+03:00 sysUpTime=0:1:53:21.79 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:59+03:00 sysUpTime=0:1:53:22.52 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:13:59+03:00 sysUpTime=0:1:53:23.13 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:00+03:00 sysUpTime=0:1:53:23.80 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:01+03:00 sysUpTime=0:1:53:24.43 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:02+03:00 sysUpTime=0:1:53:25.31 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:02+03:00 sysUpTime=0:1:53:25.97 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:03+03:00 sysUpTime=0:1:53:26.68 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:04+03:00 sysUpTime=0:1:53:27.35 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:04+03:00 sysUpTime=0:1:53:28.03 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:05+03:00 sysUpTime=0:1:53:28.70 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:06+03:00 sysUpTime=0:1:53:29.33 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:06+03:00 sysUpTime=0:1:53:30.00 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:07+03:00 sysUpTime=0:1:53:30.70 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:08+03:00 sysUpTime=0:1:53:31.33 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:08+03:00 sysUpTime=0:1:53:31.85 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:09+03:00 sysUpTime=0:1:53:32.32 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:09+03:00 sysUpTime=0:1:53:32.90 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:10+03:00 sysUpTime=0:1:53:33.61 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:11+03:00 sysUpTime=0:1:53:34.26 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:11+03:00 sysUpTime=0:1:53:34.96 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:12+03:00 sysUpTime=0:1:53:35.74 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:13+03:00 sysUpTime=0:1:53:36.47 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:14+03:00 sysUpTime=0:1:53:37.22 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:14+03:00 sysUpTime=0:1:53:37.88 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:15+03:00 sysUpTime=0:1:53:38.60 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:15+03:00 sysUpTime=0:1:53:39.12 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:16+03:00 sysUpTime=0:1:53:39.82 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:17+03:00 sysUpTime=0:1:53:40.53 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:18+03:00 sysUpTime=0:1:53:41.19 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:18+03:00 sysUpTime=0:1:53:41.89 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:19+03:00 sysUpTime=0:1:53:42.53 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:20+03:00 sysUpTime=0:1:53:43.21 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:20+03:00 sysUpTime=0:1:53:43.76 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:21+03:00 sysUpTime=0:1:53:44.42 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:21+03:00 sysUpTime=0:1:53:45.07 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:22+03:00 sysUpTime=0:1:53:45.69 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:23+03:00 sysUpTime=0:1:53:46.35 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:23+03:00 sysUpTime=0:1:53:46.87 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:24+03:00 sysUpTime=0:1:53:47.47 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:24+03:00 sysUpTime=0:1:53:48.17 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:25+03:00 sysUpTime=0:1:53:48.82 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:26+03:00 sysUpTime=0:1:53:49.40 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:26+03:00 sysUpTime=0:1:53:50.06 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:27+03:00 sysUpTime=0:1:53:50.82 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:28+03:00 sysUpTime=0:1:53:51.50 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:28+03:00 sysUpTime=0:1:53:52.11 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:29+03:00 sysUpTime=0:1:53:52.66 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:30+03:00 sysUpTime=0:1:53:53.24 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:30+03:00 sysUpTime=0:1:53:53.77 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:31+03:00 sysUpTime=0:1:53:54.43 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:31+03:00 sysUpTime=0:1:53:55.13 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:32+03:00 sysUpTime=0:1:53:55.94 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:33+03:00 sysUpTime=0:1:53:56.51 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:34+03:00 sysUpTime=0:1:53:57.25 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:34+03:00 sysUpTime=0:1:53:57.91 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:35+03:00 sysUpTime=0:1:53:58.58 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:36+03:00 sysUpTime=0:1:53:59.25 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:36+03:00 sysUpTime=0:1:53:59.89 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:37+03:00 sysUpTime=0:1:54:00.58 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:38+03:00 sysUpTime=0:1:54:01.32 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:38+03:00 sysUpTime=0:1:54:01.99 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:39+03:00 sysUpTime=0:1:54:02.67 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:39+03:00 sysUpTime=0:1:54:03.16 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:40+03:00 sysUpTime=0:1:54:03.76 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:41+03:00 sysUpTime=0:1:54:04.28 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:41+03:00 sysUpTime=0:1:54:04.92 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:42+03:00 sysUpTime=0:1:54:05.67 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:43+03:00 sysUpTime=0:1:54:06.29 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:43+03:00 sysUpTime=0:1:54:06.92 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:44+03:00 sysUpTime=0:1:54:07.66 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:45+03:00 sysUpTime=0:1:54:08.35 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:45+03:00 sysUpTime=0:1:54:09.10 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:46+03:00 sysUpTime=0:1:54:09.76 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:47+03:00 sysUpTime=0:1:54:10.50 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:47+03:00 sysUpTime=0:1:54:11.07 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:48+03:00 sysUpTime=0:1:54:11.73 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:49+03:00 sysUpTime=0:1:54:12.47 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:49+03:00 sysUpTime=0:1:54:13.15 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:50+03:00 sysUpTime=0:1:54:13.71 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:51+03:00 sysUpTime=0:1:54:14.42 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:51+03:00 sysUpTime=0:1:54:15.10 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:52+03:00 sysUpTime=0:1:54:15.93 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:53+03:00 sysUpTime=0:1:54:16.61 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:54+03:00 sysUpTime=0:1:54:17.22 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:54+03:00 sysUpTime=0:1:54:17.96 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:55+03:00 sysUpTime=0:1:54:18.53 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:55+03:00 sysUpTime=0:1:54:19.16 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:56+03:00 sysUpTime=0:1:54:19.66 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:57+03:00 sysUpTime=0:1:54:20.26 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:57+03:00 sysUpTime=0:1:54:20.89 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:58+03:00 sysUpTime=0:1:54:21.58 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:59+03:00 sysUpTime=0:1:54:22.29 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:14:59+03:00 sysUpTime=0:1:54:22.92 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:00+03:00 sysUpTime=0:1:54:23.56 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:01+03:00 sysUpTime=0:1:54:24.22 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:01+03:00 sysUpTime=0:1:54:24.86 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:02+03:00 sysUpTime=0:1:54:25.63 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:03+03:00 sysUpTime=0:1:54:26.43 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:03+03:00 sysUpTime=0:1:54:27.15 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:04+03:00 sysUpTime=0:1:54:27.82 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:05+03:00 sysUpTime=0:1:54:28.53 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:06+03:00 sysUpTime=0:1:54:29.18 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:06+03:00 sysUpTime=0:1:54:29.81 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:07+03:00 sysUpTime=0:1:54:30.54 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:07+03:00 sysUpTime=0:1:54:31.18 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:08+03:00 sysUpTime=0:1:54:31.84 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:09+03:00 sysUpTime=0:1:54:32.54 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:10+03:00 sysUpTime=0:1:54:33.26 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:10+03:00 sysUpTime=0:1:54:33.93 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:11+03:00 sysUpTime=0:1:54:34.53 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:11+03:00 sysUpTime=0:1:54:35.15 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:12+03:00 sysUpTime=0:1:54:35.89 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:13+03:00 sysUpTime=0:1:54:36.53 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:13+03:00 sysUpTime=0:1:54:37.13 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:14+03:00 sysUpTime=0:1:54:37.58 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:14+03:00 sysUpTime=0:1:54:38.13 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:15+03:00 sysUpTime=0:1:54:38.81 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:16+03:00 sysUpTime=0:1:54:39.44 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:16+03:00 sysUpTime=0:1:54:40.13 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:17+03:00 sysUpTime=0:1:54:40.77 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:18+03:00 sysUpTime=0:1:54:41.47 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:18+03:00 sysUpTime=0:1:54:42.18 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:19+03:00 sysUpTime=0:1:54:42.81 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:20+03:00 sysUpTime=0:1:54:43.53 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:21+03:00 sysUpTime=0:1:54:44.23 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:21+03:00 sysUpTime=0:1:54:44.84 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:22+03:00 sysUpTime=0:1:54:45.50 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:23+03:00 sysUpTime=0:1:54:46.33 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:23+03:00 sysUpTime=0:1:54:47.03 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:24+03:00 sysUpTime=0:1:54:47.76 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:25+03:00 sysUpTime=0:1:54:48.37 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:25+03:00 sysUpTime=0:1:54:49.06 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:26+03:00 sysUpTime=0:1:54:49.70 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:27+03:00 sysUpTime=0:1:54:50.37 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:27+03:00 sysUpTime=0:1:54:51.01 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:28+03:00 sysUpTime=0:1:54:51.73 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:29+03:00 sysUpTime=0:1:54:52.41 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:29+03:00 sysUpTime=0:1:54:53.14 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:30+03:00 sysUpTime=0:1:54:53.89 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:31+03:00 sysUpTime=0:1:54:54.46 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:31+03:00 sysUpTime=0:1:54:55.06 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:32+03:00 sysUpTime=0:1:54:55.69 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:33+03:00 sysUpTime=0:1:54:56.36 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:33+03:00 sysUpTime=0:1:54:56.92 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:34+03:00 sysUpTime=0:1:54:57.51 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:34+03:00 sysUpTime=0:1:54:58.11 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:35+03:00 sysUpTime=0:1:54:58.69 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:36+03:00 sysUpTime=0:1:54:59.34 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:36+03:00 sysUpTime=0:1:54:59.99 mode=3 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:37+03:00 sysUpTime=0:1:55:00.66 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:38+03:00 sysUpTime=0:1:55:01.40 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:38+03:00 sysUpTime=0:1:55:02.11 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:39+03:00 sysUpTime=0:1:55:02.75 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:40+03:00 sysUpTime=0:1:55:03.37 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:40+03:00 sysUpTime=0:1:55:04.05 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:41+03:00 sysUpTime=0:1:55:04.61 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:41+03:00 sysUpTime=0:1:55:05.05 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:42+03:00 sysUpTime=0:1:55:05.63 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:43+03:00 sysUpTime=0:1:55:06.40 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:43+03:00 sysUpTime=0:1:55:07.00 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:44+03:00 sysUpTime=0:1:55:07.77 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:45+03:00 sysUpTime=0:1:55:08.43 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:45+03:00 sysUpTime=0:1:55:09.07 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:46+03:00 sysUpTime=0:1:55:09.68 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:47+03:00 sysUpTime=0:1:55:10.24 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:47+03:00 sysUpTime=0:1:55:10.76 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:48+03:00 sysUpTime=0:1:55:11.44 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:48+03:00 sysUpTime=0:1:55:12.03 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:49+03:00 sysUpTime=0:1:55:12.70 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:50+03:00 sysUpTime=0:1:55:13.34 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:50+03:00 sysUpTime=0:1:55:13.97 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:51+03:00 sysUpTime=0:1:55:14.56 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:51+03:00 sysUpTime=0:1:55:15.13 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:52+03:00 sysUpTime=0:1:55:15.65 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:53+03:00 sysUpTime=0:1:55:16.22 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:53+03:00 sysUpTime=0:1:55:16.87 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:54+03:00 sysUpTime=0:1:55:17.56 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:55+03:00 sysUpTime=0:1:55:18.21 mode=3 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:55+03:00 sysUpTime=0:1:55:18.82 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:56+03:00 sysUpTime=0:1:55:19.40 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:56+03:00 sysUpTime=0:1:55:19.95 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:57+03:00 sysUpTime=0:1:55:20.49 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:58+03:00 sysUpTime=0:1:55:21.20 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:58+03:00 sysUpTime=0:1:55:21.83 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:59+03:00 sysUpTime=0:1:55:22.39 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:15:59+03:00 sysUpTime=0:1:55:23.06 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:00+03:00 sysUpTime=0:1:55:23.67 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:01+03:00 sysUpTime=0:1:55:24.30 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:01+03:00 sysUpTime=0:1:55:24.90 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:02+03:00 sysUpTime=0:1:55:25.49 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:02+03:00 sysUpTime=0:1:55:26.04 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:03+03:00 sysUpTime=0:1:55:26.60 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:04+03:00 sysUpTime=0:1:55:27.26 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:04+03:00 sysUpTime=0:1:55:27.98 mode=3 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:05+03:00 sysUpTime=0:1:55:28.68 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:06+03:00 sysUpTime=0:1:55:29.33 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:06+03:00 sysUpTime=0:1:55:30.01 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:07+03:00 sysUpTime=0:1:55:30.71 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:08+03:00 sysUpTime=0:1:55:31.37 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:08+03:00 sysUpTime=0:1:55:32.12 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:09+03:00 sysUpTime=0:1:55:32.74 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:10+03:00 sysUpTime=0:1:55:33.43 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:10+03:00 sysUpTime=0:1:55:34.04 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:11+03:00 sysUpTime=0:1:55:34.71 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:12+03:00 sysUpTime=0:1:55:35.37 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:12+03:00 sysUpTime=0:1:55:35.98 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:13+03:00 sysUpTime=0:1:55:36.57 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:13+03:00 sysUpTime=0:1:55:37.13 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:14+03:00 sysUpTime=0:1:55:37.65 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:15+03:00 sysUpTime=0:1:55:38.29 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:15+03:00 sysUpTime=0:1:55:38.94 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:16+03:00 sysUpTime=0:1:55:39.51 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:17+03:00 sysUpTime=0:1:55:40.21 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:17+03:00 sysUpTime=0:1:55:40.92 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:18+03:00 sysUpTime=0:1:55:41.57 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:19+03:00 sysUpTime=0:1:55:42.27 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:19+03:00 sysUpTime=0:1:55:42.88 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:20+03:00 sysUpTime=0:1:55:43.54 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:21+03:00 sysUpTime=0:1:55:44.24 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:21+03:00 sysUpTime=0:1:55:44.88 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:22+03:00 sysUpTime=0:1:55:45.56 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:23+03:00 sysUpTime=0:1:55:46.30 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:23+03:00 sysUpTime=0:1:55:46.96 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:24+03:00 sysUpTime=0:1:55:47.67 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:25+03:00 sysUpTime=0:1:55:48.33 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:25+03:00 sysUpTime=0:1:55:48.99 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:26+03:00 sysUpTime=0:1:55:49.68 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:27+03:00 sysUpTime=0:1:55:50.33 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:27+03:00 sysUpTime=0:1:55:50.97 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:28+03:00 sysUpTime=0:1:55:51.65 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:29+03:00 sysUpTime=0:1:55:52.31 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:29+03:00 sysUpTime=0:1:55:52.94 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:30+03:00 sysUpTime=0:1:55:53.60 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:31+03:00 sysUpTime=0:1:55:54.24 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:31+03:00 sysUpTime=0:1:55:54.82 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:32+03:00 sysUpTime=0:1:55:55.50 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:32+03:00 sysUpTime=0:1:55:56.03 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:33+03:00 sysUpTime=0:1:55:56.56 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:33+03:00 sysUpTime=0:1:55:57.13 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:34+03:00 sysUpTime=0:1:55:57.79 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:35+03:00 sysUpTime=0:1:55:58.51 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:35+03:00 sysUpTime=0:1:55:59.17 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:36+03:00 sysUpTime=0:1:55:59.74 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:37+03:00 sysUpTime=0:1:56:00.29 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:37+03:00 sysUpTime=0:1:56:00.81 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:38+03:00 sysUpTime=0:1:56:01.31 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:38+03:00 sysUpTime=0:1:56:01.92 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:39+03:00 sysUpTime=0:1:56:02.62 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:40+03:00 sysUpTime=0:1:56:03.26 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:40+03:00 sysUpTime=0:1:56:03.88 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:41+03:00 sysUpTime=0:1:56:04.49 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:41+03:00 sysUpTime=0:1:56:05.13 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:42+03:00 sysUpTime=0:1:56:05.69 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:43+03:00 sysUpTime=0:1:56:06.23 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:43+03:00 sysUpTime=0:1:56:06.85 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:44+03:00 sysUpTime=0:1:56:07.53 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:45+03:00 sysUpTime=0:1:56:08.23 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:45+03:00 sysUpTime=0:1:56:08.81 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:46+03:00 sysUpTime=0:1:56:09.55 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:46+03:00 sysUpTime=0:1:56:10.13 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:47+03:00 sysUpTime=0:1:56:10.80 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:48+03:00 sysUpTime=0:1:56:11.46 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:48+03:00 sysUpTime=0:1:56:12.14 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:49+03:00 sysUpTime=0:1:56:12.79 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:50+03:00 sysUpTime=0:1:56:13.49 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:50+03:00 sysUpTime=0:1:56:14.12 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:51+03:00 sysUpTime=0:1:56:14.78 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:52+03:00 sysUpTime=0:1:56:15.33 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:52+03:00 sysUpTime=0:1:56:16.01 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:53+03:00 sysUpTime=0:1:56:16.51 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:53+03:00 sysUpTime=0:1:56:17.13 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:54+03:00 sysUpTime=0:1:56:17.74 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:55+03:00 sysUpTime=0:1:56:18.40 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:55+03:00 sysUpTime=0:1:56:19.11 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:56+03:00 sysUpTime=0:1:56:19.76 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:57+03:00 sysUpTime=0:1:56:20.42 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:57+03:00 sysUpTime=0:1:56:21.09 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:58+03:00 sysUpTime=0:1:56:21.79 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:59+03:00 sysUpTime=0:1:56:22.40 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:16:59+03:00 sysUpTime=0:1:56:23.11 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:00+03:00 sysUpTime=0:1:56:23.78 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:01+03:00 sysUpTime=0:1:56:24.36 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:01+03:00 sysUpTime=0:1:56:25.05 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:02+03:00 sysUpTime=0:1:56:25.91 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:03+03:00 sysUpTime=0:1:56:26.59 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:04+03:00 sysUpTime=0:1:56:27.25 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:04+03:00 sysUpTime=0:1:56:27.88 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:05+03:00 sysUpTime=0:1:56:28.61 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:06+03:00 sysUpTime=0:1:56:29.27 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:06+03:00 sysUpTime=0:1:56:30.00 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:07+03:00 sysUpTime=0:1:56:30.68 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:08+03:00 sysUpTime=0:1:56:31.32 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:08+03:00 sysUpTime=0:1:56:32.05 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:09+03:00 sysUpTime=0:1:56:32.73 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:10+03:00 sysUpTime=0:1:56:33.42 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:10+03:00 sysUpTime=0:1:56:34.10 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:11+03:00 sysUpTime=0:1:56:34.72 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:12+03:00 sysUpTime=0:1:56:35.41 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:12+03:00 sysUpTime=0:1:56:36.13 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:13+03:00 sysUpTime=0:1:56:36.77 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:14+03:00 sysUpTime=0:1:56:37.39 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:14+03:00 sysUpTime=0:1:56:37.91 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:15+03:00 sysUpTime=0:1:56:38.45 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:15+03:00 sysUpTime=0:1:56:38.97 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:16+03:00 sysUpTime=0:1:56:39.55 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:16+03:00 sysUpTime=0:1:56:40.12 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:17+03:00 sysUpTime=0:1:56:40.76 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:18+03:00 sysUpTime=0:1:56:41.28 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:18+03:00 sysUpTime=0:1:56:41.90 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:19+03:00 sysUpTime=0:1:56:42.43 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:19+03:00 sysUpTime=0:1:56:43.01 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:20+03:00 sysUpTime=0:1:56:43.69 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:21+03:00 sysUpTime=0:1:56:44.40 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:21+03:00 sysUpTime=0:1:56:45.00 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:22+03:00 sysUpTime=0:1:56:45.66 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:23+03:00 sysUpTime=0:1:56:46.29 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:23+03:00 sysUpTime=0:1:56:47.03 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:24+03:00 sysUpTime=0:1:56:47.86 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:25+03:00 sysUpTime=0:1:56:48.39 mode=1 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:25+03:00 sysUpTime=0:1:56:49.10 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:26+03:00 sysUpTime=0:1:56:49.81 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:27+03:00 sysUpTime=0:1:56:50.51 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:27+03:00 sysUpTime=0:1:56:51.16 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:28+03:00 sysUpTime=0:1:56:51.75 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:29+03:00 sysUpTime=0:1:56:52.44 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:29+03:00 sysUpTime=0:1:56:53.12 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:30+03:00 sysUpTime=0:1:56:53.65 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:31+03:00 sysUpTime=0:1:56:54.22 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:31+03:00 sysUpTime=0:1:56:54.76 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:32+03:00 sysUpTime=0:1:56:55.29 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:32+03:00 sysUpTime=0:1:56:55.99 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:33+03:00 sysUpTime=0:1:56:56.67 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:34+03:00 sysUpTime=0:1:56:57.38 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:34+03:00 sysUpTime=0:1:56:58.04 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:35+03:00 sysUpTime=0:1:56:58.66 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:36+03:00 sysUpTime=0:1:56:59.36 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:36+03:00 sysUpTime=0:1:57:00.01 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:37+03:00 sysUpTime=0:1:57:00.59 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:38+03:00 sysUpTime=0:1:57:01.29 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:38+03:00 sysUpTime=0:1:57:01.96 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:39+03:00 sysUpTime=0:1:57:02.61 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:40+03:00 sysUpTime=0:1:57:03.34 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:40+03:00 sysUpTime=0:1:57:03.99 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:41+03:00 sysUpTime=0:1:57:04.70 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:42+03:00 sysUpTime=0:1:57:05.33 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:42+03:00 sysUpTime=0:1:57:06.03 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:43+03:00 sysUpTime=0:1:57:06.70 mode=1 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:44+03:00 sysUpTime=0:1:57:07.38 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:44+03:00 sysUpTime=0:1:57:08.09 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:45+03:00 sysUpTime=0:1:57:08.72 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:46+03:00 sysUpTime=0:1:57:09.38 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:46+03:00 sysUpTime=0:1:57:10.12 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:47+03:00 sysUpTime=0:1:57:10.84 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:48+03:00 sysUpTime=0:1:57:11.54 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:49+03:00 sysUpTime=0:1:57:12.23 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:49+03:00 sysUpTime=0:1:57:12.92 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:50+03:00 sysUpTime=0:1:57:13.50 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:50+03:00 sysUpTime=0:1:57:14.11 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:51+03:00 sysUpTime=0:1:57:14.80 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:52+03:00 sysUpTime=0:1:57:15.61 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:53+03:00 sysUpTime=0:1:57:16.24 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:53+03:00 sysUpTime=0:1:57:16.89 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:54+03:00 sysUpTime=0:1:57:17.52 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:54+03:00 sysUpTime=0:1:57:18.15 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:55+03:00 sysUpTime=0:1:57:18.87 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:56+03:00 sysUpTime=0:1:57:19.53 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:57+03:00 sysUpTime=0:1:57:20.21 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:57+03:00 sysUpTime=0:1:57:20.91 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:58+03:00 sysUpTime=0:1:57:21.64 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:59+03:00 sysUpTime=0:1:57:22.35 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:17:59+03:00 sysUpTime=0:1:57:22.91 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:00+03:00 sysUpTime=0:1:57:23.54 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:01+03:00 sysUpTime=0:1:57:24.20 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:01+03:00 sysUpTime=0:1:57:24.90 mode=1 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:02+03:00 sysUpTime=0:1:57:25.67 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:03+03:00 sysUpTime=0:1:57:26.41 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:03+03:00 sysUpTime=0:1:57:27.11 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:04+03:00 sysUpTime=0:1:57:27.78 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:05+03:00 sysUpTime=0:1:57:28.51 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:05+03:00 sysUpTime=0:1:57:29.14 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:06+03:00 sysUpTime=0:1:57:29.83 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:07+03:00 sysUpTime=0:1:57:30.52 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:08+03:00 sysUpTime=0:1:57:31.23 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:08+03:00 sysUpTime=0:1:57:31.94 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:09+03:00 sysUpTime=0:1:57:32.47 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:09+03:00 sysUpTime=0:1:57:33.15 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:10+03:00 sysUpTime=0:1:57:33.77 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:11+03:00 sysUpTime=0:1:57:34.48 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:12+03:00 sysUpTime=0:1:57:35.34 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:12+03:00 sysUpTime=0:1:57:35.96 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:13+03:00 sysUpTime=0:1:57:36.63 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:14+03:00 sysUpTime=0:1:57:37.31 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:14+03:00 sysUpTime=0:1:57:38.01 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:15+03:00 sysUpTime=0:1:57:38.60 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:15+03:00 sysUpTime=0:1:57:39.17 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:16+03:00 sysUpTime=0:1:57:39.73 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:17+03:00 sysUpTime=0:1:57:40.22 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:17+03:00 sysUpTime=0:1:57:40.91 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:18+03:00 sysUpTime=0:1:57:41.59 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:19+03:00 sysUpTime=0:1:57:42.31 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:19+03:00 sysUpTime=0:1:57:42.87 mode=1 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:20+03:00 sysUpTime=0:1:57:43.49 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:21+03:00 sysUpTime=0:1:57:44.29 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:21+03:00 sysUpTime=0:1:57:44.89 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:22+03:00 sysUpTime=0:1:57:45.43 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:22+03:00 sysUpTime=0:1:57:45.92 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:23+03:00 sysUpTime=0:1:57:46.52 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:23+03:00 sysUpTime=0:1:57:47.15 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:24+03:00 sysUpTime=0:1:57:47.81 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:25+03:00 sysUpTime=0:1:57:48.48 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:26+03:00 sysUpTime=0:1:57:49.23 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:26+03:00 sysUpTime=0:1:57:49.82 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:27+03:00 sysUpTime=0:1:57:50.49 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:28+03:00 sysUpTime=0:1:57:51.18 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:28+03:00 sysUpTime=0:1:57:51.89 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:29+03:00 sysUpTime=0:1:57:52.55 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:30+03:00 sysUpTime=0:1:57:53.19 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:30+03:00 sysUpTime=0:1:57:53.90 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:31+03:00 sysUpTime=0:1:57:54.60 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:32+03:00 sysUpTime=0:1:57:55.44 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:32+03:00 sysUpTime=0:1:57:56.12 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:33+03:00 sysUpTime=0:1:57:56.71 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:34+03:00 sysUpTime=0:1:57:57.38 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:34+03:00 sysUpTime=0:1:57:58.09 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:35+03:00 sysUpTime=0:1:57:58.73 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:36+03:00 sysUpTime=0:1:57:59.47 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:36+03:00 sysUpTime=0:1:58:00.06 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:37+03:00 sysUpTime=0:1:58:00.63 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:38+03:00 sysUpTime=0:1:58:01.28 mode=1 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:38+03:00 sysUpTime=0:1:58:01.91 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:39+03:00 sysUpTime=0:1:58:02.45 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:39+03:00 sysUpTime=0:1:58:02.98 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:40+03:00 sysUpTime=0:1:58:03.57 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:41+03:00 sysUpTime=0:1:58:04.23 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:41+03:00 sysUpTime=0:1:58:04.88 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:42+03:00 sysUpTime=0:1:58:05.42 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:42+03:00 sysUpTime=0:1:58:05.96 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:43+03:00 sysUpTime=0:1:58:06.54 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:43+03:00 sysUpTime=0:1:58:07.12 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:44+03:00 sysUpTime=0:1:58:07.87 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:45+03:00 sysUpTime=0:1:58:08.58 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:46+03:00 sysUpTime=0:1:58:09.26 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:46+03:00 sysUpTime=0:1:58:09.92 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:47+03:00 sysUpTime=0:1:58:10.55 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:48+03:00 sysUpTime=0:1:58:11.20 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:48+03:00 sysUpTime=0:1:58:11.92 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:49+03:00 sysUpTime=0:1:58:12.63 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:50+03:00 sysUpTime=0:1:58:13.30 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:50+03:00 sysUpTime=0:1:58:13.96 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:51+03:00 sysUpTime=0:1:58:14.62 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:52+03:00 sysUpTime=0:1:58:15.45 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:52+03:00 sysUpTime=0:1:58:16.16 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:53+03:00 sysUpTime=0:1:58:16.77 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:54+03:00 sysUpTime=0:1:58:17.42 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:55+03:00 sysUpTime=0:1:58:18.18 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:55+03:00 sysUpTime=0:1:58:18.83 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:56+03:00 sysUpTime=0:1:58:19.50 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:57+03:00 sysUpTime=0:1:58:20.24 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:57+03:00 sysUpTime=0:1:58:20.82 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:58+03:00 sysUpTime=0:1:58:21.44 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:58+03:00 sysUpTime=0:1:58:22.16 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:18:59+03:00 sysUpTime=0:1:58:22.87 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:00+03:00 sysUpTime=0:1:58:23.60 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:01+03:00 sysUpTime=0:1:58:24.22 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:01+03:00 sysUpTime=0:1:58:24.90 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:02+03:00 sysUpTime=0:1:58:25.48 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:02+03:00 sysUpTime=0:1:58:26.02 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:03+03:00 sysUpTime=0:1:58:26.59 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:04+03:00 sysUpTime=0:1:58:27.18 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:04+03:00 sysUpTime=0:1:58:27.82 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:05+03:00 sysUpTime=0:1:58:28.40 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:05+03:00 sysUpTime=0:1:58:29.09 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:06+03:00 sysUpTime=0:1:58:29.79 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:07+03:00 sysUpTime=0:1:58:30.50 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:07+03:00 sysUpTime=0:1:58:31.01 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:08+03:00 sysUpTime=0:1:58:31.68 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:09+03:00 sysUpTime=0:1:58:32.47 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:09+03:00 sysUpTime=0:1:58:33.15 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:10+03:00 sysUpTime=0:1:58:33.82 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:11+03:00 sysUpTime=0:1:58:34.36 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:11+03:00 sysUpTime=0:1:58:35.05 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:12+03:00 sysUpTime=0:1:58:35.58 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:12+03:00 sysUpTime=0:1:58:36.18 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:13+03:00 sysUpTime=0:1:58:36.78 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:14+03:00 sysUpTime=0:1:58:37.39 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:14+03:00 sysUpTime=0:1:58:37.99 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:15+03:00 sysUpTime=0:1:58:38.65 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:16+03:00 sysUpTime=0:1:58:39.39 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:16+03:00 sysUpTime=0:1:58:40.11 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:17+03:00 sysUpTime=0:1:58:40.73 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:18+03:00 sysUpTime=0:1:58:41.23 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:18+03:00 sysUpTime=0:1:58:41.75 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:19+03:00 sysUpTime=0:1:58:42.33 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:19+03:00 sysUpTime=0:1:58:42.94 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:20+03:00 sysUpTime=0:1:58:43.61 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:21+03:00 sysUpTime=0:1:58:44.28 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:21+03:00 sysUpTime=0:1:58:44.99 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:22+03:00 sysUpTime=0:1:58:45.70 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:23+03:00 sysUpTime=0:1:58:46.40 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:23+03:00 sysUpTime=0:1:58:47.08 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:24+03:00 sysUpTime=0:1:58:47.70 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:25+03:00 sysUpTime=0:1:58:48.20 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:25+03:00 sysUpTime=0:1:58:48.76 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:26+03:00 sysUpTime=0:1:58:49.28 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:26+03:00 sysUpTime=0:1:58:49.91 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:27+03:00 sysUpTime=0:1:58:50.63 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:28+03:00 sysUpTime=0:1:58:51.34 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:28+03:00 sysUpTime=0:1:58:51.95 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:29+03:00 sysUpTime=0:1:58:52.59 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:30+03:00 sysUpTime=0:1:58:53.20 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:30+03:00 sysUpTime=0:1:58:53.90 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:31+03:00 sysUpTime=0:1:58:54.61 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:32+03:00 sysUpTime=0:1:58:55.30 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:32+03:00 sysUpTime=0:1:58:56.01 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:33+03:00 sysUpTime=0:1:58:56.72 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:34+03:00 sysUpTime=0:1:58:57.33 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:34+03:00 sysUpTime=0:1:58:57.88 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:35+03:00 sysUpTime=0:1:58:58.36 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:35+03:00 sysUpTime=0:1:58:58.92 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:36+03:00 sysUpTime=0:1:58:59.58 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:37+03:00 sysUpTime=0:1:59:00.25 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:37+03:00 sysUpTime=0:1:59:00.97 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:38+03:00 sysUpTime=0:1:59:01.71 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:39+03:00 sysUpTime=0:1:59:02.33 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:39+03:00 sysUpTime=0:1:59:02.89 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:40+03:00 sysUpTime=0:1:59:03.60 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:41+03:00 sysUpTime=0:1:59:04.29 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:41+03:00 sysUpTime=0:1:59:04.95 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:42+03:00 sysUpTime=0:1:59:05.59 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:43+03:00 sysUpTime=0:1:59:06.27 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:43+03:00 sysUpTime=0:1:59:06.95 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:44+03:00 sysUpTime=0:1:59:07.72 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:45+03:00 sysUpTime=0:1:59:08.45 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:45+03:00 sysUpTime=0:1:59:09.07 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:46+03:00 sysUpTime=0:1:59:09.67 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:47+03:00 sysUpTime=0:1:59:10.35 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:47+03:00 sysUpTime=0:1:59:10.93 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:48+03:00 sysUpTime=0:1:59:11.67 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:49+03:00 sysUpTime=0:1:59:12.27 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:49+03:00 sysUpTime=0:1:59:12.98 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:50+03:00 sysUpTime=0:1:59:13.70 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:51+03:00 sysUpTime=0:1:59:14.37 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:51+03:00 sysUpTime=0:1:59:15.15 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:52+03:00 sysUpTime=0:1:59:15.75 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:53+03:00 sysUpTime=0:1:59:16.45 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:53+03:00 sysUpTime=0:1:59:17.09 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:54+03:00 sysUpTime=0:1:59:17.75 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:55+03:00 sysUpTime=0:1:59:18.43 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:55+03:00 sysUpTime=0:1:59:19.09 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:56+03:00 sysUpTime=0:1:59:19.81 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:57+03:00 sysUpTime=0:1:59:20.48 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:58+03:00 sysUpTime=0:1:59:21.22 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:58+03:00 sysUpTime=0:1:59:21.92 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:59+03:00 sysUpTime=0:1:59:22.50 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:19:59+03:00 sysUpTime=0:1:59:23.12 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:00+03:00 sysUpTime=0:1:59:23.85 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:01+03:00 sysUpTime=0:1:59:24.54 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:01+03:00 sysUpTime=0:1:59:25.12 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:02+03:00 sysUpTime=0:1:59:25.62 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:02+03:00 sysUpTime=0:1:59:26.17 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:03+03:00 sysUpTime=0:1:59:26.84 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:04+03:00 sysUpTime=0:1:59:27.53 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:05+03:00 sysUpTime=0:1:59:28.24 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:05+03:00 sysUpTime=0:1:59:28.96 mode=3 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:06+03:00 sysUpTime=0:1:59:29.63 mode=3 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:07+03:00 sysUpTime=0:1:59:30.35 mode=3 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:07+03:00 sysUpTime=0:1:59:31.05 mode=3 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:08+03:00 sysUpTime=0:1:59:31.71 mode=3 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:09+03:00 sysUpTime=0:1:59:32.44 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:09+03:00 sysUpTime=0:1:59:33.02 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:10+03:00 sysUpTime=0:1:59:33.77 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:11+03:00 sysUpTime=0:1:59:34.50 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:12+03:00 sysUpTime=0:1:59:35.19 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:12+03:00 sysUpTime=0:1:59:35.72 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:13+03:00 sysUpTime=0:1:59:36.20 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:13+03:00 sysUpTime=0:1:59:36.82 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:14+03:00 sysUpTime=0:1:59:37.45 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:14+03:00 sysUpTime=0:1:59:38.02 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:15+03:00 sysUpTime=0:1:59:38.57 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:15+03:00 sysUpTime=0:1:59:39.16 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:16+03:00 sysUpTime=0:1:59:39.66 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:17+03:00 sysUpTime=0:1:59:40.37 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:17+03:00 sysUpTime=0:1:59:41.08 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:18+03:00 sysUpTime=0:1:59:41.78 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:19+03:00 sysUpTime=0:1:59:42.48 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:19+03:00 sysUpTime=0:1:59:43.09 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:20+03:00 sysUpTime=0:1:59:43.80 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:21+03:00 sysUpTime=0:1:59:44.52 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:22+03:00 sysUpTime=0:1:59:45.32 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:22+03:00 sysUpTime=0:1:59:46.00 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:23+03:00 sysUpTime=0:1:59:46.63 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:24+03:00 sysUpTime=0:1:59:47.34 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:24+03:00 sysUpTime=0:1:59:48.09 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:25+03:00 sysUpTime=0:1:59:48.74 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:26+03:00 sysUpTime=0:1:59:49.43 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:26+03:00 sysUpTime=0:1:59:50.04 mode=3 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:27+03:00 sysUpTime=0:1:59:50.74 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:28+03:00 sysUpTime=0:1:59:51.42 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:28+03:00 sysUpTime=0:1:59:52.08 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:29+03:00 sysUpTime=0:1:59:52.67 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:30+03:00 sysUpTime=0:1:59:53.40 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:30+03:00 sysUpTime=0:1:59:54.02 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:31+03:00 sysUpTime=0:1:59:54.62 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:32+03:00 sysUpTime=0:1:59:55.34 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:32+03:00 sysUpTime=0:1:59:55.88 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:33+03:00 sysUpTime=0:1:59:56.47 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:33+03:00 sysUpTime=0:1:59:57.02 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:34+03:00 sysUpTime=0:1:59:57.71 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:35+03:00 sysUpTime=0:1:59:58.30 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:35+03:00 sysUpTime=0:1:59:58.98 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:36+03:00 sysUpTime=0:1:59:59.70 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:37+03:00 sysUpTime=0:2:00:00.34 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:37+03:00 sysUpTime=0:2:00:00.94 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:38+03:00 sysUpTime=0:2:00:01.66 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:39+03:00 sysUpTime=0:2:00:02.32 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:39+03:00 sysUpTime=0:2:00:03.03 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:40+03:00 sysUpTime=0:2:00:03.65 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:41+03:00 sysUpTime=0:2:00:04.35 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:41+03:00 sysUpTime=0:2:00:05.13 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:42+03:00 sysUpTime=0:2:00:05.83 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:43+03:00 sysUpTime=0:2:00:06.57 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:44+03:00 sysUpTime=0:2:00:07.18 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:44+03:00 sysUpTime=0:2:00:07.85 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:45+03:00 sysUpTime=0:2:00:08.52 mode=3 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:45+03:00 sysUpTime=0:2:00:09.16 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:46+03:00 sysUpTime=0:2:00:09.86 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:47+03:00 sysUpTime=0:2:00:10.55 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:48+03:00 sysUpTime=0:2:00:11.20 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:48+03:00 sysUpTime=0:2:00:11.91 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:49+03:00 sysUpTime=0:2:00:12.66 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:50+03:00 sysUpTime=0:2:00:13.36 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:50+03:00 sysUpTime=0:2:00:14.02 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:51+03:00 sysUpTime=0:2:00:14.71 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:52+03:00 sysUpTime=0:2:00:15.53 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:53+03:00 sysUpTime=0:2:00:16.19 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:53+03:00 sysUpTime=0:2:00:16.91 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:54+03:00 sysUpTime=0:2:00:17.50 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:55+03:00 sysUpTime=0:2:00:18.27 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:55+03:00 sysUpTime=0:2:00:18.88 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:56+03:00 sysUpTime=0:2:00:19.59 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:57+03:00 sysUpTime=0:2:00:20.22 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:57+03:00 sysUpTime=0:2:00:20.84 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:58+03:00 sysUpTime=0:2:00:21.51 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:59+03:00 sysUpTime=0:2:00:22.20 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:20:59+03:00 sysUpTime=0:2:00:22.87 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:00+03:00 sysUpTime=0:2:00:23.48 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:00+03:00 sysUpTime=0:2:00:24.13 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:01+03:00 sysUpTime=0:2:00:24.71 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:02+03:00 sysUpTime=0:2:00:25.54 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:03+03:00 sysUpTime=0:2:00:26.25 mode=3 fr=0 gn="02 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:03+03:00 sysUpTime=0:2:00:26.93 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:04+03:00 sysUpTime=0:2:00:27.52 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:04+03:00 sysUpTime=0:2:00:28.03 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:05+03:00 sysUpTime=0:2:00:28.62 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:06+03:00 sysUpTime=0:2:00:29.19 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:06+03:00 sysUpTime=0:2:00:29.76 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:07+03:00 sysUpTime=0:2:00:30.53 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:08+03:00 sysUpTime=0:2:00:31.19 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:08+03:00 sysUpTime=0:2:00:31.78 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:09+03:00 sysUpTime=0:2:00:32.47 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:09+03:00 sysUpTime=0:2:00:33.15 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:10+03:00 sysUpTime=0:2:00:33.83 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:11+03:00 sysUpTime=0:2:00:34.56 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:12+03:00 sysUpTime=0:2:00:35.33 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:12+03:00 sysUpTime=0:2:00:35.99 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:13+03:00 sysUpTime=0:2:00:36.62 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:14+03:00 sysUpTime=0:2:00:37.34 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:14+03:00 sysUpTime=0:2:00:38.03 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:15+03:00 sysUpTime=0:2:00:38.68 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:16+03:00 sysUpTime=0:2:00:39.34 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:16+03:00 sysUpTime=0:2:00:40.04 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:17+03:00 sysUpTime=0:2:00:40.72 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:18+03:00 sysUpTime=0:2:00:41.31 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:18+03:00 sysUpTime=0:2:00:41.95 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:19+03:00 sysUpTime=0:2:00:42.65 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:20+03:00 sysUpTime=0:2:00:43.28 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:20+03:00 sysUpTime=0:2:00:44.06 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:21+03:00 sysUpTime=0:2:00:44.74 mode=3 fr=0 gn="04 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:22+03:00 sysUpTime=0:2:00:45.46 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:22+03:00 sysUpTime=0:2:00:46.15 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:23+03:00 sysUpTime=0:2:00:46.84 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:24+03:00 sysUpTime=0:2:00:47.50 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:24+03:00 sysUpTime=0:2:00:48.10 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:25+03:00 sysUpTime=0:2:00:48.52 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:25+03:00 sysUpTime=0:2:00:49.16 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:26+03:00 sysUpTime=0:2:00:49.85 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:27+03:00 sysUpTime=0:2:00:50.49 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:27+03:00 sysUpTime=0:2:00:51.08 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:28+03:00 sysUpTime=0:2:00:51.62 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:28+03:00 sysUpTime=0:2:00:52.17 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:29+03:00 sysUpTime=0:2:00:52.75 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:30+03:00 sysUpTime=0:2:00:53.44 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:30+03:00 sysUpTime=0:2:00:54.08 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:31+03:00 sysUpTime=0:2:00:54.75 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:32+03:00 sysUpTime=0:2:00:55.50 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:33+03:00 sysUpTime=0:2:00:56.19 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:33+03:00 sysUpTime=0:2:00:56.88 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:34+03:00 sysUpTime=0:2:00:57.53 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:35+03:00 sysUpTime=0:2:00:58.26 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:35+03:00 sysUpTime=0:2:00:58.83 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:36+03:00 sysUpTime=0:2:00:59.51 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:37+03:00 sysUpTime=0:2:01:00.19 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:37+03:00 sysUpTime=0:2:01:00.80 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:38+03:00 sysUpTime=0:2:01:01.31 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:38+03:00 sysUpTime=0:2:01:01.86 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:39+03:00 sysUpTime=0:2:01:02.45 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:39+03:00 sysUpTime=0:2:01:03.10 mode=3 fr=0 gn="08 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:40+03:00 sysUpTime=0:2:01:03.81 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:41+03:00 sysUpTime=0:2:01:04.48 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:42+03:00 sysUpTime=0:2:01:05.20 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:42+03:00 sysUpTime=0:2:01:05.94 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:43+03:00 sysUpTime=0:2:01:06.60 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:43+03:00 sysUpTime=0:2:01:07.19 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:44+03:00 sysUpTime=0:2:01:07.85 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:45+03:00 sysUpTime=0:2:01:08.49 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:45+03:00 sysUpTime=0:2:01:09.08 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:46+03:00 sysUpTime=0:2:01:09.79 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:47+03:00 sysUpTime=0:2:01:10.47 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:47+03:00 sysUpTime=0:2:01:11.06 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:48+03:00 sysUpTime=0:2:01:11.60 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:48+03:00 sysUpTime=0:2:01:12.17 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:49+03:00 sysUpTime=0:2:01:12.78 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:50+03:00 sysUpTime=0:2:01:13.46 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:50+03:00 sysUpTime=0:2:01:14.16 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:51+03:00 sysUpTime=0:2:01:14.74 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:52+03:00 sysUpTime=0:2:01:15.24 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:52+03:00 sysUpTime=0:2:01:15.89 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:53+03:00 sysUpTime=0:2:01:16.48 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:53+03:00 sysUpTime=0:2:01:17.11 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:54+03:00 sysUpTime=0:2:01:17.72 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:55+03:00 sysUpTime=0:2:01:18.38 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:55+03:00 sysUpTime=0:2:01:19.06 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:56+03:00 sysUpTime=0:2:01:19.67 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:57+03:00 sysUpTime=0:2:01:20.42 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:57+03:00 sysUpTime=0:2:01:21.14 mode=3 fr=0 gn="10 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:58+03:00 sysUpTime=0:2:01:21.86 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:59+03:00 sysUpTime=0:2:01:22.54 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:21:59+03:00 sysUpTime=0:2:01:23.15 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:00+03:00 sysUpTime=0:2:01:23.86 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:01+03:00 sysUpTime=0:2:01:24.51 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:02+03:00 sysUpTime=0:2:01:25.24 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:02+03:00 sysUpTime=0:2:01:26.04 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:03+03:00 sysUpTime=0:2:01:26.66 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:04+03:00 sysUpTime=0:2:01:27.25 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:04+03:00 sysUpTime=0:2:01:27.95 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:05+03:00 sysUpTime=0:2:01:28.64 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:06+03:00 sysUpTime=0:2:01:29.30 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:06+03:00 sysUpTime=0:2:01:29.85 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:07+03:00 sysUpTime=0:2:01:30.43 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:07+03:00 sysUpTime=0:2:01:30.97 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:08+03:00 sysUpTime=0:2:01:31.51 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:08+03:00 sysUpTime=0:2:01:32.14 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:09+03:00 sysUpTime=0:2:01:32.69 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:10+03:00 sysUpTime=0:2:01:33.18 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:10+03:00 sysUpTime=0:2:01:33.73 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:11+03:00 sysUpTime=0:2:01:34.26 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:11+03:00 sysUpTime=0:2:01:34.90 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:12+03:00 sysUpTime=0:2:01:35.63 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:13+03:00 sysUpTime=0:2:01:36.31 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:13+03:00 sysUpTime=0:2:01:36.99 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:14+03:00 sysUpTime=0:2:01:37.64 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:15+03:00 sysUpTime=0:2:01:38.26 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:15+03:00 sysUpTime=0:2:01:38.97 mode=3 fr=0 gn=" " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:16+03:00 sysUpTime=0:2:01:39.68 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:17+03:00 sysUpTime=0:2:01:40.28 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:17+03:00 sysUpTime=0:2:01:40.95 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:18+03:00 sysUpTime=0:2:01:41.61 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:19+03:00 sysUpTime=0:2:01:42.30 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:19+03:00 sysUpTime=0:2:01:42.94 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:20+03:00 sysUpTime=0:2:01:43.54 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:21+03:00 sysUpTime=0:2:01:44.22 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:21+03:00 sysUpTime=0:2:01:44.91 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:22+03:00 sysUpTime=0:2:01:45.70 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:23+03:00 sysUpTime=0:2:01:46.26 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:23+03:00 sysUpTime=0:2:01:46.81 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:24+03:00 sysUpTime=0:2:01:47.32 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:24+03:00 sysUpTime=0:2:01:47.89 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:25+03:00 sysUpTime=0:2:01:48.53 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:26+03:00 sysUpTime=0:2:01:49.23 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:26+03:00 sysUpTime=0:2:01:49.91 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:27+03:00 sysUpTime=0:2:01:50.45 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:27+03:00 sysUpTime=0:2:01:51.07 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:28+03:00 sysUpTime=0:2:01:51.63 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:28+03:00 sysUpTime=0:2:01:52.16 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:29+03:00 sysUpTime=0:2:01:52.76 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:30+03:00 sysUpTime=0:2:01:53.43 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:30+03:00 sysUpTime=0:2:01:54.00 mode=3 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:31+03:00 sysUpTime=0:2:01:54.72 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:32+03:00 sysUpTime=0:2:01:55.33 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:32+03:00 sysUpTime=0:2:01:56.09 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:33+03:00 sysUpTime=0:2:01:56.62 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:33+03:00 sysUpTime=0:2:01:57.15 mode=1 fr=0 gn="@" stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:34+03:00 sysUpTime=0:2:01:57.76 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:35+03:00 sysUpTime=0:2:01:58.43 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:35+03:00 sysUpTime=0:2:01:59.11 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:36+03:00 sysUpTime=0:2:01:59.77 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:37+03:00 sysUpTime=0:2:02:00.43 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:37+03:00 sysUpTime=0:2:02:01.12 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:38+03:00 sysUpTime=0:2:02:01.74 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:39+03:00 sysUpTime=0:2:02:02.43 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:39+03:00 sysUpTime=0:2:02:03.05 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:40+03:00 sysUpTime=0:2:02:03.76 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:41+03:00 sysUpTime=0:2:02:04.34 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:41+03:00 sysUpTime=0:2:02:04.99 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:42+03:00 sysUpTime=0:2:02:05.76 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:43+03:00 sysUpTime=0:2:02:06.31 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:43+03:00 sysUpTime=0:2:02:06.81 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:44+03:00 sysUpTime=0:2:02:07.37 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:44+03:00 sysUpTime=0:2:02:08.03 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:45+03:00 sysUpTime=0:2:02:08.71 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:46+03:00 sysUpTime=0:2:02:09.30 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:46+03:00 sysUpTime=0:2:02:10.02 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:47+03:00 sysUpTime=0:2:02:10.64 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:48+03:00 sysUpTime=0:2:02:11.29 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:48+03:00 sysUpTime=0:2:02:11.98 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:49+03:00 sysUpTime=0:2:02:12.77 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:50+03:00 sysUpTime=0:2:02:13.46 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:50+03:00 sysUpTime=0:2:02:14.10 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:51+03:00 sysUpTime=0:2:02:14.66 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:52+03:00 sysUpTime=0:2:02:15.48 mode=1 fr=0 gn="80 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:52+03:00 sysUpTime=0:2:02:16.15 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:53+03:00 sysUpTime=0:2:02:16.81 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:54+03:00 sysUpTime=0:2:02:17.52 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:54+03:00 sysUpTime=0:2:02:18.07 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:55+03:00 sysUpTime=0:2:02:18.78 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:56+03:00 sysUpTime=0:2:02:19.42 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:56+03:00 sysUpTime=0:2:02:20.08 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:57+03:00 sysUpTime=0:2:02:20.68 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:58+03:00 sysUpTime=0:2:02:21.24 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:58+03:00 sysUpTime=0:2:02:21.79 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:59+03:00 sysUpTime=0:2:02:22.31 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:22:59+03:00 sysUpTime=0:2:02:23.07 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:00+03:00 sysUpTime=0:2:02:23.74 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:01+03:00 sysUpTime=0:2:02:24.40 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:01+03:00 sysUpTime=0:2:02:24.99 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:02+03:00 sysUpTime=0:2:02:25.77 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:03+03:00 sysUpTime=0:2:02:26.46 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:03+03:00 sysUpTime=0:2:02:27.17 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:04+03:00 sysUpTime=0:2:02:27.82 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:05+03:00 sysUpTime=0:2:02:28.39 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:05+03:00 sysUpTime=0:2:02:29.07 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:06+03:00 sysUpTime=0:2:02:29.78 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:07+03:00 sysUpTime=0:2:02:30.42 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:07+03:00 sysUpTime=0:2:02:31.11 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:08+03:00 sysUpTime=0:2:02:31.70 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:09+03:00 sysUpTime=0:2:02:32.26 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:09+03:00 sysUpTime=0:2:02:32.93 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:10+03:00 sysUpTime=0:2:02:33.53 mode=1 fr=0 gn="01 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:10+03:00 sysUpTime=0:2:02:34.04 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:11+03:00 sysUpTime=0:2:02:34.65 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:12+03:00 sysUpTime=0:2:02:35.40 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:12+03:00 sysUpTime=0:2:02:36.04 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:13+03:00 sysUpTime=0:2:02:36.60 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:13+03:00 sysUpTime=0:2:02:37.16 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:14+03:00 sysUpTime=0:2:02:37.65 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:15+03:00 sysUpTime=0:2:02:38.29 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:15+03:00 sysUpTime=0:2:02:38.86 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:16+03:00 sysUpTime=0:2:02:39.55 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:17+03:00 sysUpTime=0:2:02:40.27 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:17+03:00 sysUpTime=0:2:02:40.88 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:18+03:00 sysUpTime=0:2:02:41.58 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:18+03:00 sysUpTime=0:2:02:42.17 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:19+03:00 sysUpTime=0:2:02:42.83 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:20+03:00 sysUpTime=0:2:02:43.48 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:20+03:00 sysUpTime=0:2:02:44.16 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:21+03:00 sysUpTime=0:2:02:44.85 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:22+03:00 sysUpTime=0:2:02:45.55 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:22+03:00 sysUpTime=0:2:02:46.14 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:23+03:00 sysUpTime=0:2:02:46.80 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:24+03:00 sysUpTime=0:2:02:47.32 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:24+03:00 sysUpTime=0:2:02:47.87 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:25+03:00 sysUpTime=0:2:02:48.48 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:25+03:00 sysUpTime=0:2:02:49.07 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:26+03:00 sysUpTime=0:2:02:49.83 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:27+03:00 sysUpTime=0:2:02:50.46 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:27+03:00 sysUpTime=0:2:02:51.05 mode=1 fr=0 gn="02 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:28+03:00 sysUpTime=0:2:02:51.71 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:29+03:00 sysUpTime=0:2:02:52.33 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:29+03:00 sysUpTime=0:2:02:53.00 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:30+03:00 sysUpTime=0:2:02:53.66 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:31+03:00 sysUpTime=0:2:02:54.32 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:31+03:00 sysUpTime=0:2:02:55.05 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:32+03:00 sysUpTime=0:2:02:55.74 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:33+03:00 sysUpTime=0:2:02:56.46 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:33+03:00 sysUpTime=0:2:02:57.11 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:34+03:00 sysUpTime=0:2:02:57.70 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:35+03:00 sysUpTime=0:2:02:58.28 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:35+03:00 sysUpTime=0:2:02:58.76 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:36+03:00 sysUpTime=0:2:02:59.23 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:36+03:00 sysUpTime=0:2:02:59.86 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:37+03:00 sysUpTime=0:2:03:00.58 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:38+03:00 sysUpTime=0:2:03:01.27 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:38+03:00 sysUpTime=0:2:03:01.97 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:39+03:00 sysUpTime=0:2:03:02.54 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:39+03:00 sysUpTime=0:2:03:03.11 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:40+03:00 sysUpTime=0:2:03:03.65 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:41+03:00 sysUpTime=0:2:03:04.18 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:41+03:00 sysUpTime=0:2:03:04.78 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:42+03:00 sysUpTime=0:2:03:05.54 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:42+03:00 sysUpTime=0:2:03:06.05 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:43+03:00 sysUpTime=0:2:03:06.77 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:44+03:00 sysUpTime=0:2:03:07.49 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:44+03:00 sysUpTime=0:2:03:08.16 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:45+03:00 sysUpTime=0:2:03:08.85 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:46+03:00 sysUpTime=0:2:03:09.52 mode=1 fr=0 gn="04 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:47+03:00 sysUpTime=0:2:03:10.20 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:47+03:00 sysUpTime=0:2:03:10.89 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:48+03:00 sysUpTime=0:2:03:11.61 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:48+03:00 sysUpTime=0:2:03:12.15 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:49+03:00 sysUpTime=0:2:03:12.80 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:50+03:00 sysUpTime=0:2:03:13.50 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:50+03:00 sysUpTime=0:2:03:14.17 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:51+03:00 sysUpTime=0:2:03:14.79 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:52+03:00 sysUpTime=0:2:03:15.45 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:52+03:00 sysUpTime=0:2:03:16.15 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:53+03:00 sysUpTime=0:2:03:16.80 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:54+03:00 sysUpTime=0:2:03:17.50 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:55+03:00 sysUpTime=0:2:03:18.23 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:55+03:00 sysUpTime=0:2:03:18.94 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:56+03:00 sysUpTime=0:2:03:19.64 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:57+03:00 sysUpTime=0:2:03:20.34 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:57+03:00 sysUpTime=0:2:03:20.93 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:58+03:00 sysUpTime=0:2:03:21.61 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:59+03:00 sysUpTime=0:2:03:22.26 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:23:59+03:00 sysUpTime=0:2:03:23.02 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:00+03:00 sysUpTime=0:2:03:23.64 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:01+03:00 sysUpTime=0:2:03:24.24 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:01+03:00 sysUpTime=0:2:03:25.04 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:02+03:00 sysUpTime=0:2:03:25.73 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:03+03:00 sysUpTime=0:2:03:26.50 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:03+03:00 sysUpTime=0:2:03:27.07 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:04+03:00 sysUpTime=0:2:03:27.67 mode=1 fr=0 gn="08 00 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:05+03:00 sysUpTime=0:2:03:28.31 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:05+03:00 sysUpTime=0:2:03:28.91 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:06+03:00 sysUpTime=0:2:03:29.64 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:07+03:00 sysUpTime=0:2:03:30.29 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:07+03:00 sysUpTime=0:2:03:30.98 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:08+03:00 sysUpTime=0:2:03:31.65 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:09+03:00 sysUpTime=0:2:03:32.27 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:09+03:00 sysUpTime=0:2:03:32.93 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:10+03:00 sysUpTime=0:2:03:33.55 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:11+03:00 sysUpTime=0:2:03:34.25 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:11+03:00 sysUpTime=0:2:03:34.90 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:12+03:00 sysUpTime=0:2:03:35.65 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?
+2026-02-17T15:24:13+03:00 sysUpTime=0:2:03:36.34 mode=1 fr=0 gn="01 " stageLen=? stageCounter=0 transition=?

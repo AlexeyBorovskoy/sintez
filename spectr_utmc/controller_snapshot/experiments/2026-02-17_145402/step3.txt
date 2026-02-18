@@ -1,0 +1,38 @@
+\n== STEP 3: Enable YF again ==
+
+=== Testing SET_YF (with confirm) ===
+⚠️  WARNING: This will modify controller state!
+Address: 192.168.75.150
+Attempts: 8, confirmTimeout: 12s
+
+Attempt 1/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 2/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 3/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 4/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 5/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 6/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 7/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout
+
+Attempt 8/8: SNMP SET operationMode=3 + utcControlFF=1
+SET_YF: SET accepted (response varbinds: 2)
+WARN: Flashing not confirmed within timeout

@@ -1,0 +1,4 @@
+local_time_start=2026-02-18T11:07:05+03:00
+dk_ip=192.168.75.150
+dk_user=voicelink
+remote_dir=/tmp/dk_capture_20260218_110705

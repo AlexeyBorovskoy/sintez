@@ -9,6 +9,16 @@
 #include <unistd.h>
 #include <errno.h>
 
+static std::string normalizeOidString(const char* oidStr) {
+    std::string s = oidStr ? oidStr : "";
+    // net-snmp often formats numeric OIDs as "iso.3.6...." which breaks
+    // string comparisons against "1.3.6...." constants.
+    if (s.rfind("iso.", 0) == 0) {
+        s.replace(0, 4, "1.");
+    }
+    return s;
+}
+
 SNMPHandler::SNMPHandler(const std::string& community)
     : community_(community), receiverRunning_(false), receiverSocket_(-1) {
     init_snmp("spectr_utmc_cpp");
@@ -38,9 +48,10 @@ bool SNMPHandler::createSession(const std::string& address, const std::string& c
     session.community = reinterpret_cast<u_char*>(strdup(community.c_str()));
     session.community_len = community.length();
     
-    // Установка таймаута: 5 секунд для запросов
-    session.timeout = 5000000; // микросекунды (5 секунд)
-    session.retries = 3; // Количество повторов
+    // Таймауты держим небольшими, чтобы управляющие команды не "подвисали" надолго
+    // в синхронных вызовах snmp_sess_synch_response.
+    session.timeout = 1000000; // 1s
+    session.retries = 1;       // total ~2s
     
     void* handle = snmp_sess_open(&session);
     if (handle == nullptr) {
@@ -154,7 +165,7 @@ void SNMPHandler::receiverThread(uint16_t port) {
                         
                         char oidBuf[1024];
                         snprint_objid(oidBuf, sizeof(oidBuf), vars->name, vars->name_length);
-                        varbind.oid = oidBuf;
+                        varbind.oid = normalizeOidString(oidBuf);
                         varbind.type = vars->type;
                         
                         char valueBuf[1024];
@@ -242,7 +253,7 @@ bool SNMPHandler::get(const std::string& address, const std::vector<std::string>
             
             char oidBuf[1024];
             snprint_objid(oidBuf, sizeof(oidBuf), vars->name, vars->name_length);
-            varbind.oid = oidBuf;
+            varbind.oid = normalizeOidString(oidBuf);
             varbind.type = vars->type;
             
             char valueBuf[1024];
@@ -329,13 +340,21 @@ bool SNMPHandler::set(const std::string& address, const std::vector<SNMPVarbind>
     std::vector<SNMPVarbind> resultVarbinds;
     bool hasError = (status != STAT_SUCCESS || response == nullptr);
     
+    if (hasError) {
+        if (status == STAT_TIMEOUT) {
+            std::cerr << "SNMP SET timeout for " << address << std::endl;
+        } else if (status == STAT_ERROR) {
+            std::cerr << "SNMP SET error for " << address << ": " << snmp_errstring(status) << std::endl;
+        }
+    }
+
     if (!hasError && response->errstat == SNMP_ERR_NOERROR) {
         for (netsnmp_variable_list* vars = response->variables; vars != nullptr; vars = vars->next_variable) {
             SNMPVarbind varbind;
             
             char oidBuf[1024];
             snprint_objid(oidBuf, sizeof(oidBuf), vars->name, vars->name_length);
-            varbind.oid = oidBuf;
+            varbind.oid = normalizeOidString(oidBuf);
             varbind.type = vars->type;
             
             char valueBuf[1024];
@@ -345,6 +364,15 @@ bool SNMPHandler::set(const std::string& address, const std::vector<SNMPVarbind>
             resultVarbinds.push_back(varbind);
         }
     } else {
+        if (response != nullptr && response->errstat != SNMP_ERR_NOERROR) {
+            std::cerr << "SNMP error in SET response: " << snmp_errstring(response->errstat)
+                      << " (code: " << response->errstat << ")" << std::endl;
+            if (response->errstat == SNMP_ERR_NOSUCHNAME) {
+                std::cerr << "  OID may not exist or is not writable (or wrong community)" << std::endl;
+            } else if (response->errstat == SNMP_ERR_AUTHORIZATIONERROR) {
+                std::cerr << "  Authorization error - check community string" << std::endl;
+            }
+        }
         hasError = true;
     }
     

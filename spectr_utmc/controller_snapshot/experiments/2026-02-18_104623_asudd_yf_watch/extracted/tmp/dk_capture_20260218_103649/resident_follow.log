@@ -1,0 +1,29 @@
+==> /home/voicelink/rtc/resident/full.log <==
+
+==> /home/voicelink/rtc/resident/info.log <==
+
+==> /home/voicelink/rtc/resident/error.log <==
+
+==> /home/voicelink/rtc/resident/info.log <==
+18-02-2026 10:57:36;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+
+==> /home/voicelink/rtc/resident/full.log <==
+18-02-2026 10:57:36;;0x101a;;Remote mode is launched using the {0} protocol.;;UTMC
+
+==> /home/voicelink/rtc/resident/info.log <==
+18-02-2026 10:57:43;;0x101f;;Flashing yellow.;;
+
+==> /home/voicelink/rtc/resident/full.log <==
+18-02-2026 10:57:43;;0x101f;;Flashing yellow.;;
+
+==> /home/voicelink/rtc/resident/info.log <==
+18-02-2026 10:58:36;;0x1047;;Remote mode is disabled. Reason: {0}.;;Timeout
+
+==> /home/voicelink/rtc/resident/full.log <==
+18-02-2026 10:58:36;;0x1047;;Remote mode is disabled. Reason: {0}.;;Timeout
+
+==> /home/voicelink/rtc/resident/info.log <==
+18-02-2026 10:58:39;;0x1006;;Program №{0} is running.;;1
+
+==> /home/voicelink/rtc/resident/full.log <==
+18-02-2026 10:58:39;;0x1006;;Program №{0} is running.;;1

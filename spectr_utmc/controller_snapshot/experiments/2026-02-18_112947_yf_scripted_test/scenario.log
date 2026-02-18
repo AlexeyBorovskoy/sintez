@@ -1,0 +1,84 @@
+[2026-02-18T11:24:56+03:00] START capture
+started_remote_dir=/tmp/dk_capture_20260218_112456
+total 72
+-rw-r--r-- 1 voicelink voicelink 55957 Feb 18 11:44 baseline.txt
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 11:44 pid_resident_follow
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 11:44 pid_snmp_poll
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 11:44 pid_spectr_utmc_follow
+-rw-r--r-- 1 voicelink voicelink   141 Feb 18 11:44 resident_follow.log
+-rw-r--r-- 1 voicelink voicelink     0 Feb 18 11:44 snmp_poll.log
+-rw-r--r-- 1 voicelink voicelink     0 Feb 18 11:44 spectr_utmc_follow.log
+started: local_dir=/tmp/yf_scripted_test_20260218_112456
+remote_dir=/tmp/dk_capture_20260218_112456
+[2026-02-18T11:24:57+03:00] Baseline: mode/fr/gn
+mode=1
+fr=0
+gn="01 00 "
+[2026-02-18T11:24:58+03:00] STEP 1: enable YF
+[2026-02-18T11:25:01+03:00] fr=0
+[2026-02-18T11:25:04+03:00] fr=0
+[2026-02-18T11:25:08+03:00] fr=0
+[2026-02-18T11:25:12+03:00] fr=0
+[2026-02-18T11:25:16+03:00] fr=0
+[2026-02-18T11:25:20+03:00] fr=1
+[2026-02-18T11:25:20+03:00] CONFIRMED: utcReplyFR=1
+[2026-02-18T11:25:20+03:00] STEP 1: hold YF 60s (keep asserting FF=1)
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+[2026-02-18T11:26:21+03:00] STEP 2: restore normal
+mode=1 fr=0
+[2026-02-18T11:26:23+03:00] STEP 3: wait 120s
+[2026-02-18T11:28:23+03:00] STEP 4: enable YF again
+[2026-02-18T11:28:26+03:00] fr=0
+[2026-02-18T11:28:30+03:00] fr=0
+[2026-02-18T11:28:34+03:00] fr=0
+[2026-02-18T11:28:37+03:00] fr=0
+[2026-02-18T11:28:41+03:00] fr=1
+[2026-02-18T11:28:41+03:00] CONFIRMED: utcReplyFR=1
+[2026-02-18T11:28:41+03:00] STEP 4: hold YF 60s (keep asserting FF=1)
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+ff_keep_1
+[2026-02-18T11:29:43+03:00] STEP 5: restore normal
+mode=1 fr=0
+[2026-02-18T11:29:45+03:00] STOP capture + pull
+stopped_remote_dir=/tmp/dk_capture_20260218_112456
+tar: Removing leading `/' from member names
+pulled: /tmp/yf_scripted_test_20260218_112456/capture.tgz

@@ -1,0 +1,10 @@
+started_remote_dir=/tmp/dk_capture_20260218_103649
+total 72
+-rw-r--r-- 1 voicelink voicelink 57623 Feb 18 10:56 baseline.txt
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 10:56 pid_resident_follow
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 10:56 pid_snmp_poll
+-rw-r--r-- 1 voicelink voicelink     6 Feb 18 10:56 pid_spectr_utmc_follow
+-rw-r--r-- 1 voicelink voicelink     0 Feb 18 10:56 resident_follow.log
+-rw-r--r-- 1 voicelink voicelink     0 Feb 18 10:56 spectr_utmc_follow.log
+started: local_dir=/tmp/zm_watch_20260218_103649
+remote_dir=/tmp/dk_capture_20260218_103649

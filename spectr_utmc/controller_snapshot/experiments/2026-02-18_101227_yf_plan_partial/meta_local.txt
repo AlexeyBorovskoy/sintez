@@ -1,0 +1,2 @@
+run_dir=/tmp/dk_yf_plan_full_20260218_100608
+controller=192.168.75.150 user=voicelink comm=UTMC
